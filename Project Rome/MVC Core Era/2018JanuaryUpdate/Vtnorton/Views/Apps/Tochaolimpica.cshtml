@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Vtnorton.Model
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Tocha Olímpica";
+    ViewData["Description"] = Localizer["RioShortDescription4"].Value;
+    ViewData["Keywords"] = "tocha olimpica, rio 2016, aplicativos, windows 10, windows insider, desenvolvedor indie";
+}
+@section submenu{
+    <ul>
+        <li><a href="#" class="on notranslate">Tocha Olímpica</a></li>
+        <li><a href="http://dev.vtnorton.com/tocha-olimpica-changelog/" class="notranslate">Changelog</a></li>
+    </ul>
+}
+<script src="~/js/vtnorton.apps.js"></script>
+<script src="~/json/app.tochaolimpica.json" type="application/ld+json"></script>
+
+<section class="app bg-red">
+    <div class="app-section">
+        <div class="app-image">
+            <img style="padding: 0px; width: 200px" src="/images/Rio.png" />
+        </div>
+        <div class="app-definition">
+            <h2 class="white notranslate">Tocha Olímpica</h2>
+            <p class="white">@Localizer["RioShortDescription4"]</p>
+            <a href="https://www.microsoft.com/store/apps/9nblggh4pmts" class="btn white notranslate">Download</a> <a href="http://dev.vtnorton.com/tocha-olimpica-changelog/" class="btn white notranslate">Changelog</a>
+        </div>
+        <div class="clean"></div>
+    </div>
+</section>
+<section>
+    <div class="section-wrapper">
+        <div class="section-image-right right">
+            <img class="section-image-right-img" style="padding: 20px; margin-right: -20px; padding-bottom: 40px" src="/images/apps/tocha.png" />
+        </div>
+
+        <div class="section-content-left left">
+            <h1>@Localizer["TerreDescription"]</h1>
+            <p>@Localizer["RioDescription"]</p>
+        </div>
+        <div class="clean"></div>
+    </div>
+</section>
+<section class="bg-light">
+    <div class="wrapper" style="padding: 30px 0">
+        @foreach (var item in (IEnumerable<FeedItem>)ViewData["feed"])
+        {
+            <div class="article-blog">
+                <h4><a href="@item.Link">@item.Title</a></h4>
+                <img src="@item.ImageURL" />
+                <p>@item.Content</p>
+                <p><strong><a href="@item.Link">@Localizer["ReadMore"]</a></strong></p>
+            </div>
+        }
+        <div class="clean"></div>
+    </div>
+</section>

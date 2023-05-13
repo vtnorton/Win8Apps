@@ -1,0 +1,142 @@
+﻿@model ProjectCachoeiro.Web.Models.Empresa.Company
+@{
+    ViewData["Title"] = "Editar empresa";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-9">
+        <div class="view-element">
+            <div class="toolbar">
+                <div class="left">
+                    <h2>Editar empresa</h2>
+                </div>
+                <div class="clean"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form id="form" asp-action="Editar">
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Razão social</label>
+                                <input asp-for="RazaoSocial" type="text" />
+                                <span asp-validation-for="RazaoSocial"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Nome fantasia</label>
+                                <input asp-for="NomeFantasia" type="text" />
+                                <span asp-validation-for="NomeFantasia"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>CNPJ</label>
+                                <!-- TODO: colocar esse campo desativado ao buscar o CNPJ no passo anterior-->
+                                <input class="disabled form-control" asp-for="CNPJ" type="text" />
+                                <span asp-validation-for="CNPJ"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label>Descrição</label>
+                                <textarea asp-for="Descricao" type="text"></textarea>
+                                <span asp-validation-for="Descricao"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-9">
+                                <label>Endereço</label>
+                                <input asp-for="Endereco" type="text" />
+                                <span asp-validation-for="Endereco"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label>Cidade</label>
+                                <input asp-for="Cidade" type="text" placeholder="Cachoeiro de Itapemirim" />
+                                <span asp-validation-for="Cidade"></span>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Estado</label>
+                                <input asp-for="Estado" type="text" placeholder="ES" />
+                                <span asp-validation-for="Estado"></span>
+                            </div>
+                            <div class="col-md-3">
+                                <label>CEP</label>
+                                <input asp-for="CEP" type="text" placeholder="00000-000" />
+                                <span asp-validation-for="CEP"></span>
+                            </div>
+                        </div>
+
+                        <br /><br /><br />
+
+                        <div class="row">
+                            <!-- TODO: Criar formas de adicionar mais de uma opção de telefone/email -->
+                            <div class="col-md-4">
+                                <label>Telefone</label>
+                                <input asp-for="Telefone" type="text" placeholder="(00) 1111-2222" />
+                                <span asp-validation-for="Telefone"></span>
+                            </div>
+                            <div class="col-md-5">
+                                <label>Email</label>
+                                <input asp-for="Email" type="email" placeholder="contato@contoso.com" />
+                                <span asp-validation-for="Email"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Site</label>
+                                <input asp-for="Site" type="url" placeholder="http://" />
+                                <span asp-validation-for="Site"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="view-bottom">
+                <hr />
+                <p class="small">Legenda da tabela e outras informações importantes a serem acrescentadas aqui.</p>
+            </div>
+        </div>
+    </div>
+    <div class="info-bar col-md-3">
+        @{
+            OtherOptions otherOptions = new OtherOptions
+            {
+                Descricao = "Veja opções relacionadas com a apresentação de itens.",
+                FeedbackEChamadoID = "ItemFamilia",
+                OpcoesRelacionadas = new Links[] {
+                    new Links{
+                        Titulo = "Adicionar família",
+                        Url = "/Familias/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar estado de produto",
+                        Url = "/Estados/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar produto",
+                        Url = "/Produtos/Create"
+                    }
+                }
+            };
+        }
+        @Html.Partial("AppOtherOptions", otherOptions)
+    </div>
+</div>
+<div class="taskbar">
+    <div class="left">
+        <a class="btn btn-link" asp-action="Index"><i class="fa fa-list-ul"></i> Voltar</a>
+    </div>
+    <div class="right">
+        <!-- TODO: Implementar função Limpar -->
+        <a class="btn btn-success" onclick="$('#form').submit();"><i class="fa fa-save"></i> Salvar</a>
+    </div>
+    <div class="clean"></div>
+</div>

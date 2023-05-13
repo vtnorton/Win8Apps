@@ -1,0 +1,350 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="VTNORTON.Master" %>
+
+<!doctype html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- CSS -->
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/heartthrob.css" rel="stylesheet" />
+    <link href="/css/nprogress.css" rel="stylesheet" />
+    <!-- Fim do CSS -->
+
+    <!-- JavaScript -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/vtnorton.js"></script>
+    <script src="/js/nprogress.js"></script>
+    <!-- Fim do JavaScript -->
+
+    <!-- Metadados/SEO -->
+    <title>Vítor Norton - Desenvolvimento de aplicativos e sites</title>
+    <meta name="description" content="Faça um site ou um aplicativo só seu, ou para sua empresa. Veja histórias malucas e nem tão malucas. Vejam um pouco sobre mim." />
+    <meta name="keywords" content="design, desenvolvimento, windows phone, windows, vitor norton, kachu, surface, mixer, heartthrob, criação de sites" />
+    <meta name="image" content="http://www.vtnorton.com/images/logos/logo.vtnorton.thumbnail.png" />
+    <meta name="thumbnail" content="http://www.vtnorton.com/images/logos/logo.vtnorton.thumbnail.png" />
+    <meta name="author" content="Vítor Norton, contato@vtnorton.com" />
+    <meta name="designer" content="Vítor Norton" />
+    <meta name="copyright" content="vtnorton" />
+    <meta name="reply-to" content="contato@vtnorton.com" />
+    <meta name="owner" content="Vítor Norton" />
+    <meta name="url" content="http://www.vtnorton.com" />
+    <meta name="identifier-URL" content="http://www.vtnorton.com" />
+    <meta name="directory" content="submission" />
+    <meta name="category" content="software" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="revisit-after" content="1 day" />
+    <meta name="application-name" content="vtnorton.com" />
+    <meta content="@vt_norton" name="twitter:site" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="msvalidate.01" content="56DFA045266F286D4EDE0D2B401CC585" />
+    <!-- Fim do Metadados/SEO -->
+
+    <!-- Tecnologias -->
+    <link href="http://www.vtnorton.com/opensearch.xml" rel="search" title="Pesquisar vtnorton.com" type="application/opensearchdescription+xml" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="msapplication-config" content="/livetile.xml" />
+    <meta name="msapplication-starturl" content="http://www.vtnorton.com/?=ie-starturl" />
+    <meta name="msapplication-tooltip" content="Entrar em www.vtnorton.com" />
+    <meta name="msapplication-navbutton-color" content="black" />
+    <link rel="apple-touch-icon" href="/images/icones/touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icones/touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icones/touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icones/touch-icon-ipad-retina.png" />
+    <link rel="apple-touch-startup-image" href="/images/icones/startup.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Fim de Tecnologias -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+
+                <img src="/images/logos/logo.vtnorton.master.png" />
+            </a>
+            <div class="logo-written">Vítor Norton</div>
+        </div>
+        <div class="clean"></div>
+        <div class="hamburger"></div>
+        <nav>
+            <ul>
+                <li class="no-drop"><a href="/">Início</a></li>
+                <li class="dpd-menu-blog"><a href="#">Blog</a>
+                    <ul class="material-btn">
+                        <li class="nav-more"><a href="/blog/">Todos os posts</a>
+                            <div class="fwm-blog">
+                                <asp:Label ID="lblPostImageWidget" CssClass="left" runat="server" Text=""></asp:Label>
+                                <h2>
+                                    <asp:Label CssClass="h1-widget-menu" ID="lblPostTitleWidget" runat="server" Text=""></asp:Label></h2>
+                                <p>
+                                    <asp:Label ID="lblPostFirstParagrahWidget" runat="server" Text=""></asp:Label>
+                                </p>
+                                <div class="clean"></div>
+                            </div>
+                        </li>
+                        <asp:Repeater ID="rptCategoryBlog" runat="server">
+                            <ItemTemplate>
+                                <li><a href="/blog/category.aspx?categoria?id=<%#Eval("Id") %>"><%#Eval("Name") %></a></li>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </ul>
+                </li>
+                <li class="no-drop"><a href="/sextachegou/index.aspx">#SextaChegou</a></li>
+                <li class="dpd-menu-downloads"><a href="#">Downloads</a>
+                    <ul class="material-btn">
+                        <li class="nav-more"><a href="/download/novos.aspx">Recentes</a>
+                            <div class="fwm-downloads">
+                                <h2>Recomendado</h2>
+                            </div>
+                        </li>
+                        <li class="nav-more"><a href="/download/empresariais.aspx">Empresariais</a>
+                            <div>
+                                <h2>Recomendado</h2>
+                            </div>
+                        </li>
+                        <li class="nav-more"><a href="/download/aplicativos.aspx">Todos aplicativos</a>
+                            <div>
+                                <h2>Recomendado</h2>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="no-drop"><a href="/mvdm/index.aspx">Minha vida de merda</a></li>
+                <li class="dpd-menu-dev"><a href="#">Desenvolvedores</a>
+                    <ul>
+                        <li><a href="#">Principal</a></li>
+                        <li><a href="#">B# Framework</a></li>
+                        <li><a href="#">Heartthrob</a></li>
+                    </ul>
+                </li>
+                <li class="dpd-menu-suporte"><a href="#">Suporte</a>
+                    <ul>
+                        <li><a href="#">Principal</a></li>
+                        <li><a href="/bsharp.aspx">B# Framework</a></li>
+                        <li><a href="/suporte/index.aspx">Geral</a></li>
+                        <li><a href="/suporte/apps.aspx">Aplicativos</a></li>
+                        <li class="nav-more"><a href="/suporte/status.aspx">Informações</a>
+                            <div class="fwm-suporte">
+                                <h2>Versões</h2>
+                                <p>
+                                    Site:
+                                        <asp:Label ID="lblSite2" runat="server" Text=""></asp:Label><br />
+                                    Hidra:
+                                        <asp:Label ID="lblHidra2" runat="server" Text=""></asp:Label><br />
+                                    Build framework:
+                                        <asp:Label ID="lblBuildFramework2" runat="server" Text=""></asp:Label><br />
+                                    <br />
+                                    Veja mais informações <a href="status.aspx">aqui</a>.
+                                </p>
+                            </div>
+                        </li>
+                        <li><a href="/suporte/suporte.aspx">Suporte</a></li>
+                    </ul>
+                </li>
+                <li class="dpd-menu-contato"><a href="#">Contato + Sobre</a>
+                    <ul>
+                        <li class="nav-more"><a href="/sobre">Sobre</a>
+                            <div class="fwm-sobre">
+                                <h2 style="margin-bottom: -5px;">Sobre</h2>
+                                <p>Veja a história, visão, valores e missão nesta página, acesse <a href="/sobre.aspx">aqui</a>.</p>
+                                <h2 style="margin: -5px 0;">Números</h2>
+                                <p>
+                                    Visitantes online: 0<br />
+                                </p>
+                                <h2 style="margin: -5px 0;">Info</h2>
+                                <p>
+                                    Versão:
+                                        <asp:Label ID="lblSite3" runat="server" Text=""></asp:Label><br />
+                                    Veja mais <a href="/status.aspx">aqui</a>.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="nav-more"><a href="/vitor/">Biografia</a>
+                            <div>
+                                <h2>Vítor Norton</h2>
+                                <p>20 anos, estudante de Sistemas de Informação, fluente em inglês e desenvolvedor nas tecnologias Microsoft (C#, Asp/.Net, SQL Server, Azure, F#) e em Java. </p>
+                                <p>Leia mais <a href="/vitor/">aqui</a>.</p>
+                            </div>
+                        </li>
+                        <li><a href="/vitor/">Vítor Norton</a></li>
+                        <li><a href="/linha-do-tempo.aspx">Linha do tempo</a></li>
+                        <li class="nav-more"><a href="/redes-sociais">Redes Sociais</a>
+                            <div class="widget-social">
+                                <h2 style="margin-bottom: 10px;">Redes sociais</h2>
+                                <p onclick="location.href='https://www.facebook.com/vitor.norton'"><span class="widget-social-facebook"></span><a href="#">/vitor.norton</a></p>
+                                <%--<p onclick="location.href='http://www.instagram.com/vt_norton'"><span class="widget-social-instagram"></span><a href="#">@vt_norton</a></p>--%>
+                                <p onclick="location.href='http://www.twitter.com/vt_norton'"><span class="widget-social-twitter"></span><a href="#">@vt_norton</a></p>
+                                <p onclick="location.href='http://youtube.com/c/VítorNorton'"><span class="widget-social-youtube"></span><a href="#">vitor.norton</a></p>
+                                <p onclick="location.href='#'"><span class="widget-social-skype"></span><a href="#">vtnorton</a></p>
+
+                            </div>
+                        </li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li class="nav-more"><a href="/contato">Contato</a>
+                            <div>
+                                <h2>E-mails</h2>
+                                <p>
+                                    vitor@vtnorton.com<br />
+                                    norton@vtnorton.com<br />
+                                    contato@vtnorton.com
+                                </p>
+                                <h1>Outros meios</h1>
+                                <p>
+                                    Skype: vtnorton<br />
+                                    Twitter: @vt_norton
+                                </p>
+                                <p>
+                                    Veja mais informações <a href="/contato">aqui</a>.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="nav-more"><a href="/suporte/status.aspx">Mais informações</a>
+                            <div>
+                                <h2>Versões</h2>
+                                <p>
+                                    Site:
+                                        <asp:Label ID="lblSite" runat="server" Text=""></asp:Label><br />
+                                    Heartthrob:
+                                        <asp:Label ID="lblHeartthrob" runat="server" Text=""></asp:Label><br />
+                                    Hidra:
+                                        <asp:Label ID="lblHidra" runat="server" Text=""></asp:Label><br />
+                                    Ladon:
+                                        <asp:Label ID="lblLadon" runat="server" Text=""></asp:Label><br />
+                                    Build framework:
+                                        <asp:Label ID="lblBuildFramework" runat="server" Text=""></asp:Label><br />
+                                    Build atual:
+                                        <asp:Label ID="lblBuild" runat="server" Text=""></asp:Label><br />
+                                    <br />
+                                    Veja mais informações <a href="/status.aspx">aqui</a>.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="sub-menu">
+        <div class="links">
+            <asp:ContentPlaceHolder ID="SUBMENU" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+        <ul class="right minimenu">
+            <li>
+                <div title="Abrir caixa de pesquisa" class="minimenu-search"></div>
+                <form action="/search.aspx" method="get">
+                    <input id="searchBoxId" name="q" class="minimenu-search-box" placeholder="Pesquisar" type="text" required="required"/>
+                </form>
+                <div id="status" style="z-index: 99; position: relative;"></div>
+            </li>
+            <li>
+                <div title="Abrir caixa de personalização e acessibilidade" class="minimenu-acess"></div>
+                <div class="minimenu-panel-acess">
+                    <div title="Aumentar a fonte do texto principal" class="left minimenu-acess-fonte-maior"></div>
+                    <div title="Diminuir a fonte do texto principal" class="right minimenu-acess-fonte-menor"></div>
+                    <div class="clean"></div>
+                    <div onclick="document.getElementById('mafs').innerHTML = 'Selecionar'" title="Alterar a fonte padrão do site" class="minimenu-acess-fonte">
+                        Fonte
+                            <label id="mafs" class="minimenu-acess-fonte-selecionada">
+                                Segoe UI
+                            </label>
+                        <div class="clean"></div>
+                    </div>
+                    <div class="minimenu-acess-fonte-lista">
+                        <ul>
+                            <li class="ripple" onclick="document.getElementById('mafs').innerHTML = 'Arial'" title="Selecionar a fonte Arial" id="arial" style="font-family: Arial">Arial</li>
+                            <li class="ripple" onclick="document.getElementById('mafs').innerHTML = 'Georgia'" title="Selecionar a fonte Georgia" id="georgia" style="font-family: Georgia">Georgia</li>
+                            <li class="ripple" onclick="document.getElementById('mafs').innerHTML = 'Segoe UI'" title="Selecionar a fonte Segoe UI" id="segoe" style="font-family: 'Segoe UI'">Segoe UI</li>
+                            <li class="ripple" onclick="document.getElementById('mafs').innerHTML = 'Times'" title="Selecionar a fonte Times New Roman" id="times" style="font-family: 'Times New Roman'">Times New Roman</li>
+                        </ul>
+                    </div>
+                    <ul class="minimenu-acess-icons">
+                        <li title="Alinhar texto a direita" class="maiar"></li>
+                        <li title="Justificar texto" class="maiac"></li>
+                        <li title="Alinhar texto a esquerda" class="maiae"></li>
+                        <li title="Resetar todas as configurações" class="mairc"></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div title="Denunciar e reportar bug" class="minimenu-denunciar"></div>
+                <div class="minimenu-panel-denunciar">
+                    <ul>
+                        <li onclick="location.href='/report'" class="ripple"><a href='/report'>Reportar bug</a></li>
+                        <li onclick="location.href='/sugestion'" class="ripple"><a href='/sugestion'>Enviar sugestão</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <div class="clean"></div>
+    </div>
+
+    <form runat="server">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <footer>
+            <div class="widgets">
+                <div class="postagens left">
+                    <div style="width: 320px; margin: 0 auto">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- footer -->
+                        <ins class="adsbygoogle"
+                            style="display: inline-block; width: 320px; height: 100px"
+                            data-ad-client="ca-pub-5584056449430370"
+                            data-ad-slot="9184760040"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+                <div class="avaliacao right">
+                    <div>
+                        <h2>Compartilhe essa página</h2><br />
+                        Ajude-me a alcançar mais pessoas!
+                        <br />
+                        
+                    </div>
+                </div>
+                <div class="clean"></div>
+            </div>
+            <div id="copyright">
+                Copyright <a href="/"><strong>Vítor Norton</strong></a>
+                <script type='text/javascript'>var creditsyear = new Date(); document.write(creditsyear.getFullYear());</script>
+                - "Mudando o mundo um bit de cada vez"
+            </div>
+        </footer>
+    </form>
+</body>
+<script>
+    var $buoop = { c: 2 };
+    function $buo_f() {
+        var e = document.createElement("script");
+        e.src = "//browser-update.org/update.js";
+        document.body.appendChild(e);
+    };
+    try { document.addEventListener("DOMContentLoaded", $buo_f, false) }
+    catch (e) { window.attachEvent("onload", $buo_f) }
+    NProgress.start();
+    setTimeout(function () { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
+</script>
+    
+<%--<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-50145252-1', 'auto');
+    ga('send', 'pageview');
+
+</script>--%>
+</html>

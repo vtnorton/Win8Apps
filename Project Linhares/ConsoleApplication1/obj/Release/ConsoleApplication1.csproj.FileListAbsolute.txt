@@ -1,0 +1,15 @@
+F:\sun\alpha\ConsoleApplication1\bin\Release\ConsoleApplication1.exe.config
+F:\sun\alpha\ConsoleApplication1\bin\Release\ConsoleApplication1.exe
+F:\sun\alpha\ConsoleApplication1\bin\Release\ConsoleApplication1.pdb
+F:\sun\alpha\ConsoleApplication1\bin\Release\SunCore.dll
+F:\sun\alpha\ConsoleApplication1\bin\Release\NHibernate.dll
+F:\sun\alpha\ConsoleApplication1\bin\Release\FluentNHibernate.dll
+F:\sun\alpha\ConsoleApplication1\bin\Release\Iesi.Collections.dll
+F:\sun\alpha\ConsoleApplication1\bin\Release\SunCore.pdb
+F:\sun\alpha\ConsoleApplication1\bin\Release\NHibernate.xml
+F:\sun\alpha\ConsoleApplication1\bin\Release\FluentNHibernate.pdb
+F:\sun\alpha\ConsoleApplication1\bin\Release\FluentNHibernate.xml
+F:\sun\alpha\ConsoleApplication1\bin\Release\Iesi.Collections.xml
+F:\sun\alpha\ConsoleApplication1\obj\Release\ConsoleApplication1.csprojResolveAssemblyReference.cache
+F:\sun\alpha\ConsoleApplication1\obj\Release\ConsoleApplication1.exe
+F:\sun\alpha\ConsoleApplication1\obj\Release\ConsoleApplication1.pdb

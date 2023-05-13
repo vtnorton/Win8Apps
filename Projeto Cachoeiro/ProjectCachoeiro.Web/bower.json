@@ -1,0 +1,14 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "font-awesome": "4.7.0",
+    "heartthrob": "0.1.2",
+    "jquery": "2.2.0",
+    "jquery-validation": "1.17.0",
+    "jquery-validation-unobtrusive": "3.2.6",
+    "nicescroll": "3.7.6",
+    "nprogress": "0.2.0",
+    "smooth-scroll": "1.4.0"
+  }
+}

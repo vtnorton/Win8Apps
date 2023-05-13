@@ -1,0 +1,69 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Vtnorton.Model
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Formula for MVPs ";
+    ViewData["Description"] = Localizer["ThisAppDescription"].Value;
+    ViewData["Keywords"] = "";
+}
+@section metatags{
+    <!-- TODO: Create a shared resource -->
+    <script src="~/js/vtnorton.mantainscroll.js"></script>
+}
+@section submenu{
+    <li><a href="/formula">@Localizer["More"]</a></li>
+    <li><a href="http://twitter.com/formula4windows">@Localizer["Follow"]</a></li>
+    <li><a href="http://blog.vtnorton.com/category/apps/formula-universal-code-editor/">@Localizer["News"]</a></li>
+}
+<div class="section-wrapper wrapper">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>@Localizer["Singup"]</h1>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-8">
+            <p style="width:calc(100% - 90px)">@Localizer["TheFormulaContent"]</p>
+            <p style="width:calc(100% - 90px)"><a href="/formula">@Localizer["Discover"]</a></p>
+            <img class="section-image-left-img" style="width:75%;" src="/images/apps/formula.png" />
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <p>@Localizer["MVP"]</p>
+            @model Emails
+
+            @using (Html.BeginForm("FormulaMVP", "Talks"))
+            {
+                <p><strong>@Localizer["FirstName"]:</strong></p>
+                    @Html.TextBoxFor(m => m.FirstName)<br />
+                    <p><strong>@Localizer["LastName"]:</strong></p>
+                    @Html.TextBoxFor(m => m.LastName)<br />
+                    <p><strong>@Localizer["Observation"]:</strong></p>
+                    @Html.TextBoxFor(m => m.Observation)<br /><br />
+                    <p><strong>@Localizer["Email"]:</strong></p>
+                    @Html.TextBoxFor(m => m.Email)<br /><br />
+
+                    <button type="submit" value="Submit" style="width:100%; height:50px">@Localizer["Button"]</button><br />
+            }
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <blockquote class="border red full">
+                    @Html.ValidationSummary()
+                </blockquote>
+
+            }
+            @if (ViewData["result"] != null)
+            {
+                <blockquote class="border green">
+                    @Localizer["Success"]
+                </blockquote>
+            }
+            @if (ViewData["error"] != null)
+            {
+                <blockquote class="border red full">
+                    @Localizer["Error"]
+                </blockquote>
+            }
+        </div>
+    </div>
+</div>

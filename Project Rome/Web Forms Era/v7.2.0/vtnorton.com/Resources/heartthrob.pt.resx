@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AllApps" xml:space="preserve">
+    <value>Todos os aplicativos</value>
+  </data>
+  <data name="footer" xml:space="preserve">
+    <value>"Mudando o mundo um bit de cada vez"</value>
+  </data>
+  <data name="navAllEvents" xml:space="preserve">
+    <value>Todos os eventos</value>
+  </data>
+  <data name="navAnswering" xml:space="preserve">
+    <value>Respondendo feedback</value>
+  </data>
+  <data name="navApps" xml:space="preserve">
+    <value>Aplicativos</value>
+  </data>
+  <data name="navDesenvolvimento" xml:space="preserve">
+    <value>Desenvolvimento</value>
+  </data>
+  <data name="navDeveloperNotes" xml:space="preserve">
+    <value>Notas do desenvolvedor</value>
+  </data>
+  <data name="navEvents" xml:space="preserve">
+    <value>Eventos</value>
+  </data>
+  <data name="navHome" xml:space="preserve">
+    <value>Início</value>
+  </data>
+  <data name="navInTheNext" xml:space="preserve">
+    <value>Na próxima atualização</value>
+  </data>
+  <data name="navNews" xml:space="preserve">
+    <value>Novidades</value>
+  </data>
+  <data name="navOthers" xml:space="preserve">
+    <value>Outros</value>
+  </data>
+  <data name="navPersonal" xml:space="preserve">
+    <value>Blog pessoal</value>
+  </data>
+  <data name="navProjetos" xml:space="preserve">
+    <value>Projetos</value>
+  </data>
+  <data name="navTips" xml:space="preserve">
+    <value>Dicas e utilizades</value>
+  </data>
+  <data name="navUpdates" xml:space="preserve">
+    <value>Atualizações e lançamentos</value>
+  </data>
+  <data name="SendFeedback" xml:space="preserve">
+    <value>Enviar feedback</value>
+  </data>
+  <data name="openSearch" xml:space="preserve">
+    <value>Abrir caixa de pesquisa</value>
+  </data>
+  <data name="erroBlog" xml:space="preserve">
+    <value>Descubra o Windows</value>
+  </data>
+  <data name="erroDev" xml:space="preserve">
+    <value>Leia sobre os meu aplicativos</value>
+  </data>
+  <data name="erroEventos" xml:space="preserve">
+    <value>Descubra novos eventos</value>
+  </data>
+  <data name="erroGaroto" xml:space="preserve">
+    <value>Aprenda a codar</value>
+  </data>
+  <data name="erro000Description" xml:space="preserve">
+    <value>Há um erro totalmente desconhecido no qual você se esbarrou. Ele provavelmente já está sendo corrigido.</value>
+  </data>
+  <data name="erro000Title" xml:space="preserve">
+    <value>Parece que há algo de errado.</value>
+  </data>
+  <data name="erro403Description" xml:space="preserve">
+    <value>Este não é um local público do meu site. Sinto muito :-(&lt;/p&gt;
+&lt;p&gt;Se você acredita que deveria ter acesso a essa parte do site, entre em contato comigo.</value>
+  </data>
+  <data name="erro403Title" xml:space="preserve">
+    <value>Você não deveria estar aqui</value>
+  </data>
+  <data name="erro404Description" xml:space="preserve">
+    <value>Infelizmente a página que você está procurando não existe mais. Ela pode estar temporariamente indisponível, ou moveu de lugar ou não existe mais.&lt;/p&gt;&lt;p&gt;Reveja a URL que você digitou procurando algum erro e tente novamente. Ou use a barra de pesquisa e procure pelo o que esta faltando e dê uma volta pelo resto do site.</value>
+  </data>
+  <data name="erro404Title" xml:space="preserve">
+    <value>Parece que o que você procura já não está mais entre nós.</value>
+  </data>
+  <data name="erro500Description" xml:space="preserve">
+    <value>Provavelmente esse é um erro do servidor que já está sendo resolvido. Tente novamente mais tarde..&lt;/p&gt;
+&lt;p&gt;Caso você queira entrar em contato e relatar o problema use o e-mail contato@vtnorton.com para me informar sobre o problema.</value>
+  </data>
+  <data name="erro500Title" xml:space="preserve">
+    <value>Parece que há algo de errado.</value>
+  </data>
+  <data name="navAllPosts" xml:space="preserve">
+    <value>Todas as postagens</value>
+  </data>
+  <data name="navMe" xml:space="preserve">
+    <value>Eu, eu mesmo</value>
+  </data>
+</root>

@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About me</value>
+    <comment>About me</comment>
+  </data>
+  <data name="Apps" xml:space="preserve">
+    <value>Apps</value>
+    <comment>Apps</comment>
+  </data>
+  <data name="Dev" xml:space="preserve">
+    <value>Development</value>
+    <comment>Development</comment>
+  </data>
+  <data name="Others" xml:space="preserve">
+    <value>Others</value>
+    <comment>Others</comment>
+  </data>
+  <data name="Q01Dev" xml:space="preserve">
+    <value>I have one question about site creation, am I in the right place?</value>
+    <comment>Tenho perguntas relacionadas a criação de sites, estou no lugar certo?</comment>
+  </data>
+  <data name="Q02Dev" xml:space="preserve">
+    <value>I have an ideia for an app or game or site, can you do it?</value>
+    <comment>Tenho uma ideia de aplicativo ou game ou site, você poderia fazer?</comment>
+  </data>
+  <data name="Q03Dev" xml:space="preserve">
+    <value>Why you don't make any apps for iOS or Android?</value>
+    <comment>Por que não desenvolver para Android e iOS ou outras plataformas?</comment>
+  </data>
+  <data name="Q04App" xml:space="preserve">
+    <value>I can't find your apps, who is allowed to download?</value>
+    <comment>Quem tem direito a aproveitar os aplicativos?</comment>
+  </data>
+  <data name="Q05About" xml:space="preserve">
+    <value>Do you like LoL or WoW or Minecraft ou any other game?</value>
+    <comment>Você gosta de LoL ou WoW ou Minecraft ou algum outro game?</comment>
+  </data>
+  <data name="Q06About" xml:space="preserve">
+    <value>You talk a lot about Microsoft, does it pay anything to you?</value>
+    <comment>Você vive falando da Microsoft, ela te paga alguma coisa?</comment>
+  </data>
+  <data name="Q07About" xml:space="preserve">
+    <value>I don't undertand anything you say, are you normal?</value>
+    <comment>Não entendo nada do que você escreve, você é normal?</comment>
+  </data>
+  <data name="Q08About" xml:space="preserve">
+    <value>Ok, you love computers and TV Shows, any other things?</value>
+    <comment>Além de computadores e séries de TV, você entende de alguma outra coisa?</comment>
+  </data>
+  <data name="Q09About" xml:space="preserve">
+    <value>I don't like you</value>
+    <comment>Não gosto de você.</comment>
+  </data>
+  <data name="Q10About" xml:space="preserve">
+    <value>Are you a Male escort? (This joke only makes sense in portuguese)</value>
+    <comment>Você é um garoto de programa né?</comment>
+  </data>
+  <data name="Q11Site" xml:space="preserve">
+    <value>I can't find a few of your sites that should be on the web</value>
+    <comment>Não estou conseguindo acessar alguns sites que deveriam estar em seu nome.</comment>
+  </data>
+  <data name="Q12Site" xml:space="preserve">
+    <value>I can't use my email @vtnorton.com</value>
+    <comment>Não estou conseguindo acessar meu e-mail @vtnorton.com</comment>
+  </data>
+  <data name="Q13Others" xml:space="preserve">
+    <value>Can you fix my printer?</value>
+    <comment>Pode arrumar a minha impressora?</comment>
+  </data>
+  <data name="Q14Others" xml:space="preserve">
+    <value>Why doesn't have any cats photos here?</value>
+    <comment>Por que não tem fotos de gatos por aqui?</comment>
+  </data>
+  <data name="R01" xml:space="preserve">
+    <value>Please, get in touch for more information. </value>
+    <comment>Por favor entre em contato via e-mail para mais informações e para solicitar um orçamento.</comment>
+  </data>
+  <data name="R02" xml:space="preserve">
+    <value>Ideias are always welcome and none are deleted. Send me your ideia, and who knows your idea comes to live. If you want an exclusive app for your company or anything like that, get in touch for a budget. If you are a Patreon, go to the exclusive Facebook Group and send me your idea there, it will have more chances to be bringed to live.</value>
+    <comment>Ideias são sempre bem vindas e nenhuma é descartada. Envie-me a sua ideia, e quem sabe ela não será feita. Se você deseja um aplicativo somente seu, entre em contato para orçamento. Se você for um Patreon, entre no grupo exclusivo do Facebook e envie sua ideia lá, você terá mais chances de que ela se torne um aplicativo.</comment>
+  </data>
+  <data name="R03" xml:space="preserve">
+    <value>I am only one. To create apps for iOS and Android it needs a few more things that I know. And, talking about Android, I don't want to develop for a platform that I don't think is ideal. But, who knows, in a near future, I change my mind...</value>
+    <comment>Sou apenas um. Para criar aplicativos para iOS é preciso saber programar Swift e de um Mac, algo que eu não tenho (aceito doações). Para o Android é preciso saber Java, porém não tenho interesse em desenvolver para uma plataforma que eu não acredito ser ideal. Mas quem sabe, num futuro proxímo, eu mude de ideia... nunca descarto as possíbilidades.</comment>
+  </data>
+  <data name="R04" xml:space="preserve">
+    <value>The apps are being made for brazilian folks on Windows 10 (Mobile and PC). But this isn't a rule, I'm currently working to bring the apps for others regions and platforms. Please, check if your region is disponible.</value>
+    <comment>Os aplicativos estão sendo feitos para os usuários brasileiros do Windows 10 (mobile e PC). Porém isto não é regra e estou trabalhando para levar a mais plataformas e regiões. Fique atento e verifique as regiões disponíveis.</comment>
+  </data>
+  <data name="R05" xml:space="preserve">
+    <value>No, I don't play. </value>
+    <comment>Não sou adepto a jogos, claro que existem os casuais. Jogava Minecraft para construir algumas coisas, fora isso não sei nada mais.</comment>
+  </data>
+  <data name="R06" xml:space="preserve">
+    <value>Oh yes, I talk a lot about Microsoft and I love it. Microsoft doesn't pay me anything. Today my apps and website uses Azure services, by BizSpark from Microsoft, to be available. So, thinking a little bit more, they actually pay something for me. And yes, they paid on trip to Redmond, WA in April/2015.</value>
+    <comment>Falo e falo bem mesmo. Milhares de pessoas falam e falam de seus times e artistas e ninguém discute isso. A Microsoft não me paga nada para isso, mas seria bom. Hoje o site e alguns serviços essenciais para o funcionamento de outros sites e aplicativos meus estão hospedados no Azure, que está sendo pago pelo plano BizSpark da Microsoft. Pensando bem, ela me paga sim. E também, pagou uma viagem para conhece-los em Redmond, WA em Abril de 2015.</comment>
+  </data>
+  <data name="R07" xml:space="preserve">
+    <value>No, I'm not normal. Mostly of the things I write is about tecnologie and TV Shows, and only people who is aware of this world will understand. Sorry. </value>
+    <comment>Não, eu não sou normal. A maioria das coisas que escrevo é sobre alguns mundos, como tecnologia, séries de tv e afins, e somente quem está por dentro desses mundos consegue entender. Sinto muito.</comment>
+  </data>
+  <data name="R08" xml:space="preserve">
+    <value>I love history and music.</value>
+    <comment>Sou apaixonado por história, especialmente a história da arte, dos Estados Unidos e a do Egito. Também sou apaixonado por música, teatro e dança. Também adoro teorias da conspiração.</comment>
+  </data>
+  <data name="R09" xml:space="preserve">
+    <value>This isn't a question.</value>
+    <comment>Isso não foi uma pergunta.</comment>
+  </data>
+  <data name="R10" xml:space="preserve">
+    <value>That depends. (as I said this joke only work in portuguese).</value>
+    <comment>Isso depende do ponto de vista.</comment>
+  </data>
+  <data name="R11" xml:space="preserve">
+    <value>After a lot of internal changes I removed a lot of websites with the name vtnorton. If you are trying to go to icesperafeliz.vtnorton.com, go to the address &lt;a href="http://icesperafeliz.blogspot.com"&gt;icesperafeliz.blogspot.com &lt;/a&gt;. The follow sites is not avalible anymore: beta.vtnorton.com, vitor.vtnorton.com, hidra.vtnorton.com, www2.vtnorton.com and hot.vtnorton.com. Projects like Jade is also shut down.</value>
+    <comment>Devido a mudanças internas retirei da web diversos sites com o nome vtnorton. Caso você esteja tentando acessar ao site icesperafeliz.vtnorton.com, entre atravéz do endereço &lt;a href="http://icesperafeliz.blogspot.com"&gt;icesperafeliz.blogspot.com &lt;/a&gt;. Os sites beta.vtnorton.com, vitor.vtnorton.com, hidra.vtnorton.com, www2.vtnorton.com e hot.vtnorton.com não estão disponíveis mais, assim como projetos como a Jade.</comment>
+  </data>
+  <data name="R12" xml:space="preserve">
+    <value>A lot of emails was deactivated, with the knowledge of the owner. There was made backups of the data and you have 90 days, after the desactivation, to ask to recive this datas. Please get in touch in &lt;a href="#contato" title="Get in touch" target="_blank"&gt;contact section&lt;/a&gt;, after 90 days, this datas will be deleted.</value>
+    <comment>Muitos e-mails foram desativados, com o conhecimento do dono do endereço. Foram feito backups dos dados e você têm 90 dias, a partir da data de desativação, para poder pedir o acesso a tais dados, por favor entre em &lt;a href="/contato" title="Entrar em contato" target="_blank"&gt;contato&lt;/a&gt; comigo, após esse prazo os dados serão apagados.</comment>
+  </data>
+  <data name="R13" xml:space="preserve">
+    <value>No.</value>
+    <comment>Não.</comment>
+  </data>
+  <data name="R14" xml:space="preserve">
+    <value>Oh yeah, there is... take a look!</value>
+    <comment>Temos sim, olha...</comment>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>Sites</value>
+    <comment>Sites</comment>
+  </data>
+</root>

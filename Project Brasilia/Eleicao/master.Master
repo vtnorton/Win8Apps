@@ -1,0 +1,165 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="Eleicao.master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- CSS -->
+    <link href="/css/heartthrob.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/responsivo.css" rel="stylesheet" />
+    <link href="/css/ui-light.css" rel="stylesheet" />
+    <link href="/css/eleicao.css" rel="stylesheet" />
+    <!-- Fim do CSS -->
+
+    <!-- JavaScript -->
+    <script src="/js/jquery.js"></script>
+    <script async="async" src="/js/vtn.pinnedsite.js"></script>
+    <!-- Fim do JavaScript -->
+
+    <!-- Metadados -->
+    <title>Resultado Eleição 2º Turno | VTNorton</title>
+    <meta name="description" content="Acompanhe em tempo real o resultado do 2º turdo das eleições presidenciais." />
+    <meta name="keywords" content="vitor norton, vtnorton, criar sites, design, presidencia, dilma, aecio, politica, apuração, eleição, turno, votação, votações, candidatos" />
+    <meta name="image" content="http://www.vtnorton.com/images/logos/logo.vtnorton.thumbnail.png" />
+    <meta name="thumbnail" content="http://www.vtnorton.com/images/logos/logo.vtnorton.thumbnail.png" />
+    <meta name="author" content="Vítor Norton, contato@vtnorton.com" />
+    <meta name="designer" content="Vítor Norton" />
+    <meta name="copyright" content="vtnorton" />
+    <meta name="reply-to" content="contato@vtnorton.com" />
+    <meta name="owner" content="Vítor Norton" />
+    <meta name="url" content="http://www.vtnorton.com" />
+    <meta name="identifier-URL" content="http://www.vtnorton.com" />
+    <meta name="directory" content="submission" />
+    <meta name="category" content="software" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="revisit-after" content="1 day" />
+    <meta name="application-name" content="vtnorton.com" />
+    <meta content="@vt_norton" name="twitter:site" />
+    <!-- Fim do Metadados -->
+
+    <!-- Tecnologias -->
+    <link href="http://www.vtnorton.com/opensearch.xml" rel="search" title="Hidra" type="application/opensearchdescription+xml" />
+    <link rel="shortcut icon" href="http://beta.vtnorton.com/favicon.ico" />
+    <link href="http://beta.vtnorton.com/images/icones/icon.png" rel="icon" type="image/x-icon" />
+    <link href="http://beta.vtnorton.com/images/icones/shortcut-icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://beta.vtnorton.com/images/icones/touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="http://beta.vtnorton.com/images/icones/touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="http://beta.vtnorton.com/images/icones/touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="http://beta.vtnorton.com/images/icones/touch-icon-ipad-retina.png" />
+    <link rel="apple-touch-startup-image" href="http://beta.vtnorton.com/images/icones/startup.png" />
+    <!-- 320 x 480 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Fim de Tecnologias -->
+</head>
+<body>
+    <div class="header">
+        <div class="header-margin">
+            <div class="logo">
+                <img src="/img/logo.vtnorton.master.png" style="margin-top: 15px; margin-left: 10px;" />
+            </div>
+
+            <div class="resetSearch search">
+                <form action='http://www.vtnorton.com/search/Search.aspx' method='get'>
+                    <input type="search" autocomplete="on" name='q' />
+                </form>
+            </div>
+
+            <div style="clear: both"></div>
+            <div class="menu" style="margin-left: 30px;">
+                <ul>
+                    <li><a href="http://www.vtnorton.com/index.aspx?=eleicao">Início</a></li>
+                    <li><a href="/index.aspx">ELEIÇÕES 2014</a></li>
+                    <li><a href="http://vitor.vtnorton.com/?=eleicao">Blog</a></li>
+                    <li><a href="http://www.vtnorton.com/search/Index.aspx?=eleicao">Search</a></li>
+                    <li><a href="http://www.vtnorton.com/connect/Index.aspx?=eleicao">Tenha um site</a></li>
+                    <li><a href="http://www.vtnorton.com/sobre.aspx?=eleicao">Sobre</a></li>
+                    <li><a href="http://www.vtnorton.com/contato.aspx?=eleicao">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="sub-menu">
+        <div class="sub-menu-margin" style="margin-top: 15px !important;">
+            <asp:ContentPlaceHolder ID="SUBMENU" runat="server">
+            </asp:ContentPlaceHolder>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+
+    <div class="wrapper"></div>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    <div class="footer">
+        <div class="secundario">
+            <div class="mapa">
+                <div class="bloco primeiro">
+                    <ul>
+                        <h1>Início</h1>
+                        <li><a href="http://www.vtnorton.com/index.aspx">Principal</a></li>
+                        <li><a href="http://www.vtnorton.com/projetos.aspx">Nossos projetos</a></li>
+                        <li><a href="http://www.vtnorton.com/planosfuturos.aspx">O que vem por ai</a></li>
+                    </ul>
+                    <ul>
+                        <h1>Blog</h1>
+                        <li><a href="http://vitor.vtnorton.com/?=footersiteprincipal">Vítor Norton</a></li>
+                    </ul>
+                </div>
+                <div class="bloco">
+                    <ul>
+                        <h1>Search</h1>
+                        <li><a href="http://www.vtnorton.com/search/Index.aspx">Search</a></li>
+                        <li><a href="http://www.vtnorton.com/search/sobre.aspx">Sobre</a></li>
+                        <li><a href="http://www.vtnorton.com/search/opiniao.aspx">Mande sua sugestão</a></li>
+                        <li><a href="http://www.vtnorton.com/search/adicionarnavegador.aspx">Search no seu navegador</a></li>
+                    </ul>
+                </div>
+                <div class="bloco">
+                    <ul>
+                        <h1>Tenha um site</h1>
+                        <li><a href="http://www.vtnorton.com/connect/Index.aspx?=submenu">Conheça o projeto</a></li>
+                        <li><a href="http://www.vtnorton.com/connect/motivos.aspx?=submenu">Por que ter um site?</a></li>
+                        <li><a href="http://www.vtnorton.com/connect/depoimentos.aspx?=submenu">Depoimentos</a></li>
+                        <li><a href="http://www.vtnorton.com/connect/faq.aspx?=submenu">Perguntas Frequentes</a></li>
+                        <li><a href="http://www.vtnorton.com/formulariodecontato.aspx?=submenuconnect">Tire suas dúvidas</a></li>
+                    </ul>
+                </div>
+                <div class="bloco ultimo">
+                    <ul>
+                        <h1>Sobre</h1>
+                        <li><a href="http://www.vtnorton.com/sobre.aspx">Sobre</a></li>
+                        <li><a href="http://www.vtnorton.com/status.aspx">Status de serviços</a></li>
+                    </ul>
+                    <ul>
+                        <h1>Contato</h1>
+                        <li><a href="http://www.vtnorton.com/contato.aspx?=Footer">Redes sociais</a></li>
+                        <li><a href="http://www.vtnorton.com/formulariodecontato.aspx?=Footer">Fale conosco</a></li>
+                    </ul>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+
+            <div id="copyright">
+                Copyright <a href="/Index.aspx"><strong>VTNORTON</strong></a>
+                <script type='text/javascript'>var creditsyear = new Date(); document.write(creditsyear.getFullYear());</script>
+                - "Mudando o mundo um bit de cada vez"
+            </div>
+        </div>
+    </div>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-55372000-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

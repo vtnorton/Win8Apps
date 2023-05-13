@@ -1,0 +1,75 @@
+@using Microsoft.AspNetCore.Identity
+@using ProjectCachoeiro.Web.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
+<html>
+<head>
+    @await Html.PartialAsync("_ImporterHead")
+</head>
+<body>
+    <header>
+        <div class="pull-left">
+            <div class="logo">
+                <img src="~/images/logo-white.png" />
+            </div>
+        </div>
+        <div class="pull-right">
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <ul class="box-icons">
+                    <li>
+                        <a onclick="openMenu('#help')" class="dropdown"><i class="fa fa-question-circle-o"></i></a>
+                        <ul id="help">
+                            <li><a href="#">Abrir um chamado</a></li>
+                            <li><a href="#">Ver chamados</a></li>
+                            <li><a href="#">Enviar um feedback</a></li>
+                            <li><a href="#">Log de alterações</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a onclick="openMenu('#account')" class="box-profile dropdown">@UserManager.GetUserAsync(User).Result.Nome</a>
+                        <ul id="account">
+                            <li class="profile">
+                                <!-- TODO: Imagem + Nome + E-mail-->
+                            </li>
+                            <li><a asp-controller="Manage" asp-action="Edit">Editar perfil</a></li>
+                            <li><a asp-controller="Manage" asp-action="Index" title="Manage">Gerenciar conta</a></li>
+                            <!-- TODO: Criar configurações do sistema -->
+                            @*<li><a href="/Sistema/Configuracoes">Configurações</a></li>*@
+                            <li><a asp-controller="Account" asp-action="Logout">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            }
+            else
+            {
+                <div class="box-login">
+                    <a asp-area="" asp-controller="Account" asp-action="Login">Entrar</a>
+                </div>
+            }
+        </div>
+        <div class="clear"></div>
+    </header>
+
+    @*@if (SignInManager.IsSignedIn(User)){
+        @if (ViewData["LOGIC"].ToString() == "OOBE"){
+            @await Html.PartialAsync("OOBEMenu")
+        }else{
+            @await Html.PartialAsync("AppMenu")
+        }
+        <content>
+            <div class="content-wrapper">
+                @RenderBody()
+            </div>
+        </content>
+        <div class="clear"></div>
+    }else{*@
+        @RenderBody()
+    @*}*@
+
+    @await Html.PartialAsync("_ImporterBody")
+</body>
+</html>

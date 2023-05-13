@@ -1,0 +1,144 @@
+﻿@model ProjectCachoeiro.Web.Models.Empresa.Company;
+
+@{
+    ViewData["Title"] = "Informações da empresa";
+    ViewData["LOGIC"] = "OOBE";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="step0" class="step" style="padding-top:0">
+    <div class="view-element">
+        <h1>2. Informações da empresa</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed consectetur lectus. Maecenas ligula tellus, scelerisque in libero vel, porttitor ornare nulla.</p>
+        <hr />
+
+        <div class="setup-buttons">
+            <hr />
+            <a data-scroll class="btn" href="#step2"><i class="fa fa-industry"></i> Adicionar informações da empresa</a>
+        </div>
+    </div>
+</div>
+
+@*<div id="step1" class="step">
+    <div class="view-element">
+        <h3>2.1. CNPJ e Razão social</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed consectetur lectus.</p>
+        <hr />
+        <div class="row">
+            <div class="col-md-8">
+                <br /><br />
+                <input class="cnpj" type="text" placeholder="CNPJ" />
+            </div>
+        </div>
+
+        <div class="setup-buttons">
+            <a data-scroll class="btn" href="#step2"><i class="fa fa-arrow-right"></i> Validar</a>
+        </div>
+    </div>
+</div>*@
+<form id="form" asp-action="EditarEmpresa" method="post">
+    <div id="step2" class="step">
+        <div class="view-element">
+            <h3>2.2. Mais informações</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed consectetur lectus.</p>
+            <hr />
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Razão social*</label>
+                    <input asp-for="RazaoSocial" type="text" />
+                    <span asp-validation-for="RazaoSocial"></span>
+                </div>
+                <div class="col-md-6">
+                    <label>Nome fantasia</label>
+                    <input asp-for="NomeFantasia" type="text" />
+                    <span asp-validation-for="NomeFantasia"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>CNPJ*</label>
+                    <!-- TODO: colocar esse campo desativado ao buscar o CNPJ no passo anterior-->
+                    <input class="disabled cnpj form-control" asp-for="CNPJ" type="text" />
+                    <span asp-validation-for="CNPJ"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <label>Descrição</label>
+                    <textarea asp-for="Descricao" type="text"></textarea>
+                    <span asp-validation-for="Descricao"></span>
+                </div>
+            </div>
+
+            <div class="setup-buttons">
+                <hr />
+                <a data-scroll class="btn" href="#step3"><i class="fa fa-arrow-right"></i> Próximo</a>
+            </div>
+        </div>
+    </div>
+    <div id="step3" class="step">
+        <div class="view-element">
+            <h3>2.3. Informações de contato</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed consectetur lectus.</p>
+            <hr />
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="row">
+                <div class="col-md-9">
+                    <label>Endereço</label>
+                    <input asp-for="Endereco" type="text" />
+                    <span asp-validation-for="Endereco"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <label>Cidade</label>
+                    <input asp-for="Cidade" type="text" placeholder="Cachoeiro de Itapemirim" />
+                    <span asp-validation-for="Cidade"></span>
+                </div>
+                <div class="col-md-2">
+                    <label>Estado</label>
+                    <input asp-for="Estado" type="text" placeholder="ES" />
+                    <span asp-validation-for="Estado"></span>
+                </div>
+                <div class="col-md-3">
+                    <label>CEP</label>
+                    <input asp-for="CEP" type="text" placeholder="00000-000" class="cep" />
+                    <span asp-validation-for="CEP"></span>
+                </div>
+            </div>
+
+            <br /><br /><br />
+
+            <div class="row">
+                <!-- TODO: Criar formas de adicionar mais de uma opção de telefone/email -->
+                <div class="col-md-4">
+                    <label>Telefone</label>
+                    <input asp-for="Telefone" type="text" placeholder="(00) 1111-2222" />
+                    <span asp-validation-for="Telefone"></span>
+                </div>
+                <div class="col-md-5">
+                    <label>Email</label>
+                    <input asp-for="Email" type="email" placeholder="contato@contoso.com" />
+                    <span asp-validation-for="Email"></span>
+                    <p>Este e-mail deve ser o mesmo do convite.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Site</label>
+                    <input asp-for="Site" type="url" placeholder="http://" />
+                    <span asp-validation-for="Site"></span>
+                </div>
+            </div>
+
+            <div class="setup-buttons">
+                <hr />
+                <a class="btn" onclick="$('#form').submit();"><i class="fa fa-plus"></i> Cadastrar</a>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,12 @@
+F:\sun\alpha\SunCore\bin\Release\SunCore.dll
+F:\sun\alpha\SunCore\bin\Release\SunCore.pdb
+F:\sun\alpha\SunCore\bin\Release\FluentNHibernate.dll
+F:\sun\alpha\SunCore\bin\Release\Iesi.Collections.dll
+F:\sun\alpha\SunCore\bin\Release\NHibernate.dll
+F:\sun\alpha\SunCore\bin\Release\FluentNHibernate.pdb
+F:\sun\alpha\SunCore\bin\Release\FluentNHibernate.xml
+F:\sun\alpha\SunCore\bin\Release\Iesi.Collections.xml
+F:\sun\alpha\SunCore\bin\Release\NHibernate.xml
+F:\sun\alpha\SunCore\obj\Release\SunCore.dll
+F:\sun\alpha\SunCore\obj\Release\SunCore.pdb
+F:\sun\alpha\SunCore\obj\Release\SunCore.csprojResolveAssemblyReference.cache

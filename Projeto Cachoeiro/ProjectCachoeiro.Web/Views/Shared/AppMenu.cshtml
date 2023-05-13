@@ -1,0 +1,82 @@
+﻿<nav class="nav-container">
+    <div class="nav-side-navigation">
+        <div id="nav-hamburguer">
+            <a id="hamburguerMenu"><i class="fa fa-navicon"></i> </a>
+        </div>
+        <div class="nav-navigation-list">
+            <div id="nav-top-menus">
+                <ul>
+                    <li><a href="/"><i class="fa fa-dashboard"></i> Painel</a></li>
+                    @if (User.IsInRole("User") || User.IsInRole("Admin"))
+                    {
+                        <li>
+                            <a onclick="openMenu('#Comercial', this)"><i class="fa fa-money"></i> Comercial <div class="menu-drop"></div></a>
+                            <ul id="Comercial">
+                                <li><a href="/Propostas"><i class="fa fa-list-ul"></i> Propostas</a></li>
+                                <li><a href="/Clientes"><i class="fa fa-industry"></i> Clientes</a></li>
+                            </ul>
+                        </li>
+                        @*<li>
+                                <a onclick="openMenu('#clientes', this)"><i class="fa fa-users"></i> Clientes <div class="menu-drop"></div></a>
+                                <ul id="clientes">
+                                    <li><a href="/Clientes"><i class="fa fa-industry"></i> Clientes</a></li>
+                                    <li><a href="/Contatoes"><i class="fa fa-user"></i> Contatos</a></li>
+                                </ul>
+                            </li>*@
+                        <li>
+                            <a onclick="openMenu('#produtos', this)"><i class="fa fa-list-ul"></i> Estoque <div class="menu-drop"></div></a>
+                            <ul id="produtos">
+                                <li><a href="/Bundles"><i class="fa fa-file"></i> Bundles</a></li>
+                                <li><a href="/Produtos/Blocos"><i class="fa fa-file"></i> Blocos</a></li>
+                                <li><a href="/Produtos/Chapas"><i class="fa fa-file"></i> Chapas</a></li>
+                                <li><a href="/Produtos"><i class="fa fa-file"></i> Estoque</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a onclick="openMenu('#utilitarios', this)"><i class="fa fa-ellipsis-h"></i> Utilitários <div class="menu-drop"></div></a>
+                            <ul id="utilitarios">
+                                <li><a href="/Imagens"><i class="fa fa-image"></i> Imagens</a></li>
+                            </ul>
+                        </li>
+                    }
+
+                    @if (User.IsInRole("SysAdmin"))
+                    {
+                        <li><a href="/AdminUsers/Index"><i class="fa fa-magic"></i> Administradores</a></li>
+                        <li><a href="/Companies/Index"><i class="fa fa-industry"></i> Empresas</a></li>
+                        <li>
+                            <a onclick="openMenu('#system', this)"><i class="fa fa-user-plus"></i> Convites <div class="menu-drop"></div></a>
+                            <ul id="system">
+                                <li><a href="/Invites/Create"><i class="fa fa-user-plus"></i> Enviar contive</a></li>
+                                <li><a href="/Invites/Index"><i class="fa fa-users"></i> Convites</a></li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <ul id="nav-bottom-menus">
+                <li>
+                    <a onclick="openMenu('#feedback', this)"><i class="fa fa-send-o"></i> Feedback <div class="menu-drop"></div></a>
+                    <ul id="feedback">
+                        <li><a href="#"><i class="fa fa-plus"></i> Enviar feedback</a></li>
+                        <li><a href="#"><i class="fa fa-list-ul"></i> Lista de feedbacks</a></li>
+                        <li><a href="#"><i class="fa fa-list-ol"></i> Log de alterações</a></li>
+                    </ul>
+                </li>
+                @if (User.IsInRole("Admin"))
+                {
+                    <li>
+                        <a onclick="openMenu('#admin', this)"><i class="fa fa-connectdevelop"></i> Administrativo <div class="menu-drop"></div></a>
+                        <ul id="admin">
+                            <li><a href="#"><i class="fa fa-users"></i> Gerência de usuários</a></li>
+                            <li><a href="/Sistema/Propriedades"><i class="fa fa-file-o"></i> Propriedades</a></li>
+                            <li><a href="#"><i class="fa fa-lock"></i> Segurança</a></li>
+                            <li><a href="#"><i class="fa fa-industry"></i> Perfil da empresa</a></li>
+                        </ul>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</nav>

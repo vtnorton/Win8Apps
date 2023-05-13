@@ -1,0 +1,65 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Vtnorton.Model
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Formula Beta tester";
+    ViewData["Description"] = Localizer["ThisAppDescription"].Value;
+    ViewData["Keywords"] = "";
+}
+@section metatags{
+    <script src="~/js/vtnorton.mantainscroll.js"></script>
+}
+@section submenu{
+    <li><a href="/formula">@Localizer["MoreAbout"]</a></li>
+    <li><a href="http://twitter.com/formula4windows">@Localizer["Follow"]</a></li>
+    <li><a href="http://blog.vtnorton.com/category/apps/formula-universal-code-editor/">@Localizer["News"]</a></li>
+}
+<div class="section-wrapper wrapper">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>@Localizer["Singup"]</h1>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-8">
+            <p style="width:calc(100% - 90px)">@Localizer["TheFormulaContent"]</p>
+            <p style="width:calc(100% - 90px)"><a href="/formula">@Localizer["Discover"]</a></p>
+            <img class="section-image-left-img" style="width:75%;" src="/images/apps/formula.png" />
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <p>@Localizer["MVP"]</p>
+            @model Emails
+
+            @using (Html.BeginForm())
+            {
+                    <p><strong>@Localizer["Observation"]</strong></p>
+                    @Html.TextBoxFor(m => m.Observation)<br /><br />
+                    <p><strong>@Localizer["Email"]:</strong></p>
+                    @Html.TextBoxFor(m => m.Email)<br /><br />
+
+                    <button type="submit" value="Submit" style="width:100%; height:50px" >@Localizer["Button"]</button><br />
+            }
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <blockquote class="border red full">
+                    @Html.ValidationSummary()
+                </blockquote>
+
+            }
+            @if (ViewData["result"] != null)
+            {
+                <blockquote class="border green">
+                    @Localizer["Success"]
+                    <hr /><a class="btn" value="Skype Group" href="https://join.skype.com/uZRBWxsLES31" style="width: 100% !important;height: 50px;display: block;text-align: center;padding-top: 9px;">Skype Group</a>
+                </blockquote>
+            }
+            @if (ViewData["error"] != null)
+            {
+                <blockquote class="border red full">
+                    @Localizer["Error"]
+                </blockquote>
+            }
+        </div>
+    </div>
+</div>

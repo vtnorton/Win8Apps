@@ -1,0 +1,276 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="healtthrob.master.cs" Inherits="VTNORTON.healtthrob" %>
+
+<!DOCTYPE html>
+
+<html style="height: 100%">
+<head runat="server">
+    <!-- CSS -->
+    <link href="/css/heartthrob.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <!-- Fim do CSS -->
+
+    <!-- JavaScript -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+    <script src="/js/heartthrob.js"></script>
+    <!-- Fim do JavaScript -->
+
+    <!-- Metadados/SEO -->
+    <title>Vítor Norton</title>
+    <meta name="description" content="Palestras, cursos gratuitos e pagos. Desenvolvimento de sites e aplicativos (via yapp.vtnorton.com) e um monte de outras coisas que eu faço." />
+    <meta name="keywords" content="design, desenvolvimento, windows phone, windows, vitor norton, mixer, heartthrob, criação de sites, yapp, vnext, mvp, cursos online, cursos gratuitos, cursos de desenvolvimento gratuitos, cursos de desenvolvimento online" />
+    <meta name="author" content="Vítor Norton, contato@vtnorton.com" />
+    <meta name="designer" content="Vítor Norton" />
+    <meta name="copyright" content="vtnorton" />
+    <meta name="reply-to" content="contato@vtnorton.com" />
+    <meta name="owner" content="Vítor Norton" />
+    <meta name="url" content="http://www.vtnorton.com" />
+    <meta name="identifier-URL" content="http://www.vtnorton.com" />
+    <meta name="directory" content="submission" />
+    <meta name="category" content="software" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="revisit-after" content="1 day" />
+    <meta name="application-name" content="vtnorton.com" />
+    <meta content="@vt_norton" name="twitter:site" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta name="msvalidate.01" content="56DFA045266F286D4EDE0D2B401CC585" />
+    <link rel="alternate" href="http://vtnorton.com/" hreflang="pt-br" />
+    <!-- Fim do Metadados/SEO -->
+
+    <!-- Tecnologias -->
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=xQozQlz5aA" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png?v=xQozQlz5aA" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png?v=xQozQlz5aA" sizes="16x16" />
+    <link rel="manifest" href="/manifest.json?v=xQozQlz5aA" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=xQozQlz5aA" color="#5bbad5" />
+    <link rel="shortcut icon" href="/favicon.ico?v=xQozQlz5aA" />
+    <meta name="apple-mobile-web-app-title" content="Vítor Norton" />
+    <meta name="application-name" content="Vítor Norton" />
+    <meta name="msapplication-TileColor" content="#2d89ef" />
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=xQozQlz5aA" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-tooltip" content="Entrar em www.vtnorton.com" />
+    <meta name="msapplication-navbutton-color" content="black" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Fim de Tecnologias -->
+    <script type="application/ld+json">
+        {
+          "@context" : "http://schema.org",
+          "@type" : "Person",
+          "name" : "Vítor Norton",
+          "url": "http://www.vtnorton.com/",
+          "sameAs" : [
+            "https://www.facebook.com/vitor.norton/",
+            "https://instagram.com/vt_norton/",
+            "https://twitter.com/vt_norton/",
+            "https://www.youtube.com/user/vtnortondev/"
+          ]
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var auto_slide = 1;
+            var hover_pause = 1;
+            var key_slide = 1;
+            var auto_slide_seconds = 3000;
+
+            $('#carousel_ul li:first').before($('#carousel_ul li:last'));
+
+            if (auto_slide == 1) {
+                var timer = setInterval('slide("right")', auto_slide_seconds);
+                $('#hidden_auto_slide_seconds').val(auto_slide_seconds);
+            }
+            if (hover_pause == 1) {
+                $('#carousel_ul').hover(function () {
+                    clearInterval(timer)
+                }, function () {
+                    timer = setInterval('slide("right")', auto_slide_seconds);
+                });
+            }
+
+            if (key_slide == 1) {
+                $(document).bind('keypress', function (e) {
+                    if (e.keyCode == 37) {
+                        slide('left');
+                    } else if (e.keyCode == 39) {
+                        slide('right');
+                    }
+                });
+            }
+        });
+        function slide(where) {
+            var item_width = $('#carousel_ul li').outerWidth();
+            if (where == 'left') {
+                var left_indent = parseInt($('#carousel_ul').css('left')) + item_width;
+            } else {
+                var left_indent = parseInt($('#carousel_ul').css('left')) - item_width;
+            }
+            $('#carousel_ul:not(:animated)').animate({ 'left': left_indent }, 500, function () {
+                if (where == 'left') {
+                    $('#carousel_ul li:first').before($('#carousel_ul li:last'));
+                } else {
+                    $('#carousel_ul li:last').after($('#carousel_ul li:first'));
+                }
+                $('#carousel_ul').css({ 'left': '-210px' });
+            });
+
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="height: 100%">
+    <header>
+        <div class="logo">
+            <a href="#">
+                <img src="/images/squarewithborder.png" style="max-width: 50px;" />
+            </a>
+            <div class="logo-written">VÍTOR NORTON</div>
+        </div>
+        <div class="clean"></div>
+        <div class="hamburger"></div>
+        <nav>
+            <form action="/search" method="get">
+                <input id="searchMobile" name="q" class="mobile-search" placeholder="Pesquisar..." type="text" required="required" />
+            </form>
+            <ul>
+                <li class="no-drop"><a href="/">Início</a></li>
+                <li><a target="_blank" href="http://yapp.vtnorton.com">Aplicativos</a>
+                    <ul style="width: 300px">
+                        <li><a href="http://yapp.vtnorton.com/formula-universal-code-editor/">Formula - Universal Code Editor</a></li>
+                        <li><a href="http://yapp.vtnorton.com/random-42/">Random 42</a></li>
+                        <li><a href="http://yapp.vtnorton.com/conjugar/">Conjugar</a></li>
+                        <li><a href="http://yapp.vtnorton.com/time-calculator/">Time Calculator</a></li>
+                        <li><a href="http://yapp.vtnorton.com/trueordare/">Verdade ou Consequência</a></li>
+                        <li><a href="http://yapp.vtnorton.com/tocha-olimpica/">Tocha Olímpica</a></li>
+                    </ul>
+                </li>
+                <li><a href="http://blog.vtnorton.com">Blog</a>
+                    <ul>
+                        <li><a href="http://blog.vtnorton.com/category/empreendedorismo/lancamento/">Lançamentos</a></li>
+                        <li><a href="http://blog.vtnorton.com/category/empreendedorismo/mindset/">Troca de Mindset</a></li>
+                        <li><a href="http://blog.vtnorton.com/category/empreendedorismo/insights/">Insights</a></li>
+                        <li><a href="http://blog.vtnorton.com/category/meu-eu/vida-pessoal/">Meu eu</a></li>
+                        <li><a href="http://blog.vtnorton.com/category/meu-eu/realizando-sonhos/">Realizando sonhos</a></li>
+                    </ul>
+                </li>
+                <li><a href="http://blog.vtnorton.com">Windows</a>
+                    <ul>
+                        <li><a href="http://blog.vtnorton.com/category/microsoft/windows-10/">Windows 10</a></li>
+                        <li><a href="http://blog.vtnorton.com/category/microsoft/windows-insider/">Windows Insider</a></li>
+                        <li><a href="http://blog.vtnorton.com/category/microsoft/">Microsoft</a></li>
+                    </ul>
+                </li>
+                <li><a href="http://blog.vtnorton.com">Desenvolvimento</a>
+                    <ul style="width: 300px">
+                        <li><a href="http://blog.vtnorton.com/category/empreendedorismo/lancamento/">Lançamentos</a></li>
+                        <li><a href="http://garotodeprograma.vtnorton.com/category/devops/">DevOps</a></li>
+                        <li><a href="http://garotodeprograma.vtnorton.com/category/contruindo-isso/">Construindo isso (pt)</a></li>
+                        <li><a href="#">Construindo isso (en)</a></li>
+                        <li><a href="http://garotodeprograma.vtnorton.com/category/notas-do-desenvolvedor/">Notas do desenvolvedor (pt)</a></li>
+                        <li><a href="#">Notas do desenvolvedor (en)</a></li>
+                    </ul>
+                </li>
+                <li><a href="http://garotodeprograma.vtnorton.com">Garoto de Programa</a>
+                    <ul>
+                        <li><a href="http://garotodeprograma.vtnorton.com/category/linguagens/cs/">C#</a></li>
+                        <li><a href="http://garotodeprograma.vtnorton.com/category/web/html/">HTML</a></li>
+                        <li><a href="http://garotodeprograma.vtnorton.com/category/linguagens/java/">CSS</a></li>
+                        <li><a href="http://garotodeprograma.vtnorton.com/category/web/javascript/">JavaScript</a></li>
+                        <li><a href="http://garotodeprograma.vtnorton.com/category/linguagens/sql-server/">SQL</a></li>
+                    </ul>
+                </li>
+                <li><a href="/eventos">Eventos</a>
+                    <ul>
+                        <li><a href="/eventos">Todos os eventos</a></li>
+                        <li><a href="http://blog.vtnorton.com/category/eventos/">Novidades</a></li>
+                        <li><a href="/devnasnuvens">#DevNasNuvens</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">eBooks</a>
+                    <ul>
+                        <li><a href="/onenote">OneNote</a></li>
+                    </ul>
+                </li>
+                <%--                <li><a href="#">Contato + Sobre</a>
+                    <ul>
+                        <li><a href="#">Principal</a></li>
+                        <li><a href="#">Aplicativos</a></li>
+                        <li><a href="#">Sites</a></li>
+                    </ul>
+                </li>--%>
+            </ul>
+        </nav>
+    </header>
+    <div class="sub-menu">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderSubMenu" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <ul class="right minimenu">
+            <li>
+                <div title="Abrir caixa de pesquisa" class="minimenu-search"></div>
+                <form action="/search" method="get">
+                    <input id="searchBoxId" name="q" class="minimenu-search-box" placeholder="Pesquisar... (prescione enter)" type="text" required="required" />
+                </form>
+                <div id="status" style="z-index: 99; position: relative;"></div>
+            </li>
+        </ul>
+        <div class="clean"></div>
+    </div>
+    <ul id="carousel_ul" class="slider">
+        <li class="slide">
+            <a class="img-shadow" href="http://yapp.vtnorton.com/released-formula-v2-0-see-whats-new/">
+                <img src="/images/slides/Formula.jpg" />
+                <div class="slide-text">Formula: nova atualização</div>
+            </a>
+        </li>
+        <li class="slide">
+            <a class="img-shadow" href="http://vtnorton.com/eventos">
+                <img src="images/slides/workshop.jpg" />
+                <div class="slide-text">Veja mais informações</div>
+            </a>
+        </li>
+        <li class="slide">
+            <a class="img-shadow" href="http://garotodeprograma.vtnorton.com/category/linguagens/cs/">
+                <img src="images/slides/cs.jpg" />
+                <div class="slide-text">Aprenda C#</div>
+            </a>
+        </li>
+        <li class="slide">
+            <a class="img-shadow" href="http://blog.vtnorton.com/papel-de-parede-get-shit-done/">
+                <img src="images/slides/get-shit-done.jpg" />
+                <div class="slide-text">Papel de parede: Get shit done</div>
+            </a>
+        </li>
+    </ul>
+    <div class="clean"></div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <footer>
+        <div class="widgets">
+        </div>
+        <div id="copyright">
+            <div class="left">
+                Copyright <a href="/"><span class="blue">VÍTOR NORTON</span></a>
+                <script type='text/javascript'>var creditsyear = new Date(); document.write(creditsyear.getFullYear());</script>
+                - "Mudando o mundo um bit de cada vez"
+            </div>
+            <div class="right social">
+                <ul>
+                    <li><a href="https://twitter.com/vt_norton/" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+                    <li><a href="https://www.facebook.com/vitor.norton/" target="_blank"><i style="margin-left: 3px" class="fa fa-facebook fa-2x"></i></a></li>
+                    <li><a href="https://instagram.com/vt_norton/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>
+                    <li><a href="https://instagram.com/vt_norton/" target="_blank"><i class="fa fa-snapchat-ghost fa-2x"></i></a></li>
+                    <li><a href="https://instagram.com/vt_norton/" target="_blank"><i class="fa fa-youtube fa-2x"></i></a></li>
+                    <li><a href="https://github.com/vtnorton/" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
+                </ul>
+            </div>
+            <div class="clean"></div>
+        </div>
+    </footer>
+</body>
+</html>

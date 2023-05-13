@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="DouaiUWP.Views.SendFeedback"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DouaiUWP.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Black" x:Name="gdrSendFeedback" Grid.Row="1" Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" FontSize="25" Text="Send me feedback"></TextBlock>
+        <TextBlock Grid.Row="1" FontSize="15" Text="Help me improve this app by sending me feedback of what you saw wrong or what you thing is going to be interesting to add to this app." TextWrapping="WrapWholeWords"></TextBlock>
+        <TextBox x:Name="txtEmail" Grid.Row="2" InputScope="EmailSmtpAddress" PlaceholderText="Your email" Margin="0,15,0,7.5"></TextBox>
+        <TextBox x:Name="txtSubject" Grid.Row="3" PlaceholderText="Subject" Margin="0,7.5,0,5"></TextBox>
+        <RichEditBox Grid.Row="4" Margin="0,10,0,15" x:Name="txtMenssage" Height="200" RelativePanel.Below="openFileButton" 
+                 RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"/>
+        <TextBlock Margin="0,0,0,15" TextWrapping="WrapWholeWords" Text="You can use commun HTML elements to improve your feedback, like h1, h2, br, hr and strong. " Grid.Row="5" FontSize="15"></TextBlock>
+        <Button ToolTipService.ToolTip="Send feedback" Click="btnSend_Click" x:Name="btnSend" Grid.Row="6" Content="Send Feedback" Width="150" HorizontalAlignment="Right"></Button>
+        <TextBlock TextWrapping="WrapWholeWords" Foreground="White" x:Name="lblMenssage" Text=" " Grid.Row="7" FontSize="15"></TextBlock>
+    </Grid>
+</Page>

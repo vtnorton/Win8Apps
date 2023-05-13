@@ -1,0 +1,25 @@
+﻿body { overflow: hidden }
+nav { height: calc(100% - 48px); width: 350px; position: fixed; margin-top: 48px; }
+nav ul { list-style: none; padding: 0; width: 100px; padding-top: 5px; }
+nav ul li ul, nav ul li ul li ul { padding: 0 }
+nav ul li a { color: #fff; display: block; width: 350px; padding: 15px 30px; text-decoration: none; border-left: 1px solid rgba(0,0,0,0); }
+nav ul li a:hover { background: rgba(255,255,255,0.18); transition: all .3s }
+nav ul li a.active { background: rgba(255,255,255,0.3) }
+nav ul li a.active::after { width: 30px; height: 46px; background: linear-gradient(135deg, transparent 23px, #e8e8e8 0) top left, linear-gradient(45deg, transparent 23px, #e8e8e8 0) bottom left; background-size: 100% 50%; background-repeat: no-repeat; content: ""; position: absolute; right: 0; margin-top: -15px; }
+nav ul li a.active:hover { background: rgba(255,255,255,0.35); transition: all .3s }
+nav ul li a.inactive { color: #ccc}
+nav ul li ul li { margin-left: 20px; font-size: 16px; line-height: 16px; }
+nav ul li ul li ul li { margin-left: 0 }
+nav ul li ul li a { color: #d5d5d5; padding: 8px 20px }
+nav ul li ul li a:hover { background: none; border-left: 1px solid #fff; color: #fff; background: rgba(255,255,255,0.05); -moz-transition: all .5s; -o-transition: all .5s; -webkit-transition: all .5s; transition: all .5s; }
+
+content { width: calc(100% - 350px); padding: 30px; margin-top: 50px; height: 100% }
+content h1:first-of-type { margin-top: -8px; }
+
+.step { height: 100vh; padding-top: 75px }
+.setup-buttons { position: relative; width: 100%; text-align: right; margin-top:50px }
+
+.setup-boxes { margin-bottom: 30px; padding: 0 15px; height: 120px }
+.setup-boxes-img { max-width: 50%; margin-bottom: 40px }
+
+.view-element { max-height: calc(100vh - 108px); }

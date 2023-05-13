@@ -1,0 +1,9 @@
+/out:"F:\sun\alpha\SunApp\obj\x86\Release\ilc\intermediate\SgGenerated\\"
+/int:"F:\sun\alpha\SunApp\obj\x86\Release\ilc\intermediate\\"
+/ref:"F:\sun\alpha\SunApp\obj\x86\Release\ilc\intermediate\PreMergeILTransformed\\"
+/ref:"F:\sun\alpha\SunApp\obj\x86\Release\ilc\in\\"
+/ref:"C:\Program Files (x86)\MSBuild\Microsoft\.NetNative\x86\ilc\lib\Private\\"
+/ref:"F:\sun\alpha\SunApp\obj\x86\Release\ilc\in\\"
+/ref:"F:\sun\alpha\SunApp\obj\x86\Release\ilc\in\WinMetadata\\"
+/ca:System.Private.CoreLib
+"@F:\sun\alpha\SunApp\obj\x86\Release\ilc\intermediate\PreMergeILTransformed\ComputedSerializationInput.txt"

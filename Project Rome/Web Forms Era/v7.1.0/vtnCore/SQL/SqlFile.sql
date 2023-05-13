@@ -1,0 +1,39 @@
+DROP TABLE tbl_ebooks;
+CREATE TABLE tbl_ebooks (
+	Id INT IDENTITY(1, 1) NOT NULL,
+	Name VARCHAR(80) NOT NULL,
+	Downloads INT NOT NULL);
+
+CREATE CLUSTERED INDEX id ON tbl_ebooks (id);
+
+DROP TABLE tbl_email;
+CREATE TABLE tbl_email (
+	Id INT IDENTITY(1, 1) NOT NULL,
+	Mail VARCHAR(80) NOT NULL,
+	Data VARCHAR(50) NOT NULL);
+
+CREATE CLUSTERED INDEX id ON tbl_email (id);
+
+INSERT INTO tbl_ebooks (Name, Downloads) VALUES ('OneNote', 5); 
+
+CREATE TABLE tbl_onenoteemails (
+	Id INT IDENTITY(1, 1) NOT NULL,
+	Email VARCHAR(100) NOT NULL);
+
+CREATE CLUSTERED INDEX id ON tbl_onenoteemails (id);
+
+DROP TABLE tbl_evento;
+CREATE TABLE tbl_evento (
+	Id INT IDENTITY(1, 1) NOT NULL,
+	Dia INT NOT NULL,
+	JaPassou INT NOT NULL,
+	EhOnline INT NOT NULL,
+	Ano INT NOT NULL,
+	Endereco VARCHAR(300) NOT NULL,
+	Nome VARCHAR(120) NOT NULL,
+	Mes VARCHAR(30) NOT NULL,
+	Descricao VARCHAR(MAX) NOT NULL,
+	URL VARCHAR(200) NOT NULL,
+	Data VARCHAR(23) NOT NULL);
+
+CREATE CLUSTERED INDEX id ON tbl_evento (id);

@@ -1,0 +1,47 @@
+﻿@model ProjectCachoeiro.Web.Models.Produtos.Estado
+
+@{
+    ViewData["Title"] = "Criar estado";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@await Html.PartialAsync("~/Views/App/Manage/Sistema/_ManageNav.cshtml")
+<div class="inner-content">
+    <div class="toolbar">
+        <div class="left">
+            <h2>Criar estado de produto</h2>
+        </div>
+        <div class="clean"></div>
+    </div>
+    <div class="view-element">
+        <form id="form" asp-action="Criar">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label asp-for="Sigla"></label>
+                    <input asp-for="Sigla" />
+                    <span asp-validation-for="Sigla"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Nome"></label>
+                    <input asp-for="Nome" />
+                    <span asp-validation-for="Nome"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <label asp-for="Descricao"></label>
+                    <textarea asp-for="Descricao"></textarea>
+                    <span asp-validation-for="Descricao"></span>
+                </div>
+            </div>
+        </form>
+
+        @await Html.PartialAsync("~/Views/Shared/AppTaskbar.cshtml", "CREATE")
+    </div>
+    <div class="view-bottom">
+        <hr />
+        <p class="small">O estado de um produto será utilizado no cadastro dele. Somente administradores podem criar ou editar estados.</p>
+    </div>
+</div>
+<div class="clean"></div>

@@ -1,0 +1,26 @@
+﻿::selection {background-color: rgba(0,0,0,0.2)}
+::-moz-selection {background-color: rgba(0,0,0,0.2)}
+#wrap {width: 80%;max-width: 1400px;margin:0 auto;height: auto;position: relative;margin-top: 8%;}
+#main-content {float: right;max-width: 45%;color: black;font-weight: 300;font-size: 18px;padding-bottom: 40px;line-height: 28px}
+#wordsearch {width: 45%;float: left;}
+#wordsearch ul {margin: 0px;padding: 0px;}
+#wordsearch ul li {float: left;width: 12%;background-color: rgba(0,0,0,.2);list-style: none;margin-right: 0.5%;margin-bottom: 0.5%; padding: 0; display: block; text-align: center; color: black; text-transform: uppercase; overflow: hidden;font-size: 24px;font-size: 1.6vw;font-weight: 300;transition: background-color 0.75s ease;-moz-transition: background-color 0.75s ease;-webkit-transition: background-color 0.75s ease;-o-transition: background-color 0.75s ease;}
+#wordsearch ul li.selected {background-color: #2572eb;	font-weight: 400}
+
+@media all and (max-width: 899px) {
+	#wrap { width: 90%; }
+}
+
+@media all and (max-width: 799px) {
+	#wrap { width: 90%; height: auto; margin-top: 40px; top: 0%; }
+	#wordsearch { width: 90%; float: none; margin:0 auto; }
+	#wordsearch ul li { font-size: 4vw; }
+	#main-content { float: none; width: 90%; max-width: 90%; margin:0 auto; margin-top: 30px; text-align: justify; }
+	#main-content h1 { text-align: left; }
+	#search input[type='text'] { width: 84%; }
+	#search .input-search { width: 15%; }
+}
+
+@media all and (max-width: 499px) {
+	#main-content h1 { font-size: 28px; }
+}

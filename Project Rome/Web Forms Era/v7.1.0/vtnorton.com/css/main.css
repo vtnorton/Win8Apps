@@ -1,0 +1,51 @@
+﻿.live>div{position:absolute}
+.live img{border:none}
+.live-front{width:100%;height:100%;z-index:20}
+.live-back{width:100%;height:100%;z-index:10}
+.live-img{display:block;height:100%;width:100%}
+.tile{margin:0 5px 10px;float:left;overflow:hidden;position:relative;transition:opacity .5s ease .1s;-moz-transition:opacity .5s ease .1s;-o-transition:opacity .5s ease .1s;-webkit-transition:opacity .5s ease .1s;background:#19a2de;}
+.tilehover{position:absolute;top:0;right:0;z-index:30;display:none}
+.exclude:hover{border:none;margin:0 5px 10px}
+a .tile:hover .tilehover{display:inline}
+.tile-text{color:#fff;font-size:2.4em;bottom:5px;left:10px;position:absolute;z-index:30;text-align:left}
+.large{width:310px;height:310px}
+.medium{width:310px;height:150px}
+.small{width:150px;height:150px}
+.fade{opacity:.5;filter:alpha(opacity=50)}
+.tile-pre{display:none;background: #f6f6f6;position: absolute;z-index: 99;width:100%; height:100%; box-shadow:#000 0 0 9px 1px; color:#3e3e3e; min-height:650px !important; max-height:50%}
+.line{border-bottom:1px solid #e3e3e3; margin-top:15px}
+.clean{clear:both}
+.left{float:left}
+.right{float:right}
+.last{margin-right:0}
+
+@media all and (max-width:640px) {
+.last{margin-right:auto}
+}
+
+.slider{width:9999px; height:230px; overflow:hidden; position:relative; top:-35px;}
+.slider li{float:left}
+.img-shadow{box-shadow:inset 0 -120px 160px -120px #000; float:left; position: relative;}
+.img-shadow img{display:block; width:550px; height:230px; position:relative; z-index: -1}
+.slide .slide-text{text-align:center; color: #fff; font-size:16px; margin-top:-30px; padding-bottom: 30px}
+
+.evento{padding:10px 0; width:95%; margin: 0 auto}
+.evento .data{width:100px;}
+.evento .data .dia{font-size:85px;text-align:center}
+.evento .informacoes{width:calc(100% - 130px); border-left:5px solid #e3e3e3; padding-left:15px; margin-top:15px}
+.evento:hover .informacoes{border-color: #2572EB; transition: all .3s;}
+.evento .informacoes h2{margin-top:-7px}
+.evento .informacoes h4{font-size:15px; color:#3e3e3e;font-style:italic;margin-top:-24px}
+.evento .informacoes p{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;}
+
+.projetos, .aplicativos{width:50%; margin: 0 auto}
+
+.mosaico{height:100%;}
+.mainpage-mos { margin-top: 10px; padding: 40px; }
+
+@media screen and (max-width:895px){
+    .content-mos{margin-top:60px}
+    .slider{top:80px}
+    .eventos{margin-top:80px}
+    .info{display:none}
+}

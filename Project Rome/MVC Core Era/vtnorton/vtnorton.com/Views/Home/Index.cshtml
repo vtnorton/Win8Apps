@@ -1,0 +1,217 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Vtnorton.Model
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "";
+    ViewData["Description"] = "";
+    ViewData["Keywords"] = "";
+}
+@section metatags{
+    <script src="~/js/vtnorton.mantainscroll.js"></script>
+}
+@section submenu{
+    <li><a href="/vitor">About me</a></li>
+    <li><a href="http://blog.vtnorton.com/category/apps/formula-universal-code-editor/">News about Formula development</a></li>
+    <li><a href="http://windowsinsiderbrasil.com.br">Join the Windows Insider Brasil on Slack</a></li>
+}
+<div id="loader"></div>
+<section class="info">
+    <p>@Localizer["Subscrive"]</p>
+</section>
+<section>
+    <!-- /wp-content/themes/heartthrob -->
+    <div class="section-wrapper">
+        <div class="section-image-left left" style="margin-left:-5px">
+            <div class="mainpage-mos">
+                <div class="centered clearfix content-mos">
+                    <!-- Tile 1: Yapp -->
+                    <a href="http://b-web.rocks" target="_blank" class="all tile-click empresas">
+                        <div class="tile large live" data-stops="0,20%,80%,100%" data-speed="2000" data-delay="1500" data-direction="horizontal" data-stack="true">
+                            <div class="live-front">
+                                <img class="live-img" src="images/tile/tile.b-web.jpg" alt="B-WEB: criação de sites" />
+                            </div>
+                            <div class="live-back">
+                                <img class="live-img" src="images/tile/tile.b-web.back.jpg" alt="B-WEB: criação de sites" />
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="http://blog.vtnorton.com/">
+                        <div class="tile medium">
+                            <img class="live-img" src="images/tile/tile.blog.jpg" alt="Blog do Norton" />
+                        </div>
+                    </a>
+                    <a href="/devnasnuvens">
+                        <div class="tile small">
+                            <img class="live-img" src="images/tile/tile.dev.back.jpg" alt="Evento #DevNasNuvens" />
+                        </div>
+                    </a>
+                    <a href="http://windowsinsiderbrasil.com.br/">
+                        <div class="tile small">
+                            <img class="live-img" src="images/tile/tile.winbr.jpg" alt="Windows Insider Brasil" />
+                        </div>
+                    </a>
+                    <a href="/onenote/">
+                        <div class="tile small live" data-stops="0,75%,100%" data-speed="1200" data-delay="1000" data-stack="true">
+                            <div class="live-front blue">
+                                <img class="live-img" src="images/tile/tile.onenote.jpg" alt="Guia definitivo para o OneNote" />
+                            </div>
+                            <div class="live-back green">
+                                <img class="live-img" src="images/tile/tile.onenote.back.jpg" alt="Guia definitivo para o OneNote" />
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://txt.vtnorton.com/">
+                        <div class="tile medium live" data-stops="0,75%,100%,100%,0%" data-speed="1500" data-delay="1500" data-stack="true">
+                            <div class="live-front blue">
+                                <img class="live-img" src="images/tile/tile.txt.jpg" alt="Textos do Norton" />
+                            </div>
+                            <div class="live-back green">
+                                <img class="live-img" src="images/tile/tile.back.txt.jpg" alt="Textos do Norton" />
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.mixcloud.com/vNextbr/" target="_blank">
+                        <div class="tile small live" data-stops="0,30%,75%,75%" data-speed="750" data-delay="2000" data-stack="true">
+                            <div class="live-front blue">
+                                <img class="live-img" src="images/tile/tile.nextcast.jpg" alt="Nextcast" />
+                            </div>
+                            <div class="live-back green">
+                                <img class="live-img" src="images/tile/tile.nextcast.back.jpg" alt="Nextcast" />
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.livecoding.tv/vtnorton/" target="_blank">
+                        <div class="tile small live" data-stops="0,33%,50%" data-speed="1750" data-delay="1000" data-direction="horizontal">
+                            <div class="live-front blue">
+                                <img class="live-img" src="images/tile/tile.livecoding.tv.jpg" alt="Livecoding.tv" />
+                            </div>
+                            <div class="live-back green">
+                                <img class="live-img" src="images/tile/tile.livecoding.tv.back.jpg" alt="Livecoding.tv" />
+                            </div>
+                            <span class="tile-cat black">livecoding.tv</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="section-content-right right">
+            <h2>@Localizer["Projects"]</h2>
+            <p>@Localizer["ProjectsDetails"]</p>
+        </div>
+
+        <div class="clean"></div>
+    </div>
+</section>
+<section class="bg-light">
+    <div class="section-wrapper">
+        <div class="section-image-right right" style="margin-right:-5px">
+            <div class="mainpage-mos">
+                <div class="centered clearfix content-mos">
+                    <a href="/formula">
+                        <div class="tile large">
+                            <img class="live-img" src="/images/Quebec.png" alt="Formula - Universal Code Editor" />
+                        </div>
+                    </a>
+                    <a href="/random42">
+                        <div class="tile small">
+                            <img class="live-img" src="/images/Nice.png" alt="Random 42" />
+                        </div>
+                    </a>
+                    <a href="/conjugar">
+                        <div class="tile small">
+                            <img class="live-img" src="/images/Douai.png" alt="Conjugar" />
+                        </div>
+                    </a>
+                    <a href="/truedarkmode">
+                        <div class="tile small">
+                            <img class="live-img" src="/images/extention/bellevue.jpg" alt="True Dark Mode" />
+                        </div>
+                    </a>
+                    @*<div class="show-more">View more</div>
+                        <div class="show-more">Show less</div>*@
+                    <div class="show-more-content">
+                        <a href="/tochaolimpica">
+                            <div class="tile small">
+                                <img class="live-img" src="/images/Rio.png" alt="Tocha Olímpica" />
+                            </div>
+                        </a>
+                        <a href="/verdadeouconsequencia">
+                            <div class="tile small">
+                                <img class="live-img" src="/images/LasVegas.png" alt="Verdade ou Consequencia" />
+                            </div>
+                        </a>
+                        <a href="/timecalculator">
+                            <div class="tile small">
+                                <img class="live-img" src="/images/Lyon.png" alt="Time Calculator" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-content-left left">
+            <h2>@Localizer["Apps"]</h2>
+            <p>@Localizer["AppsDetails"]</p>
+        </div>
+    </div>
+    <div class="clean"></div>
+</section>
+<section id="email" class="section-bg">
+    <div class="wrapper">
+        <div class="section-content-right">
+            <h1 class="white">Newsletter</h1>
+            <p class="white">@Localizer["Newsletter"]</p>
+            <br />
+            @model Emails
+            @using (Html.BeginForm())
+            {
+                @Html.TextBoxFor(m => m.Email, new { placeholder = "E-mail" })<br /><br />
+                <button type="submit" value="Submit" Height="50">@Localizer["SubscriveButton"]</button><br />
+            }
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <blockquote class="border red full">
+                    @Html.ValidationSummary()
+                </blockquote>
+
+            }
+            @if (ViewData["result"] != null)
+            {
+                <blockquote class="border green">
+                    @Localizer["Success"]
+                </blockquote>
+            }
+            @if (ViewData["error"] != null)
+            {
+                <blockquote class="border red full">
+                    @Localizer["Error"]
+                </blockquote>
+            }
+        </div>
+        <div class="clean"></div>
+    </div>
+</section>
+<section>
+    <div class="wrapper" style="padding: 30px 0">
+        <h2 class="blue">@Localizer["BlogdoNorton"]</h2>
+        <hr />
+        <br />
+
+        @foreach (var item in (IEnumerable<FeedItem>)ViewData["feedBlog"])
+        {
+            <div class="article-blog">
+                <h4><a href="@item.Link">@item.Title</a></h4>
+                <img src="@item.ImageURL" />
+                <p>@item.Content</p>
+                <p><strong><a href="@item.Link">@Localizer["ReadMore"]</a></strong></p>
+            </div>
+        }
+
+        <div class="clean"></div>
+    </div>
+</section>
+<script src="/js/jquery.masonry.min.js" type="text/javascript"></script>
+<script src="/js/jquery.easing.1.3.js" type="text/javascript"></script>
+<script src="/js/MetroJs.lt.js" type="text/javascript"></script>
+<script src="/js/hoverintent.js" type="text/javascript" charset="utf-8"></script>

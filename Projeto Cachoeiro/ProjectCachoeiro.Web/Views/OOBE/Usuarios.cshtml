@@ -1,0 +1,90 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Gestão de usuário";
+    ViewData["LOGIC"] = "OOBE";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="step0" class="step" style="padding-top:0">
+    <div class="view-element">
+        <h1>3. Gestão de usuários</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed consectetur lectus. Maecenas ligula tellus, scelerisque in libero vel, porttitor ornare nulla.</p>
+        <hr />
+
+        <div class="setup-buttons">
+            <a data-scroll class="btn" href="#step1"><i class="fa fa-plus"></i> Começar</a>
+        </div>
+    </div>
+</div>
+
+<div id="step1" class="step">
+    <div class="view-element">
+        <h1>3.1 Editar usuário administrador</h1>
+        <p>Precisamos coletar algumas informações básicas para o bom funcionamento do sistema.</p>
+        <hr />
+        <form id="form" method="post">
+            <div asp-validation-summary="All"></div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Nome</label>
+                    <input asp-for="Nome" type="text" />
+                    <span asp-validation-for="Nome"></span>
+                </div>
+                <div class="col-md-4">
+                    <label>Sobrenome</label>
+                    <input asp-for="Sobrenome" type="text" />
+                    <span asp-validation-for="Sobrenome"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>CPF</label>
+                    <input asp-for="CPF" type="text" class="cpf" />
+                    <span asp-validation-for="CPF"></span>
+                </div>
+            </div>
+            <br /><br />
+            <div class="row">
+                <div class="col-md-6">
+                    <label>E-mail</label>
+                    <input asp-for="Email" type="email" />
+                    <span asp-validation-for="Email"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Senha</label>
+                    <input asp-for="Password" type="password" />
+                    <span asp-validation-for="Password"></span>
+                </div>
+                <div class="col-md-4">
+                    <label>Confirmar senha</label>
+                    <input asp-for="ConfirmPassword" type="password" />
+                    <span asp-validation-for="ConfirmPassword"></span>
+                </div>
+            </div>
+        </form>
+        <div class="setup-buttons">
+            <hr />
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <a onclick="$('#form').submit();" class="btn"><i class="fa fa-user-plus"></i> Cadastrar</a>
+            }
+            else
+            {
+                <a href="/OOBE/EnviarConvites" class="btn"><i class="fa fa-arrow-right"></i> Continuar</a>
+            }
+
+        </div>
+    </div>
+</div>
+
+<div id="step2" class="step" style="padding-top:0">
+    <div class="view-element">
+        <h1>3.2 Enviar convites para equipe</h1>
+
+        <div class="setup-buttons">
+            <hr />
+            <a class="btn"><i class="fa fa-plus"></i> Começar</a>
+        </div>
+    </div>
+</div>

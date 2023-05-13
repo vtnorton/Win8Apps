@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["LOGIC"] = "UWP";
+}
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+}
+<div class="nav-pane">
+    <ul>
+        <li><a asp-controller="Manage" asp-action="Edit"><i class="fa fa-user"></i> Editar perfil</a></li>
+        <li>
+            <a onclick="openMenu('#conta')"><i class="fa fa-envelope-o"></i> Minha conta <div class="menu-drop-dark"></div></a>
+            <ul id="conta">
+                <li><a asp-controller="Manage" asp-action="Index"><i class="fa fa-phone"></i> Gerenciar conta</a>
+                <li><a asp-controller="Manage" asp-action="ChangePassword"><i class="fa fa-key"></i> Alterar Senha</a></li>
+                @if (hasExternalLogins)
+                {
+                    <li><a asp-controller="Manage" asp-action="ExternalLogins"><i class="fa fa-external-link"></i> Logins externos</a></li>
+                }
+                <li><a asp-controller="Manage" asp-action="TwoFactorAuthentication"><i class="fa fa-mobile-phone"></i> Autenticação de dois fatores</a></li>
+                <!-- TODO: Listar logins do usuário -->
+                @*<li><a asp-controller="Manage" asp-action="RegistroDeAtividades" href="#"><i class="fa fa-list"></i> Registro de atividades</a></li>*@
+            </ul>
+        </li>
+        <li class="line"></li>
+        <li>
+            <a onclick="openMenu('#chamados')"><i class="fa fa-phone"></i> Chamados <div class="menu-drop-dark"></div></a>
+            <ul id="chamados">
+                <li><a href="#"><i class="fa fa-plus"></i> Abrir chamado</a></li>
+                <li><a href="#"><i class="fa fa-list-ul"></i> Lista de chamados</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="inner-content">
+    @RenderBody()
+</div>

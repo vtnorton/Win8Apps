@@ -1,0 +1,130 @@
+﻿@charset "utf-8";
+*{margin:0;padding:0;border:0}
+a{text-decoration:none;border:none}
+body{font:12px "Segoe UI",Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;  background:#000}
+#container{width:calc(70% - 100px); float:right; padding:50px;}
+.clearfix:after{content:" ";clear:both;height:0;visibility:hidden;display:block}
+.centered{margin:0 auto}
+h1,h2,h3,h4,h5{font-weight:400;padding:5px 0}
+h1{font-size:2.8em}
+h2{font-size:2.6em}
+h3{font-size:2.4em}
+h4{font-size:2.2em}
+h5{font-size:2em}
+p{font-size:1.3em;line-height:1.5em;padding-bottom:20px}
+.live>div{position:absolute}
+.live img{border:none}
+.live-front{width:100%;height:100%;z-index:20}
+.live-back{width:100%;height:100%;z-index:10}
+.live-img{display:block;height:100%;width:100%}
+.tile{margin:0 5px 10px;float:left;overflow:hidden;position:relative;transition:opacity .5s ease .1s;-moz-transition:opacity .5s ease .1s;-o-transition:opacity .5s ease .1s;-webkit-transition:opacity .5s ease .1s;background:#19a2de;}
+.tilehover{position:absolute;top:0;right:0;z-index:30;display:none}
+.exclude:hover{border:none;margin:0 5px 10px}
+a .tile:hover .tilehover{display:inline}
+.tile-text{color:#fff;font-size:2.4em;bottom:5px;left:10px;position:absolute;z-index:30;text-align:left}
+.large{width:310px;height:310px}
+.medium{width:310px;height:150px}
+.small{width:150px;height:150px}
+.fade{opacity:.5;filter:alpha(opacity=50)}
+.tile-pre{display:none;background: #f6f6f6;position: absolute;z-index: 99;width:100%; height:100%; box-shadow:#000 0 0 9px 1px; color:#3e3e3e; min-height:650px !important; max-height:50%}
+.navigation{border-bottom:1px solid #e3e3e3; padding:5px 10px}
+.navigation a{margin-left:9px; position:relative; top:-2px}
+.navigation a:last-of-type{color:#ff0000; top:0;}
+.header{margin: 30px; padding-bottom:30px;}
+.header img{max-width:150px}
+.header .header-h{width:calc(100% - 170px)}
+.header h1{font-size:27px; margin-top:-15px; font-weight:300}
+.header h3{font-size: 18px; margin-top:-10px}
+.header .header-h a{position:relative; top:64px}
+.header .header-h a,
+.btn-group-extend a,
+.btn-group a{border:1px solid #2572EB; padding:11px 19px; color:#2572EB}
+.header .header-h a:hover,
+.btn-group-extend a:hover,
+.btn-group a:hover{border-color: #2572EB; color: #fff; background:#2572EB; transition: all 0.3s}
+.btn-group,
+.btn-group-extend{position:relative; top:30px; width:291px; margin: auto}
+.btn-group-extend{width:393px}
+.btn-group a,
+.btn-group-extend a{margin-right:-4px}
+.btn-group a:last-of-type,
+.btn-group-extend a:last-of-type{margin-right:0px}
+.content{overflow-y:scroll; border-top:1px solid #e3e3e3; padding:10px 30px 20px; width:calc(100% - 60px); height:calc(100% - 329px);}
+.content-noimage{height:calc(100% - 232px)}
+.content h2{font-size:23px; margin-bottom:8px; font-weight:300}
+.content p{font-size:14px}
+.content ul{margin-left:15px; line-height:16px; font-size:14px;}
+.content ul li{margin-bottom:5px}
+.content ul li ul li:first-child{margin-top:5px}
+.content ul li ul{margin-left:25px}
+.content table td:first-of-type{color: #9a9a9a; float:right}
+.content table td:last-of-type{padding-left:7px}
+.content table{padding-bottom:30px}
+.line{border-bottom:1px solid #e3e3e3; margin-top:15px}
+.clean{clear:both}
+.left{float:left}
+.right{float:right}
+.last{margin-right:0}
+.menus{display:none}
+.left-sidebar{width:30%;height:100%;float:left; position:fixed; z-index:100; background: #fff}
+header{margin-top:50px;}
+header img{margin-left: calc(50% - 60px)}
+header h1{font-size:37px; color: #3e3e3e; text-align:center; margin-top:-15px}
+nav{text-align:center; margin-top:50px; width:200px; margin-left: calc(50% - 100px)}
+nav ul{list-style:none}
+nav ul li{padding:5px; border-bottom:1px solid #3e3e3e;}
+nav ul li:last-child{border:none;}
+nav ul li a{color:#000; font-size:16px;}
+nav ul li a:hover{color: #2572EB; -moz-transition:all 0.3s; -o-transition:all 0.3s; -webkit-transition:all 0.3s; transition:all 0.3s;}
+footer ul{list-style:none; width:300px; margin-left: calc(50% - 150px); position:absolute; bottom:120px;}
+.menus a,
+footer ul li{float:left; margin-left: 10px; border:2px solid #2572EB; border-radius:30px; padding:5px; width:25px; height:25px;}
+.menus a,
+footer ul li a{color: #2572EB; margin:2px}
+.menus a:hover,
+footer p a:hover,
+footer ul li:hover,
+footer ul li:hover a{opacity:0.7; -moz-transition: all 0.3s; -o-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s;}
+.menus a i{font-size:17px; margin-top:4px; margin-left:2px}
+footer p{color:#808080; text-align:center; font-size:12px; position:absolute; bottom:10px; margin:20px; width: calc(100% - 40px);}
+footer p a{color: #2572EB}
+
+@media all and (max-width:640px) {
+.last{margin-right:auto}
+}
+@media (min-width:896px) and (max-width: 1074px){
+    footer ul{width:240px; margin-left: calc(50% - 120px)}
+    footer ul li{margin-left: 5px; padding:5px; width:20px; height:20px;}
+    footer ul li i{font-size:18px !important}
+    footer ul li a{margin:2px}
+}
+
+@media (max-width:895px){
+    .left-sidebar{width:100%;height:100px; z-index:100}
+    header{margin-top:10px; width:240px; height:80px}
+    header img{margin-left: 20px; max-width: 80px}
+    header h1{font-size:25px; text-align:right; margin-top:-67px}
+    nav{margin-top:0}
+    .menus{display:block; position:absolute; top:33px; right:20px}
+    nav ul{display: none; position:absolute; bottom:10px; right:15px;}
+    nav ul li{float:left; border-bottom:0; border-right:1px solid #3e3e3e; padding: 0 5px}
+    footer ul{right:-44px; bottom:10px; display:none;}
+    footer ul li{float:left; margin-left: 5px; padding:5px; width:20px; height:20px;}
+    footer ul li i{font-size:18px !important}
+    footer ul li a{margin:2px}
+    footer p{display:none}
+    #container{width:100%; float:none; padding:0; position:relative; top:130px}
+    .tile-pre{min-height: 420px !important; height: 65% !important; max-height: none}
+    .header{margin: 15px; padding-bottom:30px;}
+    .header img{max-width:100px}
+    .header .header-h{width:calc(100% - 120px)}
+    .header h1{font-size:27px; margin-top:-15px; font-weight:300}
+    .header h3{font-size: 18px; margin-top:-10px}
+    .header .header-h a{position:relative; top:17px}
+    .header .header-h a,
+    .btn-group a{padding:8px 10px}
+    .btn-group{top:20px}
+    .content{padding:10px 15px 10px; width:calc(100% - 30px); height:calc(100% - 240px);}
+    .content-noimage{height:calc(100% - 191px)}
+    .content table{padding-bottom:15px}
+}

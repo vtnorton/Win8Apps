@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VTNORTON</RootNamespace>
+    <AssemblyName>VTNORTON</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/efa1c348-bb8a-42d5-a45e-9630aa7b76f8/resourcegroups/vtnorton.com/providers/microsoft.insights/components/vtnorton.com</ApplicationInsightsResourceId>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\delta\hidra.vtnorton.com\bin\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Core">
+      <HintPath>..\..\..\..\core\Branches\v2.0\bin\Debug\Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Web.TelemetryChannel, Version=1.0.0.4227, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.TelemetryChannel.1.0.0\lib\net45\Microsoft.ApplicationInsights.Web.TelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\..\..\Postgree\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="2013\css\demo.css" />
+    <Content Include="2013\css\reset.css" />
+    <Content Include="2013\css\style.css" />
+    <Content Include="2013\css\styleIE.css" />
+    <Content Include="2013\index.html" />
+    <Content Include="2013\JavaScript.js" />
+    <Content Include="2013\jquery-lastest.js" />
+    <Content Include="2013\js\jquery.easing.1.3.js" />
+    <Content Include="2013\js\modernizr.custom.11333.js" />
+    <Content Include="2013\Logo.png" />
+    <Content Include="2013\Mensagem.html" />
+    <Content Include="2013\StyleSheet.css" />
+    <Content Include="apps\FranceDouai.aspx" />
+    <Content Include="apps\FranceLyon.aspx" />
+    <Content Include="apps\FranceNice.aspx" />
+    <Content Include="apps\USALasVegas.aspx" />
+    <Content Include="apps\USAPasadena.aspx" />
+    <Content Include="biografia.aspx" />
+    <Content Include="blog\categoria.aspx" />
+    <Content Include="blog\index.aspx" />
+    <Content Include="blog\post.aspx" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\component.css" />
+    <Content Include="css\faq-css.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\media-queries.css" />
+    <Content Include="css\owl.carousel.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\slit-slider.css" />
+    <Content Include="erro\erro.css" />
+    <Content Include="erro\erro.js" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="hidra\autor.aspx" />
+    <Content Include="hidra\categoria.aspx" />
+    <Content Include="hidra\img\logos\hidra.png" />
+    <Content Include="hidra\post.aspx" />
+    <Content Include="img\blog\calculadora-de-tempo-vtnorton.jpg" />
+    <Content Include="img\blog\escolha-uma-categoria.jpg" />
+    <Content Include="img\blog\image01.jpg" />
+    <Content Include="img\blog\quizz.vtnorton.github-350.jpg" />
+    <Content Include="img\blog\random-42-vtnorton.jpg" />
+    <Content Include="img\blog\sexta-chegou-vitor-norton.jpg" />
+    <Content Include="img\blog\vitor-norton-joe-belfiore.jpg" />
+    <Content Include="img\blog\vitor-norton-windows-10-sao-paulo.jpg" />
+    <Content Include="img\blog\vtnortonversion440.jpg" />
+    <Content Include="img\blog\windows10.jpg" />
+    <Content Include="img\blog\Windows10LauchParty01.jpg" />
+    <Content Include="img\blog\Windows10LauchParty02.jpg" />
+    <Content Include="img\blog\Windows10LauchParty03.jpg" />
+    <Content Include="img\blog\windows10makeitclean.jpg" />
+    <Content Include="img\blog\3D-beach-art.jpg" />
+    <Content Include="img\blog\amazing-caves-coverimage.jpg" />
+    <Content Include="img\blog\bicycle.jpg" />
+    <Content Include="img\icones\startup.png" />
+    <Content Include="img\icones\touch-icon-ipad-retina.png" />
+    <Content Include="img\icones\touch-icon-ipad.png" />
+    <Content Include="img\icones\touch-icon-iphone-retina.png" />
+    <Content Include="img\icones\touch-icon-iphone.png" />
+    <Content Include="img\logos\logo.385.png" />
+    <Content Include="img\logos\logo.vtnorton.45.png" />
+    <Content Include="img\logos\logo.vtnorton.about.jpg" />
+    <Content Include="img\logos\logo.vtnorton.email.png" />
+    <Content Include="img\logos\logo.vtnorton.thumbnail.png" />
+    <Content Include="img\logos\opensearchicon.jpg" />
+    <Content Include="img\logos\opensearchicon64.png" />
+    <Content Include="img\logos\our-client.jpg" />
+    <Content Include="img\others\author\profile-photo-2.jpg" />
+    <Content Include="img\others\author\profile-photo.png" />
+    <Content Include="img\others\author\ProfilePic.350.jpg" />
+    <Content Include="img\others\author\vitor.profile.001.jpg" />
+    <Content Include="img\others\cat_1.jpg" />
+    <Content Include="img\others\cat_2.jpg" />
+    <Content Include="img\others\cat_3.jpg" />
+    <Content Include="img\others\cat_4.jpg" />
+    <Content Include="img\others\cat_5.jpg" />
+    <Content Include="img\parallax\code.jpg" />
+    <Content Include="img\parallax\skills.jpg" />
+    <Content Include="img\portfolio\projectDouai.png" />
+    <Content Include="img\portfolio\projectLyon.jpg" />
+    <Content Include="img\portfolio\projectNice.png" />
+    <Content Include="img\portfolio\projectPasadena.jpg" />
+    <Content Include="img\portfolio\projectLasVegas.png" />
+    <Content Include="img\portfolio\portfolio.jpg" />
+    <Content Include="img\portfolio\portx1.jpg" />
+    <Content Include="img\preloader.gif" />
+    <Content Include="img\slides\1.jpg" />
+    <Content Include="img\slides\2.jpg" />
+    <Content Include="img\slides\3.jpg" />
+    <Content Include="img\team\portfolio.jpg" />
+    <Content Include="img\team\portx1.jpg" />
+    <Content Include="img\tiles\largetile.png" />
+    <Content Include="img\tiles\mediumtile.png" />
+    <Content Include="img\tiles\smalltile.png" />
+    <Content Include="img\tiles\widetile.png" />
+    <Content Include="index.aspx" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\classie.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\easyPieChart.js" />
+    <Content Include="js\faq.js" />
+    <Content Include="js\grid.js" />
+    <Content Include="js\idangerous.swiper-2.1.min.js" />
+    <Content Include="js\jquery-1.11.0.min.js" />
+    <Content Include="js\jquery.appear.js" />
+    <Content Include="js\jquery.ba-cond.min.js" />
+    <Content Include="js\jquery.countTo.js" />
+    <Content Include="js\jquery.easing-1.3.pack.js" />
+    <Content Include="js\jquery.fitvids.js" />
+    <Content Include="js\jquery.gridder.min.js" />
+    <Content Include="js\jquery.mixitup.min.js" />
+    <Content Include="js\jquery.mobile.custom.min.js" />
+    <Content Include="js\jquery.nav.js" />
+    <Content Include="js\jquery.nicescroll.min.js" />
+    <Content Include="js\jquery.parallax-1.1.3.js" />
+    <Content Include="js\jquery.slitslider.js" />
+    <Content Include="js\jquery.sticky.js" />
+    <Content Include="js\modernizr-2.6.2.min.js" />
+    <Content Include="js\nprogress.js" />
+    <Content Include="js\owl.carousel.min.js" />
+    <Content Include="js\tweetie.min.js" />
+    <Content Include="js\wow.min.js" />
+    <Content Include="QRCode\BC\QRCodeBC.aspx" />
+    <Content Include="search.aspx" />
+    <Content Include="erro\000.aspx" />
+    <Content Include="erro\403.aspx" />
+    <Content Include="erro\404.aspx" />
+    <Content Include="erro\500.aspx" />
+    <Content Include="faq.aspx" />
+    <Content Include="opensearch.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Master.Master" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="hidra\master.Master" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="downloads\wallpaper-patreon.rar" />
+    <None Include="Properties\PublishProfiles\vtnorton %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\vtnorton.pubxml" />
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\jquery.js" />
+    <Content Include="sobre.aspx" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="apps\FranceDouai.aspx.cs">
+      <DependentUpon>FranceDouai.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="apps\FranceDouai.aspx.designer.cs">
+      <DependentUpon>FranceDouai.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apps\FranceLyon.aspx.cs">
+      <DependentUpon>FranceLyon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="apps\FranceLyon.aspx.designer.cs">
+      <DependentUpon>FranceLyon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apps\FranceNice.aspx.cs">
+      <DependentUpon>FranceNice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="apps\FranceNice.aspx.designer.cs">
+      <DependentUpon>FranceNice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apps\USALasVegas.aspx.cs">
+      <DependentUpon>USALasVegas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="apps\USALasVegas.aspx.designer.cs">
+      <DependentUpon>USALasVegas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apps\USAPasadena.aspx.cs">
+      <DependentUpon>USAPasadena.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="apps\USAPasadena.aspx.designer.cs">
+      <DependentUpon>USAPasadena.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="biografia.aspx.cs">
+      <DependentUpon>biografia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="biografia.aspx.designer.cs">
+      <DependentUpon>biografia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blog\categoria.aspx.cs">
+      <DependentUpon>categoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog\categoria.aspx.designer.cs">
+      <DependentUpon>categoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blog\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blog\post.aspx.cs">
+      <DependentUpon>post.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog\post.aspx.designer.cs">
+      <DependentUpon>post.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="hidra\autor.aspx.cs">
+      <DependentUpon>autor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hidra\autor.aspx.designer.cs">
+      <DependentUpon>autor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hidra\categoria.aspx.cs">
+      <DependentUpon>categoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hidra\categoria.aspx.designer.cs">
+      <DependentUpon>categoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hidra\master.Master.cs">
+      <DependentUpon>master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hidra\master.Master.designer.cs">
+      <DependentUpon>master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="hidra\post.aspx.cs">
+      <DependentUpon>post.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hidra\post.aspx.designer.cs">
+      <DependentUpon>post.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QRCode\BC\QRCodeBC.aspx.cs">
+      <DependentUpon>QRCodeBC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QRCode\BC\QRCodeBC.aspx.designer.cs">
+      <DependentUpon>QRCodeBC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\erropages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>erropages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\faq.Designer.cs">
+      <DependentUpon>faq.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\faq.pt.Designer.cs">
+      <DependentUpon>faq.pt.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\index.pt.Designer.cs">
+      <DependentUpon>index.pt.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\indexblog.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>indexblog.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\master.pt.Designer.cs">
+      <DependentUpon>master.pt.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\master.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>master.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\pages.pt.Designer.cs">
+      <DependentUpon>pages.pt.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\pages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\post.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>post.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\qrcodebc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qrcodebc.resx</DependentUpon>
+    </Compile>
+    <Compile Include="search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="erro\000.aspx.cs">
+      <DependentUpon>000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="erro\000.aspx.designer.cs">
+      <DependentUpon>000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="erro\403.aspx.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="erro\403.aspx.designer.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="erro\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="erro\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="erro\500.aspx.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="erro\500.aspx.designer.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="faq.aspx.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="faq.aspx.designer.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master.Master.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master.Master.designer.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sobre.aspx.cs">
+      <DependentUpon>sobre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sobre.aspx.designer.cs">
+      <DependentUpon>sobre.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="hidra\ckeditor\" />
+    <Folder Include="hidra\css\" />
+    <Folder Include="hidra\js\" />
+    <Folder Include="hidra\services\" />
+    <Folder Include="services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\erropages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>erropages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\faq.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>faq.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\faq.pt.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>faq.pt.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\index.pt.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>index.pt.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\indexblog.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>indexblog.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\master.pt.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>master.pt.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\master.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>master.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\pages.pt.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>pages.pt.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\pages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>pages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\post.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>post.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\qrcodebc.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>qrcodebc.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MoonCore\MoonCore.csproj">
+      <Project>{5fbb173d-ed38-471e-bd83-3340dc44e62e}</Project>
+      <Name>MoonCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2620</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2620/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

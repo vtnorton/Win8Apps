@@ -1,0 +1,6 @@
+"/t:System.ServiceModel.ExceptionDetail,System.ServiceModel.Primitives,dcs"
+"/t:SunApp.Read.ReadEmployeeResponse,SunApp,dcs"
+"/t:SunApp.Read.ReadEmployeeRequest,SunApp,dcs"
+"/t:SunApp.AddEmployee.AddEmployeeResponse,SunApp,dcs"
+"/t:SunApp.AddEmployee.AddEmployeeRequest,SunApp,dcs"
+"/t:System.Object,System.Runtime,dcs"

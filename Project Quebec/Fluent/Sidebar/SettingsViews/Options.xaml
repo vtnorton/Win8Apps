@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="ProjectQuebec.Fluent.Sidebar.SettingsView.Options"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="Transparent">
+        <StackPanel>
+            <TextBlock Style="{StaticResource rsTextBlockTittlePane}" x:Uid="OptionsGeneraloptions" Text=" "></TextBlock>
+            <TextBlock Style="{StaticResource rsTextBlockDescriptionPane}" x:Uid="OptionsFormulaForSchools" Text=" "></TextBlock>
+
+            <TextBlock Style="{StaticResource rsTextBlockSettingTitle}" x:Uid="OptionsExportAndRestore" Text=" "></TextBlock>
+            <TextBlock Style="{StaticResource rsTextBlockSettingsDescription}" x:Uid="OptionsExportSettingsOr" Text=" "></TextBlock>
+
+            <Grid Margin="15,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnRestoreDefault" Click="btnRestoreDefault_Click" Margin="0,15,7.5,0" Grid.Column="0" Grid.Row="1" Content="Restore default" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </Grid>
+
+            <TextBlock Style="{StaticResource rsTextBlockSettingTitle}" x:Uid="OptionsCleanRecentList" Text=" "></TextBlock>
+            <TextBlock Style="{StaticResource rsTextBlockSettingsDescription}" x:Uid="OptionsRemoveAllThe" Text=" "></TextBlock>
+            <Button x:Name="btnCleanRecentList" Click="btnCleanRecentList_Click" Margin="15,0" Grid.Column="0" Content="Clean" Width="100" VerticalAlignment="Stretch"/>
+        </StackPanel>
+    </StackPanel>
+</Page>

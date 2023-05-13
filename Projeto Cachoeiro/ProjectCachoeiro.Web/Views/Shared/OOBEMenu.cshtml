@@ -1,0 +1,83 @@
+﻿<!-- TODO: JS on window resize, colocar a página no topo -->
+<!-- TODO: Se o height for menor q a página mostrada, então vai precisar de scroll -->
+<!-- TODO: Verificação de informações antes de seguir para a página seguinda -->
+<!-- TODO: Liberar botão da página seguinte ao finalizar o cadastro de informações -->
+<!-- TODO: Colocar verificação de javascript e de cookies antes de começar a OOBE-->
+<!-- TODO: A OOBE precisa de uma faxina no quesito segurança / usuários só podem passar por ela uma única vez -->
+<nav class="bg-purple">
+    <ul>
+        <li>
+            <a href="/OOBE" class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">1. Primeiros passos</a>
+            <ul style="display: @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "" : "none")">
+                <li><a href="#step1">1.1. Informações legais</a></li>
+                <li><a href="#step2">1.2. Validação de cadastro</a></li>
+            </ul>
+        </li>
+
+        @if (ViewContext.RouteData.Values["Action"].ToString() == "EditarEmpresa" ||
+             ViewContext.RouteData.Values["Action"].ToString() == "Usuarios" ||
+             ViewContext.RouteData.Values["Action"].ToString() == "ImportarDados" ||
+             ViewContext.RouteData.Values["Action"].ToString() == "Finalizar" ||
+             ViewContext.RouteData.Values["Action"].ToString() == "EnviarConvites" || (ViewData["email"] != null))
+        {
+            <li>
+                <a href="/OOBE/EditarEmpresa" class="@(ViewContext.RouteData.Values["Action"].ToString() == "EditarEmpresa" ? "active" : "")">2. Informações da empresa</a>
+                <ul style="display: @(ViewContext.RouteData.Values["Action"].ToString() == "EditarEmpresa" ? "" : "none")">
+                    <li><a href="#step2">2.1. CNPJ e Razão social</a></li>
+                    <!-- TODO: Buscar dados de forma automática -->
+                    @*<li><a href="#step1">2.1. CNPJ e Razão social</a></li>*@
+                    @*<li><a href="#step2">2.2. Mais informações</a></li>*@
+                    <li><a href="#step3">2.3. Informações de contato</a></li>
+                </ul>
+            </li>
+        }
+        else
+        {
+            <li><a class="inactive">2. Informações da empresa</a></li>
+        }
+
+        @if (ViewContext.RouteData.Values["Action"].ToString() == "Usuarios" ||
+              ViewContext.RouteData.Values["Action"].ToString() == "ImportarDados" ||
+              ViewContext.RouteData.Values["Action"].ToString() == "Finalizar" ||
+              ViewContext.RouteData.Values["Action"].ToString() == "EnviarConvites" || User.Identity.IsAuthenticated)
+        {
+            <li>
+                <a href="/OOBE/Usuarios" class="@(ViewContext.RouteData.Values["Action"].ToString() == "Usuarios" || ViewContext.RouteData.Values["Action"].ToString() == "EnviarConvites" ? "active" : "")">3. Gestão de usuários</a>
+                <ul style="display: @(ViewContext.RouteData.Values["Action"].ToString() == "Usuarios" || ViewContext.RouteData.Values["Action"].ToString() == "EnviarConvites" ? "" : "none")">
+                    <li><a href="#step1">3.1. Editar usuário administrador</a></li>
+                    <li><a href="/OOBE/EnviarConvites">3.2. Enviar convites para equipe</a></li>
+                </ul>
+            </li>
+        }
+        else
+        {
+            <li><a class="inactive">3. Gestão de usuários</a></li>
+        }
+
+        @if (ViewContext.RouteData.Values["Action"].ToString() == "ImportarDados" ||
+              ViewContext.RouteData.Values["Action"].ToString() == "Finalizar")
+        {
+            <li>
+                <a href="/OOBE/ImportarDados" class="@(ViewContext.RouteData.Values["Action"].ToString() == "ImportarDados" ? "active" : "")">4. Importar dados</a>
+                <ul style="display: @(ViewContext.RouteData.Values["Action"].ToString() == "ImportarDados" ? "" : "none")">
+                    <li><a href="#step1">4.1. Dados padrões</a></li>
+                </ul>
+            </li>
+        }
+        else
+        {
+            <li><a class="inactive">4. Importar dados</a></li>
+        }
+
+        @if (ViewContext.RouteData.Values["Action"].ToString() == "Finalizar")
+        {
+            <li>
+                <a href="/OOBE/Finalizar" class="@(ViewContext.RouteData.Values["Action"].ToString() == "Finalizar" ? "active" : "")">5. Finalização</a>
+            </li>
+        }
+        else
+        {
+            <li><a class="inactive">5. Finalização</a></li>
+        }
+    </ul>
+</nav>

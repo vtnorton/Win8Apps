@@ -1,0 +1,12 @@
+/*
+ * Created by: Formula - Universal Code Editor
+ */
+
+#include <iostream>
+
+using namespace std;
+
+int <#NAME>(){
+	count << "Hello World!" << endl;
+	return 0;
+}

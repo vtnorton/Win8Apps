@@ -1,0 +1,134 @@
+﻿@model ProjectCachoeiro.Web.Models.Produtos.Produto
+@{
+    //TODO: não mostrar tabelas para itens de família secundária ou terceária
+    ViewData["Title"] = @Html.DisplayFor(model => model.GetName);
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-9">
+        <div class="toolbar">
+            <div class="left">
+                <h2>Produto: @Html.DisplayFor(model => model.GetName)</h2>
+            </div>
+            <div class="clean"></div>
+        </div>
+        <div class="view-element">
+            <div class="row">
+                <div class="col-md-7 col-sm-6">
+                    @if (Html.DisplayFor(model => model.DisplayName) != null)
+                {
+                    <h4>Título: @Html.DisplayFor(model => model.Titulo)</h4>
+
+            }
+                    <p>
+                        Código de referência: @Html.DisplayFor(model => model.CodigoProduto) <br />
+                        Número do bloco: @Html.DisplayFor(model => model.NumeroBloco) <br />
+                        Código NCM: @Html.DisplayFor(model => model.CodigoNCM) <br />
+                        Código EAN: @Html.DisplayFor(model => model.CodigoEAN) <br />
+                        Preço unitário: @Html.DisplayFor(model => model.GetPreco) <br />
+                    </p>
+
+                    <br />
+
+                    @if (Html.DisplayFor(model => model.Observacoes) == null)
+                {
+                    <h4>Observações</h4>
+                    <p>@Html.DisplayFor(model => model.Observacoes)</p>
+            }
+
+                    <h4>Preço</h4>
+                    <p>Preço unitário de venda: @Html.DisplayFor(model => model.GetPreco)</p>
+                </div>
+
+                <div class="col-md-5 col-sm-6">
+                    <h4>Dimensões</h4>
+                    <p>Detalhes das dimensões do material</p>
+                    <dl class="dl-horizontal">
+                        <!-- TODO: definir medida de peso e comprimento -->
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Peso)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Peso)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Largura)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Largura)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Altura)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Altura)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Comprimento)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Comprimento)
+                        </dd>
+                    </dl>
+                    <br />
+
+                    <h4>Registros</h4>
+                    <p>Conheça os detalhes do cadastro e de possíveis alterações realizadas neste item.</p>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DateCreated)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.DateCreated)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.UserCreated)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.UserCreated)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DateModified)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.DateModified)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.UserModified)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.UserModified)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            @await Html.PartialAsync("~/Views/Shared/AppTaskbar.cshtml", "VIEW;PRODUTO;ID=" + Model.Id + ";")
+        </div>
+
+        <!-- TODO: Se for da família primaria mostrar botão de transformar, se não, não. -->
+        @await Html.PartialAsync("~/Views/Shared/Templates/GridProduct_Tabela.cshtml", "CONTROLLER:ProductDetails;ACTION:ProductDetails_Read;ID:" + Model.Id + ";TRANFORMAR:Off;DETAILS:True;")
+
+    </div>
+    <div class="info-bar col-md-3">
+        @Html.Partial("AppOtherOptions", new OtherOptions
+        {
+            Descricao = "Veja opções relacionadas com " + Model.GetName + ".",
+            FeedbackEChamadoID = "Produto" + Model.Id,
+            OpcoesRelacionadas = new Links[] {
+                     new Links{
+                         Titulo = "Adicionar família",
+                         Url = "/Familias/Create"
+                     },
+                     new Links{
+                         Titulo = "Adicionar estado de produto",
+                         Url = "/Estados/Create"
+                     },
+                     new Links{
+                         Titulo = "Adicionar produto",
+                         Url = "/Produtos/Create"
+                     }
+                 }
+        })
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Enviar convites";
+    ViewData["LOGIC"] = "OOBE";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="step0" class="step" style="padding-top:0">
+    <div class="view-element">
+        <h1>3.2. Enviar convites</h1>
+        <p>Agora você pode enviar convites para membros de sua equipe utilizar o sistema. Digite o e-mail de cada usuário do sistema para que possamos enviar o convite para eles.</p>
+        <hr />
+        <!-- TODO: Enviar e-mail para esta lista utilizar o sistema -->
+        <form id="form" asp-action="EnviarConvites" method="post">
+            <input type="email" name="emails" placeholder="E-mail do usuário" />
+            <input type="email" name="emails" placeholder="E-mail do usuário" />
+        </form>
+        <div class="right" style="margin-right:10px; margin-top:15px">
+            <a onclick="addMore()" class="btn btn-link"><i class="fa fa-user-plus"></i> Adicionar mais</a>
+        </div>
+        <div class="clean"></div>
+
+        <div class="setup-buttons">
+            <hr />
+            <a href="/OOBE/ImportarDados" class="btn btn-link"><i class="fa fa-ban"></i> Ignorar</a>
+            <a onclick="$('#form').submit();" class="btn"><i class="fa fa-send-o"></i> Enviar convites</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function addMore() {
+        $("#form").append($("<input type='email' name='emails' placeholder='E- mail do usuário' />"));
+    };
+</script>

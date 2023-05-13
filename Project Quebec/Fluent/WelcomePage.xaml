@@ -1,0 +1,128 @@
+﻿<Page
+    x:Class="ProjectQuebec.Fluent.WelcomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjectQuebec.Fluent"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="listViewNewsDataTemplate">
+            <StackPanel Padding="0,10,0,10" Orientation="Vertical" VerticalAlignment="Stretch">
+                <TextBlock TextWrapping="Wrap" Text="{Binding Title}"></TextBlock>
+                <TextBlock TextWrapping="Wrap" Foreground="{StaticResource rsColorMiddleText}" FontSize="14" Text="{Binding Description}"></TextBlock>
+                <HyperlinkButton x:Uid="WelcomePageContinueReading" Content=" " NavigateUri="{Binding Url}"></HyperlinkButton>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="listViewRecentDataTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel HorizontalAlignment="Stretch" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Stretch">
+                    <TextBlock Margin="5,0,0,0" Foreground="{ThemeResource rsColorMainText}" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" Text="&#xE160;"></TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="5,0,5,0" Text="{Binding FileName}"></TextBlock>
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,3,0,0" Foreground="{StaticResource rsColorMiddleText}" FontSize="12" Text="{Binding FilePath}"></TextBlock>
+                </StackPanel>
+                <HyperlinkButton Click="HyperlinkButton_Click" Grid.Column="1" ToolTipService.ToolTip="Remove this file" Foreground="Red" FontFamily="Segoe MDL2 Assets" Content="&#xE894;" Width="30" Height="30" FontSize="10" Background="Transparent">
+                    <HyperlinkButton.ContentTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" />
+                        </DataTemplate>
+                    </HyperlinkButton.ContentTemplate>
+                </HyperlinkButton>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    
+    <Grid x:Name="mainGrid" Padding="50,25" Background="{StaticResource rsColorMainBG}">
+        <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="txtProgramName" Grid.Row="0" FontWeight="ExtraLight" FontSize="42">Formula - Universal Code Editor</TextBlock>
+            <TextBlock FontWeight="Light" Foreground="{StaticResource rsColorMiddleText}" x:Name="version" Grid.Row="1" FontSize="14">Lorem ipsum</TextBlock>
+        </Grid>
+        <Grid x:Name="gridWelcome" Grid.Row="1" Margin="0,30,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="gridLinks" Grid.Column="0" Margin="0,0,50,0">
+                <Grid.RowDefinitions>
+                    <!-- Start -->
+                    <RowDefinition Height="*"></RowDefinition>
+                    <!-- Recent -->
+                    <RowDefinition MinHeight="50" Height="1.5*"></RowDefinition>
+                    <!-- Links -->
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock Style="{StaticResource rsTextBlockWelcomeTitleIcon}" Text="&#xE10F;"></TextBlock>
+                        <TextBlock Style="{StaticResource rsTextBlockWelcomeTitle}" x:Uid="WelcomePageStart" Text=" "></TextBlock>
+                    </StackPanel>
+                    <StackPanel x:Name="stpStart">
+                        <HyperlinkButton x:Name="newFile" Click="newFile_Click" x:Uid="WelcomePageNewFile" Content=" "></HyperlinkButton>
+                        <HyperlinkButton x:Name="openFile" Click="openFile_Click" x:Uid="WelcomePageOpenFile" Content=" "></HyperlinkButton>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock Style="{StaticResource rsTextBlockWelcomeTitleIcon}" Text="&#xE24A;"></TextBlock>
+                        <TextBlock Style="{StaticResource rsTextBlockWelcomeTitle}" x:Uid="WelcomePageRecent" Text=" "></TextBlock>
+                    </StackPanel>
+                    <ListView ItemsSource="{Binding Mode=OneWay}" IsItemClickEnabled="True" ItemClick="listRecentFiles_ItemClick" ItemTemplate="{StaticResource listViewRecentDataTemplate}" Margin="-12,0,0,0" x:Name="listRecentFiles">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                    </ListView>
+                    <TextBlock Visibility="Collapsed" Foreground="{StaticResource rsColorMiddleText}" x:Uid="WelcomePageNoRecentOpened" Text=" " x:Name="NotFound" FontSize="12"></TextBlock>
+                    <HyperlinkButton Click="hplClean_Click" x:Name="hplClean" Visibility="Collapsed" x:Uid="WelcomePageCleanList" Content=" " FontSize="12"></HyperlinkButton>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock Style="{StaticResource rsTextBlockWelcomeTitleIcon}" Text="&#xE12B;"></TextBlock>
+                        <TextBlock Style="{StaticResource rsTextBlockWelcomeTitle}" x:Uid="WelcomePageGetInTouch" Text=" "></TextBlock>
+                    </StackPanel>
+                    <StackPanel x:Name="stpLinks">
+                        <HyperlinkButton NavigateUri="http://vtnorton.com" x:Uid="WelcomePageVisitTheSite" Content=" "></HyperlinkButton>
+                        <HyperlinkButton NavigateUri="http://vtnorton.com/formula-beta" Content="Formula - Beta testers"></HyperlinkButton>
+                        <HyperlinkButton NavigateUri="http://vtnorton.com/formula/privacy" x:Uid="WelcomePagePrivacyPolice" Content=" "></HyperlinkButton>
+                        <HyperlinkButton NavigateUri="http://twitter.com/formula4windows" x:Uid="WelcomePageFollowOnTwitter" Content=" "></HyperlinkButton>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Style="{StaticResource rsTextBlockWelcomeTitleIcon}" Text="&#xE8A1;"></TextBlock>
+                    <TextBlock Style="{StaticResource rsTextBlockWelcomeTitle}" x:Uid="WelcomePageNews" Text=" "></TextBlock>
+                </StackPanel>
+                <Grid Grid.Row="1">
+                    <ProgressBar x:Name="progressBar" IsIndeterminate="True" VerticalAlignment="Top" Margin="0,30,0,0" Width="350" Foreground="{ThemeResource SystemAccentColor}"/>
+                    <ListView Visibility="Collapsed" ItemTemplate="{ThemeResource listViewNewsDataTemplate}" Margin="-12,0,0,0" x:Name="listNews">
+
+                    </ListView>
+                    <HyperlinkButton VerticalAlignment="Top" x:Uid="WelcomePageYouAreUnder" Content=" " Visibility="Collapsed" Click="txtInfo_Click" Foreground="{StaticResource rsColorMiddleText}" FontSize="12" x:Name="txtInfo"></HyperlinkButton>
+                    <TextBlock x:Name="txtErroGettingFeed" Visibility="Collapsed" Foreground="{StaticResource rsColorMiddleText}" FontSize="12" x:Uid="WelcomePageWeFoundAn" Text=" "></TextBlock>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,63 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Vtnorton.Model
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Formula Beta tester";
+    ViewData["Description"] = Localizer["ThisAppDescription"].Value;
+    ViewData["Keywords"] = "";
+}
+@section metatags{
+    <script src="~/js/vtnorton.mantainscroll.js"></script>
+}
+@section submenu{
+    <ul>
+        <li><a href="/formula"></a>More about Formula</li>
+        <li><a href="http://twitter.com/yappproducer"></a>Follow Formula on Twitter</li>
+    </ul>
+}
+<div class="section-wrapper wrapper">
+    <h1>@Localizer["Singup"]</h1>
+    <div class="section-content-left left" style="padding-bottom:40px; margin-top:-35px">
+        <p style="width:calc(100% - 90px)">@Localizer["TheFormulaContent"]</p>
+        <p style="width:calc(100% - 90px)"><a href="/formula">@Localizer["Discover"]</a></p>
+        <img class="section-image-left-img" style="width:75%;" src="/images/apps/formula.png" />
+    </div>
+    <div class="section-content-right right" style="padding-bottom:40px; margin-top:-35px">
+        <p>@Localizer["MVP"]</p>
+        @model Emails
+
+        @using (Html.BeginForm())
+        {
+            <p><strong>@Localizer["FirstName"]:</strong></p>
+            @Html.TextBoxFor(m => m.FirstName)<br />
+            <p><strong>@Localizer["LastName"]:</strong></p>
+            @Html.TextBoxFor(m => m.LastName)<br />
+            <p><strong>@Localizer["Observation"]:</strong></p>
+            @Html.TextBoxFor(m => m.Observation)<br /><br />
+            <p><strong>@Localizer["Email"]:</strong></p>
+            @Html.TextBoxFor(m => m.Email)<br /><br />
+
+            <button type="submit" value="Submit" Height="50">@Localizer["Button"]</button><br />
+        }
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="error">
+                @Html.ValidationSummary()
+            </div>
+
+        }
+        @if (ViewData["result"] != null)
+        {
+            <div class="success">
+                E-mail cadastrado com sucesso
+            </div>
+        }
+        @if (ViewData["error"] != null)
+        {
+            <div class="error">
+                Houve um erro ao cadastrar o seu e-mail no sistema.
+            </div>
+        }
+    </div>
+    <div class="clean"></div>
+</div>

@@ -1,0 +1,15 @@
+﻿body {background: #180052;background-image: url(/webOS/img/loginbg.jpg);background-repeat:no-repeat;background-size:cover;}
+.btn{width: 300px}
+.img{margin-left: calc(50% - 112.5px);margin-top: 15px;margin-bottom: 5px;}
+.login-box{width: 33%;height: 380px;background: #e3e3e3;box-shadow: #000 1px 1px 10px;position:absolute;margin:12% 33%}
+.login-box-header{width:100%;border-bottom: 1px solid #3c3c3c;padding-bottom: 10px;margin-bottom: 15px;background: #fff;padding-top: 10px; margin:auto;}
+.login-box-content{padding: 20px;text-align:center;}
+.login-box-content input{margin-top: 10px; padding: 5px; width: 90%; padding-left: 10px; font-size: 14px;}
+#btnLogin{margin-top:20px; margin-bottom:10px;}
+@media screen and (max-width:884px){
+    .login-box{width: 51% !important; margin:12% 27% !important}
+}
+@media screen and (max-width:585px){
+    body{background-image:none;}
+    .login-box{width: 80% !important; margin:5% 10% !important}
+}

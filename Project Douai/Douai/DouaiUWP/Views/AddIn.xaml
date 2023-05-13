@@ -1,0 +1,102 @@
+﻿<Page
+    x:Class="DouaiUWP.Views.AddIn"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DouaiUWP.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Black" Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Margin="0,0,0,10" Grid.Row="0" Height="65">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65"></ColumnDefinition>
+                <ColumnDefinition MinWidth="150" MaxWidth="300"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Grid.RowSpan="2" Grid.Column="0" Height="60" Width="60" Source="/Images/001.png"></Image>
+            <TextBlock Margin="10,0,0,0" FontWeight="Bold" FontSize="16" Grid.Row="0" Grid.Column="1" Text="Pacote de verbos irregulares" TextWrapping="Wrap"></TextBlock>
+            <TextBlock Margin="10,0,0,0" FontSize="14" Grid.Row="1" Grid.Column="1" Text="Pacote de verbos irregulares." TextWrapping="Wrap"></TextBlock>
+            <Button Name="btnAdicionarVerbos" Visibility="Visible" Click="btnAdicionarVerbos_Click" Grid.RowSpan="3" Grid.Column="2" Content="$1,39"></Button>
+            <Button Name="btnCompradoAdicionarVerbos" IsEnabled="False" Visibility="Collapsed" Grid.RowSpan="3" Grid.Column="2" FontFamily="Segoe MDL2 Assets" Content="&#59643;"></Button>
+        </Grid>
+        <Grid Margin="0,0,0,10" Grid.Row="1" Height="65">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65"></ColumnDefinition>
+                <ColumnDefinition MinWidth="150" MaxWidth="300"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Grid.RowSpan="2" Grid.Column="0" Height="60" Width="60" Source="/Images/002.png"></Image>
+            <TextBlock Margin="10,0,0,0" FontWeight="Bold" FontSize="16" Grid.Row="0" Grid.Column="1" Text="Sem anúncios" TextWrapping="Wrap"></TextBlock>
+            <TextBlock Margin="10,0,0,0" FontSize="14" Grid.Row="1" Grid.Column="1" Text="Remova os anúncios e aproveite mais do aplicativo." TextWrapping="Wrap"></TextBlock>
+            <Button Name="btnRemoverAnuncios" Visibility="Visible" Click="btnRemoverAnuncios_Click" Grid.RowSpan="3" Grid.Column="2" Content="$0,99"></Button>
+            <Button Name="btnCompradoRemoverAnuncios" IsEnabled="False" Visibility="Collapsed" Grid.RowSpan="3" Grid.Column="2" FontFamily="Segoe MDL2 Assets" Content="&#59643;"></Button>
+        </Grid>
+        <Grid Margin="0,0,0,10" Grid.Row="2" Height="65">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65"></ColumnDefinition>
+                <ColumnDefinition MinWidth="150" MaxWidth="300"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Grid.RowSpan="2" Grid.Column="0" Height="60" Width="60" Source="/Images/003.png"></Image>
+            <TextBlock Margin="10,0,0,0" FontWeight="Bold" FontSize="16" Grid.Row="0" Grid.Column="1" Text="Pacote Pro" TextWrapping="Wrap"></TextBlock>
+            <TextBlock Margin="10,0,0,0" FontSize="14" Grid.Row="1" Grid.Column="1" Text="Remover anúncios e conjugações de verbos irregulares." TextWrapping="Wrap"></TextBlock>
+            <Button Name="btnIrregularesEAnuncios" Visibility="Visible" Click="btnIrregularesEAnuncios_Click" Grid.RowSpan="3" Grid.Column="2" Content="$1,99"></Button>
+            <Button Name="btnCompradoIrregularesEAnuncios" IsEnabled="False" Visibility="Collapsed" Grid.RowSpan="3" Grid.Column="2" FontFamily="Segoe MDL2 Assets" Content="&#59643;"></Button>
+        </Grid>
+        <Grid Margin="0,0,0,10" Grid.Row="3" Height="65">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65"></ColumnDefinition>
+                <ColumnDefinition MinWidth="150" MaxWidth="300"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Grid.RowSpan="2" Grid.Column="0" Height="60" Width="60" Source="/Images/004.png"></Image>
+            <TextBlock Margin="10,0,0,0" FontWeight="Bold" FontSize="16" Grid.Row="0" Grid.Column="1" Text="Pacote Pro + doação" TextWrapping="Wrap"></TextBlock>
+            <TextBlock Margin="10,0,0,0" FontSize="14" Grid.Row="1" Grid.Column="1" Text="Remover anúncios e conjugações de verbos irregulares e doação." TextWrapping="Wrap"></TextBlock>
+            <Button Name="btnDonation" Visibility="Visible" Click="btnDonation_Click" Grid.RowSpan="3" Grid.Column="2" Content="$3,99"></Button>
+            <Button Name="btnCompradoDonation" IsEnabled="False" Visibility="Collapsed" Grid.RowSpan="3" Grid.Column="2" FontFamily="Segoe MDL2 Assets" Content="&#59643;"></Button>
+        </Grid>
+        <Grid Margin="0,0,0,10" Grid.Row="4" Height="65">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65"></ColumnDefinition>
+                <ColumnDefinition MinWidth="150" MaxWidth="300"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Grid.RowSpan="2" Grid.Column="0" Height="60" Width="60" Source="/Images/005.png"></Image>
+            <TextBlock Margin="10,0,0,0" FontWeight="Bold" FontSize="16" Grid.Row="0" Grid.Column="1" Text="Pacote Pro + doação" TextWrapping="Wrap"></TextBlock>
+            <TextBlock Margin="10,0,0,0" FontSize="14" Grid.Row="1" Grid.Column="1" Text="Remover anúncios e conjugações de verbos irregulares e doação." TextWrapping="Wrap"></TextBlock>
+            <Button Name="btnDonation2" Visibility="Visible" Click="btnDonation2_Click" Grid.RowSpan="3" Grid.Column="2" Content="$5,99"></Button>
+            <Button Name="btnCompradoDonation2" IsEnabled="False" Visibility="Collapsed" Grid.RowSpan="3" Grid.Column="2" FontFamily="Segoe MDL2 Assets" Content="&#59643;"></Button>
+        </Grid>
+        <TextBlock Text="Nota: se você comprou o aplicativo Conjugar PRO pro Windows Phone 8.1 ou Windows 8.1, ele não é valido para a ativação de recursos deste aplicativo." Grid.Row="6" TextWrapping="WrapWholeWords"></TextBlock>
+    </Grid>
+</Page>

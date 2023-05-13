@@ -1,0 +1,91 @@
+﻿@model ProjectCachoeiro.Web.Comercial.Contato
+@{
+    ViewData["Title"] = "Adicionar contato";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-9">
+        <div class="toolbar">
+            <div class="left">
+                <h2>Adicionar contato</h2>
+            </div>
+            <div class="clean"></div>
+        </div>
+        
+        <div class="view-element">
+            <form id="form" asp-action="Criar">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="row">
+                    <h6>Informações gerais</h6>
+                    <div class="col-md-4">
+                        <label asp-for="PrimeiroNome"></label>
+                        <input asp-for="PrimeiroNome" />
+                        <span asp-validation-for="PrimeiroNome"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="UltimoNome"></label>
+                        <input asp-for="UltimoNome" />
+                        <span asp-validation-for="UltimoNome"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label asp-for="Cargo"></label>
+                        <input asp-for="Cargo" />
+                        <span asp-validation-for="Cargo"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <h6>Informações de contato</h6>
+                    <div class="col-md-4">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" type="email" />
+                        <span asp-validation-for="Email"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="Telefone"></label>
+                        <input asp-for="Telefone" />
+                        <span asp-validation-for="Telefone"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label asp-for="Observacao"></label>
+                        <textarea asp-for="Observacao"></textarea>
+                        <span asp-validation-for="Observacao"></span>
+                    </div>
+                </div>
+            </form>
+            @await Html.PartialAsync("~/Views/Shared/AppTaskbar.cshtml", "CREATE")
+        </div>
+        <div class="view-bottom">
+            <hr />
+            <p class="small">A criação de novos contatos permite identificar as empresas clientes por seus funcionários e com isso ter uma visão mais intuitiva das propostas fincanceiras.</p>
+        </div>
+    </div>
+    <div class="info-bar col-md-3">
+        @{
+            OtherOptions otherOptions = new OtherOptions
+            {
+                Descricao = "Veja opções relacionadas com a apresentação de itens.",
+                FeedbackEChamadoID = "ItemFamilia",
+                OpcoesRelacionadas = new Links[] {
+                    new Links{
+                        Titulo = "Adicionar família",
+                        Url = "/Familias/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar estado de produto",
+                        Url = "/Estados/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar produto",
+                        Url = "/Produtos/Create"
+                    }
+                }
+            };
+        }
+        @Html.Partial("AppOtherOptions", otherOptions)
+    </div>
+</div>

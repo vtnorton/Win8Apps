@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Painel";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-9">
+    <div class="toolbar">
+        <div class="left">
+            <h2>Por onde deseja começar?</h2>
+        </div>
+        <div class="clean"></div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            <div class="view-box">
+                <div class="view-box-title"><h3><i class="fa fa-file"></i> Estoque</h3></div>
+                <div class="view-box-content">
+                    <ul>
+                        <li><a href="/Produtos/Criar"><i class="fa fa-plus-square-o"></i> Adicionar produto</a></li>
+                        <li><a href="/Produtos/Blocos"><i class="fa fa-list-ul"></i> Ver blocos</a></li>
+                        <li><a href="/Produtos/Chapas"><i class="fa fa-list-ul"></i> Ver chapas</a></li>
+                        <li><a href="/Produtos"><i class="fa fa-list-ul"></i> Ver estoque</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="view-box">
+                <div class="view-box-title"><h3><i class="fa fa-industry"></i> Clientes</h3></div>
+                <div class="view-box-content">
+                    <ul>
+                        <li><a href="/Clientes/Criar"><i class="fa fa-plus-square-o"></i> Adicionar cliente</a></li>
+                        <li><a href="/Clientes"><i class="fa fa-list-ul"></i> Ver clientes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="view-box">
+                <div class="view-box-title"><h3><i class="fa fa-list-ul"></i> Propostas</h3></div>
+                <div class="view-box-content">
+                    <ul>
+                        <li><a href="/Propostas/Criar"><i class="fa fa-plus-square-o"></i> Adicionar proposta</a></li>
+                        <li><a href="/Propostas"><i class="fa fa-list-ul"></i> Ver propostas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="view-box">
+                <div class="view-box-title"><h3><i class="fa fa-gears"></i> Sistema</h3></div>
+                <div class="view-box-content" style="padding: 10px 20px">
+                    <p>Versão do sistema: @ProjectCachoeiro.Web.Util.Information.Version()</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="info-bar col-md-3">
+    @{
+        OtherOptions otherOptions = new OtherOptions
+        {
+            Descricao = "Veja opções relacionadas com a apresentação de itens.",
+            FeedbackEChamadoID = "ItemFamilia",
+            OpcoesRelacionadas = new Links[] {
+            new Links{
+                Titulo = "Adicionar família",
+                Url = "/Familias/Create"
+            },
+            new Links{
+                Titulo = "Adicionar estado de produto",
+                Url = "/Estados/Create"
+            },
+            new Links{
+                Titulo = "Adicionar produto",
+                Url = "/Produtos/Create"
+            }
+        }
+        };
+    }
+    @Html.Partial("AppOtherOptions", otherOptions)
+</div>

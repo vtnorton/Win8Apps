@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Features" xml:space="preserve">
+    <value>Funções</value>
+  </data>
+  <data name="FeaturesContent" xml:space="preserve">
+    <value>Organize seus arquivos em abas e trabalhe com mais de um arquivo ao mesmo tempo, da mesma forma como você já está acostumado a fazer.&lt;/p&gt;
+
+&lt;p&gt;E tem mais uma coisinha: você também pode usar os atalhos do teclado, da forma que você já conhece, para criar um novo arquivo, abrir um novo arquivo e salvar o arquivo.&lt;/p&gt;
+
+&lt;p&gt;Divirta-se codando, assim como eu me diverti fazendo esse app! ;) Só não esqueça o copo de café! </value>
+    <comment>Organize your files in tabs and work with more than one file at time, just like you are used to.&lt;/p&gt;
+
+&lt;p&gt;And there is something else: you can use the shortcuts as you already know to save, open and to make a new file.&lt;/p&gt;
+
+&lt;p&gt;Have fun codding, just like I had writing this app! ;) Don't forget you coffee!</comment>
+  </data>
+  <data name="Languages" xml:space="preserve">
+    <value>Linguagens</value>
+  </data>
+  <data name="LanguagesContent" xml:space="preserve">
+    <value>Você pode escrever e ler arquivos em todas as linguagens, mas a experiência é melhor com:  C#, C, C++, CSS, HTML, Java, JavaScript, JSON, LUA, Pascal, PHP, Phyton, SQL, XML e mais &lt;/p&gt;
+
+&lt;p&gt;Você também pode criar novos arquivos com o simples editor de código, isso não é incrível?!</value>
+    <comment>You can write and read all languages, but you experience will be better with: C#, C, C++, CSS, HTML, Java, JavaScript, JSON, LUA, Pascal, PHP, Phyton, SQL, XML and more.&lt;/p&gt;
+
+&lt;p&gt;Also you can create new files with this simple code editor, isn't this awesome?!</comment>
+  </data>
+  <data name="Review1" xml:space="preserve">
+    <value>"O mais completo editor que vi até agora para Windows Phone." - Biel</value>
+  </data>
+  <data name="Review2" xml:space="preserve">
+    <value>"Este aplicativo é perfeito para operações com JavaScript, já que eu uso para isso. É novo, pequeno e rápido." - Fedja</value>
+  </data>
+  <data name="Review3" xml:space="preserve">
+    <value>"O mais botino e significante e com mais funções que qualquer outro editor de códigos para Windows Mobile... E é UWP!!" - Tom</value>
+  </data>
+  <data name="Review4" xml:space="preserve">
+    <value>"Quando não estou atras de um PC eu estou usando este aplicativo para escrever algumas linhas de código :-)" - Cynthia</value>
+  </data>
+  <data name="Reviews" xml:space="preserve">
+    <value>Comentários</value>
+  </data>
+  <data name="TheFormula" xml:space="preserve">
+    <value>O &lt;span class="notranslate"&gt;Formula&lt;/span&gt;</value>
+  </data>
+  <data name="TheFormulaContent" xml:space="preserve">
+    <value>Quantas vezes você não saiu do escritório e se lembrou daquela linha de código que pode consertar o maior bug que você tem? Adivinha! Você vai se esquecer daquela linha de codigo, você simplesmente tem que escrever ela agora. Não da para esperar você chegar no escritório. É por isso que o  &lt;span class="notranslate"&gt;Formula&lt;/span&gt; está aqui!&lt;/p&gt;
+
+&lt;p&gt;Você pode usar o &lt;span class="notranslate"&gt;Formula&lt;/span&gt; no seu celular, tablet e desktop. O aplicativo também é excelente para o modo Continuum.</value>
+    <comment>How many times do you get out of your office and remember a line of code that can fix the biggest bug you have? Guest what, you will forgot that line of code, you simply have to write it right out way. It can't wait you to get to the office. That's why Formula - Universal Code Editor is here.&lt;/p&gt;
+
+&lt;p&gt;You can use Formula on you phone, tablet and desktop. Also I am working to make this app great for the Continuum.</comment>
+  </data>
+  <data name="ThisAppDescription" xml:space="preserve">
+    <value>Quantas vezes você não saiu do escritório e se lembrou daquela linha de código que pode consertar o maior bug que você tem? &lt;span class="notranslate"&gt;Formula&lt;/span&gt; está aqui para isso!</value>
+    <comment>How many times do you get out of your office and remember a line of code that can fix the biggest bug you have? &lt;span class="notranslate"&gt;Formula&lt;/span&gt;is here for you!</comment>
+  </data>
+</root>

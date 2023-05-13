@@ -1,0 +1,18 @@
+﻿<div style="padding: 0 20px 10px">
+    <div class="row">
+        <div class="col-md-6">
+            <p><small>Nome de exibição</small><br />#if (DisplayName) {# #: DisplayName # #} else { # Não cadastrado #}#</p>
+
+            <p><small>Título</small><br />#if (Titulo) {# #: Titulo # #} else { # Não cadastrado #}#</p>
+
+            <p><small>Data de entrada</small><br />#if (DataDeEntrada) { # #: DataDeEntrada # #} else { # Não cadastrado #}#</p>
+        </div>
+        <div class="col-md-6">
+            <p><small>Código EAN</small><br />#if (CodigoEAN) {# #: CodigoEAN # #} else { # Não cadastrado #}#</p>
+            
+            <p><small>Código NCM</small><br />#if (CodigoNCM) {# #: CodigoNCM # #} else { # Não cadastrado #}#</p>
+
+            <p><small>Observações</small><br />#if (Observacoes) {# #: Observacoes # #} else { # Não cadastrado #}#</p>
+        </div>
+    </div>
+</div>

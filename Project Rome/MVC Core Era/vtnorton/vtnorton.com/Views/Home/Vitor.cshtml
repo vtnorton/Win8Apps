@@ -1,0 +1,249 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["About"].Value;
+    ViewData["Description"] = Localizer["Description"];
+    ViewData["Keywords"] = "windows insider, creator, windows 10, vitor norton, vitor, poweruser, ninjacat";
+}
+
+
+@section submenu{
+    <li><a href="http://twitter.com/vt_norton">@Localizer["SubLink1"]</a></li>
+    <li><a href="#testimonial">@Localizer["SubLink2"]</a></li>
+    <li><a href="#skill">@Localizer["SubLink3"]</a></li>
+    <li><a href="#alsoknow">@Localizer["SubLink4"]</a></li>
+    <li><a href="#log">@Localizer["SubLink5"]</a></li>
+}
+
+<link href="~/css/skills.css" rel="stylesheet" />
+<script src="/js/vtnorton.skill.js" type="text/javascript"></script>
+
+<section>
+    <div class="section-wrapper" style="padding-bottom:40px">
+        <div class="row">
+            <div class="col-md-4 col-lg-5">
+                <img src="~/images/home/norton.jpg" style="margin-left:10%;width: 80%;max-height: 100%;padding-top:20px">
+            </div>
+            <div class="col-md-8 col-lg-7">
+                <h1>@Localizer["About"]</h1>
+                <p>@Localizer["AboutParagraph"]</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="testimonial" class="section-bg">
+    <div class="section-wrapper">
+        <h1 style="padding-top:40px" class="white">@Localizer["TestimonialTitle"]</h1>
+        <br /><br />
+        <p class="white text-center">
+            @Localizer["TerryTestimonial"]
+        </p>
+        <p class="white" style="text-align:right"> - Terry Myerson, Microsoft</p>
+    </div>
+</section>
+<section id="skill">
+    <div class="section-wrapper">
+        <h1 style="padding-top:40px">@Localizer["SkillsTitle"]</h1>
+        <p>@Localizer["SkillsDescription"]</p>
+        <hr />
+        <br />
+        <div class="set-size charts-container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="pie-wrapper progress-30">
+                        <span class="label">30<span class="smaller">%</span></span>
+                        <div class="pie">
+                            <div class="left-side half-circle"></div>
+                            <div class="right-side half-circle"></div>
+                        </div>
+                    </div><br />
+                    <div class="skill-info full100">
+                        <h4 class="text-center">Asp.Net MVC Core</h4>
+                        <p class="text-center">@Localizer["WebDevelopment"]</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="pie-wrapper progress-60">
+                        <span class="label">60<span class="smaller">%</span></span>
+                        <div class="pie">
+                            <div class="left-side half-circle"></div>
+                            <div class="right-side half-circle"></div>
+                        </div>
+                    </div><br />
+                    <div class="skill-info full100">
+                        <h4 class="text-center">Asp.Net Web Forms</h4>
+                        <p class="text-center">@Localizer["WebDevelopment"]</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="pie-wrapper progress-75">
+                        <span class="label">75<span class="smaller">%</span></span>
+                        <div class="pie">
+                            <div class="left-side half-circle"></div>
+                            <div class="right-side half-circle"></div>
+                        </div>
+                    </div><br />
+                    <div class="skill-info">
+                        <h4 class="text-center">Universal apps</h4>
+                        <p class="text-center">@Localizer["WindowsDevelopment"]</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="pie-wrapper progress-80">
+                        <span class="label">80<span class="smaller">%</span></span>
+                        <div class="pie">
+                            <div class="left-side half-circle"></div>
+                            <div class="right-side half-circle"></div>
+                        </div>
+                    </div><br />
+                    <div class="skill-info">
+                        <h4 class="text-center">C#/.Net</h4>
+                        <p class="text-center">@Localizer["Development"]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="pie-wrapper progress-75">
+                        <span class="label">75<span class="smaller">%</span></span>
+                        <div class="pie">
+                            <div class="left-side half-circle"></div>
+                            <div class="right-side half-circle"></div>
+                        </div>
+                    </div><br />
+                    <div class="skill-info">
+                        <h4 class="text-center">CSS 3</h4>
+                        <p class="text-center">Web design</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="pie-wrapper progress-50">
+                        <span class="label">50<span class="smaller">%</span></span>
+                        <div class="pie">
+                            <div class="left-side half-circle"></div>
+                            <div class="right-side half-circle"></div>
+                        </div>
+                    </div><br />
+                    <div class="skill-info">
+                        <h4 class="text-center">JavaScript</h4>
+                        <p class="text-center">Web</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="pie-wrapper progress-75">
+                        <span class="label">75<span class="smaller">%</span></span>
+                        <div class="pie">
+                            <div class="left-side half-circle"></div>
+                            <div class="right-side half-circle"></div>
+                        </div>
+                    </div><br />
+                    <div class="skill-info">
+                        <h4 class="text-center">HTML 5</h4>
+                        <p class="text-center">@Localizer["WebDevelopment"]</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="pie-wrapper progress-45">
+                        <span class="label">45<span class="smaller">%</span></span>
+                        <div class="pie">
+                            <div class="left-side half-circle"></div>
+                            <div class="right-side half-circle"></div>
+                        </div>
+                    </div><br />
+                    <div class="skill-info">
+                        <h4 class="text-center">PHP</h4>
+                        <p class="text-center">@Localizer["WebDevelopment"]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br /><br />
+    </div>
+</section>
+<section id="alsoknow" class="bg-light" style="padding-bottom:40px">
+    <div class="section-wrapper">
+        <h1 style="padding-top:40px">@Localizer["IAlsoKnowTitle"]</h1>
+        <p>@Localizer["IAlsoKnowDescription"]</p>
+        <hr />
+        <br />
+        <div class="skillbar clearfix">
+            <div class="skillbar-title" style="background-color: rgba(0, 0, 0, 0.5) "><span>Corel Draw</span></div>
+            <div class="skillbar-bar" style="background: #00C13F; width:80%"></div>
+            <div class="skill-bar-percent">70%</div>
+        </div>
+        <div class="skillbar clearfix">
+            <div class="skillbar-title" style="background-color: rgba(0, 0, 0, 0.5) "><span>Premiere</span></div>
+            <div class="skillbar-bar" style="background: #5f37be; width:60%"></div>
+            <div class="skill-bar-percent">60%</div>
+        </div>
+        <div class="skillbar clearfix">
+            <div class="skillbar-title" style="background-color: rgba(0, 0, 0, 0.5) "><span>Blogger</span></div>
+            <div class="skillbar-bar" style="background: #e67e22; width:75%;"></div>
+            <div class="skill-bar-percent">75%</div>
+        </div>
+        <div class="skillbar clearfix">
+            <div class="skillbar-title" style="background-color: rgba(0, 0, 0, 0.5) "><span>Bootstrap</span></div>
+            <div class="skillbar-bar" style="background: #6f48cf; width:85%"></div>
+            <div class="skill-bar-percent">85%</div>
+        </div>
+        <div class="skillbar clearfix">
+            <div class="skillbar-title" style="background-color: rgba(0, 0, 0, 0.5) "><span>Wordpress</span></div>
+            <div class="skillbar-bar" style="background: #525252; width:65%"></div>
+            <div class="skill-bar-percent">60%</div>
+        </div>
+        <div class="skillbar clearfix">
+            <div class="skillbar-title" style="background-color: rgba(0, 0, 0, 0.5) "><span>MySQL</span></div>
+            <div class="skillbar-bar" style="background: #3684fc; width:25%;"></div>
+            <div class="skill-bar-percent">25%</div>
+        </div>
+        <div class="skillbar clearfix">
+            <div class="skillbar-title" style="background-color: rgba(0, 0, 0, 0.5) "><span>SQL Server</span></div>
+            <div class="skillbar-bar" style="background: #112f5f; width:40%;"></div>
+            <div class="skill-bar-percent">40%</div>
+        </div>
+        <div class="skillbar clearfix">
+            <div class="skillbar-title" style="background-color: rgba(0, 0, 0, 0.5) "><span>TypeScript</span></div>
+            <div class="skillbar-bar" style="background: #4c4c4c; width:30%;"></div>
+            <div class="skill-bar-percent">30%</div>
+        </div>
+        <div class="skillbar clearfix">
+            <div class="skillbar-title" style="background-color: rgba(0, 0, 0, 0.5) "><span>Java</span></div>
+            <div class="skillbar-bar" style="background: #F3B200; width:27%;"></div>
+            <div class="skill-bar-percent">27%</div>
+        </div>
+        <div class="skillbar clearfix">
+            <div class="skillbar-title" style="background-color: rgba(0, 0, 0, 0.5) "><span>AngularJS 2</span></div>
+            <div class="skillbar-bar" style="background: #ff3f23; width:35%;"></div>
+            <div class="skill-bar-percent">35%</div>
+        </div>
+        <div class="skillbar clearfix">
+            <div class="skillbar-title" style="background-color: rgba(0, 0, 0, 0.5) "><span>C/C++</span></div>
+            <div class="skillbar-bar" style="background: #2c3e50; width:15%;"></div>
+            <div class="skill-bar-percent">15%</div>
+        </div>
+        <div class="skillbar clearfix">
+            <div class="skillbar-title" style="background-color: rgba(0, 0, 0, 0.5) "><span>Linux</span></div>
+            <div class="skillbar-bar" style="background: #e67e22; width:25%;"></div>
+            <div class="skill-bar-percent">25%</div>
+        </div>
+    </div>
+</section>
+<section id="log" style="padding-bottom:40px">
+    <div class="section-wrapper">
+        <h1 style="padding-top:40px">@Localizer["LogOfMyLifeTitle"]</h1>
+        <p>@Localizer["LogOfMyLifeDescription"]</p>
+        <div class="log">
+            <p>norton > [2010-04-21] Started my career</p>
+            <p>norton > [2013-05-08] Three mouths working at C2TI with Asp.Net Web Forms</p>
+            <p>norton > [2015-10-01] I won the Microsoft MVP Award: Windows Experience</p>
+            <p class="red">norton > [2016-11-01] MVP Summit --confidential aka:nda</p>
+            <p>norton > [2016-06-01] I won the Windows Insider MVP award</p>
+            <p>norton > [2016-08-20] Runned my very first event (<span class="purple">#DevNasNuvens</span>)</p>
+            <p class="red">norton > [2016-11-07] MVP Summit --confidential aka:nda</p>
+            <p>norton > [2017-04-01] <span class="blue">started</span> b-web.rocks <span class="blue">as</span> Software engineering</p>
+            <p>norton > [2017-04-21] I'm now a real brazilin company</p>
+            <p>norton > [2017-04-29] Now we have an office to work!!!</p>
+            <p class="blue">norton > </p>
+        </div>
+    </div>
+</section>

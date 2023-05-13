@@ -1,0 +1,94 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Vtnorton.Model
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Formula - Universal Code Editor";
+    ViewData["Description"] = Localizer["ThisAppDescription"].Value;
+    ViewData["Keywords"] = "universal code editor, code editor, formula, visual studio code, aplicativos, windows 10, windows insider, desenvolvedor indie";
+}
+@section submenu{
+    <li><a href="#">Formula - Universal Code Editor</a></li>
+    <li><a href="http://blog.vtnorton.com/formula-changelog/">Changelog</a></li>
+    <li><a href="http://twitter.com/formula4windows">@Localizer["FollowFormula"]</a></li>
+    <li><a href="/formula/privacy">@Localizer["Privacy"]</a></li>
+}
+<script src="~/js/vtnorton.apps.js"></script>
+<script src="~/json/app.formula.json" type="application/ld+json">
+</script>
+
+<section class="bg-dark-blue app">
+    <div class="section-wrapper">
+        <div class="row">
+            <img class="col-sm-1" src="/images/Quebec.png" />
+            <div class="col-sm-10">
+                <h2 class="white">Formula - Universal Code Editor</h2>
+                <div style="margin: 10px 0">
+                    <a href="https://www.microsoft.com/store/apps/9nblggh4wb6b" class="btn white">Download</a><a href="http://blog.vtnorton.com/formula-changelog/" class="btn white">Changelog</a><a href="/formula-beta/" class="btn white">Beta Tester</a><!-- TODO: liberar função -->@*<a href="http://vtnorton.com/formula-schools/" class="btn white">Formula for Schools</a>*@
+                </div>
+                <p class="white">@Localizer["ThisAppDescription"]</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+
+    <div class="section-image-left left">
+        <img class="section-image-left-img" style="padding: 20px; margin-left: 10px; padding-bottom: 40px" src="/images/apps/formula.png" />
+    </div>
+    <div class="section-wrapper">
+        <div class="section-content-right right">
+            <h1>@Localizer["TheFormula"]</h1>
+            <p>@Localizer["TheFormulaContent"]</p>
+        </div>
+        <div class="clean"></div>
+    </div>
+</section>
+<section class="bg-light">
+    <div class="section-wrapper">
+        <div class="section-image-right right">
+            <img class="section-image-right-img formula-mobile-view" style="padding: 20px" src="/images/apps/formula-mobile.png" />
+        </div>
+
+        <div class="section-content-left left">
+            <h1>@Localizer["Languages"]</h1>
+            <p>@Localizer["LanguagesContent"]</p>
+        </div>
+        <div class="clean"></div>
+    </div>
+</section>
+<section>
+    <div class="section-wrapper">
+        <div class="section-image-left left">
+            <img class="section-image-left-img" style="padding: 20px; margin-top: 78px; padding-bottom: 40px;" src="/images/apps/code.png" />
+        </div>
+
+        <div class="section-content-right right">
+            <h1>@Localizer["Features"]</h1>
+            <p>@Localizer["FeaturesContent"]</p>
+        </div>
+        <div class="clean"></div>
+    </div>
+</section>
+<section class="section-bg" id="formula-section-bg">
+    <div class="section-wrapper" style="padding-top: 40px; padding-bottom:40px">
+        <h1 class="white">@Localizer["Reviews"]</h1>
+        <p class="white">@Localizer["Review1"]</p>
+        <p class="white">@Localizer["Review2"]</p>
+        <p class="white">@Localizer["Review3"]</p>
+        <p class="white">@Localizer["Review4"]</p>
+    </div>
+</section>
+<section class="bg-light">
+    <div class="wrapper" style="padding: 30px 0">
+        @foreach (var item in (IEnumerable<FeedItem>)ViewData["feed"])
+        {
+            <div class="article-blog">
+                <h4><a href="@item.Link">@item.Title</a></h4>
+                <img src="@item.ImageURL" />
+                <p>@item.Content</p>
+                <p><strong><a href="@item.Link">@Localizer["ReadMore"]</a></strong></p>
+            </div>
+        }
+        <div class="clean"></div>
+    </div>
+</section>

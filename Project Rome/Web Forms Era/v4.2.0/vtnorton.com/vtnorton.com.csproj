@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VTNORTON</RootNamespace>
+    <AssemblyName>VTNORTON</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\..\..\Postgree\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.0\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="2013\css\demo.css" />
+    <Content Include="2013\css\reset.css" />
+    <Content Include="2013\css\style.css" />
+    <Content Include="2013\css\styleIE.css" />
+    <Content Include="2013\index.html" />
+    <Content Include="2013\JavaScript.js" />
+    <Content Include="2013\jquery-lastest.js" />
+    <Content Include="2013\js\jquery.easing.1.3.js" />
+    <Content Include="2013\js\modernizr.custom.11333.js" />
+    <Content Include="2013\Logo.png" />
+    <Content Include="2013\Mensagem.html" />
+    <Content Include="2013\StyleSheet.css" />
+    <Content Include="beta\index.aspx" />
+    <Content Include="blog\author.aspx" />
+    <Content Include="blog\categoria.aspx" />
+    <Content Include="blog\post.aspx" />
+    <Content Include="clock.aspx" />
+    <Content Include="css\faq-css.css" />
+    <Content Include="css\heartthrob.css" />
+    <Content Include="css\reset.css" />
+    <Content Include="css\style.css" />
+    <Content Include="dev\bsharp.aspx" />
+    <Content Include="download\aplicativo.aspx" />
+    <Content Include="download\novos.aspx" />
+    <Content Include="erro\erro.css" />
+    <Content Include="erro\erro.js" />
+    <Content Include="Global.asax" />
+    <Content Include="images\bg\parallax_slide_1.jpg" />
+    <Content Include="images\bg\parallax_slide_2.jpg" />
+    <Content Include="images\bg\parallax_slide_3.jpg" />
+    <Content Include="images\bg\parallax_slide_4.jpg" />
+    <Content Include="images\bg\parallax_slide_5.jpg" />
+    <Content Include="images\bg\parallax_slide_6.jpg" />
+    <Content Include="images\bg\parallax_slide_7.jpg" />
+    <Content Include="images\blog\image01.jpg" />
+    <Content Include="images\heartthrob\hamburger.png" />
+    <Content Include="images\heartthrob\left-hover.png" />
+    <Content Include="images\heartthrob\left.png" />
+    <Content Include="images\heartthrob\minimenu-widget.png" />
+    <Content Include="images\heartthrob\minimenu-acess-icons.png" />
+    <Content Include="images\heartthrob\mobilemenu.png" />
+    <Content Include="images\heartthrob\mobilemenuhover.png" />
+    <Content Include="images\heartthrob\social.png" />
+    <Content Include="images\logos\logo.vtnorton.about.jpg" />
+    <Content Include="images\logos\logo.vtnorton.email.png" />
+    <Content Include="images\others\author\vitor.cover.001.jpg" />
+    <Content Include="images\others\author\vitor.profile.001.jpg" />
+    <Content Include="images\others\calculadora-de-tempo.jpg" />
+    <Content Include="images\others\category\ArquivoPessoal.Cover.001.jpg" />
+    <Content Include="images\others\category\ArquivoPessoal.Profile.001.jpg" />
+    <Content Include="images\others\category\ConstruindoUmProduto.Cover.001.jpg" />
+    <Content Include="images\others\category\ConstruindoUmProduto.Profile.001.jpg" />
+    <Content Include="images\others\category\DesenvolvimentoMobile.Cover.001.jpg" />
+    <Content Include="images\others\category\DesenvolvimentoMobile.Profile.001.jpg" />
+    <Content Include="images\others\category\DesenvolvimentoWeb.Cover.001.jpg" />
+    <Content Include="images\others\category\DesenvolvimentoWeb.Profile.001.jpg" />
+    <Content Include="images\others\category\LancamentosEAtualizacoes.Cover.001.jpg" />
+    <Content Include="images\others\category\LancamentosEAtualizacoes.Profile.001.jpg" />
+    <Content Include="images\others\category\MundoMicrosoft.Cover.001.jpg" />
+    <Content Include="images\others\category\MundoMicrosoft.Profile.001.jpg" />
+    <Content Include="images\others\cat_1.jpg" />
+    <Content Include="images\others\cat_2.jpg" />
+    <Content Include="images\others\cat_3.jpg" />
+    <Content Include="images\others\cat_4.jpg" />
+    <Content Include="images\others\cat_5.jpg" />
+    <Content Include="images\others\clock.jpg" />
+    <Content Include="images\others\vitor.jpg" />
+    <Content Include="css\nprogress.css" />
+    <Content Include="js\jquery.mobile.custom.min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\modernizr.js" />
+    <Content Include="js\nprogress.js" />
+    <Content Include="js\vtnorton.js" />
+    <Content Include="mvdm\index.aspx" />
+    <Content Include="p\email.css" />
+    <Content Include="p\email.html" />
+    <Content Include="p\tutorialbsharp.aspx" />
+    <Content Include="report.aspx" />
+    <Content Include="search.aspx" />
+    <Content Include="sugestion.aspx" />
+    <Content Include="suporte\apps.aspx" />
+    <Content Include="suporte\historico.aspx" />
+    <Content Include="suporte\status.aspx" />
+    <Content Include="suporte\suporte.aspx" />
+    <Content Include="sextachegou\compartilhe.aspx" />
+    <Content Include="sextachegou\index.aspx" />
+    <Content Include="sextachegou\whathappens.aspx" />
+    <Content Include="tgit\css\tgit.css" />
+    <Content Include="tgit\index.aspx" />
+    <Content Include="vitor\biografia.aspx" />
+    <Content Include="blog\index.aspx" />
+    <Content Include="download\index.aspx" />
+    <Content Include="erro\000.aspx" />
+    <Content Include="erro\403.aspx" />
+    <Content Include="erro\404.aspx" />
+    <Content Include="erro\500.aspx" />
+    <Content Include="faq.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="formulariodecontato.aspx" />
+    <Content Include="images\icones\startup.png" />
+    <Content Include="images\icones\touch-icon-ipad-retina.png" />
+    <Content Include="images\icones\touch-icon-ipad.png" />
+    <Content Include="images\icones\touch-icon-iphone-retina.png" />
+    <Content Include="images\icones\touch-icon-iphone.png" />
+    <Content Include="images\logos\logo.vtnorton.thumbnail.png" />
+    <Content Include="images\opensearchicon.jpg" />
+    <Content Include="images\opensearchicon64.png" />
+    <Content Include="images\tiles\largetile.png" />
+    <Content Include="images\tiles\mediumtile.png" />
+    <Content Include="images\tiles\smalltile.png" />
+    <Content Include="images\tiles\widetile.png" />
+    <Content Include="linha-do-tempo.aspx" />
+    <Content Include="livetile.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="opensearch.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Master.Master" />
+    <Content Include="packages.config" />
+    <Content Include="redes-sociais.aspx" />
+    <Content Include="suporte\index.aspx" />
+    <Content Include="tgit\master.Master" />
+    <Content Include="js\bower.json" />
+    <Content Include="js\component.json" />
+    <None Include="Properties\PublishProfiles\vtnorton %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\vtnorton.pubxml" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\logos\logo.vtnorton.master.png" />
+    <Content Include="index.aspx" />
+    <Content Include="js\jquery.js" />
+    <Content Include="sobre.aspx" />
+    <Content Include="vitor\profile-photo-2.jpg" />
+    <Content Include="vitor\profile-photo.png" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="beta\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="beta\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blog\author.aspx.cs">
+      <DependentUpon>author.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog\author.aspx.designer.cs">
+      <DependentUpon>author.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blog\categoria.aspx.cs">
+      <DependentUpon>categoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog\categoria.aspx.designer.cs">
+      <DependentUpon>categoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blog\post.aspx.cs">
+      <DependentUpon>post.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog\post.aspx.designer.cs">
+      <DependentUpon>post.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="clock.aspx.cs">
+      <DependentUpon>clock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="clock.aspx.designer.cs">
+      <DependentUpon>clock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dev\bsharp.aspx.cs">
+      <DependentUpon>bsharp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dev\bsharp.aspx.designer.cs">
+      <DependentUpon>bsharp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="download\aplicativo.aspx.cs">
+      <DependentUpon>aplicativo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="download\aplicativo.aspx.designer.cs">
+      <DependentUpon>aplicativo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="download\novos.aspx.cs">
+      <DependentUpon>novos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="download\novos.aspx.designer.cs">
+      <DependentUpon>novos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="mvdm\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mvdm\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="p\tutorialbsharp.aspx.cs">
+      <DependentUpon>tutorialbsharp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="p\tutorialbsharp.aspx.designer.cs">
+      <DependentUpon>tutorialbsharp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report.aspx.cs">
+      <DependentUpon>report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report.aspx.designer.cs">
+      <DependentUpon>report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting.cs" />
+    <Compile Include="sugestion.aspx.cs">
+      <DependentUpon>sugestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sugestion.aspx.designer.cs">
+      <DependentUpon>sugestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="suporte\apps.aspx.cs">
+      <DependentUpon>apps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="suporte\apps.aspx.designer.cs">
+      <DependentUpon>apps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="suporte\historico.aspx.cs">
+      <DependentUpon>historico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="suporte\historico.aspx.designer.cs">
+      <DependentUpon>historico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="suporte\status.aspx.cs">
+      <DependentUpon>status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="suporte\status.aspx.designer.cs">
+      <DependentUpon>status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="suporte\suporte.aspx.cs">
+      <DependentUpon>suporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="suporte\suporte.aspx.designer.cs">
+      <DependentUpon>suporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sextachegou\compartilhe.aspx.cs">
+      <DependentUpon>compartilhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sextachegou\compartilhe.aspx.designer.cs">
+      <DependentUpon>compartilhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sextachegou\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sextachegou\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sextachegou\whathappens.aspx.cs">
+      <DependentUpon>whathappens.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sextachegou\whathappens.aspx.designer.cs">
+      <DependentUpon>whathappens.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tgit\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tgit\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tgit\master.Master.cs">
+      <DependentUpon>master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tgit\master.Master.designer.cs">
+      <DependentUpon>master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="vitor\biografia.aspx.cs">
+      <DependentUpon>biografia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vitor\biografia.aspx.designer.cs">
+      <DependentUpon>biografia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blog\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="download\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="download\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="erro\000.aspx.cs">
+      <DependentUpon>000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="erro\000.aspx.designer.cs">
+      <DependentUpon>000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="erro\403.aspx.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="erro\403.aspx.designer.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="erro\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="erro\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="erro\500.aspx.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="erro\500.aspx.designer.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="faq.aspx.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="faq.aspx.designer.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formulariodecontato.aspx.cs">
+      <DependentUpon>formulariodecontato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formulariodecontato.aspx.designer.cs">
+      <DependentUpon>formulariodecontato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="linha-do-tempo.aspx.cs">
+      <DependentUpon>linha-do-tempo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="linha-do-tempo.aspx.designer.cs">
+      <DependentUpon>linha-do-tempo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master.Master.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master.Master.designer.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="redes-sociais.aspx.cs">
+      <DependentUpon>redes-sociais.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="redes-sociais.aspx.designer.cs">
+      <DependentUpon>redes-sociais.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sobre.aspx.cs">
+      <DependentUpon>sobre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sobre.aspx.designer.cs">
+      <DependentUpon>sobre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="suporte\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="suporte\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="blog\nologinsnocaptchas\" />
+    <Folder Include="images\slides\" />
+    <Folder Include="morecodelessmess\" />
+    <Folder Include="tgit\images\" />
+    <Folder Include="tgit\js\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AllVtnorton\AllVtnorton.csproj">
+      <Project>{fdab7bd7-bb5a-4d67-9771-d915afb07508}</Project>
+      <Name>AllVtnorton</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BSharp\BSharp.csproj">
+      <Project>{af18e78b-452b-417d-9493-bd83c4caee16}</Project>
+      <Name>BSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ladon\Ladon.csproj">
+      <Project>{5fbb173d-ed38-471e-bd83-3340dc44e62e}</Project>
+      <Name>Ladon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2620</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2620/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,81 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Vtnorton.Model
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Guia definitivo para OneNote - eBook gratuito por Vítor Norton";
+    ViewData["Description"] = "Trabalhe em equipe, em todos os lugares com essa incrível ferramenta!";
+    ViewData["Keywords"] = "onenote, ms onenote, onenote 2016, office 365, microsoft office";
+}
+@section metatags{
+    <link href="/onenote/css/main.css" rel="stylesheet">
+    <script type="text/javascript">
+        setTimeout('window.open("/onenote/Guia-definitivo-para-o-OneNote-v1.0.pdf", "_blank")', 3000);
+    </script>
+}
+@section submenu{
+    <li><a href="/onenote" data-scroll>Saiba mais</a></li>
+    <li><a href="/vitor">Sobre mim</a></li>
+}
+<div class="counter text-center" id="Features" style="margin-top:-35px">
+    <!--container-->
+    <div class="section-wrapper">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display: block"
+             data-ad-client="ca-pub-5584056449430370"
+             data-ad-slot="9072010449"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <div>
+            <h2 class="white">Seu download irá começar em alguns segundos</h2>
+            <h4 class="white">Caso o seu download não inicie automaticamente, <a href="/onenote/Guia-definitivo-para-o-OneNote-v1.0.pdf" class="white" target="_blank">clique aqui</a>.</h4>
+            <br />
+        </div>
+        <br />
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display: block"
+             data-ad-client="ca-pub-5584056449430370"
+             data-ad-slot="9072010449"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <br />
+    </div>
+    <!--container end-->
+</div>
+<section class="hero" id="Home">
+    <div class="section-wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="logo">
+                    <a href="#">
+                        <img src="/onenote/img/logo.png" alt="Guia definitivo para o OneNote">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <div class="welcome-message">
+                    <h1>Guia definitivo para o OneNote</h1>
+                    <h2>Trabalhe em equipe, em todos os lugares com essa incrível ferramenta.</h2>
+                </div>
+                <div class="action-button">
+                    <a href="/onenote" class="button learn-more text-center">Saiba mais <i class="fa fa-arrow-right"></i></a>
+                    @*<%--<p>*Disponível em PDF, ePUB, Mobi e Kindle.</p>--%>*@
+                    <p>*Disponível somente em PDF, por enquanto.</p>
+                </div>
+            </div>
+            <div class="col-md-5 text-center">
+                <img src="/onenote/img/ebook.png" alt="ebook" style="box-shadow: 0 0 19px -6px rgb(0, 0, 0)" class="book-cover" data-no-retina>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/onenote/js/scripts.min.js"></script>
+<script src="/onenote/js/main.js"></script>

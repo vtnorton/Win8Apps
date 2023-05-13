@@ -1,0 +1,36 @@
+﻿<environment names="Development">
+    <script src="~/js/heartthrob.js"></script>
+    @*@if (ViewData["LOGIC"].ToString() == "UWP"){
+        <script src="~/js/uwp.js"></script>
+    } else if (ViewData["LOGIC"].ToString() == "OOBE") {
+        <script src="~/js/OOBE.js"></script>
+    }*@
+    <script src="~/lib/nprogress/nprogress.js"></script>
+    <script src="~/lib/smooth-scroll/smooth-scroll.js"></script>,
+    <script src="~/lib/nicescroll/jquery.nicescroll.js"></script>
+    <script src="~/js/maskeinput.js"></script>
+    <script src="~/js/shell.js"></script>
+</environment>
+<environment names="Staging,Production">
+    <script src="~/js/heartthrob.min.js"></script>
+    @*@if (ViewData["LOGIC"].ToString() == "UWP"){
+        <script src="~/js/uwp.min.js"></script>
+    } else if (ViewData["LOGIC"].ToString() == "OOBE") {
+        <script src="~/js/OOBE.min.js"></script>
+    }*@
+    <script src="~/lib/nprogress/nprogress.js"></script>
+    <script src="~/lib/smooth-scroll/smooth-scroll.js"></script>,
+    <script src="~/lib/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="~/js/maskeinput.js"></script>
+    <script src="~/js/shell.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112395012-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-112395012-1');
+    </script>
+</environment>

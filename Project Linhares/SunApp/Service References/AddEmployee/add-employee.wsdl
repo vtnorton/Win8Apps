@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://agroassistant.azurewebsites.net/Services/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://agroassistant.azurewebsites.net/Services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://agroassistant.azurewebsites.net/Services/">
+      <s:element name="AddEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="xIdFarm" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xLastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xNickName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xBirthday" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="xTemp" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="xDaysAtWork" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xFistHiringDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xLastHiringDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xLastResignationDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xBrazilCPF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xBrazilRG" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xPassport" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xBrazilCarteiraDeTrabalho" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xBrazilCNPJ" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEmployeeResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEmployee" />
+  </wsdl:message>
+  <wsdl:message name="AddEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="add_employeeSoap">
+    <wsdl:operation name="AddEmployee">
+      <wsdl:input message="tns:AddEmployeeSoapIn" />
+      <wsdl:output message="tns:AddEmployeeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="add_employeeSoap" type="tns:add_employeeSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddEmployee">
+      <soap:operation soapAction="http://agroassistant.azurewebsites.net/Services/AddEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="add_employeeSoap12" type="tns:add_employeeSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddEmployee">
+      <soap12:operation soapAction="http://agroassistant.azurewebsites.net/Services/AddEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="add_employee">
+    <wsdl:port name="add_employeeSoap" binding="tns:add_employeeSoap">
+      <soap:address location="http://agroassistant.azurewebsites.net/Services/add-employee.asmx" />
+    </wsdl:port>
+    <wsdl:port name="add_employeeSoap12" binding="tns:add_employeeSoap12">
+      <soap12:address location="http://agroassistant.azurewebsites.net/Services/add-employee.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

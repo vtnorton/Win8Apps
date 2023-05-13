@@ -1,0 +1,132 @@
+﻿@model LoginViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    ViewData["Title"] = "Começe a usar a Hidra";
+    ViewData["LOGIC"] = "FULL";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row" style="padding:48px 25px 0">
+    <div class="col-md-7" style="margin-top:25px">
+        <div class="row">
+            <div class="col-md-9">
+                <h1>Sobre o sistema Hidra</h1>
+                <hr />
+                <p>O sistema Hidra oferece a melhor solução para empresas de mármore e granito por oferecer os últimos recursos tecnológicos para a sua empresa, além de integração com a Omie Sistemas.</p>
+                <p><a href="#"><i class="fa fa-link"></i> Conheça o sistema Hidra</a></p>
+                <p><a href="#"><i class="fa fa-link"></i> Veja as últimas novidades da Hidra</a></p>
+                <p><a href="#"><i class="fa fa-link"></i> Veja como obter uma licença da Hidra</a></p>
+                <p><a href="#"><i class="fa fa-link"></i> Conheça a Omie e o que ela pode oferecer para a Hidra</a></p>
+                <img src="~/images/Square.png" style="max-width:120px" class="text-center" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5" style="margin-top:25px">
+        <div id="oobe" class="view-element link view-closed">
+            <h4 class="text-center"><i class="fa fa-key"></i> Registrar com um convite</h4>
+            <hr />
+            <div class="view-content">
+                <p class="text-center">Caso você já tenha contratado o sistema mas ainda não possui acesso a ele, então você pode resgatar o seu acesso através do convite associado ao seu e-mail.</p>
+                <br />
+                <p class="text-center">
+                    <a class="btn" href="/oobe"><i class="fa fa-key"></i> Registrar com convite</a>
+                </p>
+                <br />
+            </div>
+        </div>
+        <div id="contato" class="view-element link view-closed">
+            <h4 class="text-center"><i class="fa fa-question"></i> Saiba como se registrar</h4>
+            <hr />
+            <div class="view-content">
+
+            </div>
+        </div>
+        <div id="login" class="view-element link view-opened">
+            <h4 class="text-center"><i class="fa fa-sign-in"></i> Login</h4>
+            <hr />
+            <div class="view-content">
+                <p class="text-center">Entre no sistema para começar a fazer coisas incríveis</p>
+                <br />
+                <form asp-controller="Account" asp-action="Login" method="post">
+                    <div asp-validation-summary="All"></div>
+
+                    <input style="width:100%" asp-for="Email" placeholder="E-mail" />
+                    <span asp-validation-for="Email"></span>
+
+                    <input style="width:100%" asp-for="Password" placeholder="Senha" />
+                    <span asp-validation-for="Password"></span>
+
+                    <br /><br /><br />
+
+                    <div class="left">
+                        <div class="checkbox">
+                            <label asp-for="RememberMe">
+                                <input asp-for="RememberMe" />
+                                @Html.DisplayNameFor(m => m.RememberMe)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <a asp-controller="Account" asp-action="ForgotPassword">Esqueceu sua senha?</a>
+                    </div>
+                    <div class="clean"></div>
+
+                    <p class="text-center">
+                        <button type="submit" class="btn btn-lg btn-default"><i class="fa fa-sign-in"></i> Entrar</button><br />
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div id="docs" class="view-element link view-closed">
+            <h4 class="text-center"><i class="fa fa-support"></i> Documentação + Ajuda</h4>
+            <hr />
+            <div class="view-content">
+                <p class="text-center">Acesse toda a documentação do sistema para se tornar um mestre na utilização dele.</p>
+                <br />
+                <p class="text-center">
+                    <a class="btn" href="http://docs.hidra.pro/?=home"><i class="fa fa-support"></i> Acessar documentação</a>
+                </p>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <ul>
+        <li><p>©2018 Hidra @ProjectCachoeiro.Web.Util.Information.Version()</p></li>
+        <li><a href="#">Termos de uso</a></li>
+        <li><a href="#">Política de privacidade</a></li>
+    </ul>
+</footer>
+
+<script>
+    $("#oobe").click(function () {
+        $("#contato").addClass("view-closed", 1000);
+        $("#login").addClass("view-closed", 1000);
+        $("#docs").addClass("view-closed", 1000);
+        $("#oobe").removeClass("view-closed", 1000);
+        $("#oobe").addClass("view-opened");
+    });
+    $("#contato").click(function () {
+        $("#oobe").addClass("view-closed", 1000);
+        $("#login").addClass("view-closed", 1000);
+        $("#docs").addClass("view-closed", 1000);
+        $("#contato").removeClass("view-closed", 1000);
+        $("#contato").addClass("view-opened");
+    });
+    $("#login").click(function () {
+        $("#oobe").addClass("view-closed", 1000);
+        $("#contato").addClass("view-closed", 1000);
+        $("#docs").addClass("view-closed", 1000);
+        $("#login").removeClass("view-closed", 1000);
+        $("#login").addClass("view-opened");
+    });
+    $("#docs").click(function () {
+        $("#oobe").addClass("view-closed", 1000);
+        $("#login").addClass("view-closed", 1000);
+        $("#contato").addClass("view-closed", 1000);
+        $("#docs").removeClass("view-closed", 1000);
+        $("#docs").addClass("view-opened");
+    });
+</script>

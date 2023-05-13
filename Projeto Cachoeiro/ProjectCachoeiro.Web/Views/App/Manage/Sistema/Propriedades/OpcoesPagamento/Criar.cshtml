@@ -1,0 +1,80 @@
+﻿@model ProjectCachoeiro.Web.Models.Comercial.OpcoesPagamento
+@{
+    ViewData["Title"] = "Adicionar opções de pagamento";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@await Html.PartialAsync("~/Views/App/Manage/Sistema/_ManageNav.cshtml")
+<div class="inner-content">
+    <div class="toolbar">
+        <div class="left">
+            <h2>Adicionar opções de pagamento</h2>
+        </div>
+        <div class="clean"></div>
+    </div>
+    <div class="view-element">
+        <form id="form" asp-action="Criar">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Opção de pagamento</label>
+                    <input id="opcoes" value="" name="NomeNaOmie" />
+                    <span asp-validation-for="NomeNaOmie"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label asp-for="Nome"></label>
+                    <input id="nome" asp-for="Nome" />
+                    <span asp-validation-for="Nome"></span>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="NomeEmIngles"></label>
+                    <input id="nomeen" asp-for="NomeEmIngles" />
+                    <span asp-validation-for="NomeEmIngles"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <label asp-for="Descricao"></label>
+                    <textarea asp-for="Descricao"></textarea>
+                    <span asp-validation-for="Descricao"></span>
+                </div>
+            </div>
+        </form>
+        @await Html.PartialAsync("~/Views/Shared/AppTaskbar.cshtml", "CREATE")
+    </div>
+</div>
+<div class="clean"></div>
+<script>
+    var jsonOpcoes = (function () {
+        var json = null;
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': '/json/parcelas.json',
+            'dataType': "json",
+            'success': function (data) {
+                json = data;
+            }
+        });
+        return json;
+    })();
+
+    $("#opcoes").kendoDropDownList({
+        dataTextField: "nome",
+        dataValueField: "id",
+        index: 0,
+        filter: "startswith",
+        dataSource: jsonOpcoes,
+        select: onChange
+    });
+
+    function onChange(e) {
+        var dataItem = this.dataItem(e.item);
+        $("#nome").val(dataItem.nome);
+        $("#nomeen").val(dataItem.nome);
+    };
+</script>

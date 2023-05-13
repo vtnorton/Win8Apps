@@ -1,0 +1,31 @@
+﻿.info{color: #000 !important; padding:10px 0;}
+.icon-info-e{margin-top: 20px;}
+table tr td{width: 45%;}
+.card{padding: 20px 15px; width: 450px; margin-bottom: 20px; box-shadow: #000 0 0 10px;background: #2572EB; border: 1px solid #2572ED;}
+.card:hover{background: #1B58B8; border: 1px solid #1B58B9; -moz-transition:all 1s; -o-transition:all 1s; -webkit-transition:all 1s; transition:all 1s;}
+.card-info h2, .card-info h4{color:#fff !important}
+.card-porcentagem{margin-left: 10px; margin-top: 25px;}
+.card-porcentagem h1{color: #fff !important;}
+.right{float:right}
+.left{float:left}
+.twitter{height: 132px; width: 13px; background: #55ACEE url(/img/twitter2.png) no-repeat 2px 50px; position:absolute; margin-top: -21px; margin-left: 383px;}
+.twitter:hover{
+    height: 132px; 
+    width: 132px; 
+    border-left:1px solid #fff; 
+    background: #55ACEE url(/img/twitter.png) no-repeat 28px; 
+    position:absolute; 
+    margin-top: -21px; 
+    margin-left: 263px; 
+    cursor:pointer; 
+    -moz-transition:linear 0.2s; 
+    -o-transition:linear 0.2s; 
+    -webkit-transition:linear 0.2s; 
+    transition:linear 0.2s;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	 .twitter {margin-left: 140px}
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	 .twitter:hover {margin-left: 21px}
+}

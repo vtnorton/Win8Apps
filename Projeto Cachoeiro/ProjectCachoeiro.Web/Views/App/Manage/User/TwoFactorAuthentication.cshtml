@@ -1,0 +1,54 @@
+@model TwoFactorAuthenticationViewModel
+@{
+    ViewData["Title"] = "Verificação de dois fatores";
+    //TODO: analisar esse AddActivePage para deixar alguns menus abertos
+    ViewData.AddActivePage(ManageNavPages.TwoFactorAuthentication);
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+
+
+<h2>Verificação de dois fatores</h2>
+<p>Usar a proteção de verificação de dois fatores deixa a sua conta mais segura e menos propensa de ser hackeada, para isso basta seguir as instruções.</p>
+<hr />
+<div class="view-element">
+    <h4>Aplicativo de autentificação</h4>
+    <p>Utilize as opções apresentadas abaixo para configurar um aplicativo de autentificação</p>
+    <br />
+    @if (!Model.HasAuthenticator)
+    {
+        <a asp-action="EnableAuthenticator" class="btn btn-default">Adicionar aplicativo de autentificação</a>
+    }
+    else
+    {
+        <a asp-action="EnableAuthenticator" class="btn btn-default">Configurar aplicativo</a>
+        <a asp-action="ResetAuthenticatorWarning" class="btn btn-default">Resetar chave de autentificação</a>
+    }
+    <br />
+    @if (Model.Is2faEnabled)
+    {
+        if (Model.RecoveryCodesLeft == 0)
+        {
+            <div class="alert alert-danger">
+                <strong>You have no recovery codes left.</strong>
+                <p>You must <a asp-action="GenerateRecoveryCodes">generate a new set of recovery codes</a> before you can log in with a recovery code.</p>
+            </div>
+        }
+        else if (Model.RecoveryCodesLeft == 1)
+        {
+            <div class="alert alert-danger">
+                <strong>You have 1 recovery code left.</strong>
+                <p>You can <a asp-action="GenerateRecoveryCodes">generate a new set of recovery codes</a>.</p>
+            </div>
+        }
+        else if (Model.RecoveryCodesLeft <= 3)
+        {
+            <div class="alert alert-warning">
+                <strong>You have @Model.RecoveryCodesLeft recovery codes left.</strong>
+                <p>You should <a asp-action="GenerateRecoveryCodes">generate a new set of recovery codes</a>.</p>
+            </div>
+        }
+
+        <a asp-action="Disable2faWarning" class="btn btn-default">Disable 2FA</a>
+        <a asp-action="GenerateRecoveryCodes" class="btn btn-default">Reset recovery codes</a>
+    }
+</div>

@@ -1,0 +1,103 @@
+﻿@model ProjectCachoeiro.Web.Models.Empresa.Company
+@{
+    ViewData["Title"] = @Html.DisplayFor(model => model.NomeFantasia);
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-9">
+        <div class="view-element">
+            <div class="toolbar">
+                <div class="left">
+                    <h2>@Html.DisplayFor(model => model.NomeFantasia)</h2>
+                </div>
+                <div class="clean"></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-7 col-sm-6">
+                    <p>@Html.DisplayFor(model => model.Descricao)</p>
+                    <h4>Detalhes</h4>
+                    <p>
+                        <strong>CNPJ: </strong> @Html.DisplayFor(model => model.CNPJ) <br />
+                        <strong>Razão social: </strong> @Html.DisplayFor(model => model.RazaoSocial)
+                    </p><br /><br />
+
+                    <h4>Informações de contato</h4>
+                    <p>
+                        <strong>Telefone: </strong>@Html.DisplayFor(model => model.Telefone) <br />
+                        <strong>E-mail: </strong>@Html.DisplayFor(model => model.Email)<br />
+                        <strong>Site: </strong>@Html.DisplayFor(model => model.Site)<br />
+                        <strong>Endereço: </strong> @Html.DisplayFor(model => model.Endereco), @Html.DisplayFor(model => model.Cidade) - @Html.DisplayFor(model => model.Estado), @Html.DisplayFor(model => model.CEP)<br /><br /><br />
+                        <a href="mailto:@Html.DisplayFor(model => model.Email)" class="btn"><i class="fa fa-envelope-open-o"></i>Enviar e-mail</a>
+                    </p>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <h4>Registros</h4>
+                    <p>Conheça os detalhes do cadastro e de possíveis alterações realizadas neste item.</p>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DateCreated)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.DateCreated)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.UserCreated)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.UserCreated)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DateModified)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.DateModified)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.UserModified)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.UserModified)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="info-bar col-md-3">
+        @{
+            OtherOptions otherOptions = new OtherOptions
+            {
+                Descricao = "Veja opções relacionadas com a apresentação de itens.",
+                FeedbackEChamadoID = "ItemFamilia",
+                OpcoesRelacionadas = new Links[] {
+                    new Links{
+                        Titulo = "Adicionar família",
+                        Url = "/Familias/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar estado de produto",
+                        Url = "/Estados/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar produto",
+                        Url = "/Produtos/Create"
+                    }
+                }
+            };
+        }
+        @Html.Partial("AppOtherOptions", otherOptions)
+    </div>
+</div>
+<div class="taskbar">
+    <div class="left">
+        <a class="btn btn-link" asp-action="Index"><i class="fa fa-list-ul"></i> Voltar</a>
+    </div>
+    <div class="right">
+        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.Id"><i class="fa fa-trash-o"></i>Apagar</a>
+        <a class="btn" asp-action="Edit" asp-route-id="@Model.Id"><i class="fa fa-edit"></i>Editar</a>
+    </div>
+    <div class="clean"></div>
+</div>

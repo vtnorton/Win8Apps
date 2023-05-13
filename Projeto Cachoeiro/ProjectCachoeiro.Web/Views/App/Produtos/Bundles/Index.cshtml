@@ -1,0 +1,136 @@
+﻿@model IEnumerable<ProjectCachoeiro.Web.Models.Produtos.Bundles>
+
+@{
+    ViewData["Title"] = "Bundles";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-9">
+        <div class="toolbar">
+            <div class="left">
+                <h2>Bundles</h2>
+            </div>
+            <div class="right">
+                <a asp-action="Criar" class="btn"><i class="fa fa-plus"></i> Adicionar novo</a>
+            </div>
+            <div class="clean"></div>
+        </div>
+
+        @(Html.Kendo().Grid<ProjectCachoeiro.Web.Models.Produtos.Bundles>().Name("Bundles").Columns(col =>
+                        {
+                            col.Bound(c => c.Codigo);
+                            col.Bound(c => c.Observacao);
+                            col.Bound(p => p.Id).ClientTemplate(@"
+        <a class='k-button k-button-icontext k-grid-Edit' href='/Bundles/Editar/#=Id#'>
+            <span class='k-icon k-i-hyperlink-open'></span> Editar
+        </a>
+        <a class='k-button k-button-icontext k-grid-Details' href='/Bundles/Detalhes/#=Id#'>
+            <span class='k-icon k-i-hyperlink'></span> Mais
+        </a>").Title("Opções").Width(189).Editable("noEdit")
+                                        .Filterable(false).HtmlAttributes(new { @style = "padding-right:0" });
+                            col.Command(command =>
+                            {
+                                command.Destroy().Text("Apagar");
+                            }).Width(100).HtmlAttributes(new { @style = "padding-left:0" });
+                        }).NoRecords(n => n.TemplateId("NoRecordAddOne")).ClientDetailTemplateId("TemplateDetalhesIndividual")
+                        .Sortable().Filterable(mess =>
+                        {
+                            mess.Operators(ope =>
+                            {
+                                ope.ForDate(str => str.IsNull("é nulo").IsNotNull("não é nulo").IsNotEqualTo("não é igual a").IsLessThanOrEqualTo("é menor ou igual").IsLessThan("é menor que").IsGreaterThanOrEqualTo("é maior ou igual a").IsGreaterThan("é maior que").IsEqualTo("é igual a"));
+                                ope.ForEnums(str => str.IsNull("é nulo").IsNotNull("não é nulo").IsNotEqualTo("não é igual a").IsEqualTo("é igual a"));
+                                ope.ForNumber(str => str.IsNull("é nulo").IsNotNull("não é nulo").IsNotEqualTo("não é igual a").IsLessThanOrEqualTo("é menor ou igual").IsLessThan("é menor que").IsGreaterThanOrEqualTo("é maior ou igual a").IsGreaterThan("é maior que").IsEqualTo("é igual a"));
+                                ope.ForString(str => str.StartsWith("começa com").Contains("contem").DoesNotContain("não contem").EndsWith("termina com").IsNull("é nulo").IsNotNull("não é nulo").IsNotEqualTo("não é igual a").IsNotEmpty("não em branco").IsEqualTo("é igual a").IsNotEqualTo("não é igual a").IsEmpty("esta em branco"));
+                            });
+                            mess.Messages(c => { c.Clear("Limpar"); c.And("e"); c.Cancel("Cancelar"); c.IsFalse("é falso"); c.IsTrue("é verdadeiro"); c.Or("ou"); c.Search("Pesquisar"); c.SelectValue("Selecionar valor"); c.Filter("Filtrar"); c.SelectValue("Selecionar"); c.Info("Mostrar itens que"); });
+                        }).Pageable(page => page.Refresh(true).ButtonCount(5).Messages(c =>
+                        {
+                            c.ItemsPerPage("Itens por página");
+                            c.Last("Último");
+                            c.Next("Próximo");
+                            c.First("Primeira");
+                            c.Refresh("Recarregar");
+                            c.Display("{0} - {1} de {2} itens");
+                        })).Editable(e => e.Mode(GridEditMode.InCell)).Events(ev => ev.CellClose("CellCloseScript")).DataSource(
+                                    data => data.Ajax().ServerOperation(false).Events(events => events.Error("error_handler"))
+                                                .Model(model => model.Id(p => p.Id))
+                                                .Read(read => read.Action("Read", "Bundles"))
+                                                .Update("Update", "Bundles")
+                                                .Destroy("Destroy", "Bundles")))
+
+        <script>
+            function noEdit(dataItem) {
+                return dataItem.Id == 0;
+            }
+            function CellCloseScript(e) {
+                this.dataSource.sync()
+            }
+        </script>
+
+        <script id="NoRecordAddOne" type="text/x-kendo-template">
+            <div style="padding:20px 50px">
+                <p class="text-center">Não há nenhum bundle cadastrado aqui aqui. Você pode adicionar novos bundles pelo botão abaixo.</p>
+                <br />
+                <a href="/Bundles/Criar" class="btn"><i class="fa fa-plus-square-o"></i> Adicionar bundle</a>
+                <br />
+            </div>
+        </script>
+        <script id="TemplateDetalhesIndividual" type="text/x-kendo-tmpl">
+            @(Html.Kendo().Grid<ProjectCachoeiro.Web.Models.Produtos.BundleItem>().Name("BundlesItem").Columns(col =>
+        {
+            col.ForeignKey(c => c.IdProduto, (System.Collections.IEnumerable)ViewData["produtos"], "Id", "Titulo").Title("Chapa");
+            col.ForeignKey(c => c.IdProduto, (System.Collections.IEnumerable)ViewData["produtos"], "Id", "DisplayName").Title("Nome de exibição");
+            col.ForeignKey(c => c.IdCliente, (System.Collections.IEnumerable)ViewData["clientes"], "Id", "GetName").Title("Cliente");
+            col.Command(command =>
+            {
+                command.Destroy().Text("Remover");
+            }).Width(120).HtmlAttributes(new { @style = "padding-left:0" });
+        }).NoRecords(n => n.TemplateId("NoRecordAddOne")).ClientDetailTemplateId("TemplateDetalhesIndividual")
+            .Sortable().Filterable(mess => {
+                mess.Operators(ope => {
+                    ope.ForDate(str => str.IsNull("é nulo").IsNotNull("não é nulo").IsNotEqualTo("não é igual a").IsLessThanOrEqualTo("é menor ou igual").IsLessThan("é menor que").IsGreaterThanOrEqualTo("é maior ou igual a").IsGreaterThan("é maior que").IsEqualTo("é igual a"));
+                    ope.ForEnums(str => str.IsNull("é nulo").IsNotNull("não é nulo").IsNotEqualTo("não é igual a").IsEqualTo("é igual a"));
+                    ope.ForNumber(str => str.IsNull("é nulo").IsNotNull("não é nulo").IsNotEqualTo("não é igual a").IsLessThanOrEqualTo("é menor ou igual").IsLessThan("é menor que").IsGreaterThanOrEqualTo("é maior ou igual a").IsGreaterThan("é maior que").IsEqualTo("é igual a"));
+                    ope.ForString(str => str.StartsWith("começa com").Contains("contem").DoesNotContain("não contem").EndsWith("termina com").IsNull("é nulo").IsNotNull("não é nulo").IsNotEqualTo("não é igual a").IsNotEmpty("não em branco").IsEqualTo("é igual a").IsNotEqualTo("não é igual a").IsEmpty("esta em branco"));
+                });
+                mess.Messages(c => { c.Clear("Limpar"); c.And("e"); c.Cancel("Cancelar"); c.IsFalse("é falso"); c.IsTrue("é verdadeiro"); c.Or("ou"); c.Search("Pesquisar"); c.SelectValue("Selecionar valor"); c.Filter("Filtrar"); c.SelectValue("Selecionar"); c.Info("Mostrar itens que"); });
+            }).Pageable(page => page.Refresh(true).ButtonCount(5).Messages(c =>
+            {
+                c.ItemsPerPage("Itens por página");
+                c.Last("Último");
+                c.Next("Próximo");
+                c.First("Primeira");
+                c.Refresh("Recarregar");
+                c.Display("{0} - {1} de {2} itens");
+            })).DataSource(data => data.Ajax().ServerOperation(false).Events(events => events.Error("error_handler")).Model(model => model.Id(p => p.Id))
+                    .Read(read => read.Action("ReadDetails", "Bundles", new { Id = "01" }))
+                    .Destroy("Destroy", "Bundles")))
+        </script>
+    </div>
+    <div class="info-bar col-md-3">
+        @{
+            OtherOptions otherOptions = new OtherOptions
+            {
+                Descricao = "Veja opções relacionadas com a apresentação de itens.",
+                FeedbackEChamadoID = "ItemFamilia",
+                OpcoesRelacionadas = new Links[] {
+                    new Links{
+                        Titulo = "Adicionar família",
+                        Url = "/Familias/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar estado de produto",
+                        Url = "/Estados/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar produto",
+                        Url = "/Produtos/Create"
+                    }
+                }
+            };
+        }
+        @Html.Partial("AppOtherOptions", otherOptions)
+    </div>
+</div>

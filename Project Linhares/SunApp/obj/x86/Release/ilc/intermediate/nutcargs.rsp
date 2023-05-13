@@ -1,0 +1,9 @@
+/ignoreAccessChecks
+/metadataFile "F:\sun\alpha\SunApp\obj\x86\Release\ilc\intermediate\ILTransformed\SunApp.metadata"
+/gvmAssemblyName "System.Private.CoreLib"
+/o
+/sharedGenerics
+/ilmergeinfo "F:\sun\alpha\SunApp\obj\x86\Release\ilc\intermediate\ILTransformed\SunApp.csv"
+/sharedGenericsMode StandardHeuristics
+/in "F:\sun\alpha\SunApp\obj\x86\Release\ilc\intermediate\ILTransformed\SunApp.ilexe"
+/out "F:\sun\alpha\SunApp\obj\x86\Release\ilc\intermediate\MDIL\SunApp.mdilexe"

@@ -1,0 +1,76 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Vtnorton.Model
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Conjugar";
+    ViewData["Description"] = Localizer["DouaiShortDescription"].Value;
+    ViewData["Keywords"] = "conjugar, verbos, aplicativos, windows 10, windows insider, desenvolvedor indie";
+}
+@section submenu{
+    <li><a href="#">Conjugar</a></li>
+    <li><a href="http://blog.vtnorton.com/conjugar-changelog/">Changelog</a></li>
+}
+<script src="~/js/vtnorton.apps.js"></script>
+<script src="~/json/app.conjugar.json" type="application/ld+json">
+</script>
+
+<section class="app bg-dark-green">
+    <div class="section-wrapper">
+        <div class="row">
+            <img class="col-sm-1" src="/images/Douai.png" />
+            <div class="col-sm-10">
+                <h2 class="white">Conjugar</h2>
+                <div style="margin: 10px 0">
+                    <a href="https://www.microsoft.com/store/apps/9nblggh63n89" class="btn white">Download</a> <a href="http://blog.vtnorton.com/conjugar-changelog/" class="btn white">Changelog</a>
+                </div>
+                <p class="white">@Localizer["DouaiShortDescription"]</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="section-wrapper">
+        <div class="section-image-right right">
+            <img class="section-image-right-img" style="padding: 20px; margin-right: -20px; padding-bottom: 40px" src="/images/apps/conjugar.png" />
+        </div>
+        <div class="section-content-left left">
+            <h1>@Localizer["TerreDescription"]</h1>
+            <p>@Localizer["DouaiDescription"]</p>
+        </div>
+        <div class="clean"></div>
+    </div>
+</section>
+<section class="bg-light">
+    <div class="section-wrapper">
+        <div class="section-image-left left">
+            <img class="section-image-right-img formula-mobile-view" style="padding: 20px" src="/images/apps/formula-mobile.png" />
+        </div>
+
+        <div class="section-content-right right">
+            <h1>@Localizer["DouaiSecondTitle"]</h1>
+            <p>@Localizer["DouaiSecondDescription"]</p>
+        </div>
+        <div class="clean"></div>
+    </div>
+</section>
+<section class="section-bg" id="formula-section-bg">
+    <div class="section-wrapper" style="padding-top: 40px">
+        <h1 class="white">@Localizer["Reviews"]</h1>
+        <p class="white">@Localizer["DouaiReview1"]</p>
+        <p class="white">@Localizer["DouaiReview11"]</p>
+    </div>
+</section>
+<section>
+    <div class="wrapper" style="padding: 30px 0">
+        @foreach (var item in (IEnumerable<FeedItem>)ViewData["feed"])
+        {
+            <div class="article-blog">
+                <h4><a href="@item.Link">@item.Title</a></h4>
+                <img src="@item.ImageURL" />
+                <p>@item.Content</p>
+                <p><strong><a href="@item.Link">@Localizer["ReadMore"]</a></strong></p>
+            </div>
+        }
+        <div class="clean"></div>
+    </div>
+</section>

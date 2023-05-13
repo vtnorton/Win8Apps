@@ -1,0 +1,14 @@
+12/31/2016 1:20:06 AM,contato@vtnorton.com,Jesdee,Jes,ed3w,dee,des,;
+12/31/2016 1:21:26 AM,vtn@vtn.com,Jurisdição,Prudial,,,,;
+12/31/2016 1:21:30 AM,vtn@vtn.com,Jurisdição,Prudialdd,,,,;
+12/31/2016 11:34:11 AM,vitor@vtnorton.com,Vitor,Norton,,,,;
+12/31/2016 11:42:10 AM,vitor@vtnorton.com,Vitor,Norton,,,,;
+12/31/2016 11:46:41 AM,vitor@vtnorton.com,Vitor,norton,,,,;
+12/31/2016 11:47:12 AM,vitor@vtnorton.com,Vitor,Norton,,,,;
+12/31/2016 11:47:31 AM,vitor@vtnorton.com,Vitor,Norton,,,,;
+12/31/2016 12:59:23 PM,vitor@vtnorton.com,Vitor,Norton,,,,;
+12/31/2016 1:00:04 PM,vitor@vtnorton.com,Vitor,Norton,,,,;
+12/31/2016 1:01:11 PM,vitor@vtnorton.com,Vitor,Norton,,,,;
+12/31/2016 1:02:43 PM,vitor@vtnorton.com,Vitor,Norton,,,,;
+12/31/2016 1:04:41 PM,vitor@vtnorton.com,Vitor,Norton,,,,;
+12/31/2016 2:34:18 PM,vitor@vtnorton.com,Vitor,Norton,,,,;

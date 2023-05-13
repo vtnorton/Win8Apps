@@ -1,0 +1,12 @@
+{
+	"name": "V\u00edtor Norton",
+	"icons": [
+		{
+			"src": "\/android-chrome-192x192.png?v=xQozQlz5aA",
+			"sizes": "192x192",
+			"type": "image\/png"
+		}
+	],
+	"theme_color": "#ffffff",
+	"display": "standalone"
+}

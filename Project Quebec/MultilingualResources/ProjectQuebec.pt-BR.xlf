@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="pt-BR" original="PROJECTQUEBEC/STRINGS/EN-US/RESOURCES.RESW" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6810.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="PROJECTQUEBEC/STRINGS/EN-US/RESOURCES.RESW" datatype="resx">
+        <trans-unit id="Language.Text" translate="yes" xml:space="preserve">
+          <source>Language</source>
+          <target state="new">Language</target>
+        </trans-unit>
+        <trans-unit id="AboutChangelog.Text" translate="yes" xml:space="preserve">
+          <source>Changelog</source>
+          <target state="new">Changelog</target>
+        </trans-unit>
+        <trans-unit id="AboutFeedbackDescription.Text" translate="yes" xml:space="preserve">
+          <source>Help me improve this app by sending me feedback of what you saw wrong or what you thing is going to be interesting to add to this app.</source>
+          <target state="new">Help me improve this app by sending me feedback of what you saw wrong or what you thing is going to be interesting to add to this app.</target>
+        </trans-unit>
+        <trans-unit id="AboutFeedbackMenssageHelp.Text" translate="yes" xml:space="preserve">
+          <source>You can use commun HTML elements to improve your feedback, like h1, h2, br, hr and strong.</source>
+          <target state="new">You can use commun HTML elements to improve your feedback, like h1, h2, br, hr and strong.</target>
+        </trans-unit>
+        <trans-unit id="AboutFollowOnTwitter.Content" translate="yes" xml:space="preserve">
+          <source>Follow on Twitter</source>
+          <target state="new">Follow on Twitter</target>
+        </trans-unit>
+        <trans-unit id="AboutHereYouCan.Text" translate="yes" xml:space="preserve">
+          <source>Here you can find what was added to the project and what was fixed. Please, enjoy.</source>
+          <target state="new">Here you can find what was added to the project and what was fixed. Please, enjoy.</target>
+        </trans-unit>
+        <trans-unit id="AboutJoinTheBeta.Content" translate="yes" xml:space="preserve">
+          <source>Join the beta tester program</source>
+          <target state="new">Join the beta tester program</target>
+        </trans-unit>
+        <trans-unit id="AboutMadeByVítor.Text" translate="yes" xml:space="preserve">
+          <source>Made by Vítor Norton</source>
+          <target state="new">Made by Vítor Norton</target>
+        </trans-unit>
+        <trans-unit id="AboutNews.Text" translate="yes" xml:space="preserve">
+          <source>News</source>
+          <target state="new">News</target>
+        </trans-unit>
+        <trans-unit id="AboutPrivacyPolice.Content" translate="yes" xml:space="preserve">
+          <source>Privacy Police</source>
+          <target state="new">Privacy Police</target>
+        </trans-unit>
+        <trans-unit id="AboutRateThisApp.Content" translate="yes" xml:space="preserve">
+          <source>Rate this app</source>
+          <target state="new">Rate this app</target>
+        </trans-unit>
+        <trans-unit id="AboutReaadMoreAbout.Text" translate="yes" xml:space="preserve">
+          <source>Read more about Formula's annuncments and development process</source>
+          <target state="new">Read more about Formula's annuncments and development process</target>
+        </trans-unit>
+        <trans-unit id="AboutSendMeFeedback.Text" translate="yes" xml:space="preserve">
+          <source>Send me feedback</source>
+          <target state="new">Send me feedback</target>
+        </trans-unit>
+        <trans-unit id="AboutTitle.Text" translate="yes" xml:space="preserve">
+          <source>About this app</source>
+          <target state="new">About this app</target>
+        </trans-unit>
+        <trans-unit id="AboutViewChangelog.Content" translate="yes" xml:space="preserve">
+          <source>View Changelog</source>
+          <target state="new">View Changelog</target>
+        </trans-unit>
+        <trans-unit id="AccountsGitHub.Text" translate="yes" xml:space="preserve">
+          <source>GitHub account</source>
+          <target state="new">GitHub account</target>
+        </trans-unit>
+        <trans-unit id="AccountsTitle.Text" translate="yes" xml:space="preserve">
+          <source>Accounts</source>
+          <target state="new">Accounts</target>
+        </trans-unit>
+        <trans-unit id="LanguageAddOrRemove.Text" translate="yes" xml:space="preserve">
+          <source>Add or remove one language to your favorites</source>
+          <target state="new">Add or remove one language to your favorites</target>
+        </trans-unit>
+        <trans-unit id="LanguagesFavoriteLenguages.Text" translate="yes" xml:space="preserve">
+          <source>Favorite language</source>
+          <target state="new">Favorite language</target>
+        </trans-unit>
+        <trans-unit id="LanguagesQuicklyAccess.Text" translate="yes" xml:space="preserve">
+          <source>Quickly access your favorite language when creating a new file</source>
+          <target state="new">Quickly access your favorite language when creating a new file</target>
+        </trans-unit>
+        <trans-unit id="LanguagesTitle.Text" translate="yes" xml:space="preserve">
+          <source>Languages</source>
+          <target state="new">Languages</target>
+        </trans-unit>
+        <trans-unit id="MasterPageCloseAll.Text" translate="yes" xml:space="preserve">
+          <source>Close all</source>
+          <target state="new">Close all</target>
+        </trans-unit>
+        <trans-unit id="MasterPageCloseOtherTabs.Text" translate="yes" xml:space="preserve">
+          <source>Close other tabs</source>
+          <target state="new">Close other tabs</target>
+        </trans-unit>
+        <trans-unit id="MasterPageCloseTab.Text" translate="yes" xml:space="preserve">
+          <source>Close tab</source>
+          <target state="new">Close tab</target>
+        </trans-unit>
+        <trans-unit id="MasterPageCloseUnmodified.Text" translate="yes" xml:space="preserve">
+          <source>Close unmodified</source>
+          <target state="new">Close unmodified</target>
+        </trans-unit>
+        <trans-unit id="MasterpageRename.Text" translate="yes" xml:space="preserve">
+          <source>Rename</source>
+          <target state="new">Rename</target>
+        </trans-unit>
+        <trans-unit id="MasterPageSaveThis.Text" translate="yes" xml:space="preserve">
+          <source>Save this</source>
+          <target state="new">Save this</target>
+        </trans-unit>
+        <trans-unit id="MaterPageSaveAll.Text" translate="yes" xml:space="preserve">
+          <source>Save all</source>
+          <target state="new">Save all</target>
+        </trans-unit>
+        <trans-unit id="NewFilePleaseSelect.Text" translate="yes" xml:space="preserve">
+          <source>Please select the category</source>
+          <target state="new">Please select the category</target>
+        </trans-unit>
+        <trans-unit id="NewFileSelectOneOf.Text" translate="yes" xml:space="preserve">
+          <source>Select one of this file templates?</source>
+          <target state="new">Select one of this file templates?</target>
+        </trans-unit>
+        <trans-unit id="NewFileTitle.Text" translate="yes" xml:space="preserve">
+          <source>New file</source>
+          <target state="new">New file</target>
+        </trans-unit>
+        <trans-unit id="NewFileWhatLanguage.Text" translate="yes" xml:space="preserve">
+          <source>What language is your project?</source>
+          <target state="new">What language is your project?</target>
+        </trans-unit>
+        <trans-unit id="NewsContinueReadingIt.Content" translate="yes" xml:space="preserve">
+          <source>Continue reading it</source>
+          <target state="new">Continue reading it</target>
+        </trans-unit>
+        <trans-unit id="OptionsCleanRecentList.Text" translate="yes" xml:space="preserve">
+          <source>Clean recent list</source>
+          <target state="new">Clean recent list</target>
+        </trans-unit>
+        <trans-unit id="OptionsExportAndRestore.Text" translate="yes" xml:space="preserve">
+          <source>Export and restore</source>
+          <target state="new">Export and restore</target>
+        </trans-unit>
+        <trans-unit id="OptionsExportSettingsOr.Text" translate="yes" xml:space="preserve">
+          <source>Export settings or restore then</source>
+          <target state="new">Export settings or restore then</target>
+        </trans-unit>
+        <trans-unit id="OptionsFormulaForSchools.Text" translate="yes" xml:space="preserve">
+          <source>Formula for Schools, language, restore and backup</source>
+          <target state="new">Formula for Schools, language, restore and backup</target>
+        </trans-unit>
+        <trans-unit id="OptionsGeneraloptions.Text" translate="yes" xml:space="preserve">
+          <source>General options</source>
+          <target state="new">General options</target>
+        </trans-unit>
+        <trans-unit id="OptionsLearnHowTo.Text" translate="yes" xml:space="preserve">
+          <source>Learn how to code using Formula</source>
+          <target state="new">Learn how to code using Formula</target>
+        </trans-unit>
+        <trans-unit id="OptionsRemoveAllThe.Text" translate="yes" xml:space="preserve">
+          <source>Remove all the itens from recent list</source>
+          <target state="new">Remove all the itens from recent list</target>
+        </trans-unit>
+        <trans-unit id="OptionsSetTheApp.Text" translate="yes" xml:space="preserve">
+          <source>Set the app language</source>
+          <target state="new">Set the app language</target>
+        </trans-unit>
+        <trans-unit id="OptionsSetTheDefault.Text" translate="yes" xml:space="preserve">
+          <source>Set the default zoom for the app</source>
+          <target state="new">Set the default zoom for the app</target>
+        </trans-unit>
+        <trans-unit id="OptionsSetTheKeywoards.Text" translate="yes" xml:space="preserve">
+          <source>Set the keywords for finding tasks (separe it with comma ",")</source>
+          <target state="new">Set the keywords for finding tasks (separe it with comma ",")</target>
+        </trans-unit>
+        <trans-unit id="OptionsTasks.Text" translate="yes" xml:space="preserve">
+          <source>Tasks</source>
+          <target state="new">Tasks</target>
+        </trans-unit>
+        <trans-unit id="OptionsWeFoundAn.Text" translate="yes" xml:space="preserve">
+          <source>We found an error when looking for news, please check your internet connection..</source>
+          <target state="new">We found an error when looking for news, please check your internet connection..</target>
+        </trans-unit>
+        <trans-unit id="OptionsYouNeedTo.Text" translate="yes" xml:space="preserve">
+          <source>You need to restart the app to load the changes.</source>
+          <target state="new">You need to restart the app to load the changes.</target>
+        </trans-unit>
+        <trans-unit id="OptionsZoom.Text" translate="yes" xml:space="preserve">
+          <source>Zoom</source>
+          <target state="new">Zoom</target>
+        </trans-unit>
+        <trans-unit id="PersonalizationActiveOrDesactive.Text" translate="yes" xml:space="preserve">
+          <source>Active or desactive the Dark Mode</source>
+          <target state="new">Active or desactive the Dark Mode</target>
+        </trans-unit>
+        <trans-unit id="PersonalizationChangeTheDefault.Text" translate="yes" xml:space="preserve">
+          <source>Change the default font from the code editor</source>
+          <target state="new">Change the default font from the code editor</target>
+        </trans-unit>
+        <trans-unit id="PersonalizationDarkModeFont.Text" translate="yes" xml:space="preserve">
+          <source>Dark mode, font size and others</source>
+          <target state="new">Dark mode, font size and others</target>
+        </trans-unit>
+        <trans-unit id="PersonalizationDefaultFont.Text" translate="yes" xml:space="preserve">
+          <source>Default font</source>
+          <target state="new">Default font</target>
+        </trans-unit>
+        <trans-unit id="PersonalizationMode.Text" translate="yes" xml:space="preserve">
+          <source>Mode</source>
+          <target state="new">Mode</target>
+        </trans-unit>
+        <trans-unit id="PersonalizationTitle.Text" translate="yes" xml:space="preserve">
+          <source>Personalization</source>
+          <target state="new">Personalization</target>
+        </trans-unit>
+        <trans-unit id="PersonalizationYouNeedTo.Text" translate="yes" xml:space="preserve">
+          <source>You need to restart the app to load the changes.</source>
+          <target state="new">You need to restart the app to load the changes.</target>
+        </trans-unit>
+        <trans-unit id="SchoolAll.Content" translate="yes" xml:space="preserve">
+          <source>All</source>
+          <target state="new">All</target>
+        </trans-unit>
+        <trans-unit id="SchoolBeginner.Content" translate="yes" xml:space="preserve">
+          <source>Beginner</source>
+          <target state="new">Beginner</target>
+        </trans-unit>
+        <trans-unit id="SchoolDescription.Text" translate="yes" xml:space="preserve">
+          <source>Learn how to code using Formula</source>
+          <target state="new">Learn how to code using Formula</target>
+        </trans-unit>
+        <trans-unit id="SchoolIntermediate.Content" translate="yes" xml:space="preserve">
+          <source>Intermediate</source>
+          <target state="new">Intermediate</target>
+        </trans-unit>
+        <trans-unit id="SchoolMaster.Content" translate="yes" xml:space="preserve">
+          <source>Master</source>
+          <target state="new">Master</target>
+        </trans-unit>
+        <trans-unit id="SchoolTitle.Text" translate="yes" xml:space="preserve">
+          <source>Formula for Schools</source>
+          <target state="new">Formula for Schools</target>
+        </trans-unit>
+        <trans-unit id="SearchAllOpenFiles.Content" translate="yes" xml:space="preserve">
+          <source>All open files</source>
+          <target state="new">All open files</target>
+        </trans-unit>
+        <trans-unit id="SearchCurrentFile.Content" translate="yes" xml:space="preserve">
+          <source>Current file</source>
+          <target state="new">Current file</target>
+        </trans-unit>
+        <trans-unit id="SearchDescription.Text" translate="yes" xml:space="preserve">
+          <source>Search on every file on the solution explorer or on the current file</source>
+          <target state="new">Search on every file on the solution explorer or on the current file</target>
+        </trans-unit>
+        <trans-unit id="SearchEntireSolution.Content" translate="yes" xml:space="preserve">
+          <source>Entire Solution</source>
+          <target state="new">Entire Solution</target>
+        </trans-unit>
+        <trans-unit id="SearchReplace.Content" translate="yes" xml:space="preserve">
+          <source>Replace</source>
+          <target state="new">Replace</target>
+        </trans-unit>
+        <trans-unit id="SearchReplaceAll.Content" translate="yes" xml:space="preserve">
+          <source>Replace All</source>
+          <target state="new">Replace All</target>
+        </trans-unit>
+        <trans-unit id="SearchTitle.Text" translate="yes" xml:space="preserve">
+          <source>Search</source>
+          <target state="new">Search</target>
+        </trans-unit>
+        <trans-unit id="SettingsDescription.Text" translate="yes" xml:space="preserve">
+          <source>Configure your Formula - Universal Code from here</source>
+          <target state="new">Configure your Formula - Universal Code from here</target>
+        </trans-unit>
+        <trans-unit id="SettingsTitle.Text" translate="yes" xml:space="preserve">
+          <source>Settings</source>
+          <target state="new">Settings</target>
+        </trans-unit>
+        <trans-unit id="ShoolAdvanced.Content" translate="yes" xml:space="preserve">
+          <source>Advanced</source>
+          <target state="new">Advanced</target>
+        </trans-unit>
+        <trans-unit id="TasksComboBoxStep1.Content" translate="yes" xml:space="preserve">
+          <source>Tasks A to Z</source>
+          <target state="new">Tasks A to Z</target>
+        </trans-unit>
+        <trans-unit id="TasksComboBoxStep2.Content" translate="yes" xml:space="preserve">
+          <source>Tasks Z to A</source>
+          <target state="new">Tasks Z to A</target>
+        </trans-unit>
+        <trans-unit id="TasksComboBoxStep3.Content" translate="yes" xml:space="preserve">
+          <source>File A to Z</source>
+          <target state="new">File A to Z</target>
+        </trans-unit>
+        <trans-unit id="TasksComboBoxStep4.Content" translate="yes" xml:space="preserve">
+          <source>File Z to A</source>
+          <target state="new">File Z to A</target>
+        </trans-unit>
+        <trans-unit id="TasksCurrentFile.Content" translate="yes" xml:space="preserve">
+          <source>Current file</source>
+          <target state="new">Current file</target>
+        </trans-unit>
+        <trans-unit id="TasksDescription.Text" translate="yes" xml:space="preserve">
+          <source>Follow all the tasks added to your code through "TODO" keyword</source>
+          <target state="new">Follow all the tasks added to your code through "TODO" keyword</target>
+        </trans-unit>
+        <trans-unit id="TasksEntireSolution.Content" translate="yes" xml:space="preserve">
+          <source>Entire solution</source>
+          <target state="new">Entire solution</target>
+        </trans-unit>
+        <trans-unit id="TasksTitle.Text" translate="yes" xml:space="preserve">
+          <source>Tasks</source>
+          <target state="new">Tasks</target>
+        </trans-unit>
+        <trans-unit id="WelcomePageCleanList.Content" translate="yes" xml:space="preserve">
+          <source>Clean list</source>
+          <target state="new">Clean list</target>
+        </trans-unit>
+        <trans-unit id="WelcomePageFollowOnTwitter.Content" translate="yes" xml:space="preserve">
+          <source>Follow on Twitter</source>
+          <target state="new">Follow on Twitter</target>
+        </trans-unit>
+        <trans-unit id="WelcomePageGetInTouch.Text" translate="yes" xml:space="preserve">
+          <source>Get in touch</source>
+          <target state="new">Get in touch</target>
+        </trans-unit>
+        <trans-unit id="WelcomePageNewFile.Content" translate="yes" xml:space="preserve">
+          <source>New file</source>
+          <target state="new">New file</target>
+        </trans-unit>
+        <trans-unit id="WelcomePageNoRecentOpened.Text" translate="yes" xml:space="preserve">
+          <source>No recent opened files found...</source>
+          <target state="new">No recent opened files found...</target>
+        </trans-unit>
+        <trans-unit id="WelcomePageOpenFile.Content" translate="yes" xml:space="preserve">
+          <source>Open file</source>
+          <target state="new">Open file</target>
+        </trans-unit>
+        <trans-unit id="WelcomePageOpenFolder.Content" translate="yes" xml:space="preserve">
+          <source>Open folder</source>
+          <target state="new">Open folder</target>
+        </trans-unit>
+        <trans-unit id="WelcomePagePrivacyPolice.Content" translate="yes" xml:space="preserve">
+          <source>Privacy Police</source>
+          <target state="new">Privacy Police</target>
+        </trans-unit>
+        <trans-unit id="WelcomePageRecent.Text" translate="yes" xml:space="preserve">
+          <source>Recent</source>
+          <target state="new">Recent</target>
+        </trans-unit>
+        <trans-unit id="WelcomePageStart.Text" translate="yes" xml:space="preserve">
+          <source>Start</source>
+          <target state="new">Start</target>
+        </trans-unit>
+        <trans-unit id="WelcomePageVisitTheSite.Content" translate="yes" xml:space="preserve">
+          <source>Visit the site</source>
+          <target state="new">Visit the site</target>
+        </trans-unit>
+        <trans-unit id="WelcomePageWeFoundAn.Text" translate="yes" xml:space="preserve">
+          <source>We found an error when looking for news, please check your internet connection..</source>
+          <target state="new">We found an error when looking for news, please check your internet connection..</target>
+        </trans-unit>
+        <trans-unit id="WelcomePageYouAreUnder.Content" translate="yes" xml:space="preserve">
+          <source>You are under a non WiFi connection, click here to load the news</source>
+          <target state="new">You are under a non WiFi connection, click here to load the news</target>
+        </trans-unit>
+        <trans-unit id="WelcomePageNews.Text" translate="yes" xml:space="preserve">
+          <source>News</source>
+          <target state="new">News</target>
+        </trans-unit>
+        <trans-unit id="OptionsFormulaForSchoolsTitle.Text" translate="yes" xml:space="preserve">
+          <source>Formula for Schools</source>
+          <target state="new">Formula for Schools</target>
+        </trans-unit>
+        <trans-unit id="TasksOpenFiles.Content" translate="yes" xml:space="preserve">
+          <source>Open files</source>
+          <target state="new">Open files</target>
+        </trans-unit>
+        <trans-unit id="SearchTextToReplace.PlaceholderText" translate="yes" xml:space="preserve">
+          <source>Text to replace</source>
+          <target state="new">Text to replace</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

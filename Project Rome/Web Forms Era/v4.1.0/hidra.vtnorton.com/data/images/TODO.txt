@@ -1,0 +1,1 @@
+﻿Criar imagem em /data/images/ com o titulo imagem-capitulo.jpg

@@ -1,0 +1,65 @@
+﻿body{color:#2e2e2e}
+.navbar-custom{color:#fff}
+.navbar-custom a{color:#fff}
+.navbar-custom .navbar-nav > li > a:hover{color:#001940}
+.navbar-custom .navbar-toggle{background:#fff}
+.top-nav-collapse{background-color:#001940}
+.navbar-custom .navbar-toggle .icon-bar{background:#001940}
+#top{color:#fff}
+#countdown{color:#fff;text-shadow:0 0 6px #2e2e2e}
+#overview h3{color:#999}
+#overview h3 span{color:#2e2e2e}
+#overview h4{margin-bottom:20px}
+#overview i{color:#001940}
+#overview .lead{color:#999}
+#overview .fa-circle{color:#001940}
+#speakers{background:#efefef}
+.speaker figcaption{background:rgba(0,25,64,0.85);color:#fff}
+.speaker figcaption h4{color:#fff}
+.speaker figcaption p{color:#fff}
+.speaker a,.speaker .social a{color:rgba(255,255,255,.75)}
+.speaker a:hover,.speaker .social a:hover{color:rgba(255,255,255,1)}
+.speaker .title{color:#888}
+#speaker-detail{color:#2e2e2e;background:#fff}
+#speaker-detail h3{color:#001940}
+#speaker-detail a{color:#001940}
+#speaker-detail i{color:#888}
+.event h3{color:#001940}
+.event .icon{color:#fff;background:#001940}
+.event .description{background:#efefef}
+#days .item{background:#efefef}
+#days .item:hover,#days .item:active{color:#fff;background:#001940}
+.venue-address{color:#fff;background:rgba(0,25,64,0.85)}
+#venue h3{color:#001940}
+#venue .venue-address h2{color:#fff}
+#venue i{color:#001940}
+#venue .fa-inverse{color:#fff}
+#testimonial{color:#fff}
+#sponsors h3{color:#999}
+#subscribe{color:#fff}
+#subscribe input{color:#fff;background:rgba(255,255,255,0.30);border:1px solid #fff}
+#faq-gallery{background:#ececec}
+#faq i{color:#001940}
+#register{color:#fff}
+.price-table-header{color:#fff;background:#001940}
+.price-table-description{background:#fff}
+.description-item{color:#2e2e2e}
+.price-table-description .stripe{color:#fff;background:#001940}
+#register-form{background:#fff}
+.contact{color:#fff;background:rgba(0,25,64,0.85)}
+.social .fa-inverse{color:#001940}
+.social a{color:rgba(255,255,255,0.65)}
+.social a:hover{color:rgba(255,255,255,1)}
+input[type="text"],input[type="email"],select{color:#2e2e2e}
+::-webkit-input-placeholder{color:#2e2e2e}
+:-moz-placeholder{color:#2e2e2e}
+::-moz-placeholder{color:#2e2e2e}
+:-ms-input-placeholder{color:#2e2e2e}
+.button{color:inherit;background:none}
+.button-light{border:1px solid #fff;color:#fff}
+.button-light:hover,.button-light:active{color:#001940;background:#fff}
+.button-dark{color:#fff;background:#001940}
+.button-dark:hover,.button-dark:active{color:#fff;background:#001940}
+#preload{background:#ececee}
+.loader{border-top:1.1em solid rgba(255,255,255,0.2);border-right:1.1em solid rgba(255,255,255,0.2);border-bottom:1.1em solid rgba(255,255,255,0.2);border-left:1.1em solid #001940}
+.mfp-bg{background:#001940}

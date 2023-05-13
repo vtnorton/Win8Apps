@@ -1,0 +1,16 @@
+App.xbf
+MainPage.xbf
+MasterPage.xbf
+Views\About.xbf
+Views\Agronomy\MainAgronomy.xbf
+Views\Agronomy\Types\AddCoffee.xbf
+Views\Agronomy\Types\ViewCoffee.xbf
+Views\Financial\AddOldProductionCost.xbf
+Views\Financial\AddProductionCost.xbf
+Views\Financial\MainFinancial.xbf
+Views\Financial\ViewProductionCost.xbf
+Views\Help.xbf
+Views\Humans\MainHumans.xbf
+Views\Humans\ViewClients.xbf
+Views\Humans\ViewEmployee.xbf
+Views\Settings.xbf

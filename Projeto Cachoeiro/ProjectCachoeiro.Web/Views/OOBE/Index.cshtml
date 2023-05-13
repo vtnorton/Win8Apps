@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Primeiros passos";
+    ViewData["LOGIC"] = "OOBE";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- TODO: Descer com o layout até o erro -->
+@if (ViewData["erro"] != null)
+{
+    <script>
+        location.href = "#step2";
+        //document.getElementById('').scrollIntoView(true);
+    </script>
+}
+<div id="step0" class="step" style="padding-top:0">
+    <div class="view-element">
+        <h1>1. Primeiros passos</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed consectetur lectus. Maecenas ligula tellus, scelerisque in libero vel, porttitor ornare nulla.</p>
+        <hr />
+
+        <div class="setup-buttons">
+            <hr />
+            <a data-scroll class="btn" href="#step1"><i class="fa fa-star"></i> Começar</a>
+        </div>
+    </div>
+</div>
+
+<div id="step1" class="step">
+    <div class="view-element">
+        <h3>1.1. Informações legais</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed consectetur lectus.</p>
+        <hr />
+        <table style="margin:35px 0">
+            <tr>
+                <td style="width:220px"><a href="#" class="btn btn-link"><i class="fa fa-link"></i> Visualizar</a><a href="#" class="btn btn-link"><i class="fa fa-download"></i> Baixar</a></td>
+                <td>Termo de uso e responsabilidade</td>
+
+            </tr>
+            <tr>
+                <td><a href="#" class="btn btn-link"><i class="fa fa-link"></i>  Visualizar</a><a href="#" class="btn btn-link"><i class="fa fa-download"></i> Baixar</a></td>
+                <td>Política de privacidade</td>
+            </tr>
+        </table>
+
+        <p><i>Ao confirmar esta página você estará aceitando os termos de responsabilidade e de uso e a nossa política de privacidade.</i></p>
+        <div class="setup-buttons">
+            <hr />
+            <a data-scroll class="btn btn-link" href="#step0"><i class="fa fa-arrow-left"></i> Voltar</a>
+            <a data-scroll class="btn" href="#step2"><i class="fa fa-arrow-right"></i> Li e aceito os termos</a>
+        </div>
+    </div>
+</div>
+
+<div id="step2" class="step">
+    <div class="view-element">
+        <h3>1.2. Validação de cadastro</h3>
+        <p>Para continuar com a instalação do sistema, precisamos verificar se você possui um convite exclusivo para o uso dele.</p>
+        <hr />
+        <div class="row">
+            <div class="col-md-8">
+                <form id="form" method="post" asp-action="Index">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <br /><br />
+                    <input name="email" type="email" value="@ViewData["email"]" placeholder="Informe o seu e-mail" />
+                    <br /><br />
+                </form>
+            </div>
+        </div>
+
+        <div class="setup-buttons">
+            <hr />
+            <a class="btn" onclick="$('#form').submit()"><i class="fa fa-arrow-right"></i> Validar</a>
+        </div>
+    </div>
+</div>

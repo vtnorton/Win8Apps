@@ -1,0 +1,32 @@
+﻿using System;
+using vtnCore;
+using vtnCore.Methods;
+
+namespace VTNORTON.onenote
+{
+    public partial class index1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+
+        }
+        protected void btnBaixar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(txtEmail.Text))
+                {
+                    new SqlCommands().SQLCommand("INSERT INTO " + TableNames.OneNoteEmails + " (Email) VALUES ('" + txtEmail.Text + "')");
+                    Response.Redirect("/onenote/download.aspx");
+                }
+                else
+                    Label1.Text = "Por favor, insira seu e-mail";
+            }
+            catch (Exception Ex)
+            {
+                Label1.Text = "Ocorreu um erro ao guardarmos o seu e-mail, mas você ainda pode baixar o livro <a href='download.aspx'>aqui</a>. <br/> Menssagem do erro: " + Ex.Message;
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/css/colors.min.css",
+    "inputFiles": [ "wwwroot/css/colors.css" ]
+  },
+  {
+    "outputFileName": "wwwroot/css/oobe.min.css",
+    "inputFiles": [ "wwwroot/css/oobe.css" ]
+  },
+  {
+    "outputFileName": "wwwroot/js/oobe.min.js",
+    "inputFiles": [ "wwwroot/js/oobe.js" ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/shell.min.js",
+    "inputFiles": [ "wwwroot/js/shell.js" ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/uap.min.js",
+    "inputFiles": [ "wwwroot/js/uap.js" ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/cep.min.js",
+    "inputFiles": [ "wwwroot/js/cep.js" ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/uwp.min.js",
+    "inputFiles": [ "wwwroot/js/uwp.js" ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/heartthrob.min.js",
+    "inputFiles": [ "wwwroot/js/heartthrob.js" ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

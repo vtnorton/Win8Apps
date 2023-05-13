@@ -1,0 +1,76 @@
+﻿@model ProjectCachoeiro.Web.Models.ApplicationUser
+@{
+    ViewData["Title"] = "Editar perfil";
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+
+<h2>Editar perfil</h2>
+<hr />
+<div class="view-element">
+    <div class="row">
+        <div class="col-md-12">
+            <form id="form" asp-action="Edit">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <label asp-for="Nome"></label>
+                        <input asp-for="Nome" />
+                        <span asp-validation-for="Nome"></span>
+                    </div>
+                    <div class="col-md-5">
+                        <label asp-for="Sobrenome"></label>
+                        <input asp-for="Sobrenome" />
+                        <span asp-validation-for="Sobrenome"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Cargo na empresa</label>
+                        <input asp-for="Cargo" />
+                        <span asp-validation-for="Cargo"></span>
+                    </div>
+                </div>
+                <br />
+                <!-- TODO: Ao deletar um usuário a foto deve ser removida do servidor -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Imagem de perfil</label><br />
+                        <input id="ImagePath" title="Imagem de perfil" type="file" name="file" accept="image/x-png,image/jpeg" />
+                        <p class="small">Faça upload de uma imagem com no máximo 500px por 500px e que seja menor do que 500kb.</p>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-3">
+                        <label asp-for="CPF"></label>
+                        <input asp-for="CPF" class="cpf" />
+                        <span asp-validation-for="CPF"></span>
+                    </div>
+                    <div class="col-md-3">
+                        <label>Data de nascimento</label>
+                        @(Html.Kendo().DatePickerFor(m => m.DataDeNascimento))
+                        <span asp-validation-for="DataDeNascimento"></span>
+                    </div>
+                    <div class="col-md-3">
+                        <label>Número de telefone</label>
+                        <input asp-for="PhoneNumber" />
+                        <span asp-validation-for="PhoneNumber"></span>
+                    </div>
+                </div>
+
+                <br />
+                <hr />
+                <a class="btn right" onclick="$('#form').submit();"><i class="fa fa-save"></i> Salvar</a>
+                <div class="clean"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<environment names="Development">
+    <script src="~/lib/jcrop/js/Jcrop.js"></script>
+</environment>
+<environment names="Staging,Production">
+    <script src="~/lib/jcrop/js/Jcrop.min.js"></script>
+</environment>

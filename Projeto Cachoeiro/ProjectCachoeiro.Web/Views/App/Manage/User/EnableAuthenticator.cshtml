@@ -1,0 +1,52 @@
+﻿@model EnableAuthenticatorViewModel
+@{
+    ViewData["Title"] = "Habilitar autentificação por aplicativo";
+    ViewData.AddActivePage(ManageNavPages.TwoFactorAuthentication);
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+
+    <h2>Habilitar autentificação por aplicativo</h2>
+    <hr />
+    <div class="view-element">
+        <p>Para usar um aplicativo de autentificação de dois fatores, por favor siga as etapas:</p>
+        <ol class="list">
+            <li>
+                <p>
+                    Faça download de um aplicativo de autentificação de dois fatores, como o Microsoft Authenticator for
+                    <a href="https://go.microsoft.com/fwlink/?Linkid=825071">Windows Phone</a>,
+                    <a href="https://go.microsoft.com/fwlink/?Linkid=825072">Android</a> e
+                    <a href="https://go.microsoft.com/fwlink/?Linkid=825073">iOS</a> ou o
+                    Google Authenticator para
+                    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;hl=en">Android</a> e
+                    <a href="https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8">iOS</a>.
+                </p>
+            </li>
+            <li>
+                <p>Escaneie o QR ou entre com a chave <strong>@Model.SharedKey</strong> no seu aplicativo de autentificação. Espaços e capitalização letras não importam.</p>
+                <br />
+                @(Html.Kendo().QRCode().Name("qrUrl")
+                        .Value(@Html.Raw(Model.AuthenticatorUri).ToString())
+                        .ErrorCorrection(QRErrorCorrectionLevel.M).Size(240).Border(border => border.Color("#000000").Width(5))
+                )
+                <div id="qrCodeData" data-url="@Html.Raw(Model.AuthenticatorUri)"></div>
+            </li>
+            <li>
+                <p>
+                    Uma vez escaneado o QR code ou inserida a chave acima, o aplicativo irá prover uma chave única para você. Entre com esse código no campo abaixo.
+                </p>
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <form method="post">
+                            <div class="form-group">
+                                <input asp-for="Code" placeholder="Código de verificação" autocomplete="off" />
+                                <span asp-validation-for="Code"></span>
+                            </div>
+                            <button type="submit" class="btn btn-default">Verificar</button>
+                            <div asp-validation-summary="ModelOnly"></div>
+                        </form>
+                    </div>
+                </div>
+            </li>
+        </ol>
+    </div>

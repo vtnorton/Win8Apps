@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="ProjectDubai.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjectDubai"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <SplitView IsPaneOpen="False" OpenPaneLength="300" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="splitView">
+        <SplitView.Pane>
+            <StackPanel Padding="15" BorderBrush="#10bbb3" BorderThickness="0,0,1,0">
+                <TextBlock FontSize="23" Foreground="DarkSlateGray">Notes</TextBlock>
+                <TextBlock TextWrapping="Wrap">
+                    Note: This is not the official app for Sarahah and was made only because there isn't one at the Store. 
+                    <LineBreak></LineBreak>
+                    <LineBreak></LineBreak>If Sarahah developers want, I will remove the app from the store, share the code with them or even make the offical one for them.
+                    <LineBreak></LineBreak>
+                    <LineBreak></LineBreak>This app does not store or share any information with the developer, policy of privacy of it's content is with Sarahah.
+                </TextBlock>
+                <TextBlock Margin="0,15,0,0" FontSize="23" Foreground="DarkSlateGray">About</TextBlock>
+                <TextBlock TextWrapping="Wrap">
+                    Developer: Vítor Norton (@vt_norton)
+                    <LineBreak></LineBreak>
+                    <LineBreak></LineBreak>Version: 1.0.9
+                </TextBlock>
+            </StackPanel>
+        </SplitView.Pane>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Background="#10bbb3" Grid.Row="0" >
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button x:Name="btnMenssage" Click="btnMenssage_Click"  Content="&#xE166;" ToolTipService.ToolTip="Messages" Style="{StaticResource rsButtonToolbar}"/>
+                    <Button x:Name="btnSettings" Click="btnSettings_Click"  Content="&#xE115;" ToolTipService.ToolTip="Settings" Style="{StaticResource rsButtonToolbar}"/>
+                    <Button x:Name="btnRefresh" Click="btnRefresh_Click" Content="&#xE117;" ToolTipService.ToolTip="Refresh page" Style="{StaticResource rsButtonToolbar}"/>
+                    <Button x:Name="btnAbout" Click="btnAbout_Click"  Content="&#xE10C;" ToolTipService.ToolTip="About the app" Style="{StaticResource rsButtonToolbar}"/>
+                </StackPanel>
+            </Grid>
+            <WebView Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="frameContent"></WebView>
+        </Grid>
+    </SplitView>
+</Page>

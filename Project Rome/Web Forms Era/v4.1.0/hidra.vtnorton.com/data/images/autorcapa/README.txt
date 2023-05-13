@@ -1,0 +1,1 @@
+﻿Criar imagem default.jpg para a capa e perfil. Mesmo nome (Banco de dados)

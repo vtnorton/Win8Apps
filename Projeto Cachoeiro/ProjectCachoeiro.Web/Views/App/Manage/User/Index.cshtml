@@ -1,0 +1,40 @@
+﻿@model IndexViewModel
+@{
+    ViewData["Title"] = "Gerencie sua conta";
+    ViewData.AddActivePage(ManageNavPages.Index);
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@Html.Partial("~/Views/App/Manage/_StatusMessage.cshtml", Model.StatusMessage)
+
+<h2>Gerencie sua conta</h2>
+<p>Altere propriedades da sua conta para manter ela segura e para que você não perca o acesso a ela, caso tenha alguma dúvida quanto a esse processo, entre em contato com o administrador do sistema.</p>
+<hr />
+<div class="view-element">
+
+    <form method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="row">
+            <div class="col-md-10">
+                <h4>Alterar e-mail</h4>
+                <p>Caso você tenha atualizado o seu endereço de e-mail, recomendamos que você altere o e-mail de acesso ao sistema.</p>
+                <br />
+
+                <div class="form-inline">
+                    <input style="width:80%" asp-for="Email" />
+                    <button type="submit" class="btn btn-default">Salvar</button>
+                </div>
+
+
+                @if (!Model.IsEmailConfirmed)
+                {
+                    <blockquote class="border red">
+                        <p>O seu e-mail ainda não foi verificado, por favor verifique ele o mais rápido possível, para isso iremos enviar um e-mail com um link na sua caixa de entrada. Caso não encontre, por favor verifique a caixa de spam.</p>
+                        <button asp-action="SendVerificationEmail" class="btn btn-link">Enviar e-mail de verificação</button>
+                    </blockquote>
+                }
+                <span asp-validation-for="Email"></span>
+
+            </div>
+        </div>
+    </form>
+</div>

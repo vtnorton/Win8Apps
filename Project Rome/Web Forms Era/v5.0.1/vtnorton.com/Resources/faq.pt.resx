@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Sobre mim</value>
+  </data>
+  <data name="Apps" xml:space="preserve">
+    <value>Aplicativos</value>
+  </data>
+  <data name="Dev" xml:space="preserve">
+    <value>Desenvolvimento</value>
+  </data>
+  <data name="Others" xml:space="preserve">
+    <value>Outras</value>
+  </data>
+  <data name="Q01Dev" xml:space="preserve">
+    <value>Tenho perguntas relacionadas a criação de sites, estou no lugar certo?</value>
+  </data>
+  <data name="Q02Dev" xml:space="preserve">
+    <value>Tenho uma ideia de aplicativo ou game ou site, você poderia fazer?</value>
+  </data>
+  <data name="Q03Dev" xml:space="preserve">
+    <value>Por que não desenvolver para Android e iOS ou outras plataformas?</value>
+  </data>
+  <data name="Q04App" xml:space="preserve">
+    <value>Quem tem direito a aproveitar os aplicativos?</value>
+  </data>
+  <data name="Q05About" xml:space="preserve">
+    <value>Você gosta de LoL ou WoW ou Minecraft ou algum outro game?</value>
+  </data>
+  <data name="Q06About" xml:space="preserve">
+    <value>Você vive falando da Microsoft, ela te paga alguma coisa?</value>
+  </data>
+  <data name="Q07About" xml:space="preserve">
+    <value>Não entendo nada do que você escreve, você é normal?</value>
+  </data>
+  <data name="Q08About" xml:space="preserve">
+    <value>Além de computadores e séries de TV, você entende de alguma outra coisa?</value>
+  </data>
+  <data name="Q09About" xml:space="preserve">
+    <value>Não gosto de você.</value>
+  </data>
+  <data name="Q10About" xml:space="preserve">
+    <value>Você é um garoto de programa né?</value>
+  </data>
+  <data name="Q11Site" xml:space="preserve">
+    <value>Não estou conseguindo acessar alguns sites que deveriam estar em seu nome.</value>
+  </data>
+  <data name="Q12Site" xml:space="preserve">
+    <value>Não estou conseguindo acessar meu e-mail @vtnorton.com</value>
+  </data>
+  <data name="Q13Others" xml:space="preserve">
+    <value>Pode arrumar a minha impressora?</value>
+  </data>
+  <data name="Q14Others" xml:space="preserve">
+    <value>Por que não tem fotos de gatos por aqui?</value>
+  </data>
+  <data name="R01" xml:space="preserve">
+    <value>Por favor entre em contato via e-mail para mais informações e para solicitar um orçamento.</value>
+  </data>
+  <data name="R02" xml:space="preserve">
+    <value>Ideias são sempre bem vindas e nenhuma é descartada. Envie-me a sua ideia, e quem sabe ela não será feita. Se você deseja um aplicativo somente seu, entre em contato para orçamento. Se você for um Patreon, entre no grupo exclusivo do Facebook e envie sua ideia lá, você terá mais chances de que ela se torne um aplicativo.</value>
+  </data>
+  <data name="R03" xml:space="preserve">
+    <value>Sou apenas um. Para criar aplicativos para iOS é preciso saber programar Swift e de um Mac, algo que eu não tenho (aceito doações). Para o Android é preciso saber Java, porém não tenho interesse em desenvolver para uma plataforma que eu não acredito ser ideal. Mas quem sabe, num futuro proxímo, eu mude de ideia... nunca descarto as possíbilidades.</value>
+  </data>
+  <data name="R04" xml:space="preserve">
+    <value>Os aplicativos estão sendo feitos para os usuários brasileiros do Windows 10 (mobile e PC). Porém isto não é regra e estou trabalhando para levar a mais plataformas e regiões. Fique atento e verifique as regiões disponíveis.</value>
+  </data>
+  <data name="R05" xml:space="preserve">
+    <value>Não sou adepto a jogos, claro que existem os casuais. Jogava Minecraft para construir algumas coisas, fora isso não sei nada mais.</value>
+  </data>
+  <data name="R06" xml:space="preserve">
+    <value>Falo e falo bem mesmo. Milhares de pessoas falam e falam de seus times e artistas e ninguém discute isso. A Microsoft não me paga nada para isso, mas seria bom. Hoje o site e alguns serviços essenciais para o funcionamento de outros sites e aplicativos meus estão hospedados no Azure, que está sendo pago pelo plano BizSpark da Microsoft. Pensando bem, ela me paga sim. E também, pagou uma viagem para conhece-los em Redmond, WA em Abril de 2015.</value>
+  </data>
+  <data name="R07" xml:space="preserve">
+    <value>Não, eu não sou normal. A maioria das coisas que escrevo é sobre alguns mundos, como tecnologia, séries de tv e afins, e somente quem está por dentro desses mundos consegue entender. Sinto muito.</value>
+  </data>
+  <data name="R08" xml:space="preserve">
+    <value>Sou apaixonado por história, especialmente a história da arte, dos Estados Unidos e a do Egito. Também sou apaixonado por música, teatro e dança. Também adoro teorias da conspiração.</value>
+  </data>
+  <data name="R09" xml:space="preserve">
+    <value>Isso não foi uma pergunta.</value>
+  </data>
+  <data name="R10" xml:space="preserve">
+    <value>Isso depende do ponto de vista.</value>
+  </data>
+  <data name="R11" xml:space="preserve">
+    <value>Devido a mudanças internas retirei da web diversos sites com o nome vtnorton. Caso você esteja tentando acessar ao site icesperafeliz.vtnorton.com, entre atravéz do endereço &lt;a href="http://icesperafeliz.blogspot.com"&gt;icesperafeliz.blogspot.com &lt;/a&gt;. Os sites beta.vtnorton.com, vitor.vtnorton.com, hidra.vtnorton.com, www2.vtnorton.com e hot.vtnorton.com não estão disponíveis mais, assim como projetos como a Jade.</value>
+  </data>
+  <data name="R12" xml:space="preserve">
+    <value>Muitos e-mails foram desativados, com o conhecimento do dono do endereço. Foram feito backups dos dados e você têm 90 dias, a partir da data de desativação, para poder pedir o acesso a tais dados, por favor entre em &lt;a href="#contato" title="Entrar em contato" target="_blank"&gt;contato&lt;/a&gt; comigo, após esse prazo os dados serão apagados.</value>
+  </data>
+  <data name="R13" xml:space="preserve">
+    <value>Não.</value>
+  </data>
+  <data name="R14" xml:space="preserve">
+    <value>Temos sim, olha...</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>Sites</value>
+  </data>
+</root>

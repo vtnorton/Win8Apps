@@ -1,0 +1,96 @@
+﻿@model ProjectCachoeiro.Web.Models.Utilitarios.Imagem
+@{
+    ViewData["Title"] = "Editar imagem";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-9">
+        <div class="view-element">
+            <div class="toolbar">
+                <div class="left">
+                    <h2>Editar imagem</h2>
+                    <hr />
+                </div>
+                <div class="clean"></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <form id="form" asp-action="Editar">
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label asp-for="URL"></label>
+                            <input asp-for="URL" />
+                            <span asp-validation-for="URL"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Alt"></label>
+                            <input asp-for="Alt" />
+                            <span asp-validation-for="Alt"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Legenda"></label>
+                            <input asp-for="Legenda" />
+                            <span asp-validation-for="Legenda"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CorPredominante"></label>
+                            <input asp-for="CorPredominante" />
+                            <span asp-validation-for="CorPredominante"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Tags"></label>
+                            <input asp-for="Tags" />
+                            <span asp-validation-for="Tags"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="view-bottom">
+                <hr />
+                <p class="small">Legenda da tabela e outras informações importantes a serem acrescentadas aqui.</p>
+            </div>
+
+            <div class="view-bottom">
+                <hr />
+                <p class="small">Legenda da tabela e outras informações importantes a serem acrescentadas aqui.</p>
+            </div>
+        </div>
+    </div>
+    <div class="info-bar col-md-3">
+        @{
+            OtherOptions otherOptions = new OtherOptions
+            {
+                Descricao = "Veja opções relacionadas com a apresentação de itens.",
+                FeedbackEChamadoID = "ItemFamilia",
+                OpcoesRelacionadas = new Links[] {
+                    new Links{
+                        Titulo = "Adicionar família",
+                        Url = "/Familias/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar estado de produto",
+                        Url = "/Estados/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar produto",
+                        Url = "/Produtos/Create"
+                    }
+                }
+            };
+        }
+        @Html.Partial("AppOtherOptions", otherOptions)
+    </div>
+</div>
+<div class="taskbar">
+    <div class="left">
+        <a class="btn btn-link" asp-action="Index"><i class="fa fa-list-ul"></i> Voltar</a>
+    </div>
+    <div class="right">
+        <!-- TODO: Implementar função Limpar -->
+        <a class="btn btn-success" onclick="$('#form').submit();"><i class="fa fa-save"></i> Salvar</a>
+    </div>
+    <div class="clean"></div>
+</div>

@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Finalização";
+    ViewData["LOGIC"] = "OOBE";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="step0" class="step" style="padding-top:0">
+    <div class="view-element">
+        <h1>5. Finalização</h1>
+        <p>O sistema está pronto para uso, aproveite!</p>
+        <hr />
+
+
+        <div class="row text-center" style="margin: 50px 0">
+            <!-- TODO: Criar os links daqui -->
+            <div class="col-md-4">
+                <img src="~/images/oobe/Feedback.png" class="setup-boxes-img" />
+                <h3>Envie feedback</h3>
+                <p class="text-center setup-boxes">O seu feedback é importante para evoluirmos o sistema de acordo com as suas necessidades. Estamos abertos para ouvir sugestões ou problemas encontrados durante o uso do sistema.</p>
+                <a href="#" class="btn"><i class="fa fa-envelope-open-o"></i> Enviar feedback</a>
+            </div>
+            <div class="col-md-4">
+                <img src="~/images/oobe/Support.png" class="setup-boxes-img" />
+                <h3>Suporte e Ajuda</h3>
+                <p class="text-center setup-boxes">Precisa de ajuda para começar a utilizar o nosso sistema? Você pode conferir o nosso manual ou se precisar abra um chamado para resolvermos para você.</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="#" class="btn text-center"><i class="fa fa-question"></i> Chamados</a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#" class="btn text-center"><i class="fa fa-newspaper-o"></i> Manual de uso</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img src="~/images/oobe/Dashboard.png" class="setup-boxes-img" />
+                <h3>Começe a usar</h3>
+                <p class="text-center setup-boxes">O sistema está pronto para o uso, agora você pode .... <!-- TODO: Menssagem --> (inserir mensagem aqui)</p>
+                <a class="btn" href="/dashboard"><i class="fa fa-dashboard"></i> Acessar painel</a>
+            </div>
+        </div>
+    </div>
+</div>

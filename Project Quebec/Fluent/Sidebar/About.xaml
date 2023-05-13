@@ -1,0 +1,100 @@
+﻿<Page
+    x:Class="ProjectQuebec.Fluent.Sidebar.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjectQuebec.Fluent.Sidebar"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Button  x:Name="btnAbout"
+                         ToolTipService.ToolTip="About this app"
+                         Style="{StaticResource rsButtonPane}"
+                         Click="btnAbout_Click"
+					     Content="&#xE8C9;"
+                         Foreground="{ThemeResource SystemAccentColor}" BorderBrush="{ThemeResource SystemAccentColor}"/>
+                <Button  x:Name="btnChangelog"
+                         Style="{StaticResource rsButtonPane}"
+                         ToolTipService.ToolTip="Open changelog pane"
+                         Click="btnChangelog_Click"
+					     Content="&#xE81C;"/>
+                <Button  x:Name="btnSendFeedback"
+                         Style="{StaticResource rsButtonPane}"
+                         ToolTipService.ToolTip="Send feedback"
+                         Click="btnSendFeedback_Click"
+					     Content="&#xE90A;"/>
+                <Button  x:Name="btnNews"
+                         Style="{StaticResource rsButtonPane}"
+                         ToolTipService.ToolTip="Look up the news"
+                         Click="btnNews_Click"
+					     Content="&#xE8A1;"/>
+                <!-- TODO: Adicionar privacy -->
+            </StackPanel>
+        </Grid>
+        <StackPanel Orientation="Vertical" x:Name="gdrAbout" Grid.Row="1" Visibility="Visible">
+            <TextBlock Style="{StaticResource rsTextBlockTittlePane}" x:Uid="AboutTitle" Text=" "></TextBlock>
+            <TextBlock x:Name="txtVersion" Style="{StaticResource rsTextBlockDescriptionPane}">Lorem ipsum</TextBlock>
+            <TextBlock Style="{StaticResource rsTextBlockDescriptionPane}" x:Uid="AboutMadeByVítor" Text=" "></TextBlock>
+            <HyperlinkButton Style="{StaticResource rsHyperLinkPane}" ToolTipService.ToolTip="Open the site" Content="Vítor Norton" NavigateUri="http://vtnorton.com/"></HyperlinkButton>
+            <HyperlinkButton Style="{StaticResource rsHyperLinkPane}" ToolTipService.ToolTip="Show changelog" x:Uid="AboutViewChangelog" Content=" " Click="HyperlinkButton_Click"></HyperlinkButton>
+            <HyperlinkButton Style="{StaticResource rsHyperLinkPane}" ToolTipService.ToolTip="Rate this app" x:Uid="AboutRateThisApp" Content=" " Click="HyperlinkButton_Click_1"></HyperlinkButton>
+            <HyperlinkButton Style="{StaticResource rsHyperLinkPane}" ToolTipService.ToolTip="Join the beta testers" FontSize="15" x:Uid="AboutJoinTheBeta" Content=" " NavigateUri="http://vtnorton.com/formula-beta/"></HyperlinkButton>
+            <HyperlinkButton Style="{StaticResource rsHyperLinkPane}" NavigateUri="http://vtnorton.com/formula/privacy" x:Uid="AboutPrivacyPolice" Content=" "></HyperlinkButton>
+            <HyperlinkButton Style="{StaticResource rsHyperLinkPane}" NavigateUri="http://twitter.com/formula4windows" x:Uid="AboutFollowOnTwitter" Content=" "></HyperlinkButton>
+        </StackPanel>
+
+        <Grid x:Name="gdrChangelog" Grid.Row="1" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="15"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Style="{StaticResource rsTextBlockTittlePane}" x:Uid="AboutChangelog" Text=" "></TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource rsTextBlockDescriptionPane}" x:Uid="AboutHereYouCan" Text=" " TextWrapping="WrapWholeWords"></TextBlock>
+            <Frame Grid.Row="2" Margin="0,15,0,15" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="frameChangelog"></Frame>
+        </Grid>
+        <Grid x:Name="grdNews" Grid.Row="1" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="15"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Style="{StaticResource rsTextBlockTittlePane}" x:Uid="AboutNews" Text=" "></TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource rsTextBlockDescriptionPane}" x:Uid="AboutReaadMoreAbout" Text=" " TextWrapping="WrapWholeWords"></TextBlock>
+            <Frame Grid.Row="2" Margin="0,15,0,15" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="frameNews"></Frame>
+        </Grid>
+
+        <StackPanel x:Name="gdrSendFeedback" Grid.Row="1" Visibility="Collapsed">
+            <TextBlock Style="{StaticResource rsTextBlockTittlePane}" x:Uid="AboutSendMeFeedback" Text=" "></TextBlock>
+            <TextBlock Style="{StaticResource rsTextBlockDescriptionPane}" x:Uid="AboutFeedbackDescription" Text=" " TextWrapping="WrapWholeWords"></TextBlock>
+            <TextBox x:Name="txtEmail" InputScope="EmailSmtpAddress" PlaceholderText="Your email" Margin="15"></TextBox>
+            <TextBox x:Name="txtSubject" PlaceholderText="Subject" Margin="15,8,15,5"></TextBox>
+            <!--<RelativePanel Grid.Row="4" Margin="0,10,0,15" HorizontalAlignment="Stretch">-->
+            <!--<RelativePanel.Resources>
+                    <Style TargetType="AppBarButton">
+                        <Setter Property="IsCompact" Value="True"/>
+                    </Style>
+                </RelativePanel.Resources>
+                <AppBarButton x:Name="openFileButton"
+                  Click="OpenButton_Click"/>
+                <AppBarButton Height="30" Width="30" Icon="Bold" Click="BoldButton_Click" ToolTipService.ToolTip="Bold" RelativePanel.LeftOf="italicButton"/>
+                <AppBarButton x:Name="italicButton" Icon="Italic" Click="ItalicButton_Click" ToolTipService.ToolTip="Italic" RelativePanel.LeftOf="underlineButton"/>
+                <AppBarButton x:Name="underlineButton" Icon="Underline" Click="UnderlineButton_Click" ToolTipService.ToolTip="Underline" RelativePanel.AlignRightWithPanel="True"/>-->
+            <RichEditBox Margin="15" x:Name="txtMenssage" Height="200" RelativePanel.Below="openFileButton" 
+                 RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"/>
+            <TextBlock Foreground="{ThemeResource SystemBaseMediumHighColor}" Margin="15" TextWrapping="WrapWholeWords" x:Uid="AboutFeedbackMenssageHelp" Text=" "></TextBlock>
+            <!--</RelativePanel>-->
+            <Button ToolTipService.ToolTip="Send feedback" Click="btnSend_Click" x:Name="btnSend" Content="Send Feedback" Width="150" HorizontalAlignment="Right" Margin="0,0,15,0"></Button>
+            <TextBlock Foreground="{ThemeResource rsColorMiddleText}" Margin="15" TextWrapping="WrapWholeWords" x:Name="lblMenssage" Text=" "></TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>

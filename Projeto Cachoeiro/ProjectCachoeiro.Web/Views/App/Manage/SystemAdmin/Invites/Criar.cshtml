@@ -1,0 +1,71 @@
+﻿@model ProjectCachoeiro.Web.Models.Invite
+@{
+    ViewData["Title"] = "Enviar convite";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-9">
+        <div class="toolbar">
+            <div class="left">
+                <h2>Enviar convite</h2>
+            </div>
+            <div class="clean"></div>
+        </div>
+        <div class="view-element">
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="form" asp-action="Criar">
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <div class="form-group">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" placeholder="contato@contoso.com" />
+                            <span asp-validation-for="Email"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="left">
+                <a class="btn btn-link" asp-action="Index"><i class="fa fa-list-ul"></i> Lista de convites</a>
+            </div>
+            <div class="right">
+                <!-- TODO: Implementar função Limpar -->
+                <a class="btn btn-link" href="#"><i class="fa fa-remove"></i> Limpar</a>
+                <a class="btn btn-success" onclick="$('#form').submit();"><i class="fa fa-user-plus"></i> Enviar</a>
+            </div>
+            <div class="clean"></div>
+        </div>
+        <div class="view-bottom">
+            <hr />
+            <p class="small">Uma vez que o responsável pelo sistema receba o convite, ele poderá acessar a Hidra através da opção "Tenho um convite" na página principal.</p>
+            <!-- TODO: Mecanismo para mandar e-mail com informações, ver linha abaixo -->
+            <p class="small">O cliente não recebá nenhuma informação por e-mail</p>
+        </div>
+    </div>
+    <div class="info-bar col-md-3">
+        @{
+            OtherOptions otherOptions = new OtherOptions
+            {
+                Descricao = "Veja opções relacionadas com a apresentação de itens.",
+                FeedbackEChamadoID = "ItemFamilia",
+                OpcoesRelacionadas = new Links[] {
+                    new Links{
+                        Titulo = "Adicionar família",
+                        Url = "/Familias/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar estado de produto",
+                        Url = "/Estados/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar produto",
+                        Url = "/Produtos/Create"
+                    }
+                }
+            };
+        }
+        @Html.Partial("AppOtherOptions", otherOptions)
+    </div>
+</div>
+

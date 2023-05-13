@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="VTNORTON.tgit.master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- CSS -->
+    <link href="/css/heartthrob.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/responsivo.css" rel="stylesheet" />
+    <link href="/css/ui-light.css" rel="stylesheet" />
+    <link href="/tgit/css/tgit.css" rel="stylesheet" />
+    <!-- Fim do CSS -->
+
+    <!-- JavaScript -->
+    <script src="/js/jquery.js"></script>
+    <script async="async" src="/js/vtn.pinnedsite.js"></script>
+    <script src="/js/WinJS.js"></script>
+    <script src="/js/WinJs.UI.Searchbox.js"></script>
+    <!-- Fim do JavaScript -->
+
+    <!-- Metadados -->
+    <title>#TGIT - Grey's Anatomy, Scandal e How To Get Away With Murder | Vtnorton</title>
+    <meta name="description" content="Veja a ABC ao vivo e acompanhe junto com os principais grupos do Brasil das séreis produzidas pela Shondaland" />
+    <meta name="keywords" content="vitor norton, shondalande, shonda rhimes, abc, scandal, how to get away with murder, ao vivo, online, grey's anatomy" />
+    <meta name="image" content="http://www.vtnorton.com/images/logos/logo.vtnorton.thumbnail.png" />
+    <meta name="thumbnail" content="http://www.vtnorton.com/images/logos/logo.vtnorton.thumbnail.png" />
+    <meta name="author" content="Vítor Norton, contato@vtnorton.com" />
+    <meta name="designer" content="Vítor Norton" />
+    <meta name="copyright" content="vtnorton" />
+    <meta name="reply-to" content="contato@vtnorton.com" />
+    <meta name="owner" content="Vítor Norton" />
+    <meta name="url" content="http://www.vtnorton.com" />
+    <meta name="identifier-URL" content="http://www.vtnorton.com" />
+    <meta name="directory" content="submission" />
+    <meta name="category" content="software" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="revisit-after" content="1 day" />
+    <meta name="application-name" content="vtnorton.com" />
+    <meta content="@vt_norton" name="twitter:site" />
+    <!-- Fim do Metadados -->
+
+    <!-- Tecnologias -->
+    <link href="http://www.vtnorton.com/opensearch.xml" rel="search" title="Hidra" type="application/opensearchdescription+xml" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="msapplication-config" content="/livetile.xml" />
+    <meta name="msapplication-starturl" content="http://www.vtnorton.com/?=ie-starturl" />
+    <meta name="msapplication-tooltip" content="Entrar em www.vtnorton.com" />
+    <meta name="msapplication-navbutton-color" content="black" />
+    <!-- Achar alguma cor interessante -->
+    <link href="/images/icones/icon.png" rel="icon" type="image/x-icon" />
+    <link href="/images/icones/shortcut-icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/icones/touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icones/touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icones/touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icones/touch-icon-ipad-retina.png" />
+    <link rel="apple-touch-startup-image" href="/images/icones/startup.png" />
+    <!-- 320 x 480 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Fim de Tecnologias -->
+</head>
+<body>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

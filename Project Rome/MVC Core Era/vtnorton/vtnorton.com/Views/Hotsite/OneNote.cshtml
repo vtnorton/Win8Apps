@@ -1,0 +1,172 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Vtnorton.Model
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Guia definitivo para OneNote - eBook gratuito por Vítor Norton";
+    ViewData["Description"] = "Trabalhe em equipe, em todos os lugares com essa incrível ferramenta!";
+    ViewData["Keywords"] = "onenote, ms onenote, onenote 2016, office 365, microsoft office";
+}
+@section metatags
+{
+    <link href="/onenote/css/main.css" rel="stylesheet">
+}
+@section submenu{
+    <li><a href="#Subscribe" data-scroll>Baixar agora mesmo</a></li>
+    <li><a href="/vitor">Sobre mim</a></li>
+}
+<section class="hero" id="Home">
+    <div class="section-wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="logo">
+                    <a href="#">
+                        <img src="/onenote/img/logo.png" alt="Guia definitivo para o OneNote">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row" data-0="opacity: 1" data-800="opacity: 0">
+            <div class="col-md-7">
+                <div class="welcome-message">
+                    <h1>Guia definitivo para o OneNote</h1>
+                    <h2>Trabalhe em equipe, em todos os lugares com essa incrível ferramenta.</h2>
+                </div>
+                <div class="action-button">
+                    <a href="#Features" class="button learn-more text-center">Saiba mais <i class="fa fa-arrow-right"></i></a><a href="#Subscribe" class="button buy text-center">Baixe agora <i class="fa fa-download"></i></a>
+                    @*<%--<p>*Disponível em PDF, ePUB, Mobi e Kindle.</p>--%>*@
+                    <p>*Disponível somente em PDF, por enquanto.</p>
+                </div>
+                <div>
+                    <br />
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- 2ad.vnext.com.br -->
+                    <ins class="adsbygoogle"
+                         style="display: block"
+                         data-ad-client="ca-pub-5584056449430370"
+                         data-ad-slot="9072010449"
+                         data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+            <div class="col-md-5 text-center">
+                <img src="/onenote/img/ebook.png" alt="ebook" style="box-shadow: 0 0 19px -6px rgb(0, 0, 0)" class="book-cover" data-no-retina>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Hero section end-->
+<!--counter-->
+<div class="counter text-center" id="Features">
+    <!--container-->
+    <div class="section-wrapper">
+        <div>
+            <h2 class="white">Guia definitivo para o OneNote</h2>
+            <h4 class="white">Quais os pontos que este livro gratuito oferece?</h4>
+            <br />
+        </div>
+        <div class="row">
+            <div class="slide-left col-sm-4">
+                <i class="fa fa-4x fa-check-square-o"></i>
+                <h4 class="white" style="font-weight: 500">OneNote, o básico</h4>
+                <hr>
+                <p>OneNote é um caderno virtual de anotações que permite que os usuários criem anotações escritas ou desenhadas e compartilhar elas!</p>
+            </div>
+            <div class="slide-top col-sm-4">
+                <i class="fa fa-4x fa-list-ol"></i>
+                <h4 class="white" style="font-weight: 500">Organize suas ideias</h4>
+                <hr>
+                <p>Quando estamos falando de estudos ou algum projeto grande, é preciso organizar bem as anotações e o OneNote irá facilitar e muito para você!</p>
+            </div>
+            <div class="slide-right col-sm-4">
+                <i class="fa fa-4x fa-users"></i>
+                <h4 class="white" style="font-weight: 500">OneNote para equipes</h4>
+                <hr>
+                <p>O OneNote é fantástico para equipes, pois várias pessoas podem editar anotações ao mesmo tempo.</p>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="slide-left col-sm-4">
+                <i class="fa fa-4x fa-edit"></i>
+                <h4 class="white" style="font-weight: 500">Desenho com o OneNote</h4>
+                <hr>
+                <p>Se é anotações, tem que ser possível desenhar né? E não é que dá para fazer muita coisa com os desenhos no OneNote?</p>
+            </div>
+            <div class="slide-top col-sm-4">
+                <i class="fa fa-4x fa-thumbs-up"></i>
+                <h4 class="white" style="font-weight: 500">Dicas para o OneNote</h4>
+                <hr>
+                <p>Neste espaço eu reuni algumas dicas de ferramentas do OneNote que podem ser extremamente úteis para você.</p>
+            </div>
+        </div>
+    </div>
+    <!--container end-->
+</div>
+<!--counter end-->
+<!--Author-->
+
+<section class="author section-spacing" id="Author">
+    <div class="section-wrapper">
+        <div class="text-center">
+            <h2>Sobre o autor</h2>
+        </div>
+        <div class="row">
+            <img src="/images/home/norton.jpg" alt="author" class="author-img slide-left col-md-5">
+            <div class="col-md-7">
+                <h4 class="slide-right">Vítor Norton</h4>
+                <hr class="slide-right">
+                <p class="slide-right">Venho trabalhando com o OneNote já tem alguns anos, uso-o constantemente para gerenciar os conteúdos da minha faculdade, escrever as aulas e palestras que eu dou, organizar as minhas ideias e os feedbacks que eu recebo nos meus aplicativos, que são publicados pela Y’APP e para controlar a pauta do meu podcast favorito o Nextcast, o melhor podcast sobre a Microsoft do Brasil, ele é produzido e distribuído pelo vNext Brasil.</p>
+                <p class="slide-right">Sou Microsoft MVP em Windows Experience, e venho, no meu primeiro eBook trazer um pouco da experiência que tive com o OneNote e como ele pode te ajudar a alcançar mais nas suas anotações, seja em casa, na escola ou no trabalho. </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Author end-->
+<!--buy now-->
+<div class="buy-now text-center" id="Subscribe">
+    <div class="section-wrapper" id="prebaixar">
+        <div class="text-center">
+            <h2 style="color: #fff">Cadastre-se</h2>
+            <h4 style="color: #ddd">Informe seu e-mail para poder baixar o eBook. Não irei enviar spam, prometo!</h4>
+        </div>
+
+        @model Emails
+
+        @using (Html.BeginForm())
+            {
+            @Html.TextBoxFor(m => m.Email, new { placeholder = "Endereço de e-mail" })<br /><br />
+            <button class="button buy" type="submit" value="Submit" Height="50">Baixar agora</button><br />
+        }
+        @if (!ViewData.ModelState.IsValid)
+            {
+            <div class="error">
+                @Html.ValidationSummary()
+            </div>
+        }
+        @if (ViewData["error"] != null)
+        {
+            <div class="error">
+                Houve um erro ao cadastrar o seu e-mail no sistema.
+            </div>
+        }
+        <div style="margin-bottom: 22px; margin-top: 20px">
+            <asp:TextBox ID="txtEmail" MaxLength="120" CssClass="slide-bottom emailbox form-control" placeholer="Email" runat="server" TextMode="Email"></asp:TextBox>
+        </div>
+        <br /><br />
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display: block"
+             data-ad-client="ca-pub-5584056449430370"
+             data-ad-slot="9072010449"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</div>
+<!--buy now end-->
+<script src="/onenote/js/scripts.min.js"></script>
+<script src="/onenote/js/main.js"></script>

@@ -1,0 +1,106 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Adicionar usuário administrador";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-9">
+        <div class="view-element">
+            <div class="toolbar">
+                <div class="left">
+                    <h2>Adicionar usuário administrador</h2>
+                </div>
+                <div class="clean"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <form id="form" asp-action="Criar">
+                        <div asp-validation-summary="All"></div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Nome</label>
+                                <input asp-for="Nome" type="text" />
+                                <span asp-validation-for="Nome"></span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Sobrenome</label>
+                                <input asp-for="Sobrenome" type="text" />
+                                <span asp-validation-for="Sobrenome"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>CPF</label>
+                                <input asp-for="CPF" type="text" class="cpf" />
+                                <span asp-validation-for="CPF"></span>
+                            </div>
+                        </div>
+                        <br /><br />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>E-mail</label>
+                                <input asp-for="Email" type="email" />
+                                <span asp-validation-for="Email"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Senha</label>
+                                <input asp-for="Password" type="password" />
+                                <span asp-validation-for="Password"></span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Confirmar senha</label>
+                                <input asp-for="ConfirmPassword" type="password" />
+                                <span asp-validation-for="ConfirmPassword"></span>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="view-bottom">
+            <hr />
+            <p class="small">Legenda da tabela e outras informações importantes a serem acrescentadas aqui.</p>
+        </div>
+    </div>
+    <div class="info-bar col-md-3">
+        @{
+            OtherOptions otherOptions = new OtherOptions
+            {
+                Descricao = "Veja opções relacionadas com a apresentação de itens.",
+                FeedbackEChamadoID = "ItemFamilia",
+                OpcoesRelacionadas = new Links[] {
+                    new Links{
+                        Titulo = "Adicionar família",
+                        Url = "/Familias/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar estado de produto",
+                        Url = "/Estados/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar produto",
+                        Url = "/Produtos/Create"
+                    }
+                }
+            };
+        }
+        @Html.Partial("AppOtherOptions", otherOptions)
+    </div>
+</div>
+
+<div class="taskbar">
+    <div class="left">
+        <a class="btn btn-link" asp-action="Index"><i class="fa fa-list-ul"></i> Voltar</a>
+    </div>
+    <div class="right">
+        <!-- TODO: Implementar função Limpar -->
+        <a class="btn btn-link" href="#"><i class="fa fa-remove"></i> Limpar</a>
+        <a class="btn btn-success" onclick="$('#form').submit();"><i class="fa fa-plus"></i> Criar</a>
+    </div>
+    <div class="clean"></div>
+</div>

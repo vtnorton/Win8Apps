@@ -1,0 +1,12 @@
+﻿{
+  "@context": "http://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Conjugar",
+  "operatingSystem": "Windows 10",
+  "applicationCategory": "http://schema.org/BusinessApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "Free",
+    "priceCurrency": "USD"
+  }
+}

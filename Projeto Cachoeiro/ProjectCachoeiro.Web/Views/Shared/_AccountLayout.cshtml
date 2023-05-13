@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8">
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/heartthrob/build/heartthrob.css" />
+        <link rel="stylesheet" href="~/lib/heartthrob/build/shell.heartthrob.css" />
+        <link rel="stylesheet" href="~/lib/heartthrob/build/uap.heartthrob.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/lib/heartthrob/build/heartthrob.min.css" />
+        <link rel="stylesheet" href="~/lib/heartthrob/build/shell.heartthrob.min.css" />
+        <link rel="stylesheet" href="~/lib/heartthrob/build/uap.heartthrob.min.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
+    </environment>
+</head>
+<body>
+    <div class="box">
+        <div class="box-header">
+            <img src="~/images/Square.png" />
+        </div>
+        <div class="box-content">
+            @RenderBody()
+        </div>
+    </div>
+
+    <footer>
+        <ul>
+            <li><p>©2018 Hidra @ProjectCachoeiro.Web.Util.Information.Version()</p></li>
+            <li><a href="#">Termos de uso</a></li>
+            <li><a href="#">Política de privacidade</a></li>
+        </ul>
+    </footer>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/js/uap.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="~/js/uap.min.js" asp-append-version="true"></script>
+    </environment>
+
+</body>
+</html>

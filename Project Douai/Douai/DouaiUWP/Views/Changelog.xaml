@@ -1,0 +1,118 @@
+﻿<Page
+    x:Class="DouaiUWP.Views.Changelog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DouaiUWP.Views"
+    xmlns:viewmodels="using:DouaiUWP.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    NavigationCacheMode="Enabled"
+    mc:Ignorable="d">
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition />
+        </TransitionCollection>
+    </Page.Transitions>
+
+    <Page.Resources>
+        <DataTemplate x:Key="MasterListViewItemTemplate" x:DataType="viewmodels:HistoryVersionViewModel">
+            <Grid Margin="0,11,0,13">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="{x:Bind VersionName}" Style="{ThemeResource BaseTextBlockStyle}" />
+
+                <!--<TextBlock
+                    Text="{x:Bind DateCreatedHourMinute}"
+                    Grid.Row="1"
+                    MaxLines="1"
+                    Style="{ThemeResource ListBodyTextBlockStyle}" />-->
+                <TextBlock
+                    Text="{x:Bind DateCreatedHourMinute}"
+                    Grid.Row="1"
+                    MaxLines="1" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="DetailContentTemplate" x:DataType="viewmodels:HistoryVersionViewModel">
+            <ScrollViewer>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" x:Name="txtVersionName" Style="{ThemeResource TitleTextBlockStyle}" HorizontalAlignment="Left" Text="{x:Bind VersionName}" />
+                    <TextBlock Grid.Row="1" x:Name="txtDataRelease" HorizontalAlignment="Left" Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind UpdateRelease}" EntranceNavigationTransitionInfo.IsTargetElement="True" />
+                    <TextBlock ScrollViewer.VerticalScrollBarVisibility="Visible" 
+                       ScrollViewer.ZoomMode="Enabled" Grid.Row="2" 
+                       Margin="0,15,0,0" VerticalAlignment="Stretch"
+                       x:Name="txtChangelog" HorizontalAlignment="Stretch" 
+                       Style="{ThemeResource BodyTextBlockStyle}" 
+                       TextWrapping="WrapWholeWords" Text="{x:Bind Changelog}" />
+                </Grid>
+            </ScrollViewer>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid x:Name="LayoutRoot" Loaded="LayoutRoot_Loaded">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="AdaptiveStates" CurrentStateChanged="AdaptiveStates_CurrentStateChanged">
+                <VisualState x:Name="DefaultState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <Setter Target="MasterColumn.Width" Value="*" />
+                        <Setter Target="DetailColumn.Width" Value="0" />
+                        <Setter Target="MasterListView.SelectionMode" Value="None" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="MasterColumn" Width="320" />
+            <ColumnDefinition x:Name="DetailColumn" Width="*" />
+        </Grid.ColumnDefinitions>
+        <ListView
+            x:Name="MasterListView"
+            ItemContainerTransitions="{x:Null}"
+            ItemTemplate="{StaticResource MasterListViewItemTemplate}"
+            IsItemClickEnabled="True"
+            ItemClick="MasterListView_ItemClick">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+        <ContentPresenter
+            x:Name="DetailContentPresenter"
+            Grid.Column="1"
+            Grid.RowSpan="4"
+            BorderThickness="1,0,0,0"
+            Padding="24,0"
+            BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}"
+            Content="{x:Bind MasterListView.SelectedItem, Mode=OneWay}"
+            ContentTemplate="{StaticResource DetailContentTemplate}">
+            <ContentPresenter.ContentTransitions>
+                <!-- Empty by default. See MasterListView_ItemClick -->
+                <TransitionCollection />
+            </ContentPresenter.ContentTransitions>
+        </ContentPresenter>
+
+    </Grid>
+</Page>

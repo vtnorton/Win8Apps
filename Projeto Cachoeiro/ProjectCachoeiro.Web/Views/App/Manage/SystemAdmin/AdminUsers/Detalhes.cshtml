@@ -1,0 +1,63 @@
+﻿@model ProjectCachoeiro.Web.Models.ApplicationUser
+@{
+    ViewData["Title"] = @Html.DisplayFor(model => model.Nome + " " + model.Sobrenome);
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-9">
+        <div class="view-element">
+            <div class="toolbar">
+                <div class="left">
+
+                    <h2>@Html.DisplayFor(model => model.Nome) @Html.DisplayFor(model => model.Sobrenome)</h2>
+                </div>
+                <div class="clean"></div>
+            </div>
+            <div class="row">
+                <!-- TODO: da pra melhorar muito essa pagina -->
+                <div class="col-md-7 col-sm-6">
+                    <p>CPF: @Html.DisplayFor(model => model.CPF)</p>
+                    <p>Data de nascimento: @Html.DisplayFor(model => model.DataDeNascimento)</p>
+                    <p>E-mail: @Html.DisplayFor(model => model.Email)</p>
+                    <p>Telefone: @Html.DisplayFor(model => model.PhoneNumber)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="info-bar col-md-3">
+        @{
+            OtherOptions otherOptions = new OtherOptions
+            {
+                Descricao = "Veja opções relacionadas com a apresentação de itens.",
+                FeedbackEChamadoID = "ItemFamilia",
+                OpcoesRelacionadas = new Links[] {
+                    new Links{
+                        Titulo = "Adicionar família",
+                        Url = "/Familias/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar estado de produto",
+                        Url = "/Estados/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar produto",
+                        Url = "/Produtos/Create"
+                    }
+                }
+            };
+        }
+        @Html.Partial("AppOtherOptions", otherOptions)
+    </div>
+</div>
+<div class="taskbar">
+    <div class="left">
+        <a class="btn btn-link" asp-action="Index"><i class="fa fa-list-ul"></i> Voltar</a>
+    </div>
+    <div class="right">
+        <!--TODO: Enviar e-mail novamente <a asp-action="Create" class="btn"><i class="fa fa-user-plus"></i> Enviar novo convite</a> -->
+        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.Id"><i class="fa fa-trash-o"></i>Apagar</a>
+        <a asp-action="Create" class="btn"><i class="fa fa-user-plus"></i> Adicionar novo usuário</a>
+    </div>
+    <div class="clean"></div>
+</div>

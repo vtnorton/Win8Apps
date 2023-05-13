@@ -1,0 +1,72 @@
+﻿@using ProjectCachoeiro.Web.Extensions
+@model string
+<hr />
+<div class="left">
+    <a class="btn btn-link" asp-action="Index"><i class="fa fa-list-ul"></i> Voltar</a>
+</div>
+<div class="right">
+    @if (Model.Contains("EDIT"))
+    {
+        int Id = int.Parse(Model.GetBetween("ID=", ";"));
+        <form id="delete" asp-route-id="@Id" asp-action="Delete"></form>
+        <a class="btn btn-danger" onclick="$('#delete').submit()"><i class="fa fa-trash-o"></i>Apagar</a>
+        @*<a class="btn btn-danger" asp-action="Delete" asp-route-id="@Id"><i class="fa fa-trash-o"></i>Apagar</a>*@
+        <a class="btn btn-success" onclick="$('#form').submit();"><i class="fa fa-save"></i> Salvar</a>
+    }
+    else if (Model.Contains("CREATE"))
+    {
+        <a class="btn btn-link" onclick="window.location.reload()" href="#"><i class="fa fa-remove"></i> Limpar</a>
+        <a class="btn btn-success" onclick="$('#form').submit();"><i class="fa fa-plus"></i> Criar</a>
+    }
+    else if (Model.Contains("VIEW"))
+    {
+
+        int Id = int.Parse(Model.GetBetween("ID=", ";"));
+        <form id="delete" asp-route-id="@Id" asp-action="Delete"></form>
+        <a class="btn btn-danger" onclick="$('#delete').submit()"><i class="fa fa-trash-o"></i>Apagar</a>
+        <a class="btn" asp-action="Editar" asp-route-id="@Id"><i class="fa fa-edit"></i>Editar</a>
+
+        if (Model.Contains("PROPOSTA"))
+        {
+            <a class="btn" onclick="alert('Esta função ainda está em desenvolvimento')"><i class="fa fa-list"></i> Invoice</a>
+            <a class="btn" onclick="alert('Esta função ainda está em desenvolvimento')"><i class="fa fa-list"></i> Pack List</a>
+        }
+
+        if (Model.Contains("PRODUTO"))
+        {
+            <a class="btn" onclick="alert('Esta função ainda está em desenvolvimento')"><i class="fa fa-print"></i> Imprimir etiqueta</a>
+        }
+    }
+
+</div>
+<div class="clean"></div>
+@if (Model.Contains("CREATE") || Model.Contains("EDIT"))
+{
+    <br />
+    <small class="text-right right">Os campos com * significam que são obrigatórios.</small>
+    <div class="clean"></div>
+}
+<script>
+
+    function deletar() {
+        //$.ajax({
+        //    type: "POST",
+        //    url: "",
+        //    data: { id: dataid },
+        //    success: function () {
+        //        alert("success!");
+        //    },
+        //    error: function (data) {
+        //        alert("Error: " + data.id);
+        //    }
+        //});
+    };
+
+    var validator = $("#form").kendoValidator({
+        messages: {
+            required: "Este campo é obrigatório",
+            email: "Por favor, insira um e-mail válido",
+            url: "Por favor, insira um link válido"
+        }
+    }).data("kendoValidator");
+</script>

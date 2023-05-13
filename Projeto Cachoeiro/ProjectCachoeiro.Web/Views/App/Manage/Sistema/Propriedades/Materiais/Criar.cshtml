@@ -1,0 +1,40 @@
+﻿@model ProjectCachoeiro.Web.Models.Produtos.Material
+@{
+    ViewData["Title"] = "Criar material";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@await Html.PartialAsync("~/Views/App/Manage/Sistema/_ManageNav.cshtml")
+<div class="inner-content">
+    <div class="toolbar">
+        <div class="left">
+            <h2>Criar material de produto</h2>
+        </div>
+        <div class="clean"></div>
+    </div>
+    <div class="view-element">
+        <form id="form" asp-action="Criar">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="Nome"></label>
+                    <input asp-for="Nome" />
+                    <span asp-validation-for="Nome"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <label asp-for="Descricao"></label>
+                    <textarea asp-for="Descricao"></textarea>
+                    <span asp-validation-for="Descricao"></span>
+                </div>
+            </div>
+        </form>
+        @await Html.PartialAsync("~/Views/Shared/AppTaskbar.cshtml", "CREATE")
+    </div>
+    <div class="view-bottom">
+        <hr />
+        <p class="small">O material de um produto será utilizado no cadastro dele. Somente administradores podem criar ou editar materiais.</p>
+    </div>
+</div>
+<div class="clean"></div>

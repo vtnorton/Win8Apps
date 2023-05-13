@@ -1,0 +1,148 @@
+﻿@model IEnumerable<ProjectCachoeiro.Web.Comercial.Cliente>
+@{
+    ViewData["Title"] = "Clientes";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/x-kendo-tmpl" id="single-contact-template">
+    <div class="contact-view k-widget" id="#: Id #">
+        <div class="header">
+            <span class="hidden-email" style="display:none">#: EmailContato #</span>
+            <div class="left">
+                <span class="image-wrapper" style="margin-top:6px">
+                    @*<img src="# if (sessionStorage.getItem(EmployeeID)) {#data:image/png;base64,#:sessionStorage.getItem(EmployeeID)# # } else {#@(Url.Content("Contacts/Picture/"))#:EmployeeID# # } #" alt="#:EmployeeID # image" />*@
+                </span>
+            </div>
+            <div class="right contact-info">
+                <div class="name">#: GetName #</div>
+                <div class="info">#: CNPJ #</div>
+                <div class="edit-buttons">
+                    <a href="mailto:#: EmailContato #" class="k-button k-single-email-button"><span class="icon i-mail"></span></a>
+                    <a href="/Clientes/Detalhes/#: Id #" class="k-button k-single-view-details"><span class="icon icon-ok"></span></a>
+                    <a href="/Clientes/Editar/#: Id #" class="k-button k-single-edit-button"><span class="icon i-edit"></span></a>
+                    <span class="k-button k-single-delete-button"><span class="icon i-delete"></span></span>
+                </div>
+            </div>
+            <div class="clean"></div>
+        </div>
+        <div class="details">
+            <div class="row">
+                <div class="col-md-6">
+                    <p><span class="small">Telefone</span><br /> #if (Telefone) {# #: Telefone # #} else { # Não cadastrado #}#</p>
+                    <p><span class="small">Fax empresarial</span><br /> #if (Fax) {# #: Fax # #} else { # Não cadastrado #}#</p>
+                    <p><span class="small">Email de contato</span><br /> #if (EmailContato) {# <a href="mailto:#: EmailContato #">#: EmailContato #</a> #} else { # Não cadastrado #}#</p>
+                    <p><span class="small">Endereço do site</span><br /> #if (Site) {# <a href="#: Site #">#: Site #</a> #} else { # Não cadastrado #}#</p>
+                </div>
+                <div class="col-md-6">
+                    <p><span class="small">País</span><br /> #if (Pais) {# #: Pais # #} else { # Não cadastrado #}#</p>
+                    <p><span class="small">Endereco da empresa</span><br /> #if (Endereco) {# #: GetEndereco # #} else { # Não cadastrado #}#</p>
+                </div>
+            </div>
+            <div onclick="loadMap(this, '#: GetEndereco #')" id="map">
+                <p class="text-center">
+                    Abra o endereço do cliente no mapa para achar a localização do mesmo. <br /><br />
+                    <a class="btn"><i class="fa fa-map"></i> Abrir mapa</a>
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    #if (Descricao) {# <p><span class="small">Descricao</span><br /> #: Descricao # #}#</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<div class="row">
+    <div class="col-md-9">
+        <div class="toolbar">
+            <div class="left">
+                <h2>Clientes</h2>
+            </div>
+            <div class="right">
+                <a class="btn btn-vertical-pane btn-link selected" onclick="changeToListDetails(this)" title="Mostrar painel vertical"><i class="fa fa-th-list"></i></a>
+                <a class="btn btn-cards btn-link" onclick="changeToContactsCards(this)" title="Mostrar cartões"><i class="fa fa-th"></i></a>
+                <a class="btn" href="/Clientes/Criar"><i class="fa fa-plus"></i> Novo</a>
+            </div>
+            <div class="clean"></div>
+        </div>
+        <div class="inner-section list-view view-element">
+            <div class="list-view-inner">
+                @* TODO: Implementar função de search
+                    <span class="searchbox">
+                        <input type="text" class="k-input search-textbox" placeholder="Search people ...">
+                    </span>*@
+                <!-- TODO: ListView Editavel: https://demos.telerik.com/aspnet-mvc/webmail/Contacts -->
+                @(Html.Kendo().ListView<ProjectCachoeiro.Web.Comercial.Cliente>()
+                        .Name("mainWidget").TagName("div").ClientTemplateId("single-contact-template")
+                            .DataSource(data => data.Ajax().ServerOperation(false)
+                                .Events(events => events.Error("error_handler"))
+                                .Model(model => model.Id(p => p.Id))
+                                .Read(read => read.Action("Read", "Clientes"))
+                                .Destroy("Destroy", "Clientes")
+                            ).Selectable().Events(e => e
+                                .DataBound("onListViewDataBound")
+                                .Change("onListViewSelectionChange")
+                                .Cancel("onListViewChangeCancel")
+                                .Save("onListViewChangeSave")))
+            </div>
+            <div class="single-contact-details">
+
+            </div>
+        </div>
+    </div>
+    <div class="info-bar col-md-3">
+        @{
+            OtherOptions otherOptions = new OtherOptions
+            {
+                Descricao = "Veja opções relacionadas com com sua lista de clientes",
+                FeedbackEChamadoID = "IndexClientes",
+                OpcoesRelacionadas = new Links[] {
+                    new Links{
+                        Titulo = "Adicionar novo cliente",
+                        Url = "/Clientes/Criar"
+                    }
+                }
+            };
+        }
+        @Html.Partial("AppOtherOptions", otherOptions)
+    </div>
+</div>
+<script>
+    function loadMap(x, address) {
+        geocoder = new google.maps.Geocoder();
+        map = new google.maps.Map(x, {
+            center: { lat: -34.397, lng: 150.644 },
+            zoom: 14
+        });
+
+        if (geocoder) {
+            geocoder.geocode({ 'address': address }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+                        map.setCenter(results[0].geometry.location);
+                        var infowindow = new google.maps.InfoWindow(
+                            {
+                                content: '<b>' + address + '</b>',
+                                size: new google.maps.Size(150, 50)
+                            });
+
+                        var marker = new google.maps.Marker({
+                            position: results[0].geometry.location,
+                            map: map,
+                            title: address
+                        });
+                        google.maps.event.addListener(marker, 'click', function () {
+                            infowindow.open(map, marker);
+                        });
+
+                    }
+                } else {
+                    alert("Erro no mapa: tente recadastrar o endereço do cliente.");
+                }
+            });
+        }
+    };
+</script>
+<script type="text/javascript" src="~/js/contact.js"></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8OuOHO6KM8RGmWyRvzA9mjdwlVT4VHrk&callback=initMap"></script>

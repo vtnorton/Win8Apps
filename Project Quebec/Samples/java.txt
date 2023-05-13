@@ -1,0 +1,6 @@
+/*
+ * Created by: Formula - Universal Code Editor
+ */
+public class <#NAME>{
+	
+}

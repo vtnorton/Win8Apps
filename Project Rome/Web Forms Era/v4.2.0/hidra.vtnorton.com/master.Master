@@ -1,0 +1,160 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="HidraOnline.master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <!-- CSS -->
+    <link href="/css/styleOS.css" rel="stylesheet" />
+    <link href="/css/heartthrob.css" rel="stylesheet" />
+    <link href="/plugins/perfect/css/perfect-scrollbar.css" rel="stylesheet" />
+    <link href="/plugins/nprogress/css/nprogress.css" rel="stylesheet" />
+    <!-- CSS -->
+
+    <!-- Scripts -->
+    <script src="/js/jquery.js"></script>
+    <script src="/plugins/perfect/js/perfect-scrollbar.js"></script>
+    <script src="/plugins/nprogress/js/nprogress.js"></script>
+    <script src="/js/heartthrob.js"></script>
+    <script src="/js/hidraOS.js"></script>
+    <!-- Scripts -->
+
+    <!-- Metadados -->
+    <meta name="keywords" content="vitor norton, hidra, bsharp, microsoft, surface, office, windows, vtnorton, criar sites, design, heatthrob" />
+    <meta name="image" content="/images/logos/logo.hidra.thumbnail.png" />
+    <meta name="thumbnail" content="/images/logos/logo.hidra.thumbnail.png" />
+    <meta name="author" content="Vítor Norton, contato@vtnorton.com" />
+    <meta name="designer" content="Vítor Norton" />
+    <meta name="copyright" content="vtnorton" />
+    <meta name="reply-to" content="contato@vtnorton.com" />
+    <meta name="owner" content="Vítor Norton" />
+    <meta name="url" content="http://hidra.vtnorton.com" />
+    <meta name="identifier-URL" content="http://hidra.vtnorton.com" />
+    <meta name="directory" content="submission" />
+    <meta name="category" content="software" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="revisit-after" content="1 day" />
+    <meta name="application-name" content="hidra.vtnorton.com" />
+    <meta content="@vt_norton" name="twitter:site" />
+    <!-- Metadados -->
+
+    <!-- Tecnologias -->
+    <link href="http://www.vtnorton.com/opensearch.xml" rel="search" title="Pesquisar | Vítor Norton" type="application/opensearchdescription+xml" />
+    <%--<link rel="shortcut icon" href="/favicon.ico" />--%>
+    <meta name="msapplication-starturl" content="http://hidra.vtnorton.com/index.aspx" />
+    <meta name="msapplication-tooltip" content="Dashboard | Hidra OS" />
+    <meta name="msapplication-navbutton-color" content="black" />
+    <link rel="apple-touch-icon" href="/images/icones/touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icones/touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icones/touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icones/touch-icon-ipad-retina.png" />
+    <link rel="apple-touch-startup-image" href="/images/icones/startup.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Tecnologias -->
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <title>Hidra OS Alpha 4.1</title>
+</head>
+<body onkeydown="return (event.keyCode!=13)">
+    <header>
+        <div class="logo">
+            <a href="/dashboard.aspx">
+                <img src="/images/logo/hidra.png" />
+            </a>
+            <div class="logo">
+            </div>
+        </div>
+        <div class="clean"></div>
+        <div class="hamburger"></div>
+        <div class="clean"></div>
+
+        <nav>
+            <ul>
+                <li class="no-drop"><a href="/dashboard.aspx">Dashboard</a></li>
+                <li class="no-drop"><a href="/p/application.aspx">Aplicativos</a></li>
+                <li class="no-drop"><a href="/blog.aspx">Blog</a></li>
+                <li class="no-drop"><a href="/gdvw.aspx">God View</a></li>
+                <li class="no-drop"><a href="/p/histories.aspx">Histórias</a></li>
+                <li class="no-mobile"></li>
+                <li class="no-drop"><a href="/configuracoes.aspx">Configurações</a></li>
+                <li class="no-drop"><a href="/p/about.aspx">Sobre + Suporte</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="sub-menu">
+        <div class="links">
+            <asp:ContentPlaceHolder ID="SUBMENU" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <ul class="right minimenu">
+            <li><a href="#" class="menu-user">Vítor Norton</a></li>
+            <li>
+                <div title="Abrir caixa de personalização e acessibilidade" class="minimenu-acess"></div>
+                <div class="minimenu-panel-acess">
+                    <div title="Aumentar a fonte do texto principal" class="left minimenu-acess-fonte-maior"></div>
+                    <div title="Diminuir a fonte do texto principal" class="right minimenu-acess-fonte-menor"></div>
+                    <div class="clean"></div>
+                    <div onclick="document.getElementById('mafs').innerHTML = 'Selecionar'" title="Alterar a fonte padrão do site" class="minimenu-acess-fonte">
+                        Fonte
+                            <label id="mafs" class="minimenu-acess-fonte-selecionada">
+                                Segoe UI
+                            </label>
+                        <div class="clean"></div>
+                    </div>
+                    <div class="minimenu-acess-fonte-lista">
+                        <ul>
+                            <li class="ripple" onclick="document.getElementById('mafs').innerHTML = 'Arial'" title="Selecionar a fonte Arial" id="arial" style="font-family: Arial">Arial</li>
+                            <li class="ripple" onclick="document.getElementById('mafs').innerHTML = 'Georgia'" title="Selecionar a fonte Georgia" id="georgia" style="font-family: Georgia">Georgia</li>
+                            <li class="ripple" onclick="document.getElementById('mafs').innerHTML = 'Segoe UI'" title="Selecionar a fonte Segoe UI" id="segoe" style="font-family: 'Segoe UI'">Segoe UI</li>
+                            <li class="ripple" onclick="document.getElementById('mafs').innerHTML = 'Times'" title="Selecionar a fonte Times New Roman" id="times" style="font-family: 'Times New Roman'">Times New Roman</li>
+                        </ul>
+                    </div>
+                    <ul class="minimenu-acess-icons">
+                        <li title="Alinhar texto a direita" class="maiar"></li>
+                        <li title="Justificar texto" class="maiac"></li>
+                        <li title="Alinhar texto a esquerda" class="maiae"></li>
+                        <li title="Resetar todas as configurações" class="mairc"></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div title="Denunciar e reportar bug" class="minimenu-denunciar"></div>
+                <div class="minimenu-panel-denunciar">
+                    <ul>
+                        <li onclick="location.href='/p/Bug.aspx'" class="ripple"><a href='/p/Bug.aspx'>Reportar bug</a></li>
+                        <li onclick="location.href='/novo/sugestion.aspx'" class="ripple"><a href='/novo/sugestion.aspx'>Enviar sugestão</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <div class="clean"></div>
+    </div>
+    <form runat="server">
+        <asp:ContentPlaceHolder ID="Content" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </form>
+    <footer>
+        <div id="copyright">
+            Copyright <a href="/"><strong>Vítor Norton</strong></a>
+            <script type='text/javascript'>var creditsyear = new Date(); document.write(creditsyear.getFullYear());</script>
+            - "Mudando o mundo um bit de cada vez"
+        </div>
+    </footer>
+    <script>
+        var $buoop = { c: 2 };
+        function $buo_f() {
+            var e = document.createElement("script");
+            e.src = "//browser-update.org/update.js";
+            document.body.appendChild(e);
+        };
+        try { document.addEventListener("DOMContentLoaded", $buo_f, false) }
+        catch (e) { window.attachEvent("onload", $buo_f) }
+        NProgress.start();
+        setTimeout(function () { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
+    </script>
+</body>
+</html>

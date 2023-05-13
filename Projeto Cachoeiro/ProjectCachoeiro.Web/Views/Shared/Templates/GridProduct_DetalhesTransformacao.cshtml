@@ -1,0 +1,38 @@
+﻿<script id="TemplateDetalhesTransformar" type="text/x-kendo-tmpl">
+    <p style="float:right; margin: 15px 21px 0 0; position:relative; z-index:9" class="small">
+        <a class="light-grey" href="/Produtos/Detalhes/#=Id#"><i class="fa fa-link"></i> Produto: #= GetName #</a> |
+        <a href="/Produtos/Editar/#=Id#" class="light-grey"><i class="fa fa-edit"></i> Editar</a> |
+        <a href="/Produtos/Delete/#=Id#" class="red"><i class="fa fa-trash-o"></i> Apagar</a>
+    </p>
+
+    @(Html.Kendo().TabStrip().Name("produto_detalhes_tabstrip_#=Id#")
+                  .Items(items =>
+                  {
+                      items.Add().Text("Derivados").Selected(true).Content(
+                        @<text>@(Html.Kendo().Grid<ProjectCachoeiro.Web.Models.Produtos.Produto>()
+                                      .Name("#=Id#").Columns(col =>
+                                                 {
+                                                     col.Bound(c => c.GetName).Title("Nome");
+                                                     col.ForeignKey(c => c.IdStatus, (System.Collections.IEnumerable)ViewData["estado"], "Id", "Nome").Title("Estado");
+                                                     col.ForeignKey(c => c.IdMaterial, (System.Collections.IEnumerable)ViewData["material"], "Id", "Nome").Title("Material");
+                                                     col.ForeignKey(c => c.IdTipo, (System.Collections.IEnumerable)ViewData["tipo"], "Id", "Nome").Title("Tipo");
+                                                     col.Bound(c => c.GetPreco).Title("Preço");
+                                                     col.Bound(c => c.DisponivelEmEstoque).Title("Disponibilidade").ClientTemplate("# if (data.DisponivelEmEstoque) { # Disponível #}else{ # Indisponível # } #");
+                                                 }).Navigatable().NoRecords(n => n.TemplateId("NoRecord"))
+                                      .Pageable(page => page.Refresh(true).ButtonCount(5).Messages(c => { c.ItemsPerPage("Itens por página"); c.Last("Último"); c.Next("Próximo"); c.First("Primeira"); c.Refresh("Recarregar"); c.Display("{0} - {1} de {2} itens"); }))
+                                      .ClientDetailTemplateId("TemplateDetalhesIndividual").Editable(e => e.Mode(GridEditMode.InCell))
+                                      .Events(e => e.DataBound("LinkToNoRecord").CellClose("CellCloseScript"))
+                                      .DataSource(dataSource => dataSource
+                                         .Ajax().PageSize(5).Model(model => { model.Id(detail => detail.Id); }).Batch(true).ServerOperation(false)
+                                         .Read("ProductDetails_Read", "ProductDetails", new { Id = "#=Id#" })
+                                         .Update("ProductDetails_UpdateAsync", "ProductDetails")).ToClientTemplate())
+                        </text>);
+                     items.Add().Text("Detalhes do produto").Content(
+                        @<text>
+                            @await Html.PartialAsync("~/Views/Shared/Templates/GridProduct_DetalhesContent.cshtml")
+                        </text>);
+                  }).ToClientTemplate())
+</script>
+
+@await Html.PartialAsync("~/Views/Shared/Templates/GridProduct_DetalhesIndividual.cshtml")
+@await Html.PartialAsync("~/Views/Shared/Templates/GridProduct_Transformar.cshtml")

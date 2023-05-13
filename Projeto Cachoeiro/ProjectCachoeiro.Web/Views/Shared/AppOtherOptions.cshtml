@@ -1,0 +1,32 @@
+﻿@model ProjectCachoeiro.Web.Models.Utilitarios.OtherOptions
+<div class="toolbar">
+    <div class="left">
+        <h2>Outras opções</h2>
+    </div>
+    <div class="clean"></div>
+</div>
+
+<br />
+
+<div class="info-bar-item">
+    <h4>Relacionados</h4>
+    <p>@Model.Descricao</p>
+    <p>
+        @foreach (var item in Model.OpcoesRelacionadas)
+        {
+            <a href="@item.Url">@item.Titulo</a><br />
+        }
+    </p>
+</div>
+
+<div class="info-bar-item">
+    <h4>Suporte</h4>
+    <!-- TODO: Criar parte de chamados no sistema -->
+    <p>Precisa de uma ajuda com essa parte do sistema? <a href="#">Abra um chamado</a>.</p>
+</div>
+
+<div class="info-bar-item">
+    <h4>Feedback</h4>
+    <p>Faça deste sistema melhor, por mandar sugestões ou reportar erros no sistema.</p>
+    <p><a href="mailto:contato@vtnorton.com">Envie um feedback</a></p>
+</div>

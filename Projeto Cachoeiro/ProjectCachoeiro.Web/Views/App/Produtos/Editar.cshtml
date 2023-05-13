@@ -1,0 +1,159 @@
+﻿@model ProjectCachoeiro.Web.Models.Produtos.Produto
+@{
+    ViewData["Title"] = "Editar produto";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-9">
+        <div class="toolbar">
+            <div class="left">
+                <h2>Editar produto</h2>
+            </div>
+            <div class="clean"></div>
+        </div>
+        <div class="view-element">
+            <div class="row">
+                <div class="col-md-12">
+                    <form id="form" asp-action="Editar">
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label asp-for="NumeroBloco"></label>
+                                <input asp-for="NumeroBloco" type="number" placeholder="0000" />
+                                <span asp-validation-for="NumeroBloco"></span>
+                            </div>
+                            <div class="col-md-2">
+                                <label asp-for="CodigoProduto"></label>
+                                <input asp-for="CodigoProduto" placeholder="0000" />
+                                <span asp-validation-for="CodigoProduto"></span>
+                            </div>
+                            <div class="col-md-4">
+                                <label asp-for="Titulo"></label>
+                                <input asp-for="Titulo" />
+                                <span asp-validation-for="Titulo"></span>
+                            </div>
+                            <div class="col-md-4">
+                                <label asp-for="DisplayName"></label>
+                                <input asp-for="DisplayName" />
+                                <span asp-validation-for="DisplayName"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label asp-for="CodigoEAN"></label>
+                                <input asp-for="CodigoEAN" class="ean" placeholder="0 000000 000000" />
+                                <span asp-validation-for="CodigoEAN"></span>
+                            </div>
+                            <div class="col-md-4">
+                                <label asp-for="CodigoNCM"></label>
+                                <input asp-for="CodigoNCM" class="ncm" />
+                                <span asp-validation-for="CodigoNCM"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Data de entrada</label>
+                                @(Html.Kendo().DatePickerFor(m => m.DataDeEntrada))
+                                <span asp-validation-for="DataDeEntrada"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Estado do produto</label>
+                                @(Html.Kendo().DropDownListFor(model => model.IdStatus).Filter(FilterType.Contains).DataValueField("Id").DataTextField("Nome").BindTo((System.Collections.IEnumerable)ViewData["estado"]))
+                                <span asp-validation-for="IdStatus"></span>
+                            </div>
+                            <div class="col-md-5">
+                                <label>Qualidade do produto</label>
+                                @(Html.Kendo().DropDownListFor(model => model.IdQualidade).Filter(FilterType.Contains).DataValueField("Id").DataTextField("Nome").BindTo((System.Collections.IEnumerable)ViewData["qualidade"]))
+                                <span asp-validation-for="IdQualidade"></span>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Tipo do produto</label>
+                                @(Html.Kendo().DropDownListFor(model => model.IdTipo).Filter(FilterType.Contains).DataValueField("Id").DataTextField("Nome").BindTo((System.Collections.IEnumerable)ViewData["tipo"]))
+                                <span asp-validation-for="IdTipo"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Material do produto</label>
+                                @(Html.Kendo().DropDownListFor(model => model.IdMaterial).Filter(FilterType.Contains).DataValueField("Id").DataTextField("Nome").BindTo((System.Collections.IEnumerable)ViewData["material"]))
+                                <span asp-validation-for="IdMaterial"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Cor do produto</label>
+                                @(Html.Kendo().DropDownListFor(model => model.IdCor).Filter(FilterType.Contains).DataValueField("Id").DataTextField("Nome").BindTo((System.Collections.IEnumerable)ViewData["cor"]))
+                                <span asp-validation-for="IdCor"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label asp-for="PrecoVenda"></label>
+                                <input asp-for="PrecoVenda" placeholder="R$ 0.00" />
+                                <span asp-validation-for="PrecoVenda"></span>
+                            </div>
+                            <div class="col-md-2">
+                                <label asp-for="Peso"></label>
+                                <input asp-for="Peso" placeholder="0.00" />
+                                <span asp-validation-for="Peso"></span>
+                            </div>
+                            <div class="col-md-2">
+                                <label asp-for="Largura"></label>
+                                <input asp-for="Largura" placeholder="0.00" />
+                                <span asp-validation-for="Largura"></span>
+                            </div>
+                            <div class="col-md-2">
+                                <label asp-for="Altura"></label>
+                                <input asp-for="Altura" placeholder="0.00" />
+                                <span asp-validation-for="Altura"></span>
+                            </div>
+                            <div class="col-md-2">
+                                <!--TODO: Em tipoo será preciso colocar campo para decidir se este será por comprimento ou por expessura -->
+                                <label asp-for="Comprimento"></label>
+                                <input asp-for="Comprimento" placeholder="0.00" />
+                                <span asp-validation-for="Comprimento"></span>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label asp-for="Observacoes"></label>
+                                <textarea asp-for="Observacoes"></textarea>
+                                <span asp-validation-for="Observacoes"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            @await Html.PartialAsync("~/Views/Shared/AppTaskbar.cshtml", "EDIT;ID=" + Model.Id + ";")
+        </div>
+    </div>
+    <div class="info-bar col-md-3">
+        @{
+            OtherOptions otherOptions = new OtherOptions
+            {
+                Descricao = "Veja opções relacionadas com a apresentação de itens.",
+                FeedbackEChamadoID = "ItemFamilia",
+                OpcoesRelacionadas = new Links[] {
+                    new Links{
+                        Titulo = "Adicionar família",
+                        Url = "/Familias/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar estado de produto",
+                        Url = "/Estados/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar produto",
+                        Url = "/Produtos/Create"
+                    }
+                }
+            };
+        }
+        @Html.Partial("AppOtherOptions", otherOptions)
+    </div>
+</div>

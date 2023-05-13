@@ -1,0 +1,76 @@
+﻿@model ProjectCachoeiro.Web.Models.Produtos.Espessura
+
+@{
+    ViewData["Title"] = "Editar espessura: " + Model.Nome;
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@await Html.PartialAsync("~/Views/App/Manage/Sistema/_ManageNav.cshtml")
+<div class="inner-content">
+    <div class="toolbar">
+        <div class="left">
+            <h2>Editar espessura: @Html.DisplayFor(model => model.Nome)</h2>
+        </div>
+        <div class="clean"></div>
+    </div>
+    <div class="view-element">
+        <div class="row">
+            <div class="col-md-7">
+                <h4>Editar informações</h4>
+                <p>Edite as informações de espessura do produto informando os novos valores e posteriormente cliando em salvar.</p>
+                <br />
+                <form id="form" asp-action="Editar">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="Nome"></label>
+                        <input asp-for="Nome" />
+                        <span asp-validation-for="Nome"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Expessura"></label>
+                        <textarea asp-for="Expessura"></textarea>
+                        <span asp-validation-for="Expessura"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-5">
+                <h4>Registros</h4>
+                <p>Conheça os detalhes do cadastro e de possíveis alterações realizadas neste item.</p>
+                <br />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DateCreated)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DateCreated)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UserCreated)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.UserCreated)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DateModified)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DateModified)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UserModified)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.UserModified)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        @await Html.PartialAsync("~/Views/Shared/AppTaskbar.cshtml", "EDIT;ID=" + Model.Id + ";")
+    </div>
+    <div class="view-bottom">
+        <hr />
+        <p class="small">A espessura de um produto será utilizado na tranformação de uma família do tipo primária para o tipo secundária. Somente administradores podem criar ou editar espessuras de produtos.</p>
+    </div>
+</div>
+<div class="clean"></div>

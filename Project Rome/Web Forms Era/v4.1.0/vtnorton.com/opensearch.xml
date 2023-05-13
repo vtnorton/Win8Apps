@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>vtnorton.com</ShortName>
+  <LongName>Pesquisar vtnorton.com</LongName>
+  <Description>Pesquisar diretamente. Opensearch: v3.0.0</Description>
+  <Contact>contato@vtnorton.com</Contact>
+  <Developer>Vítor Norton vitor@vtnorton.com</Developer>
+  <Attribution>Copyright vtnorton.com</Attribution>
+  <Language>*</Language>
+  <Image height="16" width="16" type="image/x-icon">http://www.vtnorton.com/images/opensearchicon.jpg</Image>
+  <Image height="64" width="64" type="image/png">http://www.vtnorton.com/images/opensearchicon64.png</Image>
+  <Url type="application/opensearchdescription+xml" template="http://www.vtnorton.com/opensearch.xml" rel="self"/>
+  <Url type="text/html" template="http://www.vtnorton.com/search.aspx?q={searchTerms}&amp;page={startPage?}&amp;utm_source=opensearch" />
+  <Query role="example" searchTerms="vtnorton" />
+</OpenSearchDescription>

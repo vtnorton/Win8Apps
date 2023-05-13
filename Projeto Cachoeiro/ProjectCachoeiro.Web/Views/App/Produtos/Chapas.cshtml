@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProjectCachoeiro.Web.Models.Produtos.Produto>
+@{
+    ViewData["Title"] = "Chapas";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-9">
+        <div class="toolbar">
+            <div class="left">
+                <h2>Chapas</h2>
+            </div>
+            <div class="right">
+                <a class="btn btn-link" href="/Produtos/Blocos"><i class="fa fa-list-ul"></i> Visão de blocos</a>
+                <a class="btn btn-link" href="/Produtos"><i class="fa fa-list-ul"></i> Estoque</a>
+                <a asp-action="Criar" class="btn"><i class="fa fa-plus"></i> Criar novo</a>
+            </div>
+            <div class="clean"></div>
+        </div>
+        @await Html.PartialAsync("~/Views/Shared/Templates/GridProduct_Tabela.cshtml", "CONTROLLER:Produtos;ACTION:Read_Chapas;ID:0;TRANFORMAR:Off;")
+        
+    </div>
+    <div class="info-bar col-md-3">
+        @{
+            OtherOptions otherOptions = new OtherOptions
+            {
+                Descricao = "Veja opções relacionadas com a apresentação de itens.",
+                FeedbackEChamadoID = "ItemFamilia",
+                OpcoesRelacionadas = new Links[] {
+                    new Links{
+                        Titulo = "Adicionar família",
+                        Url = "/Familias/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar estado de produto",
+                        Url = "/Estados/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar produto",
+                        Url = "/Produtos/Create"
+                    }
+                }
+            };
+        }
+        @Html.Partial("AppOtherOptions", otherOptions)
+    </div>
+</div>

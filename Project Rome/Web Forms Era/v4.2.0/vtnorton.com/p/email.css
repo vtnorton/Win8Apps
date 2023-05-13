@@ -1,0 +1,12 @@
+﻿body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important}
+#contato{font-size:33px; font-weight:300; color:#2572EB}
+#body {border-top: 1px solid #2572EB; margin: 10px 0; padding: 20px 10px}
+#footer {width: 100%;border-top:1px solid #ddd;padding: 5px 0; color:#808080}
+#footer a{color:#2572EB !important}
+#footer p {font-size: 12px; font-weight: 300; margin-bottom:10px}
+.contact {float:left; margin-top:10px}
+.contact p{font-size:16px !important; margin:0; font-weight:600 !important}
+.contact p a{text-decoration:none}
+.logo{float:right; margin-top:75px}
+.info{background:#e8f1ff; margin:5px 10px; border-top:1px solid #2572EB; margin-bottom:10px; border-bottom:1px solid #2572EB}
+.info p{font-size:14px}

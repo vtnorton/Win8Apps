@@ -1,0 +1,103 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Vtnorton.Model
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Pronatec ";
+    ViewData["Description"] = "";
+    ViewData["Keywords"] = "";
+}
+@section metatags{
+    <script src="~/js/vtnorton.mantainscroll.js"></script>
+    <script src="~/js/jquery.soap.js"></script>
+    <script>
+        function SendKeyToSOAP() {
+            alert("oi");
+            $.soap({
+                url: 'http://vtnservices.azurewebsites.net/Services/Formula.asmx',
+                method: 'SendKey',
+
+                data: {
+                   urlKey: @ViewData["key"],
+                   mail: @Model?.Email + ""
+                }
+            });
+        }
+    </script>
+    <script>@Model?.JavaScriptToRun</script>
+}
+@section submenu{
+    <ul>
+        <li><a href="http://twitter.com/vt_norton">Siga-me no Twitter</a></li>
+        <li><a href="http://facebook.com/vitor.norton">Curta o Facebook</a></li>
+        <li><a href="/">Veja os meus projetos</a></li>
+        <li><a href="/onenote">eBook gratuito do OneNote</a></li>
+    </ul>
+}
+<div class="section-wrapper wrapper">
+    <h1>Baixe grátis o <a href="/formula">Formula - Universal Code Editor</a></h1>
+    <div class="section-content-left left" style="padding-bottom:40px; margin-top:-35px">
+        <p style="width:calc(100% - 90px)">@Localizer["TheFormulaContent"]</p>
+        <p style="width:calc(100% - 90px)"><a href="/formula">@Localizer["Discover"]</a></p>
+        <img class="section-image-left-img" style="width:75%;" src="/images/apps/formula.png" />
+    </div>
+    <div class="section-content-right right" style="padding-bottom:40px; margin-top:-35px">
+        @model Emails
+
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "chimp" }))
+        {
+            <p><strong>Dados pessoais</strong></p>
+            @Html.TextBoxFor(m => m.FirstName, new { placeholder = "Primeiro nome", @required = "required" })<br />
+            @Html.TextBoxFor(m => m.LastName, new { placeholder = "Sobrenome", @required = "required" })<br />
+            @Html.TextBoxFor(m => m.Email, new { placeholder = "E-mail", @required = "required" })<br /><br />
+
+            <p><strong>Áreas de interesse</strong></p>
+
+            //DropDownList/Checkbox
+            //MailChimp
+
+            @Html.DropDownListFor(m => m.Observation, new List<SelectListItem>{
+                new SelectListItem() {Text = "Desenvolvimento Web", Value="Desenvolvimento Web"},
+                new SelectListItem() {Text = "Desenvolvimento Mobile", Value="Desenvolvimento Mobile"},
+                new SelectListItem() {Text = "Desenvolvimento em geral", Value="Desenvolvimento em geral"},
+                new SelectListItem() {Text = "Windows 10", Value="Windows 10"},
+                new SelectListItem() {Text = "Outros", Value="Outros"}
+            }, "-- Selecione uma opção --")
+
+            <p><strong> Redes sociais(opcional)</strong></p>
+            <formgroup>
+                <label class="prompt-label facebook">facebook.com/</label>@Html.TextBoxFor(m => m.FacebookProfile)
+                <div class="clean"></div>
+            </formgroup>
+            <formgroup>
+                <label class="prompt-label twitter">twitter.com/</label>@Html.TextBoxFor(m => m.TwitterProfile)
+                <div class="clean"></div>
+            </formgroup>
+            <formgroup>
+                <label class="prompt-label instagram">instagram.com/</label>@Html.TextBoxFor(m => m.LikedingProfile)
+                <div class="clean"></div>
+            </formgroup>
+                <br /><br />
+                <button type="submit" style="width:100%; height:50px" value="Submit">Receber o Formula gratuitamente</button><br />
+        }
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="error">
+                @Html.ValidationSummary()
+            </div>
+
+        }
+        @if (ViewData["result"] != null)
+        {
+            <div class="success">
+                E-mail cadastrado com sucesso
+            </div>
+        }
+        @if (ViewData["error"] != null)
+        {
+            <div class="error">
+                Houve um erro ao cadastrar o seu e-mail no sistema.
+            </div>
+        }
+    </div>
+    <div class="clean"></div>
+</div>

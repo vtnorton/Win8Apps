@@ -1,0 +1,30 @@
+﻿@inject SignInManager<ApplicationUser> SignInManager
+@{
+    var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+}
+<div class="nav-pane">
+    <ul>
+        <li>
+            <a onclick="openMenu('#comercial')"><i class="fa fa-file"></i> Propriedades comerciais<div class="menu-drop-dark"></div></a>
+            <ul id="comercial">
+                <li><a href="/GrupoDeClientes"><i class="fa fa-users"></i> Grupo de clientes</a></li>
+                <li><a href="/OpcoesPagamentoes"><i class="fa fa-money"></i> Opções de pagamento</a></li>
+                <li><a href="/ContaCorrentes"><i class="fa fa-money"></i> Conta corrente</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a onclick="openMenu('#propriedades')"><i class="fa fa-file"></i> Propriedades de produtos<div class="menu-drop-dark"></div></a>
+            <ul id="propriedades">
+                <li><a href="/Cors"><i class="fa fa-file-o"></i> Cores de produtos</a></li>
+                <li><a href="/Materiais"><i class="fa fa-file-o"></i> Materiais de produtos</a></li>
+                <li><a href="/Espessuras"><i class="fa fa-file-o"></i> Espessuras de produtos</a></li>
+                <li><a href="/Estados"><i class="fa fa-file-o"></i> Estado de produtos</a></li>
+                <li><a href="/Qualidades"><i class="fa fa-file-o"></i> Qualidades de produtos</a></li>
+                <li><a href="/Tipos"><i class="fa fa-file-o"></i> Tipos de produtos</a></li>
+                <li><a href="/Familias"><i class="fa fa-file-o"></i> Família de produtos</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</div>

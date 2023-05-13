@@ -1,0 +1,27 @@
+﻿@model int;
+@(Html.Kendo().Grid<ProjectCachoeiro.Web.Comercial.Item>()
+    .Name("#=Id#").Columns(col => {
+        col.ForeignKey(c => c.IdProduto, (System.Collections.IEnumerable)ViewData["produtos"], "Id", "Titulo").Title("Produto");
+        col.Bound(c => c.Valor).Title("Valor do produto");
+        col.Bound(c => c.ValorComDesconto).Title("Valor com desconto");
+        col.Command(command =>
+        {
+            command.Destroy().Text("Remover");
+        }).Width(100).HtmlAttributes(new { @style = "padding-left:0" });
+    }).Navigatable().Pageable(page => page.Refresh(true).ButtonCount(5).Messages(c => { c.ItemsPerPage("Itens por página"); c.Last("Último"); c.Next("Próximo"); c.First("Primeira"); c.Refresh("Recarregar"); c.Display("{0} - {1} de {2} itens"); }))
+    .Editable(e => e.Mode(GridEditMode.InCell)).Events(ev => ev.CellClose("CellCloseScript"))
+    .DataSource(dataSource => dataSource
+        .Ajax().PageSize(5).Model(model => { model.Id(detail => detail.Id); }).Batch(true).ServerOperation(false)
+        .Read("ItensDetails_Read", "ItensDetails", new { Id = Model })
+        .Update("ItensDetails_UpdateAsync", "ItensDetails")
+        .Destroy("Delete", "ItensDetails", new { Id = Model })).ToClientTemplate())
+
+<script>
+    function noEdit(dataItem) {
+        return dataItem.Id == 0;
+    }
+    function CellCloseScript(e) {
+        this.dataSource.sync()
+    }
+</script>
+<!-- TODO: Template para adicionar item na proposta caso não tenha nenhum-->

@@ -1,0 +1,17 @@
+﻿{
+  "@context": "http://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Formula - Universal Code Editor",
+  "operatingSystem": "Windows 10",
+  "applicationCategory": "http://schema.org/BusinessApplication",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "ratingCount": "138"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "1.99",
+    "priceCurrency": "USD"
+  }
+}

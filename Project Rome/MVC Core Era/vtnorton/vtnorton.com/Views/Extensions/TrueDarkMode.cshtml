@@ -1,0 +1,129 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Vtnorton.Model
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "";
+    ViewData["Description"] = Localizer["ExtensionDetail"].Value;
+    ViewData["Keywords"] = "true dark mode, Microsoft Edge, Edge, Extensão Edge, Modo escuro, Windows 10";
+}
+
+@section metatags{
+    <script src="~/js/vtnorton.apps.js"></script>
+    <script src="~/js/vtnorton.mantainscroll.js"></script>
+}
+@section submenu{
+    <li><a href="#">True Dark Mode!</a></li>
+    @*<li><a href="/extention/tdm/darkmode_1.0.0.zip">@Localizer["Link2"]</a></li>*@
+    <li><a href="https://github.com/vtnorton/TrueDarkMode">@Localizer["Link2"]</a></li>
+    <li><a href="https://github.com/vtnorton/TrueDarkMode/issues/new">@Localizer["Link3"]</a></li>
+    <li><a href="https://github.com/vtnorton/TrueDarkMode/issues/new">@Localizer["Link4"]</a></li>
+}
+<section class="bg-dark app">
+    <div class="section-wrapper">
+        <div class="row">
+            <img class="col-sm-1" src="/images/extention/bellevue.jpg" />
+            <div class="col-sm-10">
+                <h2 class="white">True Dark Mode</h2>
+                <div style="margin: 10px 0">
+                    <a href="https://github.com/vtnorton/TrueDarkMode" class="btn white">GitHub</a>@*<%--<a href="#" class="btn white">Download</a> <a href="http://blog.vtnorton.com/true-dark-mode-changelog/" class="btn white">Changelog</a>--%>*@
+                </div>
+                
+                <p class="white">@Localizer["ThisAppDescription"]</p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="section-wrapper">
+        <div class="section-image-left left">
+            <img class="section-image-left-img" style="padding: 20px; padding-bottom: 40px" src="/images/extention/Wiki.jpg" />
+        </div>
+
+        <div class="section-content-right right">
+            <h1>@Localizer["Extension"]</h1>
+            <p>@Localizer["ExtensionDetail"]</p>
+        </div>
+        <div class="clean"></div>
+    </div>
+</section>
+<section class="bg-light">
+
+    <div class="section-image-right right">
+        <img class="section-image-right-img" style="padding: 20px; margin-top:95px" src="/images/extention/microsoft-edge-barra-1060x594.png" />
+    </div>
+    <div class="section-wrapper">
+        <div class="section-content-left left">
+            <h1>@Localizer["Install"]</h1>
+            <p>@Localizer["InstallDetail"]</p>
+            <br />
+            @model Emails
+            @using (Html.BeginForm())
+            {
+                @Html.TextBoxFor(m => m.Email, new { placeholder = "E-mail" })<br /><br />
+                <button type="submit" value="Submit" Height="50">@Localizer["Download"]</button><br />
+            }
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <blockquote class="border red full">
+                    @Html.ValidationSummary()
+                </blockquote>
+
+            }
+            @if (ViewData["result"] != null)
+            {
+                <blockquote class="border green">
+                    @Localizer["Success"]
+                </blockquote>
+            }
+            @if (ViewData["error"] != null)
+            {
+                <blockquote class="border red full">
+                    @Localizer["Error"]
+                </blockquote>
+            }
+        </div>
+        <div class="clean"></div>
+    </div>
+</section>
+<section>
+
+    <div class="section-image-left left">
+        <img class="section-image-left-img" style="margin-top: 40px; padding-bottom: 40px" src="/images/extention/gray.png" />
+    </div>
+    <div class="section-wrapper">
+        <div class="section-content-right right">
+            <h1>@Localizer["Contribute"]</h1>
+            <p>@Localizer["ContributeDetail"]</p>
+            <ul>
+                <li>
+                    <p><a href="https://github.com/vtnorton/TrueDarkMode">@Localizer["GoTo"]</a></p>
+                </li>
+                <li>
+                    <p style="padding-bottom: 40px"><a href="http://vtnorton.com/formula">Download Formula - Universal Code Editor</a></p>
+                </li>
+            </ul>
+        </div>
+        <div class="clean"></div>
+    </div>
+</section>
+<section class="section-bg" id="formula-section-bg">
+    <div class="section-wrapper" style="padding-top: 40px; padding-bottom: 40px">
+        <h1 class="white">@Localizer["ToDarkMode"]</h1>
+        <p class="white">@Localizer["ToDarkModeDetail"]</p>
+    </div>
+</section>
+<section class="bg-light">
+    <div class="wrapper" style="padding: 30px 0">
+        @foreach (var item in (IEnumerable<FeedItem>)ViewData["feed"])
+        {
+            <div class="article-blog">
+                <h4><a href="@item.Link">@item.Title</a></h4>
+                <img src="@item.ImageURL" />
+                <p>@item.Content</p>
+                <p><strong><a href="@item.Link">@Localizer["ReadMore"]</a></strong></p>
+            </div>
+        }
+        <div class="clean"></div>
+    </div>
+</section>

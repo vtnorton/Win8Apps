@@ -1,0 +1,20 @@
+﻿h1{color:#00C13F}
+textarea:hover, input[type=text]:hover,input[type=password]:hover,input[type=email]:hover,input[type=number]:hover,input[type=tel]:hover,input[type=url]:hover,input[type=search]:hover,textarea:hover,.win-textarea:hover {border-color: #5f37be !important}
+textarea:focus, input[type=text]:focus, input[type=password]:focus,input[type=email]:focus,input[type=number]:focus,input[type=tel]:focus,input[type=url]:focus,input[type=search]:focus,textarea:focus,.win-textarea:focus { border-color:#00b249 !important}
+table tr{border-color: #00C13F !important}
+a:visited,a{color:#00C13F; text-decoration:none}
+body {background: #199900;background-image: url();background-repeat:no-repeat;background-size:cover}
+.img{margin-left: calc(50% - 112.5px);margin-top: 15px;margin-bottom: 5px;}
+.login-box{width: 33%;height: 425px;background: #e3e3e3;box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12), 0px 2px 4px -1px rgba(0, 0, 0, 0.2);position:absolute;margin:11% 33%}
+.login-box-header{width:100%;border-bottom: 1px solid #1b1b1b;padding-bottom: 10px;margin-bottom: 15px;background: #fff;padding-top: 10px; margin:auto;}
+.login-box-content{padding: 20px;text-align:center;}
+.login-box-content input{margin-top: 10px; padding: 5px; width: 90%; padding-left: 10px; font-size: 14px;}
+#btnLogin{width:220px; margin-top:15px; margin-bottom:10px; margin-left:calc(100% - 33% - 180px)}
+.login-box-content-options p{text-align:center}
+@media screen and (max-width:884px){
+    .login-box{width: 51% !important; margin:12% 27% !important}
+}
+@media screen and (max-width:585px){
+    body{background-image:none}
+    .login-box{width: 80% !important; margin:5% 10% !important}
+}

@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Resetar chave de autentificação";
+    ViewData.AddActivePage(ManageNavPages.TwoFactorAuthentication);
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+
+<h2>Resetar chave de autentificação</h2>
+<hr />
+<div class="view-element">
+    <p>
+        <strong>Se você resetar a chave de autentificação o seu aplicativo para autentificação não irá funcionar até que você o reconfigure.</strong>
+    </p>
+    <p>
+        Este processo desabilita a autentificação de dois fatores até que você verifique o seu aplicativo de autentificação e também irá resetar todos os códigos de recuperação para a autentificação de dois fatores. Se você não completar as configurações do aplicativo você pode vir a perder acesso a sua conta.
+    </p>
+    <br />
+    <form asp-action="ResetAuthenticator" method="post" class="form-group">
+        <button class="btn btn-danger" type="submit">Resetar chave de autentificação</button>
+    </form>
+</div>

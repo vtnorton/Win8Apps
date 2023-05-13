@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="ProjectQuebec.Fluent.Sidebar.TabsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjectQuebec.Fluent.Sidebar"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="EmailsItemTemplate">
+            <controls:SlidableListItem 
+                HorizontalAlignment="Stretch"
+                RightIcon="Remove" 
+                RightLabel="Remove"
+                RightBackground="OrangeRed"
+                RightForeground ="White"
+                ActivationWidth="100"
+                SwipeStatusChanged="SlidableListItem_SwipeStatusChanged"
+                IsLeftCommandEnabled="False"
+                IsRightCommandEnabled="True"
+                IsOffsetLimited="True"
+                MouseSlidingEnabled="True"
+                IsPointerReleasedOnSwipingHandled="True">
+                <Grid Height="50">
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="15,15,15,0">
+                        <TextBlock Foreground="{ThemeResource rsColorMainText}" Margin="5,-13,10,0" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" Text="&#xE160;"></TextBlock>
+                        <TextBlock Text="{Binding DisplayName}" Foreground="{StaticResource rsColorMainText}"  TextWrapping="NoWrap"/>
+                    </StackPanel>
+                </Grid>
+            </controls:SlidableListItem>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Background="{StaticResource rsColorToolbar}" Grid.Row="0" Orientation="Horizontal">
+            <Button x:Name="btnWelcomePage" Style="{StaticResource rsButtonToolbar}" Content="&#xE10F;" Click="btnWelcomePage_Click"></Button>
+            <Button x:Name="btnAdd" Click="btnAdd_Click" Content="&#xE710;" ToolTipService.ToolTip="New file" Style="{StaticResource rsButtonToolbar}"/>
+            <Button x:Name="btnOpen" Click="btnOpen_Click" Content="&#xE8E5;" ToolTipService.ToolTip="Open file" Style="{StaticResource rsButtonToolbar}"/>
+            <Button x:Name="btnSaveAll" Click="btnSaveAll_Click" Content="&#xEA35;" ToolTipService.ToolTip="Save all files" Style="{StaticResource rsButtonToolbar}"/>
+            <Button x:Name="btnCloseAll" Click="btnCloseAll_Click"  Content="&#xE106;" ToolTipService.ToolTip="Close all files" Style="{StaticResource rsButtonToolbar}"/>
+        </StackPanel>
+        <ListView Grid.Row="1" x:Name="TabsListView" 
+                  Background="{StaticResource rsColorToolbar}"
+                  ItemTemplate="{StaticResource EmailsItemTemplate}" 
+                  SelectionMode="None" 
+                  IsItemClickEnabled="True"
+                  ItemClick="TabsListView_ItemClick">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                    <Setter Property="Margin" Value="0,1"></Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+    </Grid>
+</Page>

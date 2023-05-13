@@ -1,0 +1,18 @@
+﻿<script type="text/javascript">
+    function LinkToNoRecord(arg) {
+        var id = arg.sender._cellId.replace("_active_cell", "");
+        $("#transformar").attr("href", "/Produtos/Transformar/" + id);
+    }
+    function CellCloseScript(e) {
+        this.dataSource.sync()
+    }
+</script>
+
+<script id="NoRecord" type="text/x-kendo-template">
+    <div style="padding:20px 50px">
+        <p class="text-center">Não há nenhum produto derivado baseado neste produto. Você pode tranformar ele para outro tipo de família pelo botão abaixo.</p>
+        <br />
+        <a id="transformar" href="" class="btn"><i class="fa fa-th"></i> Transformar</a>
+        <br />
+    </div>
+</script>

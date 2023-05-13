@@ -1,0 +1,260 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Vtnorton.Code;
+@inject IViewLocalizer Localizer
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+    <!-- CSS -->
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/heartthrob.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/font-awesome.min.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/heartthrob.mim.css" />
+        <link rel="stylesheet" href="~/css/font-awesome.min.css" />
+    </environment>
+    <!-- Fim do CSS -->
+    <!-- JavaScript -->
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/js/hoverintent.js"></script>
+        <script src="~/js/heartthrob.js"></script>
+        <script src="~/js/vtnorton.slide.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="~/js/heartthrob.js"></script>
+        <script src="~/js/vtnorton.slide.js"></script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+    <!-- Fim do JavaScript -->
+    <!-- Metadados/SEO -->
+    @{  string title, descriptions;
+        string keywords = "design, desenvolvimento, windows phone, windows, vitor norton, mixer, heartthrob, criação de sites, dev, vnext, mvp, cursos online, cursos gratuitos, cursos de desenvolvimento gratuitos, cursos de desenvolvimento online";
+        if (!string.IsNullOrEmpty(ViewData["Title"].ToString())) { title = ViewData["Title"] + " | Vítor Norton"; } else { title = "Vítor Norton"; }
+        if (!string.IsNullOrEmpty(ViewData["Description"].ToString())) { descriptions = ViewData["Description"].ToString(); } else { descriptions = "Palestras e cursos gratuitos. Desenvolvimento de sites e aplicativos (via dev.vtnorton.com) e um monte de outras coisas que eu faço."; }
+        if (!string.IsNullOrEmpty(ViewData["Keywords"].ToString())) { keywords += ViewData["Keywords"].ToString(); }
+    }
+    <title>@title</title>
+    <meta name="description" content="@descriptions" />
+    <meta name="keywords" content="@keywords" />
+    <meta name="author" content="Vítor Norton, contato@vtnorton.com" />
+    <meta name="designer" content="Vítor Norton" />
+    <meta name="copyright" content="vtnorton" />
+    <meta name="reply-to" content="contato@vtnorton.com" />
+    <meta name="owner" content="Vítor Norton" />
+    <meta name="url" content="http://www.vtnorton.com" />
+    <meta name="identifier-URL" content="http://www.vtnorton.com" />
+    <meta name="directory" content="submission" />
+    <meta name="category" content="software" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="revisit-after" content="1 day" />
+    <meta name="application-name" content="vtnorton.com" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta name="msvalidate.01" content="56DFA045266F286D4EDE0D2B401CC585" />
+    <link rel="alternate" href="http://vtnorton.com/" hreflang="pt-br" />
+    <!-- Fim do Metadados/SEO -->
+    <!-- Tecnologias -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/apple-touch-icon.png?v=0116" />
+    <link rel="icon" type="image/png" href="~/favicon-32x32.png?v=0116" sizes="32x32" />
+    <link rel="icon" type="image/png" href="~/favicon-16x16.png?v=0116" sizes="16x16" />
+    <link rel="manifest" href="~/manifest.json?v=0116" />
+    <link rel="mask-icon" href="~/safari-pinned-tab.svg?v=0116" color="#5bbad5" />
+    <link rel="shortcut icon" href="~/favicon.ico?v=0116" />
+    <meta name="apple-mobile-web-app-title" content="Vítor Norton" />
+    <meta name="application-name" content="Vítor Norton" />
+    <meta name="msapplication-TileColor" content="#2d89ef" />
+    <meta name="msapplication-TileImage" content="~/mstile-144x144.png?v=0116" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-tooltip" content="Entrar em www.vtnorton.com" />
+    <meta name="msapplication-navbutton-color" content="black" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Fim de Tecnologias -->
+
+    @RenderSection("metatags", false)
+</head>
+<body style="height: 100%">
+    <header>
+        <div class="section-wrapper">
+            <div class="logo">
+                <a href="http://vtnorton.com/">
+                    <img src="http://vtnorton.com/images/squarewithborder.png" style="max-width: 50px;" />
+                </a>
+                <div class="logo-written notranslate">VÍTOR NORTON</div>
+            </div>
+            <div style="position: absolute; top: 20px;right: 12.5%;">
+                <div id='MicrosoftTranslatorWidget' class='Dark' style='color: white; background-color: #555555'></div>
+            </div>
+            <div class="clean"></div>
+        </div>
+        <div class="hamburger"></div>
+        <nav>
+            <form action="/search" method="get">
+                <input id="searchMobile" name="q" class="mobile-search" placeholder="Pesquisar..." type="text" required="required" />
+            </form>
+            <div class="section-wrapper">
+                <ul>
+                    <li class="no-drop"><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["navHome"]</a></li>
+                    <li><a href="/vitor" class="notranslate">Vítor Norton</a></li>
+                    <li>
+                        <a target="_blank" href="http://dev.vtnorton.com">@Localizer["navApps"]</a>
+                        <ul style="width: 300px">
+                            <li><a href="/formula" class="notranslate">Formula - Universal Code Editor</a></li>
+                            <li><a href="/truedarkmode" class="notranslate">True Dark Mode</a></li>
+                            <li><a href="/random42" class="notranslate">Random 42</a></li>
+                            <li><a href="/conjugar" class="notranslate">Conjugar</a></li>
+                            <li><a href="/timecalculator" class="notranslate">Time Calculator</a></li>
+                            <li><a href="/verdadeouconsequencia" class="notranslate">#VerdadeOuConsequência</a></li>
+                            <li><a href="/tochaolimpica" class="notranslate">Tocha Olímpica</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="http://dev.vtnorton.com">@Localizer["navDesenvolvimento"]</a>
+                        <ul style="width: 300px">
+                            <li><a href="http://dev.vtnorton.com/category/updates-and-releases/">@Localizer["navUpdates"]</a></li>
+                            <li><a href="http://dev.vtnorton.com/category/building-it/">@Localizer["navAnswering"]</a></li>
+                            <li><a href="http://dev.vtnorton.com/category/developer-notes/">@Localizer["navDeveloperNotes"]</a></li>
+                            <li><a href="http://dev.vtnorton.com/category/in-the-next-update/">@Localizer["navInTheNext"]</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="http://blog.vtnorton.com">Blog</a>
+                        <ul>
+                            <li><a href="http://blog.vtnorton.com/">@Localizer["navAllPosts"]</a></li>
+                            <li><a href="http://blog.vtnorton.com/category/blog/">@Localizer["navMe"]</a></li>
+                            <li><a href="http://blog.vtnorton.com/category/blog/mvp-buzz/" class="notranslate">MVP Buzz</a></li>
+                            <li><a class="notranslate" href="http://blog.vtnorton.com/category/microsoft/">Microsoft</a></li>
+                            <li><a class="notranslate" href="http://blog.vtnorton.com/category/microsoft/windows-10/">Windows</a></li>
+                            <li><a href="http://blog.vtnorton.com/category/outros/">@Localizer["navOthers"]</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="http://blog.vtnorton.com" class="notranslate">Garoto de Programa</a>
+                        <ul>
+                            <li><a href="http://blog.vtnorton.com/category/garoto-de-programa/cs/">C#</a></li>
+                            <li><a href="http://blog.vtnorton.com/category/garoto-de-programa/css/">CSS</a></li>
+                            <li><a href="http://blog.vtnorton.com/category/garoto-de-programa/html/">HTML</a></li>
+                            <li><a href="http://blog.vtnorton.com/category/garoto-de-programa/javascript/">JavaScript</a></li>
+                            <li><a href="http://blog.vtnorton.com/category/garoto-de-programa/sql-server/">SQL</a></li>
+                            <li><a href="http://blog.vtnorton.com/category/garoto-de-programa/devops/">DevOps</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">@Localizer["navOthers"]</a>
+                        <ul>
+                            <li><a href="/onenote">eBook: OneNote</a></li>
+                            <li><a href="/devnasnuvens">#DevNasNuvens</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="sub-menu">
+        <div class="section-wrapper">
+            <ul style="margin-left: -15px;">
+                @RenderSection("submenu", false)
+            </ul>
+            <ul class="right minimenu">
+                <li>
+                    <div title="@Localizer["openSearch"]" class="minimenu-search"></div>
+                    <form action="/search" method="get">
+                        <input id="searchBoxId" name="q" class="minimenu-search-box" placeholder="Pesquisar... (prescione enter)" type="text" required="required" />
+                    </form>
+                    <div id="status" style="z-index: 99; position: relative;"></div>
+                </li>
+            </ul>
+            <div class="clean"></div>
+        </div>
+    </div>
+
+    <ul id="carousel_ul" class="slider">
+        <li class="slide">
+            <a class="img-shadow" href="http://yapp.vtnorton.com/released-formula-v2-0-see-whats-new/">
+                <img src="/images/slides/Formula.jpg" />
+                <div class="slide-text notranslate">Formula: nova atualização</div>
+            </a>
+        </li>
+        <li class="slide">
+            <a class="img-shadow" href="http://vtnorton.com/onenote">
+                <img src="/images/slides/onenote.jpg" />
+                <div class="slide-text">eBook GRATÍS: Guia definitivo do OneNote</div>
+            </a>
+        </li>
+        <li class="slide">
+            <a class="img-shadow" href="http://vtnorton.com/truedarkmode">
+                <img src="/images/slides/truedarkmode.jpg" />
+                <div class="slide-text notranslate">True Dark Mode for Edge</div>
+            </a>
+        </li>
+        <li class="slide">
+            <a class="img-shadow" href="http://blog.vtnorton.com/papel-de-parede-get-shit-done/">
+                <img src="/images/slides/get-shit-done.jpg" />
+                <div class="slide-text notranslate">Papel de parede: Get shit done</div>
+            </a>
+        </li>
+    </ul>
+    <div class="clean"></div>
+    @RenderBody()
+
+    <footer>
+        <div id="copyright">
+            <div class="section-wrapper">
+                <div class="left" style="margin-left:-15px">
+                    Copyright <a href="/"><span class="blue notranslate">VÍTOR NORTON</span></a>
+                    <script type='text/javascript'>var creditsyear = new Date(); document.write(creditsyear.getFullYear());</script>
+                    - @Localizer["footer"]
+                </div>
+                <div class="right social" style="margin-right:-15px">
+                    <ul>
+                        <li><a href="https://twitter.com/vt_norton/" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+                        <li><a href="https://www.facebook.com/vitor.norton/" target="_blank"><i style="margin-left: 3px" class="fa fa-facebook fa-2x"></i></a></li>
+                        <li><a href="https://instagram.com/vt_norton/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>
+                        <li><a href="https://youtube.com/vtnorton/" target="_blank"><i class="fa fa-youtube fa-2x"></i></a></li>
+                        <li><a href="https://github.com/vtnorton/" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
+                    </ul>
+                </div>
+                <div class="clean"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script type='text/javascript'>
+        var userLang = navigator.language || navigator.userLanguage;
+        var language = "";
+        var manual = "undefined";
+        if (userLang.startsWith('en')) {
+            language = "en";
+            manual = "Manual";
+        } else if (userLang.startsWith('pt')) {
+            language = "pt";
+            manual = "Manual";
+        }
+        setTimeout(function () { { var s = document.createElement('script'); s.type = 'text/javascript'; s.charset = 'UTF-8'; s.src = ((location && location.href && location.href.indexOf('https') == 0) ? 'https://ssl.microsofttranslator.com' : 'http://www.microsofttranslator.com') + '/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**&ctf=False&ui=true&settings=' + manual + '&from=' + language; var p = document.getElementsByTagName('head')[0] || document.documentElement; p.insertBefore(s, p.firstChild); } }, 0);</script>
+
+    <environment names="Staging,Production">
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-50145252-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </environment>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

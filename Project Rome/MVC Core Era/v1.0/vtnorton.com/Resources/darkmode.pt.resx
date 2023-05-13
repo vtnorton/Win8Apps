@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Contribute" xml:space="preserve">
+    <value>Contribuir</value>
+    <comment>Contribute</comment>
+  </data>
+  <data name="ContributeDetail" xml:space="preserve">
+    <value>Esta extensão é total free e o código é aberto, ou seja, você pode ajudar a desenvolver! Você pode achar a documentação completa sobre como desenvolver no repositório do GitHub (clique em "se envolva")&lt;/p&gt;
+
+&lt;p&gt;Para ajudar a desenvolver você não vai precisar de muito, só de um cliente Github no seu PC e um bloco de notas (mas se você quiser usar o Visual Studio Code ou o Formula - Universal Code Editor, eu não vou ficar mal).</value>
+    <comment>This is a totally free open source, and yes, you can help develop it! You can find the full documentation and the how-to-help-guide on the GitHub repository. &lt;/p&gt;
+
+&lt;p&gt;To help develop it you won't need much, just one GitHub client for you PC and one Notepad (but if you want to use Visual Studio Code or Formula - Universal Code Editor, I'm not going to be mad).</comment>
+  </data>
+  <data name="Extension" xml:space="preserve">
+    <value>Sobre a extensão</value>
+    <comment>About the extension</comment>
+  </data>
+  <data name="ExtensionDetail" xml:space="preserve">
+    <value>Realmente não importa se o seu Windows está no modo escuro ou no modo claro, os sites que você visita não estão, é por isso que está extensão do Microsoft Edge está aqui! Quando ativado, o True Dark Mode vai colocar seus sites favoritos no modo escuro. Então não se esqueça de colocar o Windows e o Edge no modo escuro também! &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Importante: Esta extensão é um trabalho em progresso, uma versão beta.&lt;/strong&gt;</value>
+    <comment>It really doesn't matter of you Windows is on dark mode or on the light mode. The websites you visit isn't, so this Microsoft Edge extension is about to change it. When enabled, this extension will put your favorite web site on the dark mode! So don't forget to put Windows and Edge on Dark Mode&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note: This is a working in progress extension, a beta version.&lt;/strong&gt;</comment>
+  </data>
+  <data name="GoTo" xml:space="preserve">
+    <value>Contribua no GitHub</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>Instalar</value>
+    <comment>Install</comment>
+  </data>
+  <data name="InstallDetail" xml:space="preserve">
+    <value>Esta extensão não está disponível na Windows Store (ainda), mas estou trabalhando para conseguir isso.&lt;/p&gt;
+
+&lt;p&gt;Para instalar a extensão você precisa ativar o modo de desenvolvedor do Microsoft Edge, para fazer isso, vá em about:flags e selecione "Ativar funções de desenvolvedores de extensões", com isso ativado, vá para o menu de três pontinhos e selecione Extensões. Clique no botão "carregar extensão" e selecione a pasta onde você salvou o download. &lt;/p&gt;
+
+&lt;p&gt;Por favor, note que, você não será alertado caso uma nova versão apareça, a menos que você me siga no Twitter &lt;a href="http://twitter.com/vt_norton"&gt;@vt_norton&lt;/a&gt;) e se inscreva na lista de e-mails para mais informações.</value>
+    <comment>This extension isn't available at the Windows Store (yet), but I'm working on this, so you may consider this as a beta! &lt;/p&gt;
+
+&lt;p&gt;To install this extension you have to enable the "Dev Mode" of Microsoft Edge, to do that, go to about:flags and select "Enable extension developer features", with this enable, go to the three dot menu and select Extension. Click on the Load Extension button and select the folder you saved the download. &lt;/p&gt;
+
+&lt;p&gt;Please, note that, you will not be alerted if a new version come out, unless you follow me on Twitter (&lt;a href="http://twitter.com/vt_norton"&gt;@vt_norton&lt;/a&gt;) and subscribe to the mail list for new information about this Edge extension!</comment>
+  </data>
+  <data name="Link1" xml:space="preserve">
+    <value>Download</value>
+    <comment>Download it now</comment>
+  </data>
+  <data name="Link2" xml:space="preserve">
+    <value>Se envolva</value>
+    <comment>Get involved</comment>
+  </data>
+  <data name="Link3" xml:space="preserve">
+    <value>Enviar feedback</value>
+    <comment>Send feedback</comment>
+  </data>
+  <data name="Link4" xml:space="preserve">
+    <value>Reportar um problema</value>
+    <comment>Report a problem</comment>
+  </data>
+  <data name="ThisAppDescription" xml:space="preserve">
+    <value>Realmente não importa se o seu Windows está no modo escuro ou no modo claro, os sites que você visita não estão, é por isso que está extensão do Microsoft Edge está aqui!</value>
+    <comment>It really doesn't matter of you Windows is on dark mode or on the light mode. The websites you visit isn't, so this Microsoft Edge extension is about to change it.</comment>
+  </data>
+  <data name="ToDarkMode" xml:space="preserve">
+    <value>Vamos colocar tudo no modo escuro</value>
+    <comment>Let's put everything on the dark mode</comment>
+  </data>
+  <data name="ToDarkModeDetail" xml:space="preserve">
+    <value>Colocar todos os sites da internet no modo escuro é um tanto que impossível, mas isso não significa que não irei tentar. Esta é só uma versão beta então poucos sites estão disponíveis no momento, mas se você quiser ajudar a adicionar mais, o código é aberto! E se você não sabe códigos, mas ainda sim quer ajudar, você pode mandar um feedback para mim pedindo adição de novos sites e reportando problemas.&lt;/p&gt;
+
+&lt;p&gt;Se você encontrar algum problema, por favor reporte isso!</value>
+    <comment>Putting every website on the internet on the dark mode is kinda of impossible, but this doesn't mean that I won't try. This is just a beta version so only a few websites is available, but if you want to help add more websites the source code is opened! And if you don't know how to code but still want to help, you can send feedback to me asking to add new sites. &lt;/p&gt;
+
+&lt;p&gt;If you find any problem, please report it!</comment>
+  </data>
+</root>

@@ -1,0 +1,13 @@
+﻿<script id="TemplateDetalhesIndividual" type="text/x-kendo-tmpl">
+    <p style="float:right; margin: 15px 21px 0 0; position:relative; z-index:9" class="small">
+        <a class="light-grey" href="/Produtos/Detalhes/#=Id#"><i class="fa fa-link"></i> Produto: #= GetName #</a> |
+        <a href="/Produtos/Editar/#=Id#" class="light-grey"><i class="fa fa-edit"></i> Editar</a> |
+        <a href="/Produtos/Delete/#=Id#" class="red"><i class="fa fa-trash-o"></i> Apagar</a>
+    </p>
+
+    @(Html.Kendo().TabStrip().Name("produto_detalhes_tabstrip_#=Id#").Items(items => {
+            items.Add().Selected(true).Text("Detalhes do produto").Content(@<text>
+                    @await Html.PartialAsync("~/Views/Shared/Templates/GridProduct_DetalhesContent.cshtml")
+            </text>);
+    }).ToClientTemplate())
+</script>

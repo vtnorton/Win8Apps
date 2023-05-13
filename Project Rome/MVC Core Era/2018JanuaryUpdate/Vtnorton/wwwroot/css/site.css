@@ -1,0 +1,96 @@
+﻿.live>div{position:absolute}
+.live img{border:none}
+.live-front{width:100%;height:100%;z-index:20}
+.live-back{width:100%;height:100%;z-index:10}
+.live-img{display:block;height:100%;width:100%}
+.tile{margin:0 5px 10px;float:left;overflow:hidden;position:relative;transition:opacity .5s ease .1s;-moz-transition:opacity .5s ease .1s;-o-transition:opacity .5s ease .1s;-webkit-transition:opacity .5s ease .1s;background:#19a2de;}
+.tilehover{position:absolute;top:0;right:0;z-index:30;display:none}
+.exclude:hover{border:none;margin:0 5px 10px}
+a .tile:hover .tilehover{display:inline}
+.tile-text{color:#fff;font-size:2.4em;bottom:5px;left:10px;position:absolute;z-index:30;text-align:left}
+.large{width:310px;height:310px}
+.medium{width:310px;height:150px}
+.small{width:150px;height:150px}
+.fade{opacity:.5;filter:alpha(opacity=50)}
+.tile-pre{display:none;background: #f6f6f6;position: absolute;z-index: 99;width:100%; height:100%; box-shadow:#000 0 0 9px 1px; color:#3e3e3e; min-height:650px !important; max-height:50%}
+.line{border-bottom:1px solid #e3e3e3; margin-top:15px}
+.clean{clear:both}
+.left{float:left}
+.right{float:right}
+.last{margin-right:0}
+
+@media all and (max-width:640px) {
+.last{margin-right:auto}
+}
+
+.evento{padding:10px 0; width:95%; margin: 0 auto}
+.evento .data{width:100px;}
+.evento .data .dia{font-size:85px;text-align:center}
+.evento .informacoes{width:calc(100% - 130px); border-left:5px solid #e3e3e3; padding-left:15px; margin-top:15px}
+.evento:hover .informacoes{border-color: #2572EB; transition: all .3s;}
+.evento .informacoes h2{margin-top:-7px}
+.evento .informacoes h4{font-size:15px; color:#3e3e3e;font-style:italic;margin-top:-24px}
+.evento .informacoes p{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;}
+
+.projetos, .aplicativos{width:50%; margin: 0 auto}
+.app-section{width:75%; margin: 0 auto; margin-top: -35px;padding:30px 0; margin-bottom:20px}
+.app-image{float:left}
+.app-definition{float:left; margin-top:40px; margin-left:30px; width: calc(100% - 230px)}
+.app-definition h2{margin-top:-20px}
+.app-definition p{margin-top:-20px}
+.app-definition a{position:relative; top:15px}
+.article-blog{float:left; width:calc(33.33% - 20px); margin-right:20px}
+.article-blog h4{height: 80px}
+.article-blog img{width:100%; height:auto}
+.fixed-header{position:fixed; top:0; width:100%; height:120px; transition:all .3s}
+.fixed-header img{max-height:100px; width:auto !important;margin-top:15px; transition:all .3s}
+.fixed-header h2{font-size:30px; transition:all .3s}
+.fixed-header p{display:none; transition:all .3s}
+.fixed-header a{position:relative; top:0; transition:all .1s}
+
+.formula-mobile-view{margin-right:40%; margin-left:30px}
+#email{background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/images/bg/bg-main.jpg) no-repeat center fixed !important; background-size:cover !important}
+#formula-section-bg{background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/images/bg/formula.jpg) no-repeat center fixed !important; background-size:cover !important}
+#testimonial{background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/images/bg/bg-vitor.jpg) no-repeat center fixed !important; background-size:cover !important}
+
+.mosaico{height:100%;}
+.mainpage-mos { margin-top: 10px; padding: 40px 0; }
+
+
+
+@media screen and (max-width:895px){
+    .slider{top:80px}
+    .content-mos{margin-top:60px}
+    .info{display:none}
+    .eventos{margin-top:80px}
+    .evento .data{width:100%; float:none !important; text-align:center}
+    .evento .data .mes p{text-align:center !important; width:100%}
+    .evento .data .dia{text-align:center}
+    .evento .informacoes{width:100%; border-top:5px solid #e3e3e3; border-left:none; padding-top:15px; margin-top:15px; margin-bottom:40px}
+    .evento .informacoes h2{margin-top:-7px}
+    .evento .informacoes h4{font-size:15px; color:#3e3e3e;font-style:italic;margin-top:-24px}
+    .evento .informacoes p{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;}
+    .app{margin-top:80px}
+    .app-section{width:calc(100% - 40px); margin:20px}
+    .app-image, .app-definition{width:calc(100% - 20px); float:none}
+    .app-image{width:200px; margin: auto}
+    .section-image-left-img{max-width:calc(100% - 50px)}
+    .article-blog{float:none; width:85%; margin:0 auto; padding-bottom:20px; margin-bottom:20px; border-bottom:1px solid #e3e3e3}
+    .formula-mobile-view{position: relative;left: calc(50% - 100px);}
+}
+
+@media screen and (max-width:400px){
+    .mainpage-mos{padding:3px}
+}
+
+
+form .prompt-label {width: 23%;padding:10px 20px;color: #fff;background-color: #2572EB;font-size: 16px;height:17px;line-height: 1;
+    border: 1px solid #2572EB;text-align: center;display: inline-block; float:left; margin-top: 4px}
+form .prompt-label.facebook {background: #3b5998;border: 1px solid #3b5998;}
+form .prompt-label.twitter {background: #55acee;border: 1px solid #55acee;}
+form .prompt-label.instagram {background: #3f729b;border: 1px solid #3f729b;}
+form formgroup{width: 100%;margin-bottom: 10px}
+form formgroup input{width: calc(77% - 60px) !important;float: right; border-left: 0px !important;}
+
+.log{background:#000; padding:20px}
+.log p{font-family:Consolas; color:#008707; line-height:17px}

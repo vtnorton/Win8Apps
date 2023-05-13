@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="srtAboutMe" xml:space="preserve">
+    <value>&lt;h2&gt;sobre &lt;span class="color"&gt;mim&lt;/span&gt;&lt;/h2&gt;</value>
+  </data>
+  <data name="srtAllPosts" xml:space="preserve">
+    <value>Todos os posts</value>
+  </data>
+  <data name="srtBio" xml:space="preserve">
+    <value>Microsoft MVP, desenvolvedor de aplicativos no mundo Microsoft (como C#, Asp/.Net, SQL Server e Azure). Se quiser saber mais sobre mim, depois de ler a minha biografia, você pode checar as minhas contas sociais.</value>
+    <comment>Microsoft MVP, app and web developer in Microsoft world, such as C#, Asp/.Net, SQL Server and Azure. If you want to know more about me, after reading my bio, you can check my social accounts.</comment>
+  </data>
+  <data name="srtBioButton" xml:space="preserve">
+    <value>Conheça-me</value>
+  </data>
+  <data name="srtDesign" xml:space="preserve">
+    <value>Não é uma das minhas maiores habilidades, mas o design sempre foi uma das minhas maiores prioridades nos meus produtos. Desde fazer logos até contruir alguns sites e apps, e acabou que eu aprendi algumas coisas.</value>
+    <comment>Not despite of being one of my specialties, the design has always being one of the biggest thing on my priority. Since making some logos to build some sites and apps.</comment>
+  </data>
+  <data name="srtFAQDescription" xml:space="preserve">
+    <value>Algumas perguntas rápidas e respostas que você provavelmente já me perguntou, ou vai me perguntar ou que você não perguntou ainda só por que não me conheceu ainda.</value>
+    <comment>Some quick questions and answers that you most likely asked me or will ask me or you didn't ask me only because you don't know me yet.</comment>
+  </data>
+  <data name="srtFAQTitle" xml:space="preserve">
+    <value>Perguntas e respostas</value>
+  </data>
+  <data name="srtFooterMessage" xml:space="preserve">
+    <value>Design por Themefisher Team (adaptado). Copyright © 2015. Vítor Norton - Mudando o mundo um bit de cada vez.</value>
+  </data>
+  <data name="srtLinesOfCode" xml:space="preserve">
+    <value>Linhas de códigos</value>
+  </data>
+  <data name="srtMobile" xml:space="preserve">
+    <value>Eu já perdi as contas de quantos apps eu já lancei, em 2015 foram 5. Então eu meio que sou bom nisso. Se não fosse por isso eu não teria mais de 10 mil downloads.</value>
+    <comment>I already lost the count of how many apps I released, in 2015 it was 5. So, I'm kinda good at it. If wasn't for that I won't have more than 10K downloads.</comment>
+  </data>
+  <data name="srtPositiveFeedback" xml:space="preserve">
+    <value>Feedback positivo</value>
+  </data>
+  <data name="srtPublishedApps" xml:space="preserve">
+    <value>Aplicativos publicados</value>
+  </data>
+  <data name="srtReadMore" xml:space="preserve">
+    <value>Leia mais</value>
+  </data>
+  <data name="srtSkills" xml:space="preserve">
+    <value>&lt;h2&gt;minhas &lt;span class="color"&gt;habilidades&lt;/span&gt;&lt;/h2&gt;</value>
+  </data>
+  <data name="srtTheProject" xml:space="preserve">
+    <value>O projeto</value>
+  </data>
+  <data name="srtTheProjectButton" xml:space="preserve">
+    <value>Sobre o projeto</value>
+  </data>
+  <data name="srtTheProjectDescription" xml:space="preserve">
+    <value>"Faça grandes coisas", este é o meu mantra. E porcausa disto eu tenho trabalahdo para lançar alguns aplicativos bem legais, e você pode ver como eu cheguei aqui. Leia mais sobre o projeto.</value>
+    <comment>"Do something amazing", this is my mantra. And because of that I'm working to realease a few awesome apps, and you have the chance to see how I got here. Read below</comment>
+  </data>
+  <data name="srtWeb" xml:space="preserve">
+    <value>Eu faço sites para viver. E faço isso por um longo, longo tempo. Tenho um grande conhecimento em Asp/.Net, HTML5, CSS3 e JavaScript</value>
+    <comment>srtWeb	I make stuffs in web for living. And that is for a long, long time. I have a big knowledge in Asp/.Net, HTML5, CSS3 and JavaScript.</comment>
+  </data>
+  <data name="srtWindows" xml:space="preserve">
+    <value>Hoje eu sou um Microsoft MVP em Windows Experience, já que eu gosto de ajudar as pessoas na internet e em volta de mim. Também sou, orgulhosamente, um Windows Insider.</value>
+    <comment>Today I am a Microsoft MVP in Windows experience, since I like to help a lot of people on web and because I'm, with proud, an Windows Insider.</comment>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Proxímo</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Anterior</value>
+  </data>
+  <data name="slideOneButton" xml:space="preserve">
+    <value>Veja os aplicativos</value>
+  </data>
+  <data name="slideOneDescription" xml:space="preserve">
+    <value>Vive reclamando que não tem aplicativos no Windows mas não baixou os meus ainda. </value>
+  </data>
+  <data name="slideOneTitle" xml:space="preserve">
+    <value>5 aplivativos gratuitos</value>
+  </data>
+  <data name="ViewApp" xml:space="preserve">
+    <value>Ver aplicativo</value>
+  </data>
+</root>

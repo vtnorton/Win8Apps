@@ -1,0 +1,5 @@
+program <#NAME>
+
+begin
+	WriteLn('Hello World');
+end.

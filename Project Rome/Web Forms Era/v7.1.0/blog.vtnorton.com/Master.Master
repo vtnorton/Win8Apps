@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="blog.vtnorton.com.Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="/js/jquery.js"></script>
+    <link href="/css/heartthrob.css" rel="stylesheet" />
+    <script src="/js/heartthrob.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="body">
+
+    <header>
+        <div class="logo">
+            <a href="#">
+                <img src="/img/squarewithborder.png" style="max-width: 50px;" />
+            </a>
+            <div class="logo-written">VÍTOR NORTON</div>
+        </div>
+        <div class="clean"></div>
+        <div class="hamburger"></div>
+        <nav>
+            <ul>
+                <li class="no-drop"><a href="#">Início</a></li>
+                <li><a href="#">Blog</a>
+                    <ul>
+                        <li><a href="#">Mudança de Mindset</a></li>
+                        <li><a href="#">Empreendedorismo</a></li>
+                        <li><a href="#">Meu eu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Windows</a>
+                    <ul>
+                        <li><a href="#">Windows 10</a></li>
+                        <li><a href="#">Windows Insider</a></li>
+                        <li><a href="#">Microsoft</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Garoto de Programa</a>
+                    <ul>
+                        <li><a href="#">C#</a></li>
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                        <li><a href="#">SQL</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contato + Sobre</a>
+                    <ul>
+                        <li><a href="#">Principal</a></li>
+                        <li><a href="#">Aplicativos</a></li>
+                        <li><a href="#">Sites</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="sub-menu">
+        <ul>
+            <li><a href="#" class="on">Principal</a></li>
+            <li><a href="#">E quando chegar a zero?</a></li>
+        </ul>
+        <ul class="right minimenu">
+            <li>
+                <div title="Abrir caixa de pesquisa" class="minimenu-search"></div>
+                <form action="#" method="get">
+                    <input id="searchBoxId" name="q" class="minimenu-search-box" placeholder="Pesquisar" type="text" required="required" />
+                </form>
+                <div id="status" style="z-index: 99; position: relative;"></div>
+            </li>
+        </ul>
+        <div class="clean"></div>
+    </div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    <footer>
+        <div class="widgets">
+        </div>
+        <div id="copyright">
+            Copyright <a href="/"><span class="blue">VÍTOR NORTON</span></a>
+            <script type='text/javascript'>var creditsyear = new Date(); document.write(creditsyear.getFullYear());</script>
+            - "Mudando o mundo um bit de cada vez"
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["Resultado"].Value;
+    ViewData["Description"] = "";
+    ViewData["Keywords"] = "";
+}
+@section submenu{
+    <ul>
+        <li><a href="/vitor" class="notranslate">Sobre mim</a></li>
+        <li><a href="/formula" class="notranslate">Formula - Universal Code Editor</a></li>
+        <li><a href="/onenote" >eBook Gratuito: OneNote</a></li>
+    </ul>
+}
+<div class="wrapper search-results">
+    <h1>@Localizer["Resultado"]</h1>
+    <p>@Localizer["Confira"]</p>
+    <script>
+            (function () {
+                var cx = '008498062917135645102:euepdpahuqg';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+            })();
+    </script>
+    <gcse:searchresults-only></gcse:searchresults-only>
+</div>

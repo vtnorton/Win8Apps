@@ -1,0 +1,194 @@
+﻿<Page
+    x:Class="ProjectQuebec.Fluent.MasterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjectQuebec.Fluent.UICode"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="DefaultTemplate">
+            <Grid Width="240" Height="48">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Margin="15,18,0,0" Grid.Column="0" Text="{Binding Icon}" FontFamily="Segoe MDL2 Assets"  Foreground="{ThemeResource SystemBaseMediumHighColor}" />
+                <TextBlock Grid.Column="1" Text="{Binding Name, Mode=OneWay}" FontSize="16" VerticalAlignment="Center" Foreground="{ThemeResource SystemBaseMediumHighColor}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="EmailsItemTemplate">
+            <controls:SlidableListItem 
+                HorizontalAlignment="Stretch"
+                RightIcon="Remove" 
+                RightLabel="Remove"
+                RightBackground="OrangeRed"
+                RightForeground ="White"
+                ActivationWidth="50"
+                SwipeStatusChanged="SlidableListItem_SwipeStatusChanged"
+                IsLeftCommandEnabled="False"
+                IsRightCommandEnabled="True"
+                IsOffsetLimited="True"
+                MouseSlidingEnabled="True"
+                IsPointerReleasedOnSwipingHandled="True">
+                <Grid Height="30">
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="5">
+                        <TextBlock Foreground="{ThemeResource rsColorMainText}" Margin="3,0,5,0" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" Text="&#xE160;"></TextBlock>
+                        <TextBlock Text="{Binding DisplayName}" Foreground="{StaticResource rsColorMainText}"  TextWrapping="NoWrap"/>
+                    </StackPanel>
+                </Grid>
+            </controls:SlidableListItem>
+        </DataTemplate>
+        <DataTemplate x:Key="listViewItemTemplateData">
+            <Grid Grid.Row="0" Width="Auto">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                    <ColumnDefinition Width="1"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.ContextFlyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem x:Name="menuCloseTab" Click="menuCloseTab_Click" x:Uid="MasterPageCloseTab" Text=" " />
+                        <MenuFlyoutItem x:Name="menuCloseAll" Click="menuCloseAll_Click" x:Uid="MasterPageCloseAll"  Text=" " />
+                        <MenuFlyoutItem x:Name="menuCloseOtherTabs" Click="menuCloseOtherTabs_Click" x:Uid="MasterPageCloseOtherTabs" Text=" " />
+                        <MenuFlyoutItem x:Name="menuCloseUnmodified" Click="menuCloseUnmodified_Click" x:Uid="MasterPageCloseUnmodified" Text=" " />
+                        <!-- TODO: ativar a opção de mover para uma nova janela-->
+                        <!--<MenuFlyoutItem x:Name="menuNewWindows" Click="menuNewWindows_Click" Text="Move to new window" />-->
+                        <MenuFlyoutSeparator />
+                        <!--<MenuFlyoutItem Text="Delete" Icon="Delete" />-->
+                        <MenuFlyoutItem x:Name="menuSaveThis" Click="menuSaveThis_Click" x:Uid="MasterPageSaveThis" Text=" " />
+                        <MenuFlyoutItem x:Name="menuSaveAll" Click="menuSaveAll_Click" x:Uid="MaterPageSaveAll" Text=" " />
+                        <!--<MenuFlyoutItem x:Name="menuRename" Click="menuRename_Click" x:Uid="MasterpageRename" Text=" " />-->
+                        <!-- TODO: create this functions
+                        <MenuFlyoutSeparator />
+                        <MenuFlyoutItem x:Name="menuOpeninExplorer" Click="" Text="Open in explorer" />
+                        <MenuFlyoutItem x:Name="menuPinFile" Click="menuPinFile_Click" Text="Pin file" />-->
+                    </MenuFlyout>
+                </Grid.ContextFlyout>
+                <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0">
+                    <TextBlock Foreground="{ThemeResource rsColorMainText}" Margin="5,-11,0,0" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" Text="&#xE160;"></TextBlock>
+                    <TextBlock Foreground="{ThemeResource SystemBaseMediumHighColor}" Text="{Binding DisplayName}" Margin="5,8,0,0" FontSize="12"></TextBlock>
+                </StackPanel>
+                <Grid Grid.Column="1" Grid.Row="0" x:Name="btnClose" Tapped="btnClose_Tapped" Margin="0,-12,0,0">
+                    <HyperlinkButton ToolTipService.ToolTip="Close this file" Foreground="{ThemeResource SystemBaseMediumHighColor}" FontFamily="Segoe MDL2 Assets" Content="&#xE894;" Width="30" Height="30" FontSize="10" Background="Transparent">
+                        <HyperlinkButton.ContentTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" />
+                            </DataTemplate>
+                        </HyperlinkButton.ContentTemplate>
+                    </HyperlinkButton>
+                </Grid>
+                <Rectangle Grid.Column="2" HorizontalAlignment="Stretch" Width="1" Fill="Gray"></Rectangle>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid x:Name="gridTitleBar">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"></RowDefinition>
+            <RowDefinition Height="0"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid VerticalAlignment="Top" Background="Transparent" Grid.Row="0">
+            <Rectangle x:Name="GrapPanel" Fill="Transparent"  HorizontalAlignment="Stretch"/>
+            <Grid x:Name="gridTabs">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48"></ColumnDefinition>
+                    <ColumnDefinition Width="335"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" x:Name="gridTabHamburguer"></Grid>
+                <Grid Grid.Column="1" x:Name="gridTabPane" BorderBrush="{StaticResource rsColorMain70}" BorderThickness="0,0,1,0"></Grid>
+                <Grid Grid.Column="2" x:Name="gridTabTabs" Margin="-48,-48,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnWelcomePage" Grid.Column="0" BorderBrush="Gray" BorderThickness="0,0,1,0"
+                            Margin="-48,0,0,0" Style="{StaticResource rsButtonNewTab}" Content="&#xE10F;" Click="btnWelcomePage_Click"></Button>
+                    <ListView x:Name="TabsListView" CanDragItems="True" AllowDrop="True" Grid.Column="1" DragEnter="TabsListView_DragEnter" Drop="TabsListView_Drop"
+                              ItemTemplate="{ThemeResource listViewItemTemplateData}" CanReorderItems="True"
+                              ItemClick="TabsListView_ItemClick" IsItemClickEnabled="True" ItemsSource="{Binding Mode=OneWay}" DragItemsStarting="TabsListView_DragItemsStarting"
+                              ScrollViewer.VerticalScrollMode="Disabled" ScrollViewer.IsVerticalRailEnabled="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                              HorizontalContentAlignment="Left" Style="{StaticResource rsListViewTab}">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsStackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListViewItem">
+                                            <ListViewItemPresenter SelectedPointerOverBackground="{StaticResource rsColorMainBG}" PointerOverBackground="{StaticResource rsColorMain70}" SelectedBackground="{StaticResource rsColorToolbar}">
+
+                                            </ListViewItemPresenter>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                    </ListView>
+                    <Button x:Name="CreateNewTab" Grid.Column="2"
+                               Style="{StaticResource rsButtonNewTab}" Content="&#xE710;" Click="CreateNewTab_Click" >
+                    </Button>
+                    <Button x:Name="CloseAll" Grid.Column="3"
+                               Style="{StaticResource rsButtonNewTab}" Visibility="Collapsed" Content="&#xE106;" Click="CloseAll_Click" >
+                    </Button>
+                    <Button x:Name="TabsView" Grid.Column="4"
+                               Style="{StaticResource rsButtonNewTab}" Visibility="Collapsed" Content="&#xE923;" Click="TabsView_Click" >
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid x:Name="gridMobileShell" Grid.Row="1" BorderBrush="{StaticResource rsColorMain70}" BorderThickness="0,0,0,1">
+            <Button HorizontalAlignment="Right" x:Name="btnTabs" Click="btnTabs_Click"  Content="&#xE923;" ToolTipService.ToolTip="New file" Style="{StaticResource rsButtonToolbar}" Background="Transparent"/>
+        </Grid>
+
+        <controls:HamburgerMenu Grid.Row="2" x:Name="HamburgerMenuControl"
+                            Foreground="{ThemeResource SystemBaseMediumHighColor}"
+                            ItemTemplate="{StaticResource DefaultTemplate}"
+                            ItemClick="OnMenuItemClick"
+                            OptionsItemTemplate="{StaticResource DefaultTemplate}"
+                            OptionsItemClick="OnMenuItemClick">
+            <Grid x:Name="gridPane">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="335"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="{StaticResource rsColorMain70}" BorderThickness="0,0,1,0" Grid.Column="0" >
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <Frame Padding="0,0,0,15" x:Name="contentFrame"/>
+                    </ScrollViewer>
+                </Grid>
+                <Grid Grid.Column="1" x:Name="gridMainGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="0"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Column="0" Background="Transparent" x:Name="frameEditor"></Frame>
+                    <Grid BorderBrush="{StaticResource rsColorMain70}" BorderThickness="1,0,0,0" Grid.Column="1">
+                        <ListView x:Name="AllTabsListView" 
+                                  Background="{StaticResource rsColorToolbar}"
+                                  ItemTemplate="{StaticResource EmailsItemTemplate}" 
+                                  SelectionMode="None" 
+                                  IsItemClickEnabled="True"
+                                  ItemClick="TabsListView_ItemClick">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                                    <Setter Property="Margin" Value="0,1"></Setter>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                        </ListView>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </controls:HamburgerMenu>
+    </Grid>
+</Page>

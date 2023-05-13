@@ -1,0 +1,123 @@
+﻿<Page
+    x:Class="ProjectRedmonde.Views.Spotlight"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="PhotosTemplate">
+            <Grid
+                Background="White"
+                BorderBrush="Black"
+                BorderThickness="1">
+                <Image
+                    Source="{Binding Thumbnail}"
+                    Stretch="UniformToFill"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="#ffffff">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Padding="15,0,15,0" Grid.Row="0" Background="DodgerBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <StackPanel x:Name="gridOptions" Orientation="Horizontal">
+                    <Button Foreground="White" Click="Get_Click" Height="50" Background="Transparent">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Padding="0,6,10,0" FontFamily="Segoe MDL2 Assets" Text="&#xE72C;"/>
+                            <TextBlock Text="Refresh" FontSize="18" />
+                        </StackPanel>
+                    </Button>
+                    <Button Foreground="White" x:Name="btnSelect" Height="50" Background="Transparent">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Padding="0,6,10,0" FontFamily="Segoe MDL2 Assets" Text="&#xE133;"/>
+                            <TextBlock Text="Select" FontSize="18" />
+                        </StackPanel>
+                    </Button>
+                    <Button Foreground="White" x:Name="btnExport" Height="50" Background="Transparent">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Padding="0,6,10,0" FontFamily="Segoe MDL2 Assets" Text="&#xE159;"/>
+                            <TextBlock Text="Export" FontSize="18" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <Grid Padding="15,0,15,0" x:Name="gridGallery" Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <StackPanel Orientation="Horizontal" BorderBrush="Gray" BorderThickness="0,0,0,1">
+                    <HyperlinkButton Foreground="DodgerBlue" Click="btnShowAll_Click"  Padding="0,0,10,0" Grid.Column="1" x:Name="btnShowAll" Content="Show all" Height="35">
+                        <HyperlinkButton.ContentTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" />
+                            </DataTemplate>
+                        </HyperlinkButton.ContentTemplate>
+                    </HyperlinkButton>
+                    <HyperlinkButton Foreground="Black" Click="btnShowMobile_Click" Grid.Column="1" x:Name="btnShowMobile" Content="Show Mobile" Height="35">
+                        <HyperlinkButton.ContentTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" />
+                            </DataTemplate>
+                        </HyperlinkButton.ContentTemplate>
+                    </HyperlinkButton>
+                    <HyperlinkButton Foreground="Black" Click="btnShowDesktop_Click" Padding="10,0,0,0" Grid.Column="1" x:Name="btnShowDesktop" Content="Show Desktop" Height="35">
+                        <HyperlinkButton.ContentTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" />
+                            </DataTemplate>
+                        </HyperlinkButton.ContentTemplate>
+                    </HyperlinkButton>
+                </StackPanel>
+            </Grid>
+            <controls:AdaptiveGridView Name="MyAdaptiveGridViewControl" Grid.Row="1" 
+                                       OneRowModeEnabled="False" 
+                                       ItemHeight="{Binding ItemHeight.Value}" 
+                                       DesiredWidth="{Binding DesiredWith.Value}" SelectionMode="Multiple" 
+                                       IsItemClickEnabled="False" 
+                                       ItemTemplate="{StaticResource PhotosTemplate}"/>
+
+            <!--<GridView Grid.Row="1" x:Name="listGallery" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <GridViewItemPresenter>
+                </GridViewItemPresenter>
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <Image Source="{Binding Source}" Height="100" Width="100"></Image>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>-->
+        </Grid>
+        <Grid Padding="15,0,15,0" x:Name="gridNoContent" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock TextAlignment="Center" Grid.Row="1" TextWrapping="WrapWholeWords" Text="Is empty here" FontSize="25"></TextBlock>
+            <TextBlock TextAlignment="Center" Margin="0,10,0,0" Grid.Row="2" TextWrapping="WrapWholeWords" Text="To get the new Windows Spotlight images please click in get new spotlight images"></TextBlock>
+            <Button Padding="15,0,15,0" Background="DodgerBlue" Foreground="White" Height="50" Margin="0,10,0,0" HorizontalAlignment="Center" Grid.Row="3" Content="Get Windows Spotlight images" x:Name="Get" Click="Get_Click"></Button>
+        </Grid>
+    </Grid>
+</Page>

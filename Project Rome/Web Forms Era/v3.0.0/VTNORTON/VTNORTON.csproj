@@ -1,0 +1,608 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VTNORTON</RootNamespace>
+    <AssemblyName>VTNORTON</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BuildClasses, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build.vtnorton.com\BuildClasses\BuildClasses\bin\Debug\BuildClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\..\..\Postgree\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="2013\css\demo.css" />
+    <Content Include="2013\css\reset.css" />
+    <Content Include="2013\css\style.css" />
+    <Content Include="2013\css\styleIE.css" />
+    <Content Include="2013\index.html" />
+    <Content Include="2013\JavaScript.js" />
+    <Content Include="2013\jquery-lastest.js" />
+    <Content Include="2013\js\jquery.easing.1.3.js" />
+    <Content Include="2013\js\modernizr.custom.11333.js" />
+    <Content Include="2013\Logo.png" />
+    <Content Include="2013\Mensagem.html" />
+    <Content Include="2013\StyleSheet.css" />
+    <Content Include="tgit\css\tgit.css" />
+    <Content Include="tgit\index.aspx" />
+    <Content Include="vitor\biografia.aspx" />
+    <Content Include="blog\index.aspx" />
+    <Content Include="css\ui-dark.css" />
+    <Content Include="css\ui-light.css" />
+    <Content Include="images\icones\search\search-build.jpg" />
+    <Content Include="images\icones\search\search-hidra.jpg" />
+    <Content Include="js\base.js" />
+    <Content Include="js\base.min.js" />
+    <Content Include="js\en-US\ui.strings.js" />
+    <Content Include="js\ui.js" />
+    <Content Include="js\ui.min.js" />
+    <Content Include="js\WinJS.js" />
+    <Content Include="js\WinJS.min.js" />
+    <Content Include="pages\atualizacao.aspx" />
+    <Content Include="pages\capitulo.aspx" />
+    <Content Include="pages\pagina.aspx" />
+    <Content Include="pages\post.aspx" />
+    <Content Include="relatar-bug.aspx" />
+    <Content Include="site\depoimentos.aspx" />
+    <Content Include="site\faq.aspx" />
+    <Content Include="site\images\connect-960-338-2versao.jpg" />
+    <Content Include="site\images\impulso-connect.jpg" />
+    <Content Include="site\images\conectado-connect.jpg" />
+    <Content Include="site\images\slide-connect-1.jpg" />
+    <Content Include="site\images\slide-reais.jpg" />
+    <Content Include="site\images\importante-connect.jpg" />
+    <Content Include="site\index.aspx" />
+    <Content Include="site\motivos.aspx" />
+    <Content Include="css\heartthrob.css" />
+    <Content Include="css\hidra.css" />
+    <Content Include="css\responsivo.css" />
+    <Content Include="download\index.aspx" />
+    <Content Include="erro\000.aspx" />
+    <Content Include="erro\403.aspx" />
+    <Content Include="erro\404.aspx" />
+    <Content Include="erro\500.aspx" />
+    <Content Include="faq.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="formulariodecontato.aspx" />
+    <Content Include="historias\arquiteto-de-mentes\index.aspx" />
+    <Content Include="historias\index.aspx" />
+    <Content Include="images\heartthrob\icons-23-23.png" />
+    <Content Include="images\heartthrob\icons-43-43.png" />
+    <Content Include="images\heartthrob\icons-hover-23-23.png" />
+    <Content Include="images\heartthrob\icons-hover-43-43.png" />
+    <Content Include="images\hidra\imageoftheday\00-00-0000.jpg" />
+    <Content Include="images\icones\startup.png" />
+    <Content Include="images\icones\touch-icon-ipad-retina.png" />
+    <Content Include="images\icones\touch-icon-ipad.png" />
+    <Content Include="images\icones\touch-icon-iphone-retina.png" />
+    <Content Include="images\icones\touch-icon-iphone.png" />
+    <Content Include="images\logos\logo.vtnorton.thumbnail.png" />
+    <Content Include="images\opensearch.png" />
+    <Content Include="images\opensearchicon.jpg" />
+    <Content Include="images\opensearchicon64.png" />
+    <Content Include="images\tiles\largetile.png" />
+    <Content Include="images\tiles\mediumtile.png" />
+    <Content Include="images\tiles\smalltile.png" />
+    <Content Include="images\tiles\widetile.png" />
+    <Content Include="js\blur.dev.js" />
+    <Content Include="js\blur.js" />
+    <Content Include="js\blur.min.js" />
+    <Content Include="linha-do-tempo.aspx" />
+    <Content Include="livetile.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="opensearch.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Master.Master" />
+    <Content Include="packages.config" />
+    <Content Include="planosfuturos.aspx" />
+    <Content Include="podcast\01 - Percas WAV.mp3" />
+    <Content Include="podcast\Capa-1400x1400px.jpg" />
+    <Content Include="podcast\index.aspx" />
+    <Content Include="projetos.aspx" />
+    <Content Include="redes-sociais.aspx" />
+    <Content Include="suporte\index.aspx" />
+    <Content Include="design\copa2014.aspx" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-01.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-02.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-03.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-04.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-05.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-06.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-07.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-08.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-09.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-10.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-11.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-12.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-13.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-14.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-15.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-16.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-17.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-18.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-19.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-20.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-21.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-22.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-23.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-24.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-25.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-26.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-27.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-28.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-29.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-30.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-31.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-32.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-33.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-34.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-35.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-36.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-37.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-38.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-39.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-40.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-41.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-42.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-43.jpg" />
+    <Content Include="design\images\copa2014\avatares-copa-do-mundo-2014-44.jpg" />
+    <Content Include="design\images\yolo-640-295-brasil-copa.jpg" />
+    <Content Include="design\index.aspx" />
+    <Content Include="js\vtn.pinnedsite.js" />
+    <Content Include="js\base.min.js.map" />
+    <Content Include="js\ui.min.js.map" />
+    <Content Include="js\WinJS.min.js.map" />
+    <Content Include="fonts\Symbols.ttf" />
+    <Content Include="js\WinJs.UI.Searchbox.js" />
+    <Content Include="tgit\master.Master" />
+    <None Include="Properties\PublishProfiles\vtnorton.pubxml" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <Content Include="design\download\avatares-copa-do-mundo-2014-pack-vtnorton.com.rar" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\style.css" />
+    <Content Include="images\logos\logo.vtnorton.master.png" />
+    <Content Include="index.aspx" />
+    <Content Include="js\jquery.js" />
+    <Content Include="hidra\adicionarnavegador.aspx" />
+    <Content Include="hidra\index.aspx" />
+    <Content Include="hidra\opiniao.aspx" />
+    <Content Include="hidra\search.aspx" />
+    <Content Include="hidra\sobre.aspx" />
+    <Content Include="sobre.aspx" />
+    <Content Include="status.aspx" />
+    <Content Include="vitor\index.aspx" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="tgit\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tgit\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tgit\master.Master.cs">
+      <DependentUpon>master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tgit\master.Master.designer.cs">
+      <DependentUpon>master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="vitor\biografia.aspx.cs">
+      <DependentUpon>biografia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vitor\biografia.aspx.designer.cs">
+      <DependentUpon>biografia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blog\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\atualizacao.aspx.cs">
+      <DependentUpon>atualizacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\atualizacao.aspx.designer.cs">
+      <DependentUpon>atualizacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\capitulo.aspx.cs">
+      <DependentUpon>capitulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\capitulo.aspx.designer.cs">
+      <DependentUpon>capitulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\pagina.aspx.cs">
+      <DependentUpon>pagina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\pagina.aspx.designer.cs">
+      <DependentUpon>pagina.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\post.aspx.cs">
+      <DependentUpon>post.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\post.aspx.designer.cs">
+      <DependentUpon>post.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="relatar-bug.aspx.cs">
+      <DependentUpon>relatar-bug.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="relatar-bug.aspx.designer.cs">
+      <DependentUpon>relatar-bug.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="site\depoimentos.aspx.cs">
+      <DependentUpon>depoimentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="site\depoimentos.aspx.designer.cs">
+      <DependentUpon>depoimentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="site\faq.aspx.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="site\faq.aspx.designer.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="site\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="site\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="site\motivos.aspx.cs">
+      <DependentUpon>motivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="site\motivos.aspx.designer.cs">
+      <DependentUpon>motivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="download\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="download\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="erro\000.aspx.cs">
+      <DependentUpon>000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="erro\000.aspx.designer.cs">
+      <DependentUpon>000.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="erro\403.aspx.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="erro\403.aspx.designer.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="erro\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="erro\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="erro\500.aspx.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="erro\500.aspx.designer.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="faq.aspx.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="faq.aspx.designer.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formulariodecontato.aspx.cs">
+      <DependentUpon>formulariodecontato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formulariodecontato.aspx.designer.cs">
+      <DependentUpon>formulariodecontato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="historias\arquiteto-de-mentes\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="historias\arquiteto-de-mentes\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="historias\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="historias\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="linha-do-tempo.aspx.cs">
+      <DependentUpon>linha-do-tempo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="linha-do-tempo.aspx.designer.cs">
+      <DependentUpon>linha-do-tempo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master.Master.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master.Master.designer.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="planosfuturos.aspx.cs">
+      <DependentUpon>planosfuturos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="planosfuturos.aspx.designer.cs">
+      <DependentUpon>planosfuturos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="podcast\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="podcast\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="projetos.aspx.cs">
+      <DependentUpon>projetos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="projetos.aspx.designer.cs">
+      <DependentUpon>projetos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="redes-sociais.aspx.cs">
+      <DependentUpon>redes-sociais.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="redes-sociais.aspx.designer.cs">
+      <DependentUpon>redes-sociais.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hidra\adicionarnavegador.aspx.cs">
+      <DependentUpon>adicionarnavegador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hidra\adicionarnavegador.aspx.designer.cs">
+      <DependentUpon>adicionarnavegador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hidra\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hidra\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hidra\opiniao.aspx.cs">
+      <DependentUpon>opiniao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hidra\opiniao.aspx.designer.cs">
+      <DependentUpon>opiniao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hidra\search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hidra\search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hidra\sobre.aspx.cs">
+      <DependentUpon>sobre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hidra\sobre.aspx.designer.cs">
+      <DependentUpon>sobre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sobre.aspx.cs">
+      <DependentUpon>sobre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sobre.aspx.designer.cs">
+      <DependentUpon>sobre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="status.aspx.cs">
+      <DependentUpon>status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="status.aspx.designer.cs">
+      <DependentUpon>status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="suporte\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="suporte\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="design\copa2014.aspx.cs">
+      <DependentUpon>copa2014.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="design\copa2014.aspx.designer.cs">
+      <DependentUpon>copa2014.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="design\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="design\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vitor\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vitor\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\slide\" />
+    <Folder Include="loja\" />
+    <Folder Include="tgif\" />
+    <Folder Include="tgit\images\" />
+    <Folder Include="tgit\js\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hidra\Hidra.csproj">
+      <Project>{aa6d6aea-cf86-4964-861d-6cf335591829}</Project>
+      <Name>Hidra</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2620</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2620/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

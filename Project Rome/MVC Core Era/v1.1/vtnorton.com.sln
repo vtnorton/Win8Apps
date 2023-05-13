@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vtnorton", "Vtnorton\Vtnorton.csproj", "{DE027322-9F12-4412-9F9A-84904E0C995D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vtnServices", "vtnServices\vtnServices.csproj", "{B5EB8EF3-C7CD-4740-B451-88D69ABDE7E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE027322-9F12-4412-9F9A-84904E0C995D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE027322-9F12-4412-9F9A-84904E0C995D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE027322-9F12-4412-9F9A-84904E0C995D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE027322-9F12-4412-9F9A-84904E0C995D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5EB8EF3-C7CD-4740-B451-88D69ABDE7E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5EB8EF3-C7CD-4740-B451-88D69ABDE7E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5EB8EF3-C7CD-4740-B451-88D69ABDE7E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5EB8EF3-C7CD-4740-B451-88D69ABDE7E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://vtnorton.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = vtnServices\\vtnServices.csproj
+		SccProjectName1 = vtnServices
+		SccLocalPath1 = vtnServices
+		SccProjectUniqueName2 = Vtnorton\\Vtnorton.csproj
+		SccProjectName2 = Vtnorton
+		SccLocalPath2 = Vtnorton
+	EndGlobalSection
+EndGlobal

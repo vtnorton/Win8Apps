@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="SunApp.Views.Humans.MainHumans"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SunApp.Views.Humans"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="20" Grid.Row="0">Recursos humanos</TextBlock>
+        <HyperlinkButton Content="Ver Clientes" Grid.Row="1" x:Name="btnClients" Click="btnClients_Click"/>
+        <HyperlinkButton Content="Ver Empregados" Grid.Row="2" x:Name="btnEmployee" Click="btnEmployee_Click"/>
+
+
+    </Grid>
+</Page>

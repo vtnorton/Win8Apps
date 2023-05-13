@@ -1,0 +1,184 @@
+﻿@model ProjectCachoeiro.Web.Models.Comercial.ContaCorrente
+@{
+    ViewData["Title"] = "Adicionar conta corrente";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@await Html.PartialAsync("~/Views/App/Manage/Sistema/_ManageNav.cshtml")
+<div class="inner-content">
+    <div class="toolbar">
+        <div class="left">
+            <h2>Adicionar conta corrente</h2>
+        </div>
+        <div class="clean"></div>
+    </div>
+    <div class="view-element">
+        <form id="form" asp-action="Criar">
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <p><small>Detalhes da conta</small></p>
+            <div class="row">
+                <div class="col-md-5">
+                    <label asp-for="Titulo"></label>
+                    <input asp-for="Titulo" placeholder="Título para esta conta" />
+                    <span asp-validation-for="Titulo"></span>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="Conta"></label>
+                    <input asp-for="Conta" />
+                    <span asp-validation-for="Conta"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="IBAN"></label>
+                    <input asp-for="IBAN" placeholder="Código IBAN" />
+                    <span asp-validation-for="IBAN"></span>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="Swift"></label>
+                    <input asp-for="Swift" />
+                    <span asp-validation-for="Swift"></span>
+                </div>
+                <div class="col-md-2">
+                    <label asp-for="Aba"></label>
+                    <input asp-for="Aba" />
+                    <span asp-validation-for="Aba"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="Beneficiario"></label>
+                    <input asp-for="Beneficiario" />
+                    <span asp-validation-for="Beneficiario"></span>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="BranchSwift"></label>
+                    <input asp-for="BranchSwift" />
+                    <span asp-validation-for="BranchSwift"></span>
+                </div>
+            </div>
+
+            <p><small>Detalhes do banco</small></p>
+            <div class="row">
+                <div class="col-md-5">
+                    <label asp-for="Banco"></label>
+                    <input asp-for="Banco" />
+                    <span asp-validation-for="Banco"></span>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="Telefone"></label>
+                    <input asp-for="Telefone" />
+                    <span asp-validation-for="Telefone"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label asp-for="CEP"></label>
+                    <input onblur="pesquisarCep(this.value)" id="cep" asp-for="CEP" class="cep" />
+                    <span asp-validation-for="CEP"></span>
+                </div>
+                <div class="col-md-8">
+                    <label asp-for="Endereco"></label>
+                    <input asp-for="Endereco" id="rua" />
+                    <span asp-validation-for="Endereco"></span>
+                </div>
+                <div class="col-md-2">
+                    <label asp-for="Numero"></label>
+                    <input asp-for="Numero" value="0" type="number" />
+                    <span asp-validation-for="Numero"></span>
+                </div>
+                <!-- TODO: col-md-1 está com falha na margin da direita -->
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <label asp-for="Complemento"></label>
+                    <input asp-for="Complemento" />
+                    <span asp-validation-for="Complemento"></span>
+                </div>
+                <div class="col-md-2">
+                    <label asp-for="Bairro"></label>
+                    <input asp-for="Bairro" id="bairro" />
+                    <span asp-validation-for="Bairro"></span>
+                </div>
+                <div class="col-md-3">
+                    <label asp-for="Cidade"></label>
+                    <input asp-for="Cidade" id="cidade" />
+                    <span asp-validation-for="Cidade"></span>
+                </div>
+                <div class="col-md-3 col-lg-2">
+                    <label asp-for="Estado"></label>
+                    <input id="estado" value="" name="Estado" />
+                    @*<input asp-for="Estado" />*@
+                    <span asp-validation-for="Estado"></span>
+                </div>
+                <div class="col-md-2 col-lg-3">
+                    <label asp-for="Pais"></label>
+                    <input id="pais" value="Brasil" name="Pais" />
+                    <span asp-validation-for="Pais"></span>
+                </div>
+            </div>
+
+            <p><small>Outras informações desta conta</small></p>
+            <label asp-for="Observacoes"></label>
+            <textarea asp-for="Observacoes"></textarea>
+            <span asp-validation-for="Observacoes"></span>
+        </form>
+        @await Html.PartialAsync("~/Views/Shared/AppTaskbar.cshtml", "CREATE")
+    </div>
+</div>
+<div class="clean"></div>
+
+<script>
+    var jsonPais = (function () {
+        var json = null;
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': '/json/paises.json',
+            'dataType': "json",
+            'success': function (data) {
+                json = data;
+            }
+        });
+        return json;
+    })();
+
+    var jsonEstados = (function () {
+        var json = null;
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': '/json/estados.json',
+            'dataType': "json",
+            'success': function (data) {
+                json = data;
+            }
+        });
+        return json;
+    })();
+
+    $("#pais").kendoDropDownList({
+        dataTextField: "nome_pais",
+        dataValueField: "nome_pais",
+        index: 0,
+        filter: "startswith",
+        dataSource: jsonPais
+    });
+
+    $("#estado").kendoDropDownList({
+        dataTextField: "nome",
+        dataValueField: "sigla",
+        index: 0,
+        filter: "startswith",
+        dataSource: jsonEstados
+    });
+</script>
+
+<environment names="Development">
+    <script src="~/js/cep.js"></script>
+</environment>
+<environment names="Staging,Production">
+    <script src="~/js/cep.mim.js"></script>
+</environment>

@@ -1,0 +1,12 @@
+﻿---------------------------------------------------------
+---              MODE BASIC BUILD WEB OS              ---
+---------------------------------------------------------
+
+Somente o básico da Hidra, sem papel de parede, sem
+funções  APIs, e reduzindo o uso de JavaScript e CSS. 
+
+Funções Limitades. 
+
+---------------------------------------------------------
+-- TO DEV: Colocar botão de voltar para versão padrão  --
+---------------------------------------------------------

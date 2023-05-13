@@ -1,0 +1,32 @@
+﻿a{}
+a:hover{}
+a:visited{}
+h1{}
+h2{}
+h3{}
+h4{}
+h5{}
+h6{}
+.img{min-width: 100% !important; max-width: 100%; position: relative; background-image: url('/images/hidra/imageoftheday/00-00-0000.jpg'); background-attachment:fixed;}
+.tile {background: rgba(0, 0, 0, 0.612); color: #fff; padding: 20px;}
+.small{width: 215px; height: 215px}
+.wide{width: 670px; height: 215px}
+.square{width: 441px; height: 441px}
+.full{width: 960px; height: 720px}
+.full-without-size{width: 960px;}
+.resultado{width: 100%; position: relative; z-index: 2; top: 60px;}
+.resultado-margin{width: 1000px; margin: 0 auto}
+.selection-active{}
+.selection{}
+.right{float: right}
+.left{float: left}
+.clear{clear:both}
+.end{
+}
+    .end a {
+        color:#e3e3e3;
+        height: 100px;
+        margin-bottom: 30px !important;
+    }
+.end a:hover{}
+.end a:visited{}

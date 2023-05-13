@@ -1,0 +1,85 @@
+﻿@model ProjectCachoeiro.Web.Comercial.Contato
+@{
+    ViewData["Title"] = "Editar contato";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-9">
+        <div class="view-element">
+            <div class="toolbar">
+                <div class="left">
+                    <h2>Editar contato</h2>
+                </div>
+                <div class="clean"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <form id="form" asp-action="Editar">
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label asp-for="PrimeiroNome"></label>
+                            <input asp-for="PrimeiroNome" />
+                            <span asp-validation-for="PrimeiroNome"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="UltimoNome"></label>
+                            <input asp-for="UltimoNome" />
+                            <span asp-validation-for="UltimoNome"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" />
+                            <span asp-validation-for="Email"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Telefone"></label>
+                            <input asp-for="Telefone" />
+                            <span asp-validation-for="Telefone"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Cargo"></label>
+                            <input asp-for="Cargo" />
+                            <span asp-validation-for="Cargo"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Observacao"></label>
+                            <input asp-for="Observacao" />
+                            <span asp-validation-for="Observacao"></span>
+                        </div>
+                    </form>
+                </div>
+                @await Html.PartialAsync("~/Views/Shared/AppTaskbar.cshtml", "EDIT;ID=" + Model.Id + ";")
+            </div>
+            <div class="view-bottom">
+                <hr />
+                <p class="small">Legenda da tabela e outras informações importantes a serem acrescentadas aqui.</p>
+            </div>
+        </div>
+    </div>
+    <div class="info-bar col-md-3">
+        @{
+            OtherOptions otherOptions = new OtherOptions
+            {
+                Descricao = "Veja opções relacionadas com a apresentação de itens.",
+                FeedbackEChamadoID = "ItemFamilia",
+                OpcoesRelacionadas = new Links[] {
+                    new Links{
+                        Titulo = "Adicionar família",
+                        Url = "/Familias/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar estado de produto",
+                        Url = "/Estados/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar produto",
+                        Url = "/Produtos/Create"
+                    }
+                }
+            };
+        }
+        @Html.Partial("AppOtherOptions", otherOptions)
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿*,:before,:after{box-sizing:border-box}
+.set-size{font-size:13em}
+.charts-container:after{clear:both;content:""}
+.pie-wrapper{height:1em;width:1em;float:left;margin:15px;position:relative;margin-left: 20%;}
+.pie-wrapper:nth-child(3n+1){clear:both}
+.pie-wrapper .pie{height:100%;width:100%;clip:rect(0,1em,1em,0.5em);left:0;position:absolute;top:0}
+.pie-wrapper .pie .half-circle{height:100%;width:100%;border:.1em solid #3498db;border-radius:50%;clip:rect(0,0.5em,1em,0);left:0;position:absolute;top:0}
+.pie-wrapper .label{background:#34495e;border-radius:50%;bottom:.4em;color:#ecf0f1;cursor:default;display:block;font-size:.25em;left:.4em;line-height:2.6em;position:absolute;right:.4em;text-align:center;top:.4em}
+.pie-wrapper .label .smaller{color:#bdc3c7;font-size:.45em;padding-bottom:20px;vertical-align:super}
+.pie-wrapper .shadow{height:100%;width:100%;border:.1em solid #bdc3c7;border-radius:50%}
+.pie-wrapper.style-2 .label{background:none;color:#7f8c8d}
+.pie-wrapper.style-2 .label .smaller{color:#bdc3c7}
+.pie-wrapper.progress-30 .pie .right-side{display:none}
+.pie-wrapper.progress-30 .pie .half-circle{border-color:#2572EB}
+.pie-wrapper.progress-30 .pie .left-side{transform:rotate(108deg)}
+.pie-wrapper.progress-45 .pie .right-side{display:none}
+.pie-wrapper.progress-45 .pie .half-circle{border-color:#6f48cf}
+.pie-wrapper.progress-45 .pie .left-side{transform:rotate(162deg)}
+.pie-wrapper.progress-50 .pie .right-side{display:none}
+.pie-wrapper.progress-50 .pie .half-circle{border-color:#e67e22}
+.pie-wrapper.progress-50 .pie .left-side{transform:rotate(180deg)}
+.pie-wrapper.progress-60 .pie{clip:rect(auto,auto,auto,auto)}
+.pie-wrapper.progress-60 .pie .right-side{transform:rotate(180deg)}
+.pie-wrapper.progress-60 .pie .half-circle{border-color:#FF2E12}
+.pie-wrapper.progress-60 .pie .left-side{transform:rotate(216deg)}
+.pie-wrapper.progress-75 .pie{clip:rect(auto,auto,auto,auto)}
+.pie-wrapper.progress-75 .pie .right-side{transform:rotate(180deg)}
+.pie-wrapper.progress-75 .pie .half-circle{border-color:#199900}
+.pie-wrapper.progress-75 .pie .left-side{transform:rotate(270deg)}
+
+.pie-wrapper.progress-80 .pie{clip:rect(auto,auto,auto,auto)}
+.pie-wrapper.progress-80 .pie .right-side{transform:rotate(180deg)}
+.pie-wrapper.progress-80 .pie .half-circle{border-color:#F3B200}
+.pie-wrapper.progress-80 .pie .left-side{transform:rotate(297deg)}
+
+.pie-wrapper.progress-95 .pie{clip:rect(auto,auto,auto,auto)}
+.pie-wrapper.progress-95 .pie .right-side{transform:rotate(180deg)}
+.pie-wrapper.progress-95 .pie .half-circle{border-color:#001E4E}
+.pie-wrapper.progress-95 .pie .left-side{transform:rotate(342deg)}
+
+.pie-wrapper--solid{border-radius:50%;overflow:hidden}
+.pie-wrapper--solid:before{border-radius:0 100% 100% 0;content:'';display:block;height:100%;margin-left:50%;transform-origin:left}
+.pie-wrapper--solid .label{background:transparent}
+.pie-wrapper--solid.progress-65{background:linear-gradient(to right,#e67e22 50%,#34495e 50%)}
+.pie-wrapper--solid.progress-65:before{background:#e67e22;transform:rotate(126deg)}
+.pie-wrapper--solid.progress-25{background:linear-gradient(to right,#6f48cf 50%,#34495e 50%)}
+.pie-wrapper--solid.progress-25:before{background:#34495e;transform:rotate(-270deg)}
+.pie-wrapper--solid.progress-88{background:linear-gradient(to right,#2572EB 50%,#34495e 50%)}
+.pie-wrapper--solid.progress-88:before{background:#3498db;transform:rotate(43.2deg)}
+.skill-info{margin-top:-10px;margin-top: 50px;}
+.skill-info p{margin-top:-3px}
+
+.skillbar{position:relative;display:block;margin-bottom:15px;width:100%;background:#eee;height:35px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-webkit-transition:.4s linear;-moz-transition:.4s linear;-ms-transition:.4s linear;-o-transition:.4s linear;transition:.4s linear;-webkit-transition-property:width,background-color;-moz-transition-property:width,background-color;-ms-transition-property:width,background-color;-o-transition-property:width,background-color;transition-property:width,background-color}
+.skillbar-title{position:absolute;top:0;left:0;width:110px;font-weight:700;font-size:13px;color:#fff;background:#6adcfa;-webkit-border-top-left-radius:3px;-webkit-border-bottom-left-radius:4px;-moz-border-radius-topleft:3px;-moz-border-radius-bottomleft:3px;border-top-left-radius:3px;border-bottom-left-radius:3px}
+.skillbar-title span{display:block;background:rgba(0,0,0,0.1);padding:0 20px;height:35px;line-height:35px;-webkit-border-top-left-radius:3px;-webkit-border-bottom-left-radius:3px;-moz-border-radius-topleft:3px;-moz-border-radius-bottomleft:3px;border-top-left-radius:3px;border-bottom-left-radius:3px}
+.skillbar-bar{height:35px;width:0;background:#6adcfa;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}
+.skill-bar-percent{position:absolute;right:10px;top:0;font-size:11px;height:35px;line-height:35px;color:#fff;color:rgba(0,0,0,0.4)}

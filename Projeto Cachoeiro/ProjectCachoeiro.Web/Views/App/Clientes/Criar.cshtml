@@ -1,0 +1,224 @@
+﻿@model ProjectCachoeiro.Web.Comercial.Cliente
+@{
+    ViewData["Title"] = "Adicionar cliente";
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-9">
+        <div class="toolbar">
+            <div class="left">
+                <h2>Adicionar cliente</h2>
+            </div>
+            <div class="clean"></div>
+        </div>
+        <div class="view-element">
+            <form id="form" asp-action="Criar">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="row">
+                    <div class="col-md-7">
+                        <label asp-for="RazaoSocial"></label>
+                        <input asp-for="RazaoSocial" id="razaosocial" />
+                        <span asp-validation-for="RazaoSocial"></span>
+                    </div>
+                    <div class="col-md-5">
+                        <label asp-for="CNPJ"></label>*
+                        <input asp-for="CNPJ" id="cnpj" class="cnpj" required />
+                        <span asp-validation-for="CNPJ"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label asp-for="InscricaoEstadual"></label>*
+                        <input asp-for="InscricaoEstadual" id="inscricao" required />
+                        <span asp-validation-for="InscricaoEstadual"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="NomeFantasia" id="nome-fantasia-label">Nome Fantasia*</label>
+                        <input asp-for="NomeFantasia" required />
+                        <span asp-validation-for="NomeFantasia"></span>
+                    </div>
+                </div>
+
+                <p><small>Informações de contato</small></p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label asp-for="Telefone"></label>
+                        <input asp-for="Telefone" />
+                        <span asp-validation-for="Telefone"></span>
+                    </div>
+                    <div class="col-md-3">
+                        <label asp-for="Fax"></label>
+                        <input asp-for="Fax" />
+                        <span asp-validation-for="Fax"></span>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label>E-mail de contato</label>*
+                        <input type="email" asp-for="EmailContato" required />
+                        <span asp-validation-for="EmailContato"></span>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label asp-for="Site"></label>
+                        <input type="url" asp-for="Site" />
+                        <span asp-validation-for="Site"></span>
+                    </div>
+                </div>
+
+                <p><small>Endereço</small></p>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label asp-for="CEP"></label>
+                        <input onblur="pesquisarCep(this.value)" id="cep" asp-for="CEP" class="cep" />
+                        <span asp-validation-for="CEP"></span>
+                    </div>
+                    <div class="col-md-8">
+                        <label asp-for="Endereco"></label>
+                        <input asp-for="Endereco" id="rua" />
+                        <span asp-validation-for="Endereco"></span>
+                    </div>
+                    <div class="col-md-2">
+                        <label asp-for="Numero"></label>
+                        <input asp-for="Numero" value="0" type="number" />
+                        <span asp-validation-for="Numero"></span>
+                    </div>
+                    <!-- TODO: col-md-1 está com falha na margin da direita -->
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <label asp-for="Complemento"></label>
+                        <input asp-for="Complemento" />
+                        <span asp-validation-for="Complemento"></span>
+                    </div>
+                    <div class="col-md-2">
+                        <label asp-for="Bairro"></label>
+                        <input asp-for="Bairro" id="bairro" />
+                        <span asp-validation-for="Bairro"></span>
+                    </div>
+                    <div class="col-md-3">
+                        <label asp-for="Cidade"></label>
+                        <input asp-for="Cidade" id="cidade" />
+                        <span asp-validation-for="Cidade"></span>
+                    </div>
+                    <div class="col-md-3 col-lg-2">
+                        <label asp-for="Estado"></label>
+                        <input id="estado" value="" name="Estado" />
+                        <span asp-validation-for="Estado"></span>
+                    </div>
+                    <div class="col-md-2 col-lg-3">
+                        <label asp-for="Pais"></label>
+                        <input id="pais" value="Brasil" name="Pais" />
+                        <span asp-validation-for="Pais"></span>
+                    </div>
+                </div>
+
+                <p><small>Outras informações</small></p>
+                <div class="row">
+                    <div class="col-md-9">
+                        <label asp-for="Descricao"></label>
+                        <textarea asp-for="Descricao"></textarea>
+                        <span asp-validation-for="Descricao"></span>
+                    </div>
+                </div>
+                <div class="status">
+                </div>
+            </form>
+            @await Html.PartialAsync("~/Views/Shared/AppTaskbar.cshtml", "CREATE")
+        </div>
+    </div>
+    <div class="info-bar col-md-3">
+        @{
+            OtherOptions otherOptions = new OtherOptions
+            {
+                Descricao = "Veja opções relacionadas com a adição de novos clientes.",
+                FeedbackEChamadoID = "AddCliente",
+                OpcoesRelacionadas = new Links[] {
+                    new Links{
+                        Titulo = "Ver lista de clientes",
+                        Url = "/Clientes"
+                    }
+                }
+            };
+        }
+        @Html.Partial("AppOtherOptions", otherOptions)
+    </div>
+</div>
+<script>
+    var jsonPais = (function () {
+        var json = null;
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': '/json/paises.json',
+            'dataType': "json",
+            'success': function (data) {
+                json = data;
+            }
+        });
+        return json;
+    })();
+
+    var jsonEstados = (function () {
+        var json = null;
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': '/json/estados.json',
+            'dataType': "json",
+            'success': function (data) {
+                json = data;
+            }
+        });
+        return json;
+    })();
+
+    $("#pais").kendoDropDownList({
+        dataTextField: "nome_pais",
+        dataValueField: "nome_pais",
+        index: 0,
+        filter: "startswith",
+        dataSource: jsonPais,
+        select: onChange
+    });
+
+    $("#estado").kendoDropDownList({
+        dataTextField: "nome",
+        dataValueField: "sigla",
+        index: 0,
+        filter: "startswith",
+        dataSource: jsonEstados
+    });
+
+    function onChange(e) {
+        var dataItem = this.dataItem(e.item);
+        if (dataItem.nome_pais != "Brasil") {
+            $("#cnpj").prop('disabled', true);
+            $("#razaosocial").prop('disabled', true);
+            $("#inscricao").prop('disabled', true);
+            $("#cep").prop('disabled', true);
+            $("#nome-fantasia-label").html("Nome da empresa*");
+            document.getElementById("cnpj").required = false;
+            document.getElementById("razaosocial").required = false;
+            document.getElementById("inscricao").required = false;
+        } else {
+            $("#cnpj").prop('disabled', false);
+            $("#razaosocial").prop('disabled', false);
+            $("#inscricao").prop('disabled', false);
+            $("#cep").prop('disabled', false);
+            $("#nome-fantasia-label").html("Nome da fantasia*");
+            document.getElementById("cnpj").required = true;
+            document.getElementById("razaosocial").required = true;
+            document.getElementById("inscricao").required = true;
+        }
+    };
+</script>
+
+<environment names="Development">
+    <script src="~/js/cep.js"></script>
+</environment>
+<environment names="Staging,Production">
+    <script src="~/js/cep.min.js"></script>
+</environment>

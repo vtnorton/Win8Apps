@@ -1,0 +1,159 @@
+﻿<Page
+    x:Class="ProjectRedmonde.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjectRedmonde.Views"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"  
+    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <SplitView PaneBackground="Transparent" CompactPaneLength="50" x:Name="MySplitView" OpenPaneLength="300" DisplayMode="CompactInline" IsPaneOpen="True">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualState000min">
+                    <VisualState.Setters>
+                        <Setter Target="MySliptView.(SplitView.IsPaneOpen)" Value="False"/>
+                        <Setter Target="MySliptView.(SplitView.DisplayMode)" Value="Overlay"/>
+                        <Setter Target="btnMenu2.(UIElement.Visibility)" Value="Visible"/>
+                    </VisualState.Setters>
+                    <!--<VisualState.StateTriggers>
+                        <AdaptiveTrigger/>
+                    </VisualState.StateTriggers>-->
+                </VisualState>
+                <VisualState x:Name="VisualState641min">
+                    <!--<VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="641"/>
+                    </VisualState.StateTriggers>-->
+                </VisualState>
+                <VisualState x:Name="VisualState941min">
+                    <VisualState.Setters>
+                        <Setter Target="MySliptView.(SplitView.IsPaneOpen)" Value="True"/>
+                    </VisualState.Setters>
+                    <!--<VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="941"/>
+                    </VisualState.StateTriggers>-->
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <SplitView.Pane>
+            <StackPanel Background="#1b1b1b">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal">
+                        <HyperlinkButton Click="btnMenu_Click" Grid.Column="1" x:Name="btnMenu" Foreground="White"  FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                        Width="50" Height="50" Background="Transparent">
+                            <HyperlinkButton.ContentTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" />
+                                </DataTemplate>
+                            </HyperlinkButton.ContentTemplate>
+                        </HyperlinkButton>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel x:Name="stpHome" PointerMoved="stpHome_PointerMoved" PointerExited="stpHome_PointerExited" Tapped="xtnHome_Click"  Orientation="Horizontal">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5"></ColumnDefinition>
+                            <ColumnDefinition Width="45"></ColumnDefinition>
+                            <ColumnDefinition Width="250"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" x:Name="gridHome" Background="Transparent"></Grid>
+                        <HyperlinkButton Grid.Column="1" x:Name="btnHome" Foreground="White"  FontFamily="Segoe MDL2 Assets" Content="&#xE10F;"
+                        Width="45" Height="50" Background="Transparent">
+                            <HyperlinkButton.ContentTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" />
+                                </DataTemplate>
+                            </HyperlinkButton.ContentTemplate>
+                        </HyperlinkButton>
+                        <TextBlock Grid.Column="2" x:Name="txtHome" Text="Spotlight" FontSize="18" Foreground="White" VerticalAlignment="Center" />
+                    </Grid>
+                </StackPanel>
+                <StackPanel x:Name="stpChangelog" Tapped="stpChangelog_Tapped" Orientation="Horizontal" PointerMoved="stpChangelog_PointerMoved" PointerExited="stpChangelog_PointerExited">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5"></ColumnDefinition>
+                            <ColumnDefinition Width="45"></ColumnDefinition>
+                            <ColumnDefinition Width="250"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" x:Name="gridChangelog" Background="Transparent"></Grid>
+                        <HyperlinkButton Grid.Column="1" x:Name="btnChangelog" Foreground="White"  FontFamily="Segoe MDL2 Assets" Content="&#xE81C;"
+                        Width="45" Height="50" Background="Transparent">
+                            <HyperlinkButton.ContentTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" />
+                                </DataTemplate>
+                            </HyperlinkButton.ContentTemplate>
+                        </HyperlinkButton>
+                        <TextBlock Grid.Column="2" x:Name="txtChangelog" Text="Changelog" FontSize="18" Foreground="White" VerticalAlignment="Center" />
+                    </Grid>
+                </StackPanel>
+                <StackPanel x:Name="stpFeedback" Tapped="stpFeedback_Tapped" Orientation="Horizontal" PointerMoved="stpFeedback_PointerMoved"  PointerExited="stpFeedback_PointerExited">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5"></ColumnDefinition>
+                            <ColumnDefinition Width="45"></ColumnDefinition>
+                            <ColumnDefinition Width="250"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" x:Name="gridFeedcak" Background="Transparent"></Grid>
+                        <HyperlinkButton Grid.Column="1" x:Name="btnFeedback" Foreground="White"  FontFamily="Segoe MDL2 Assets" Content="&#xE90A;"
+                        Width="45" Height="50" Background="Transparent">
+                            <HyperlinkButton.ContentTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" />
+                                </DataTemplate>
+                            </HyperlinkButton.ContentTemplate>
+                        </HyperlinkButton>
+                        <TextBlock Grid.Column="2" x:Name="txtFeedback" Text="Feedback" FontSize="18" Foreground="White" VerticalAlignment="Center" />
+                    </Grid>
+                </StackPanel>
+                <StackPanel x:Name="stpAbout" Tapped="btnAbout_Click" Orientation="Horizontal" PointerMoved="stpAbout_PointerMoved" PointerExited="stpAbout_PointerExited">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5"></ColumnDefinition>
+                            <ColumnDefinition Width="45"></ColumnDefinition>
+                            <ColumnDefinition Width="250"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" x:Name="gridAbout" Background="Transparent"></Grid>
+                        <HyperlinkButton Grid.Column="1" x:Name="btnAbout" Foreground="White" FontFamily="Segoe MDL2 Assets" Content="&#xE171;"
+                        Width="45" Height="50" Background="Transparent">
+                            <HyperlinkButton.ContentTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" />
+                                </DataTemplate>
+                            </HyperlinkButton.ContentTemplate>
+                        </HyperlinkButton>
+                        <TextBlock Grid.Column="2" x:Name="txtAbout" Text="About" FontSize="18" Foreground="White" VerticalAlignment="Center" />
+                    </Grid>
+                </StackPanel>
+
+                <Grid Canvas.ZIndex="-1" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Name="PaneBackgroundGrid" Grid.Column="1">
+                        <interactivity:Interaction.Behaviors>
+                            <behaviors:Blur x:Name="blur" Value="25" Duration="0" Delay="0" AutomaticallyStart="true"/>
+                        </interactivity:Interaction.Behaviors>
+                        <Grid.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.5"/>
+                        </Grid.Background>
+                    </Grid>
+                </Grid>
+            </StackPanel>
+            
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Grid x:Name="mainFrame">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" x:Name="frameBody"></Frame>
+            </Grid>
+        </SplitView.Content>
+    </SplitView>
+    
+    
+</Page>

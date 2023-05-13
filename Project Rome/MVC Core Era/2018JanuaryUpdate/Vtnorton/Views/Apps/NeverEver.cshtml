@@ -1,0 +1,56 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Vtnorton.Model
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "#NeverEver";
+    ViewData["Description"] = Localizer["PasadenaShortDescription"].Value;
+    ViewData["Keywords"] = "neverever, eu nunca, jogos, jogos com bebidas, aplicativos, windows 10, windows insider, desenvolvedor indie";
+}
+@section submenu{
+    <ul>
+        <li><a href="#" class="on notranslate">#NeverEver</a></li>
+    </ul>
+}
+<script src="~/js/vtnorton.apps.js"></script>
+<script src="~/json/app.neverever.json" type="application/ld+json"></script>
+
+<section class="app bg-dark">
+    <div class="app-section">
+        <div class="app-image">
+            <img style="padding: 0px; width: 200px" src="/images/Pasadena.png" />
+        </div>
+        <div class="app-definition">
+            <h2 class="white notranslate">#NeverEver</h2>
+            <p class="white">@Localizer["PasadenaShortDescription"]</p>
+            <a href="https://www.microsoft.com/store/apps/9nblggh6bvgz" class="btn white notranslate">Download</a>
+        </div>
+        <div class="clean"></div>
+    </div>
+</section>
+<section>
+    <div class="section-wrapper">
+        <div class="section-image-right right">
+            <img class="section-image-right-img" style="padding: 20px; margin-right: -20px; padding-bottom: 40px" src="/images/apps/neverever.png" />
+        </div>
+
+        <div class="section-content-left left">
+            <h1>@Localizer["TerreDescription"]</h1>
+            <p>@Localizer["PasadenaDescription"]</p>
+        </div>
+        <div class="clean"></div>
+    </div>
+</section>
+<section class="bg-light">
+    <div class="wrapper" style="padding: 30px 0">
+        @foreach (var item in (IEnumerable<FeedItem>)ViewData["feed"])
+        {
+            <div class="article-blog">
+                <h4><a href="@item.Link">@item.Title</a></h4>
+                <img src="@item.ImageURL" />
+                <p>@item.Content</p>
+                <p><strong><a href="@item.Link">@Localizer["ReadMore"]</a></strong></p>
+            </div>
+        }
+        <div class="clean"></div>
+    </div>
+</section>

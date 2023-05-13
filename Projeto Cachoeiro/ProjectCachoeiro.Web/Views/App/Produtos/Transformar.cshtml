@@ -1,0 +1,257 @@
+﻿@model ProjectCachoeiro.Web.Models.Produtos.Produto
+
+@{
+    ViewData["Title"] = "Transformar " + Model.GetName;
+    ViewData["LOGIC"] = "UWP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    function createDerivados() {
+        //TODO: Adicionar validadores em todas as páginas (ao estilo do Material Framework)
+        //TODO: Personalizar mensagem de erro
+        if ($("#form").valid()) {
+            $("#form").submit();
+        }
+    }
+</script>
+
+<div class="row">
+    <div class="col-md-9">
+        <div class="toolbar">
+            <div class="left">
+            </div>
+            <div class="clean"></div>
+        </div>
+        <div class="toolbar">
+            <div class="left">
+                <h2>Transformar @Html.DisplayFor(model => model.GetName)</h2>
+            </div>
+            <div class="clean"></div>
+        </div>
+        <div id="confirmar" class="view-element view-opened">
+            <h4>Confirmar produto</h4>
+            <hr />
+            <div class="view-content">
+                <div class="row">
+                    <div class="col-md-7 col-sm-6">
+                        @if (Html.DisplayFor(model => model.DisplayName) != null)
+                    {
+                        <h6>Título: @Html.DisplayFor(model => model.Titulo)</h6>
+                }
+                        <p>
+                            Código de referência: @Html.DisplayFor(model => model.CodigoProduto) <br />
+                            Número do bloco: @Html.DisplayFor(model => model.NumeroBloco) <br />
+                            Código NCM: @Html.DisplayFor(model => model.CodigoNCM) <br />
+                            Código EAN: @Html.DisplayFor(model => model.CodigoEAN) <br />
+                            Preço unitário: @Html.DisplayFor(model => model.GetPreco) <br />
+                        </p>
+                        <br />
+                        @if (Html.DisplayFor(model => model.Observacoes) == null)
+                    {
+                        <h4>Observações</h4>
+                        <p>@Html.DisplayFor(model => model.Observacoes)</p>
+                }
+                    </div>
+                    <div class="col-md-5 col-sm-6">
+                        <h6>Dimensões</h6>
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Peso)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Peso)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Largura)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Largura)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Altura)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Altura)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Comprimento)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Comprimento)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <p>Você está prestes a transformar este produto, de uma família primária, para uma família secundária. Por favor confirme se este é o produto em questão e então prossiga.</p>
+                <hr />
+                <div class="right">
+                    <a class="btn" onclick="nextStep('#detalhes', '#confirmar')"><i class="fa fa-arrow-right"></i> Confirmar</a>
+                </div>
+                <div class="clean"></div>
+            </div>
+        </div>
+        <div id="detalhes" class="view-element view-closed">
+            <h4>Detalhes da transformação</h4>
+            <hr />
+            <div class="view-content">
+                <form id="form" asp-action="Transformar">
+                    <h6>Definições</h6>
+                    <p>Para o sistema transformar o produto é necessário confirmar alguns dados do produto final.</p>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label>Família do produto</label>
+                            @(Html.Kendo().DropDownList().Name("Familia").DataValueField("Id").DataTextField("Nome").BindTo((System.Collections.IEnumerable)ViewData["familiasecundaria"]))
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="Numero">Número total de derivados</label>
+                            <input id="numerodederivados" name="Numero" type="number" required />
+                        </div>
+                    </div>
+                    <br />
+                    <h6>Título</h6>
+                    <p>Você pode definir o título padrão para a criação do produtos. <strong>Deixe este campo em branco para gerar um título automaticamente.</strong></p>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <input id="titulo" placeholder="Deixe em branco para gerar automaticamente" name="UserTitulo" type="text" />
+                        </div>
+                    </div>
+                    <br />
+                    <h6>Valores padrões</h6>
+                    <p>Estes valores são padrões e poderão ser alterados individualmente no próximo passo.</p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Estado padrão</label>
+                            @(Html.Kendo().DropDownList().Name("Estado").DataValueField("Id").DataTextField("Nome").BindTo((System.Collections.IEnumerable)ViewData["estado"]))
+                        </div>
+                        <div class="col-md-2">
+                            <label for="Preco">Preço padrão</label>
+                            <input name="Preco" type="number" required />
+                        </div>
+                        <div class="col-md-4">
+                            <label for="NCM">Código NCM</label>
+                            <input name="NCM" class="ncm" type="text" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Espessura</label>
+                            @(Html.Kendo().DropDownList().Name("Espessura").DataValueField("Id").DataTextField("Nome").BindTo((System.Collections.IEnumerable)ViewData["espessura"]))
+                        </div>
+                        <div class="col-md-3">
+                            <label for="Largura">Largura</label>
+                            <input name="Largura" type="number" required />
+                        </div>
+                        <div class="col-md-3">
+                            <label for="Altura">Altura</label>
+                            <input name="Altura" type="number" required />
+                        </div>
+                        <div class="col-md-3">
+                            <label for="Peso">Peso</label>
+                            <input name="Peso" type="number" required />
+                        </div>
+                    </div>
+
+                    <hr />
+                    <p class="small">Ao clicar em "Confirmar" os novos produtos serão gerados no sistema. Você poderá editar eles no próximo passo.</p>
+                    <br />
+                    <div class="left">
+                        <a class="btn btn-link" onclick="backStep('#confirmar', '#detalhes')"><i class="fa fa-arrow-left"></i> Voltar</a>
+                    </div>
+                    <div class="right">
+                        <a class="btn" onclick="createDerivados();"><i class="fa fa-arrow-right"></i> Confirmar</a>
+                    </div>
+                    <div class="clean"></div>
+                </form>
+            </div>
+        </div>
+
+        <div id="tabela" class="view-element view-closed" style="max-height:none">
+            <h4>Produtos derivados</h4>
+            <hr />
+            <div class="view-content view-content-table">
+                <p style="padding:0 25px">Estes produtos foram criados baseados no produto original e os seus dados precisam ser revisados.</p>
+                <p style="padding:0 25px" class="small">Os sequintes campos na tabela foram abreviados: Peso (P), Largura (L), Espessura (E) e Altura (A).</p>
+                <br />
+                <!-- TODO: https://www.telerik.com/forums/incell-editing---saving-when-stepping-out-of-cell -->
+                @(Html.Kendo().Grid<ProjectCachoeiro.Web.Models.Produtos.Produto>()
+                                                        .Name("Material").Columns(col =>
+                                                        {
+                                                            col.Bound(c => c.Titulo).Title("Título");
+                                                            col.ForeignKey(c => c.IdStatus, (System.Collections.IEnumerable)ViewData["estado"], "Id", "Nome").Title("Estado").Width(150);
+                                                            col.ForeignKey(c => c.IdEspessura, (System.Collections.IEnumerable)ViewData["espessura"], "Id", "Nome").Title("E").Width(50);
+                                                            col.Bound(c => c.Largura).Title("L").Width(20);
+                                                            col.Bound(c => c.Altura).Title("A").Width(20);
+                                                            col.Bound(c => c.Peso).Title("P").Width(20);
+                                                            col.Bound(c => c.PrecoVenda).Title("Preço");
+                                                        }).Sortable().Navigatable().Editable(e => e.Mode(GridEditMode.InCell)).ToolBar(t => { t.Save(); })
+                                                        .HtmlAttributes(new { style = "width: 100%;" })
+                                                        .Pageable(page => page.Refresh(true).ButtonCount(5)
+                                                            .Messages(c =>
+                                                            {
+                                                                c.ItemsPerPage("Itens por página");
+                                                                c.Last("Último");
+                                                                c.Next("Próximo");
+                                                                c.First("Primeira");
+                                                                c.Refresh("Recarregar");
+                                                                c.Display("{0} - {1} de {2} itens");
+                                                            }))
+                                                        .DataSource(data => data.Ajax().PageSize(153).Events(events => events.Error("error_handler")).Model(model => model.Id(p => p.Id))
+                                                            .Sort(sort => sort.Add("Titulo").Ascending())
+                                                            .Read(read => read.Action("ProductDetails_Read", "ProductDetails", new { Id = Model.Id }))
+                                                            .Update(update => update.Action("ProductDetails_UpdateAsync", "ProductDetails")).Batch(true)))
+
+                <hr />
+                <div class="left" style="margin-left:25px">
+                    <a class="btn btn-link" href="/Produtos/Blocos"><i class="fa fa-list-ul"></i> Lista de produtos</a>
+                </div>
+                <div class="right" style="margin-right:25px;">
+                    <a class="btn btn-danger" href="#" onclick="alert('Essa função está em desenvolvimento')"><i class="fa fa-undo"></i> Reverter</a>
+                    <a class="btn btn-warning" href="#" onclick="alert('Essa função está em desenvolvimento')"><i class="fa fa-print"></i> Imprimir etiquetas</a>
+                    <a class="btn btn-success" href="/Produtos/Blocos"><i class="fa fa-list-ul"></i> Finalizar</a>
+                </div>
+                <div class="clean"></div>
+            </div>
+        </div>
+    </div>
+    <div class="info-bar col-md-3">
+        @{
+            OtherOptions otherOptions = new OtherOptions
+            {
+                Descricao = "Veja opções relacionadas com a apresentação de itens.",
+                FeedbackEChamadoID = "ItemFamilia",
+                OpcoesRelacionadas = new Links[] {
+                    new Links{
+                        Titulo = "Adicionar família",
+                        Url = "/Familias/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar estado de produto",
+                        Url = "/Estados/Create"
+                    },
+                    new Links{
+                        Titulo = "Adicionar produto",
+                        Url = "/Produtos/Create"
+                    }
+                }
+            };
+        }
+        @Html.Partial("AppOtherOptions", otherOptions)
+    </div>
+</div>
+
+@if (ViewData["posted"] != null)
+{
+    if (ViewData["posted"].ToString() == "true")
+    {
+        <script>
+            $("#confirmar").removeClass("view-opened");
+            $("#confirmar").addClass("view-closed", 1000);
+            $("#confirmar").addClass("view-passed");
+            $("#detalhes").addClass("view-passed");
+            $("#tabela").removeClass("view-closed");
+            $("#tabela").addClass("view-opened", 1000);
+        </script>
+    }
+}

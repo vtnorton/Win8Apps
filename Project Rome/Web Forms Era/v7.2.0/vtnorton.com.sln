@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vtnorton.com", "vtnorton.com\vtnorton.com.csproj", "{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vtnCore", "vtnCore\vtnCore.csproj", "{F897CA41-2D58-472B-A22C-BCE553B7460E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}.Release|ARM.ActiveCfg = Release|Any CPU
+		{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}.Release|x64.ActiveCfg = Release|Any CPU
+		{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}.Release|x86.ActiveCfg = Release|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Debug|ARM.Build.0 = Debug|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Debug|x64.Build.0 = Debug|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Debug|x86.Build.0 = Debug|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Release|ARM.ActiveCfg = Release|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Release|ARM.Build.0 = Release|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Release|x64.ActiveCfg = Release|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Release|x64.Build.0 = Release|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Release|x86.ActiveCfg = Release|Any CPU
+		{F897CA41-2D58-472B-A22C-BCE553B7460E}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://vtnorton.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = vtnorton.com\\vtnorton.com.csproj
+		SccProjectName1 = vtnorton.com
+		SccLocalPath1 = vtnorton.com
+		SccProjectUniqueName2 = vtnCore\\vtnCore.csproj
+		SccProjectName2 = vtnCore
+		SccLocalPath2 = vtnCore
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Internal.master.cs" Inherits="VTNORTON.Core.Internal" %>
+
+<!DOCTYPE html>
+
+<html style="height: calc(100% - 90px); overflow: hidden" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Internal stuff</title>
+    <link href="/Core/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Core/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Core/css/style.css" rel="stylesheet" />
+    <script src="/Core/js/modernizr-2.6.2.min.js"></script>
+    <script src="/Core/js/jquery-1.11.0.min.js"></script>
+    <script src="/Core/js/bootstrap.min.js"></script>
+    <script src="/Core/js/custom.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <header>
+        <img src="/Core/img/vtnorton.png" />
+    </header>
+    <div class="wrapper">
+        <nav>
+            <div class="header">
+                <h2>Menu de opções</h2>
+                <p>Menu com todas as opções do sistema.</p>
+            </div>
+            <div class="css-treeview">
+                <ul>
+                    <li>
+                        <input type="checkbox" id="item-0" /><label for="item-0">eBook</label>
+                        <ul>
+                            <%--<li>
+                                <input type="checkbox" id="item-0-1" /><label for="item-0-1">Aplicativos</label>
+                                <ul>
+                                    <li><a href="/Core/Apps/new-apps.aspx">Novo aplicativo</a></li>
+                                    <li><a href="/Core/Apps/new-changelog.aspx">Novo changelog</a></li>
+                                    <li><a href="/Core/Apps/manage-apps.aspx">Ver aplicativos</a></li>
+                                    <li><a href="/Core/Apps/manage-changelog.aspx">Ver changelogs</a></li>
+                                </ul>
+                            </li>--%>
+                            <li><a href="/Core/CRUD/Ebook/create.aspx">Criar eBook</a></li>
+                            <li><a href="/Core/CRUD/Ebook/index.aspx">Ver eBooks</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-1" /><label for="item-1">E-mail</label>
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="item-0-1" /><label for="item-0-1">Listas</label>
+                                <ul>
+                                    <li><a href="/Core/CRUD/Listas/create.aspx">Criar nova lista</a></li>
+                                    <li><a href="/Core/CRUD/Listas/index.aspx">Ver listas</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="item-0-2" /><label for="item-0-2">Temas</label>
+                                <ul>
+                                    <li><a href="/Core/CRUD/Temas/create.aspx">Criar novo tema</a></li>
+                                    <li><a href="/Core/CRUD/Temas/index.aspx">Ver temas</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/Core/CRUD/Email/Create.aspx">Enviar e-mail</a></li>
+                            <li><a href="/Core/CRUD/Enviados/index.aspx">E-mails enviados</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/Core/index.aspx">Início</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section id="content">
+            <form runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </form>
+        </section>
+
+        <div style="clear: both"></div>
+    </div>
+    <footer>
+        <p>Vítor Norton - Internal things... Confidential - v2.0.0</p>
+    </footer>
+</body>
+</html>

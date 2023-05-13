@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTNORTON", "VTNORTON\VTNORTON.csproj", "{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{857C57D8-D226-41E8-A578-98D17F116AFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hidra", "Hidra\Hidra.csproj", "{AA6D6AEA-CF86-4964-861D-6CF335591829}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetaVtnorton", "BetaVtnorton\BetaVtnorton.csproj", "{ABAAEE27-4A41-4049-A15B-C5F24A9C9EDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42E02DAD-088F-41B5-A95F-CBFF4CB6D367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA6D6AEA-CF86-4964-861D-6CF335591829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA6D6AEA-CF86-4964-861D-6CF335591829}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA6D6AEA-CF86-4964-861D-6CF335591829}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA6D6AEA-CF86-4964-861D-6CF335591829}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABAAEE27-4A41-4049-A15B-C5F24A9C9EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABAAEE27-4A41-4049-A15B-C5F24A9C9EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABAAEE27-4A41-4049-A15B-C5F24A9C9EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABAAEE27-4A41-4049-A15B-C5F24A9C9EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{42E02DAD-088F-41B5-A95F-CBFF4CB6D367} = {857C57D8-D226-41E8-A578-98D17F116AFC}
+		{AA6D6AEA-CF86-4964-861D-6CF335591829} = {857C57D8-D226-41E8-A578-98D17F116AFC}
+	EndGlobalSection
+EndGlobal

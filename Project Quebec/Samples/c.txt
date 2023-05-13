@@ -1,0 +1,9 @@
+/*
+ * Created by: Formula - Universal Code Editor
+ */
+
+#include <stdio.h>
+
+<#NAME>(){
+
+}
